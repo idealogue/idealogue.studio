@@ -1,3 +1,5 @@
+// TODO: Update this file.
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,

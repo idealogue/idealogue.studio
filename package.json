@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "idealogue",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Idealogue.studio site.",
+  "version": "3.0.0",
+  "author": "Mariusz Roliński <mariusz@mariusz.io>",
   "dependencies": {
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
@@ -22,7 +22,7 @@
     "prettier": "^1.19.1"
   },
   "keywords": [
-    "gatsby"
+    "idealogue"
   ],
   "license": "MIT",
   "scripts": {
