@@ -1,7 +1,5 @@
-import React from "react"
-
 const NotFoundPage = () => (
-  '404'
+    '404'
 )
 
 export default NotFoundPage

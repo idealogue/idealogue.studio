@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'Lab Grotesque';
+    font-style: normal;
+    font-weight: 200;
+    src: url('../fonts/LabGrotesque-Light.eot');
+    src: local('Lab Grotesque Light'),
+            local('LabGrotesque-Light'),
+            url('../fonts/LabGrotesque-Light.eot') format('embedded-opentype'),
+            url('../fonts/LabGrotesque-Light.woff2') format('woff2'),
+            url('../fonts/LabGrotesque-Light.woff') format('woff'),
+            url('../fonts/LabGrotesque-Light.tff')  format('truetype');
+}
+
+@font-face {
+    font-family: 'Lab Grotesque';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/LabGrotesque-Regular.eot');
+    src: local('Lab Grotesque Regular'),
+            local('LabGrotesque-Regular'),
+            url('../fonts/LabGrotesque-Regular.eot') format('embedded-opentype'),
+            url('../fonts/LabGrotesque-Regular.woff2') format('woff2'),
+            url('../fonts/LabGrotesque-Regular.woff') format('woff'),
+            url('../fonts/LabGrotesque-Regular.tff')  format('truetype');
+}
+
+@font-face {
+    font-family: 'Lab Grotesque';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/LabGrotesque-Bold.eot');
+    src: local('Lab Grotesque Bold'),
+            local('LabGrotesque-Bold'),
+            url('../fonts/LabGrotesque-Bold.eot') format('embedded-opentype'),
+            url('../fonts/LabGrotesque-Bold.woff2') format('woff2'),
+            url('../fonts/LabGrotesque-Bold.woff') format('woff'),
+            url('../fonts/LabGrotesque-Bold.tff')  format('truetype');
+}
+
+@font-face {
+    font-family: 'Publico Text';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/PublicoText-Roman-Web.eot');
+    src: local('Publico Text Roman'),
+            local('PublicoText-Roman'),
+            url('../fonts/PublicoText-Roman-Web.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/PublicoText-Roman-Web.woff') format('woff'),
+            url('../fonts/PublicoText-Roman-Web.svg#svgFontName') format('svg');
+}
+
+@font-face {
+    font-family: 'Publico Text';
+    font-style: italic;
+    font-weight: 400;
+    src: url('../fonts/PublicoText-Italic-Web.eot');
+    src: local('Publico Text Italic'),
+            local('PublicoText-Italic'),
+            url('../fonts/PublicoText-Italic-Web.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/PublicoText-Italic-Web.woff') format('woff'),
+            url('../fonts/PublicoText-Italic-Web.ttf')  format('truetype'),
+            url('../fonts/PublicoText-Italic-Web.svg#svgFontName') format('svg');
+}
+
+@font-face {
+    font-family: 'Publico Text';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/PublicoText-Semibold-Web.eot');
+    src: local('Publico Text Semibold'),
+            local('PublicoText-Semibold'),
+            url('../fonts/PublicoText-Semibold-Web.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/PublicoText-Semibold-Web.woff') format('woff'),
+            url('../fonts/PublicoText-Semibold-Web.ttf')  format('truetype'),
+            url('../fonts/PublicoText-Semibold-Web.svg#svgFontName') format('svg');
+}
+
+@font-face {
+    font-family: 'Publico Text';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/PublicoText-Bold-Web.eot');
+    src: local('Publico Text Bold'),
+            local('PublicoText-Bold'),
+            url('../fonts/PublicoText-Bold-Web.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/PublicoText-Bold-Web.woff2') format('woff2'),
+            url('../fonts/PublicoText-Bold-Web.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Realtime Text';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/realtime/346E82_4_0.eot');
+    src: local('Realtime Text Semibold'),
+            local('RealtimeText-Semibold'),
+            url('../fonts/realtime/346E82_4_0.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/realtime/346E82_4_0.woff2') format('woff2'),
+            url('../fonts/realtime/346E82_4_0.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Sharp Sans';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/sharpsans/SharpSans-Bold.eot');
+    src: local('Sharp Sans No1 Bold'),
+            local('SharpSansNoOne-Bold'),
+            url('../fonts/sharpsans/SharpSans-Bold.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/sharpsans/SharpSans-Bold.woff2') format('woff2'),
+            url('../fonts/sharpsans/SharpSans-Bold.woff') format('woff');
+}
