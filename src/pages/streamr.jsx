@@ -1,7 +1,21 @@
-import React from "react"
+import React from 'react'
+import SectionHeader from '$shared/SectionHeader'
+import NextProject from '$shared/NextProject'
+import Layout from '$shared/Layout'
+import Project, { STREAMR } from '$shared/Project'
+import Hero from '$shared/Hero'
 
-const StreamrPage = () => (
-    <h1>Streamr</h1>
+const LayoutTheme = {
+    backgroundColor: '#ffffff',
+}
+
+const CobaltPage = () => (
+    <Project id={STREAMR}>
+        <Layout theme={LayoutTheme}>
+            <Hero />
+            <NextProject />
+        </Layout>
+    </Project>
 )
 
-export default StreamrPage
+export default CobaltPage

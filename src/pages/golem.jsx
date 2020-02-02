@@ -1,7 +1,21 @@
-import React from "react"
+import React from 'react'
+import SectionHeader from '$shared/SectionHeader'
+import NextProject from '$shared/NextProject'
+import Layout from '$shared/Layout'
+import Project, { GOLEM } from '$shared/Project'
+import Hero from '$shared/Hero'
 
-const GolemPage = () => (
-    <h1>Golem</h1>
+const LayoutTheme = {
+    backgroundColor: '#ffffff',
+}
+
+const CobaltPage = () => (
+    <Project id={GOLEM}>
+        <Layout theme={LayoutTheme}>
+            <Hero />
+            <NextProject />
+        </Layout>
+    </Project>
 )
 
-export default GolemPage
+export default CobaltPage
