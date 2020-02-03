@@ -1,19 +1,152 @@
 import React from 'react'
-import SectionHeader from '$shared/SectionHeader'
-import NextProject from '$shared/NextProject'
-import Layout from '$shared/Layout'
-import Project, { STREAMR } from '$shared/Project'
+import Bullet from '$shared/Bullet'
+import Container from '$shared/Container'
+import Contributor, { Contributors } from '$shared/Contributor'
 import Hero from '$shared/Hero'
+import Layout from '$shared/Layout'
+import Link from '$shared/Link'
+import NextProject from '$shared/NextProject'
+import Project, { STREAMR } from '$shared/Project'
+import Section from '$shared/Section'
+import SectionHeader from '$shared/SectionHeader'
 
 const LayoutTheme = {
-    backgroundColor: '#ffffff',
+    backgroundColor: '#06042a',
+}
+
+const DarkBlueTheme = {
+    backgroundColor: '#06042a',
+    color: '#ffffff',
+}
+
+const BlueTheme = {
+    backgroundColor: '#09006d',
+    color: '#ffffff',
 }
 
 const CobaltPage = () => (
     <Project id={STREAMR}>
         <Layout theme={LayoutTheme}>
-            <Hero />
-            <NextProject />
+            <Section theme={DarkBlueTheme}>
+                <Hero>
+                    <p>
+                        We rebranded Streamr, a decentralised realtime data platform, and integrated
+                        their services into a more user-focused app called Core.
+                    </p>
+                </Hero>
+                <SectionHeader no={1}>
+                    An introduction to realtime data
+                </SectionHeader>
+                <Container>
+                    <p>
+                        When we first met them in 2017, Streamr had a big vision for the future
+                        of realtime data economy, and a powerful but somewhat rough visual
+                        programming app already working. They were planning to build a global
+                        peer-to-peer realtime data network, with nodes incentivised by an ERC-20
+                        crypto token, DATA.
+                    </p>
+                    <p>
+                        Given our experience with both crypto and visual programming systems,
+                        it seemed like a good match, so we came onboard in late 2017. We first
+                        worked on a website that helped to raise $30M in an initial coin offering,
+                        and then turned focus to a rebrand.
+                    </p>
+                </Container>
+            </Section>
+            <Section theme={BlueTheme}>
+                <SectionHeader no={2}>
+                    Creating a stylised data diorama
+                </SectionHeader>
+                <Container>
+                    <p>
+                        Streamr CEO, Henri Pihkala, and I preferred to avoid the sci-fi cliches
+                        that seem to be ever-present in the crypto world, and instead aimed
+                        to visualise a semi-realistic, near-future world that works in different
+                        ways to our present day. A stylised but detailed 3D world, seen as a kind
+                        of data diorama was the starting point. To help us realise this we brought
+                        on one of our regular collaborators, the illustrator Stuart Wade. His
+                        detailed isometric illustrations and animations helped visualise Streamr’s
+                        largely invisible data products and services, along with a touch of humour.
+                    </p>
+                </Container>
+            </Section>
+            <Section theme={DarkBlueTheme}>
+                <SectionHeader no={3}>
+                    Consensus New York — an early milestone
+                </SectionHeader>
+                <Container>
+                    <p>
+                        The first new app to roll out was a brand new Data Marketplace MVP, which
+                        from the start of design to launch at the Consensus conference in May 2018
+                        was a touch over 3 months — probably the fastest we've ever turned around
+                        an entire app from scratch. Launch was a bit hectic, and the app MVP was
+                        a bit rough, but it was well received, and certainly was a trial by fire
+                        for the whole design and front end teams.
+                    </p>
+                    <p>
+                        We worked with London agency Accept & Proceed who did a great job
+                        of creating a room build and various data installations, including
+                        robots building real-world infographics from a Streamr data feed, an AR
+                        installation using a 3D printed car body, and a pollution sensing diorama
+                        incorporating 3D print of the buildings of midtown Manhattan.
+                    </p>
+                </Container>
+                <SectionHeader no={4}>
+                    Core - one app to rule them all
+                </SectionHeader>
+                <Container>
+                    <p>
+                        Streamr had some powerful tools, included a node & cable visual editor for
+                        building realtime data processes, and a stream creation tool. Once we added
+                        the Marketplace, the divide became quite stark between old and new. We
+                        realised the main weakness was a lack of central point to manage all the
+                        resources users could create. So we designed a set of user pages to glue
+                        everything together, which we eventually renamed Core.
+                    </p>
+                    <p>
+                        Core now includes editors to create streams, canvases and dashboards, as
+                        well as products for the Marketplace, including the Data Unions feature
+                        for building crowdsourced data products.
+                    </p>
+                </Container>
+                <SectionHeader no={5}>
+                    Wrapping it all into one package
+                </SectionHeader>
+                <Container>
+                    <p>
+                        All of this was wrapped up into the full public website, launched in 2019.
+                        With the help of another of our regular collaborators, front end dev
+                        Mariusz Roliński, we wrote and designed a new site that incorporated
+                        realtime live data showing the amount of traffic passing through the
+                        Streamr Network, as well as live token prices. Another key part of this
+                        was the design and rewriting of an all-new Docs section.
+                    </p>
+                </Container>
+                <SectionHeader no={6}>
+                    Credits
+                    <Bullet />
+                    <Link as="a" href="https://streamr.network/" target="_blank" rel="noopener noreferrer">
+                        Visit Streamr website
+                    </Link>
+                </SectionHeader>
+                <Contributors>
+                    <Contributor name="Ross Harrington" role="Brand design &amp; animation" />
+                    <Contributor name="Matt Innes" role="Brand, Design lead" />
+                    <Contributor name="Saori Kajiwara" role="UI/UX design" />
+                    <Contributor name="Stuart Wade" role="Illustration &amp; animation" />
+                    <br />
+                    <Contributor name="Matthew Fontana" role="Front end dev" />
+                    <Contributor name="Juha Haavisto" role=" Front end lead" />
+                    <Contributor name="Tuomas Koponen" role="Front end dev" />
+                    <Contributor name="Tim Oxley" role=" Core app lead" />
+                    <Contributor name="Henri Pihkala" role="CEO / Product lead" />
+                    <Contributor name="Mariusz Roliński" role="Public site lead" />
+                </Contributors>
+                <Container>
+                    <hr />
+                </Container>
+                <NextProject />
+            </Section>
         </Layout>
     </Project>
 )
