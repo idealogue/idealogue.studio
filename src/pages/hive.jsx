@@ -7,6 +7,7 @@ import NextProject from '$shared/NextProject'
 import Project, { HIVE } from '$shared/Project'
 import Section from '$shared/Section'
 import SectionHeader from '$shared/SectionHeader'
+import Icons from '$hive/Icons'
 
 const LayoutTheme = {
     backgroundColor: '#edb400',
@@ -50,6 +51,7 @@ const CobaltPage = () => (
                         from honeycomb and created a new mark plus a range of geometric avatars
                         for the app and site.
                     </p>
+                    <Icons />
                 </Container>
                 <SectionHeader no={2}>
                     Hive Wallet 1.0
