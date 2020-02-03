@@ -11,6 +11,11 @@ const Section = styled(UnstyledSection)`
     background-color: ${({ theme }) => theme.backgroundColor};
     color: ${({ theme }) => theme.color};
 
+    :first-child {
+        height: 100%;
+        max-height: 1440px;
+    }
+
     p {
         font-family: 'Publico Text';
         font-size: 24px;

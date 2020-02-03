@@ -13,6 +13,13 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Lab Grotesque';
         font-size: 16px;
     }
+
+    html,
+    body,
+    body > div,
+    body > div > div {
+        height: 100%;
+    }
 `
 
 const Layout = ({ children, theme }) => (
