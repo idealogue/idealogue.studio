@@ -8,6 +8,11 @@ import Project, { HIVE } from '$shared/Project'
 import Section from '$shared/Section'
 import SectionHeader from '$shared/SectionHeader'
 import Icons from '$hive/Icons'
+import OldWallet from '$hive/OldWallet'
+import FluidImage from '$shared/FluidImage'
+import BrowserFrame from '$shared/BrowserFrame'
+import Image from '$hive/Image'
+import NewWallet from '$hive/NewWallet'
 
 const LayoutTheme = {
     backgroundColor: '#edb400',
@@ -64,6 +69,7 @@ const CobaltPage = () => (
                         Waggle, after the way bees move their bodies to guide other bees.
                     </p>
                 </Container>
+                <OldWallet />
             </Section>
             <Section theme={YellowGrayTheme}>
                 <SectionHeader no={3}>
@@ -78,6 +84,7 @@ const CobaltPage = () => (
                         and instant trading. In the process we also made it visually lighter.
                     </p>
                 </Container>
+                <NewWallet />
             </Section>
             <Section theme={WhiteTheme}>
                 <SectionHeader no={4}>
@@ -89,6 +96,9 @@ const CobaltPage = () => (
                         system for Hive, along with a back end dashboard for clients to manage
                         their wallet, get notifications, and real time analytics.
                     </p>
+                    <BrowserFrame>
+                        <FluidImage src={Image.HOSTED} alt="Hive hosted" />
+                    </BrowserFrame>
                 </Container>
                 <SectionHeader no={5}>
                     Credits
