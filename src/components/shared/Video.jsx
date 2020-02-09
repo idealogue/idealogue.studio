@@ -6,6 +6,11 @@ const sources = {
         ['/videos/hive.webm', 'video/quicktime'],
         ['/videos/hive.mov', 'video/webm'],
     ],
+    hux: [
+        ['/videos/hux.mp4', 'video/mp4'],
+        ['/videos/hux.webm', 'video/quicktime'],
+        ['/videos/hux.mov', 'video/webm'],
+    ],
 }
 
 const Video = ({ id, ...props }) => (

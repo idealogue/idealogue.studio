@@ -9,6 +9,7 @@ import NextProject from '$shared/NextProject'
 import Project, { HUXTABURGER } from '$shared/Project'
 import Section from '$shared/Section'
 import SectionHeader from '$shared/SectionHeader'
+import BrowsingVideo from '$huxtaburger/BrowsingVideo'
 
 const LayoutTheme = {
     backgroundColor: '#dd2712',
@@ -57,6 +58,9 @@ const CobaltPage = () => (
                         &amp; blue fly strips, with the king of beef at the centre of it all.
                     </p>
                 </Container>
+                {/* HERE: Logo */}
+                {/* HERE: 4 images */}
+                {/* HERE: Huge hux image */}
                 <SectionHeader no={2}>
                     Beery Browsing
                 </SectionHeader>
@@ -67,6 +71,7 @@ const CobaltPage = () => (
                         a beer in the other. Also, early on, we decided we want to be able to see
                         what was in the burgers by tapping them. Put another way, exploding burgers.
                     </p>
+                    <BrowsingVideo />
                 </Container>
             </Section>
             <Section theme={BlueTheme}>
@@ -81,6 +86,7 @@ const CobaltPage = () => (
                         applied it to the products we extended it to the stores, making each one
                         an individual animated icon. Try clicking the ones below.
                     </p>
+                    {/* HERE: Burgers */}
                 </Container>
             </Section>
             <Section theme={BlackTheme}>
@@ -93,6 +99,7 @@ const CobaltPage = () => (
                         without doubt this Hot Beef — Cold Beer neon is our favourite.
                     </p>
                 </Container>
+                {/* HERE: Neon */}
                 <SectionHeader no={5}>
                     Credits
                     <Bullet />

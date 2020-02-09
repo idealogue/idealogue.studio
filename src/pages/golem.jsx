@@ -38,7 +38,8 @@ const CobaltPage = () => (
             <Section theme={BlueTheme}>
                 <Hero>
                     <p>
-                        We worked on user experience design for the cryptocurrency-based shared computing project, as well as a brand that didn’t see the light of day.
+                        We worked on user experience design for the cryptocurrency-based shared
+                        computing project, as well as a brand that didn’t see the light of day.
                     </p>
                 </Hero>
             </Section>
@@ -48,16 +49,25 @@ const CobaltPage = () => (
                 </SectionHeader>
                 <Container>
                     <p>
-                        On these type of projects we usually start with the brand process, in order to create a good toolkit and consistent voice to use in the product design, launch site and social media. In this case, the team wanted to do a user experience pass first, as they wanted to show some public progress, rather than waiting for a brand process to run its course.
+                        On these type of projects we usually start with the brand process, in order
+                        to create a good toolkit and consistent voice to use in the product design,
+                        launch site and social media. In this case, the team wanted to do a user
+                        experience pass first, as they wanted to show some public progress, rather
+                        than waiting for a brand process to run its course.
                     </p>
-                    {/* Image. */}
+                    {/* HERE: Old UI */}
                     <p>
-                        One key problem to solve was that there would be two very distinct user types, Providers, who would run the app to earn digital tokens in return for their compute power, and Requesters who would pay to use the network to run tasks. Some of these users would do both, but many would not. This led to us dividing the UI for these groups. We explored these ideas with a number of wireframes and interaction prototypes.
+                        One key problem to solve was that there would be two very distinct user
+                        types, Providers, who would run the app to earn digital tokens in return
+                        for their compute power, and Requesters who would pay to use the network
+                        to run tasks. Some of these users would do both, but many would not. This
+                        led to us dividing the UI for these groups. We explored these ideas with
+                        a number of wireframes and interaction prototypes.
                     </p>
                 </Container>
             </Section>
             <Section theme={GrayishTheme}>
-                {/* Images. */}
+                {/* HERE: Images */}
             </Section>
             <Section theme={BlueTheme}>
                 <SectionHeader no={2}>
@@ -65,11 +75,20 @@ const CobaltPage = () => (
                 </SectionHeader>
                 <Container>
                     <p>
-                        As we had not developed a brand yet, and the existing Golem brand was unsuitable, we developed the first visual pass as a fairly generic bootstrap type theme that we could build on. The toughest problem was really creating a system that could work for future unknown task types while also working well for the first integration, which was to be 3D rendering for Blender and LuxRender.
+                        As we had not developed a brand yet, and the existing Golem brand was
+                        unsuitable, we developed the first visual pass as a fairly generic
+                        bootstrap type theme that we could build on. The toughest problem was
+                        really creating a system that could work for future unknown task types
+                        while also working well for the first integration, which was to be 3D
+                        rendering for Blender and LuxRender.
                     </p>
-                    {/* Animation. */}
+                    {/* HERE: Animation */}
                     <p>
-                        The other key goal was to design something anyone could use, but also something that power users could customise to their liking. We had to push quite hard to keep the simple slide-to-allocate resources on the Network view, but balanced it out with an advanced setup for users comfortable with tweaking parameters.
+                        The other key goal was to design something anyone could use, but also
+                        something that power users could customise to their liking. We had to push
+                        quite hard to keep the simple slide-to-allocate resources on the Network
+                        view, but balanced it out with an advanced setup for users comfortable with
+                        tweaking parameters.
                     </p>
                 </Container>
             </Section>
@@ -79,16 +98,32 @@ const CobaltPage = () => (
                 </SectionHeader>
                 <Container>
                     <p>
-                        The core idea was to make something that could go beyond the usual cryptocurrency brand and appeal to a more mainstream audience. The interesting points for us were the stages of the project the whitepaper envisioned — Brass, Clay, Stone, Iron. Creating a brand that could vary and grow from stage to stage was the idea we started with. We also liked the origin of the name — Stanislav Lem’s novel Golem XIV, about a conversation with an AI which is evolving consciousness.
+                        The core idea was to make something that could go beyond the usual
+                        cryptocurrency brand and appeal to a more mainstream audience. The
+                        interesting points for us were the stages of the project the whitepaper
+                        envisioned — Brass, Clay, Stone, Iron. Creating a brand that could vary
+                        and grow from stage to stage was the idea we started with. We also liked
+                        the origin of the name — Stanislav Lem’s novel Golem XIV, about
+                        a conversation with an AI which is evolving consciousness.
                     </p>
                 </Container>
+                {/* HERE: Golem exploration */}
             </Section>
             <Section theme={BlueTheme}>
+                {/* HERE: Golem carousel */}
                 <Container>
                     <p>
-                        We decided upon a character that would combine an AI and a traditional Golem, along with a flexible mark that could be animated to represent the network in some way. To that end we brought on illustrator Stuart Wade, whose work we’d admired on the Monster Project. The tricky part with the character development was to find something that was part AI, part golem, without being too robotic — and without feeling too threatening or overly cute. The reaction on Reddit to an early presentation was that we got that right.
+                        We decided upon a character that would combine an AI and a traditional
+                        Golem, along with a flexible mark that could be animated to represent the
+                        network in some way. To that end we brought on illustrator Stuart Wade,
+                        whose work we’d admired on the Monster Project. The tricky part with the
+                        character development was to find something that was part AI, part golem,
+                        without being too robotic — and without feeling too threatening or overly
+                        cute. The reaction on Reddit to an early presentation was that we got
+                        that right.
                     </p>
                 </Container>
+                {/* HERE: Loop */}
             </Section>
             <Section theme={BlackTheme}>
                 <SectionHeader no={4}>
@@ -96,8 +131,13 @@ const CobaltPage = () => (
                 </SectionHeader>
                 <Container>
                     <p>
-                        The beta launch page was to be fairly simple, as the app itself was still under heavy development. So the focus was just on alerting people to the Brass milestone, providing download access and encouraging users to come and talk to us on Slack and Reddit about testing the beta, and rendering 3D files, the first Golem integration.
+                        The beta launch page was to be fairly simple, as the app itself was still
+                        under heavy development. So the focus was just on alerting people to the
+                        Brass milestone, providing download access and encouraging users to come
+                        and talk to us on Slack and Reddit about testing the beta, and rendering
+                        3D files, the first Golem integration.
                     </p>
+                    {/* HERE: Lotta stuff. */}
                 </Container>
             </Section>
             <Section theme={BlueTheme}>
