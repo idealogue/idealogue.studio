@@ -9,6 +9,9 @@ import Container from '$shared/Container'
 import Bullet from '$shared/Bullet'
 import Link from '$shared/Link'
 import Contributor, { Contributors } from '$shared/Contributor'
+import LogoImage from '$cobalt/LogoImage'
+import ClarityImages from '$cobalt/ClarityImages'
+import BugImages from '$cobalt/BugImages'
 
 const LayoutTheme = {
     backgroundColor: '#207dbc',
@@ -47,6 +50,7 @@ const CobaltPage = () => (
                         of Danish Vikings. We helped with a new name, an eyeball / combination
                         lock-inspired mark, and an approachable brand wrapped around it all.
                     </p>
+                    <LogoImage />
                 </Container>
                 <SectionHeader no={2}>
                     Aiming for Clarity
@@ -57,6 +61,7 @@ const CobaltPage = () => (
                         and accessible, with a friendly voice. We also did a brief UI pass over
                         Central, their web dashboard, to clean it up.
                     </p>
+                    <ClarityImages />
                 </Container>
             </Section>
             <Section theme={DarkTheme}>
@@ -70,6 +75,7 @@ const CobaltPage = () => (
                         Marty Cook to create a range of icons representing all the bug types they
                         can fix in client's applications — from access control to an SQL injection.
                     </p>
+                    <BugImages />
                 </Container>
             </Section>
             <Section theme={LightTheme}>
