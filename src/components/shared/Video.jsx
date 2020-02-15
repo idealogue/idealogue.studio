@@ -11,6 +11,11 @@ const sources = {
         ['/videos/hux.webm', 'video/quicktime'],
         ['/videos/hux.mov', 'video/webm'],
     ],
+    golemCharacter: [
+        ['/videos/golem_character.mp4', 'video/mp4'],
+        ['/videos/golem_character.webm', 'video/quicktime'],
+        ['/videos/golem_character.mov', 'video/webm'],
+    ],
 }
 
 const Video = ({ id, ...props }) => (

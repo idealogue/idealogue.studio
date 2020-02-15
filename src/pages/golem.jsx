@@ -7,6 +7,9 @@ import Hero from '$shared/Hero'
 import Section from '$shared/Section'
 import Container from '$shared/Container'
 import Contributor, { Contributors } from '$shared/Contributor'
+import FluidImage from '$shared/FluidImage'
+import Image from '$golem/Image'
+import Video from '$shared/Video'
 
 const LayoutTheme = {
     backgroundColor: '#000f24',
@@ -55,7 +58,7 @@ const CobaltPage = () => (
                         experience pass first, as they wanted to show some public progress, rather
                         than waiting for a brand process to run its course.
                     </p>
-                    {/* HERE: Old UI */}
+                    <FluidImage src={Image.UX_FIRST} alt="UI First" />
                     <p>
                         One key problem to solve was that there would be two very distinct user
                         types, Providers, who would run the app to earn digital tokens in return
@@ -67,7 +70,7 @@ const CobaltPage = () => (
                 </Container>
             </Section>
             <Section theme={GrayishTheme}>
-                {/* HERE: Images */}
+                <FluidImage src={Image.UI_PROCESS} alt="" />
             </Section>
             <Section theme={BlueTheme}>
                 <SectionHeader no={2}>
@@ -107,10 +110,12 @@ const CobaltPage = () => (
                         a conversation with an AI which is evolving consciousness.
                     </p>
                 </Container>
-                {/* HERE: Golem exploration */}
+                <FluidImage src={Image.IDENTITY} alt="" />
             </Section>
             <Section theme={BlueTheme}>
-                {/* HERE: Golem carousel */}
+                {Image.GOLEMS.map((src) => (
+                    <FluidImage key={src} src={src} alt="" />
+                ))}
                 <Container>
                     <p>
                         We decided upon a character that would combine an AI and a traditional
@@ -123,7 +128,7 @@ const CobaltPage = () => (
                         that right.
                     </p>
                 </Container>
-                {/* HERE: Loop */}
+                <Video id="golemCharacter" loop autoPlay playsInline muted />
             </Section>
             <Section theme={BlackTheme}>
                 <SectionHeader no={4}>

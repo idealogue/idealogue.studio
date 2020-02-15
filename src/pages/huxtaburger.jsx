@@ -10,6 +10,8 @@ import Project, { HUXTABURGER } from '$shared/Project'
 import Section from '$shared/Section'
 import SectionHeader from '$shared/SectionHeader'
 import BrowsingVideo from '$huxtaburger/BrowsingVideo'
+import FluidImage from '$shared/FluidImage'
+import Image from '$huxtaburger/Image'
 
 const LayoutTheme = {
     backgroundColor: '#dd2712',
@@ -58,9 +60,11 @@ const CobaltPage = () => (
                         &amp; blue fly strips, with the king of beef at the centre of it all.
                     </p>
                 </Container>
-                {/* HERE: Logo */}
-                {/* HERE: 4 images */}
-                {/* HERE: Huge hux image */}
+                <FluidImage src={Image.HUXTABURGER} alt="Huxtaburger" />
+                {Image.COLLAGE.map((src) => (
+                    <FluidImage key={src} src={src} alt="" />
+                ))}
+                <FluidImage src={Image.SIGN} alt="Sign" />
                 <SectionHeader no={2}>
                     Beery Browsing
                 </SectionHeader>
@@ -99,7 +103,7 @@ const CobaltPage = () => (
                         without doubt this Hot Beef — Cold Beer neon is our favourite.
                     </p>
                 </Container>
-                {/* HERE: Neon */}
+                <FluidImage src={Image.NEON} alt="Neon" />
                 <SectionHeader no={5}>
                     Credits
                     <Bullet />
