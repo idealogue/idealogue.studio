@@ -10,6 +10,10 @@ import Contributor, { Contributors } from '$shared/Contributor'
 import FluidImage from '$shared/FluidImage'
 import Image from '$golem/Image'
 import Video from '$shared/Video'
+import UiFirst from '$golem/UiFirst'
+import UiProcess from '$golem/UiProcess'
+import AppLoop from '$golem/AppLoop'
+import Identity from '$golem/Identity'
 
 const LayoutTheme = {
     backgroundColor: '#000f24',
@@ -58,7 +62,9 @@ const CobaltPage = () => (
                         experience pass first, as they wanted to show some public progress, rather
                         than waiting for a brand process to run its course.
                     </p>
-                    <FluidImage src={Image.UX_FIRST} alt="UI First" />
+                </Container>
+                <UiFirst />
+                <Container>
                     <p>
                         One key problem to solve was that there would be two very distinct user
                         types, Providers, who would run the app to earn digital tokens in return
@@ -70,7 +76,7 @@ const CobaltPage = () => (
                 </Container>
             </Section>
             <Section theme={GrayishTheme}>
-                <FluidImage src={Image.UI_PROCESS} alt="" />
+                <UiProcess />
             </Section>
             <Section theme={BlueTheme}>
                 <SectionHeader no={2}>
@@ -85,7 +91,9 @@ const CobaltPage = () => (
                         while also working well for the first integration, which was to be 3D
                         rendering for Blender and LuxRender.
                     </p>
-                    {/* HERE: Animation */}
+                </Container>
+                <AppLoop />
+                <Container>
                     <p>
                         The other key goal was to design something anyone could use, but also
                         something that power users could customise to their liking. We had to push
@@ -110,7 +118,7 @@ const CobaltPage = () => (
                         a conversation with an AI which is evolving consciousness.
                     </p>
                 </Container>
-                <FluidImage src={Image.IDENTITY} alt="" />
+                <Identity />
             </Section>
             <Section theme={BlueTheme}>
                 {Image.GOLEMS.map((src) => (
@@ -129,6 +137,11 @@ const CobaltPage = () => (
                     </p>
                 </Container>
                 <Video id="golemCharacter" loop autoPlay playsInline muted />
+                {/* HERE: Logos and typography. */}
+                {Image.SHIRTS.map((src) => (
+                    <FluidImage key={src} src={src} alt="" />
+                ))}
+                <FluidImage src={Image.REDDIT_PAGE} alt="" />
             </Section>
             <Section theme={BlackTheme}>
                 <SectionHeader no={4}>
@@ -142,8 +155,8 @@ const CobaltPage = () => (
                         and talk to us on Slack and Reddit about testing the beta, and rendering
                         3D files, the first Golem integration.
                     </p>
-                    {/* HERE: Lotta stuff. */}
                 </Container>
+                <FluidImage src={Image.BETA_LAUNCH} alt="" />
             </Section>
             <Section theme={BlueTheme}>
                 <SectionHeader no={5}>
