@@ -9,11 +9,14 @@ import Container from '$shared/Container'
 import Contributor, { Contributors } from '$shared/Contributor'
 import FluidImage from '$shared/FluidImage'
 import Image from '$golem/Image'
-import Video from '$shared/Video'
 import UiFirst from '$golem/UiFirst'
 import UiProcess from '$golem/UiProcess'
 import AppLoop from '$golem/AppLoop'
 import Identity from '$golem/Identity'
+import Golems from '$golem/Golems'
+import GolemCharacter from '$golem/GolemCharacter'
+import RedditPage from '$golem/RedditPage'
+import BetaLaunchPage from '$golem/BetaLaunchPage'
 
 const LayoutTheme = {
     backgroundColor: '#000f24',
@@ -21,6 +24,11 @@ const LayoutTheme = {
 
 const BlueTheme = {
     backgroundColor: '#005ad3',
+    color: '#ffffff',
+}
+
+const DarkBlueTheme = {
+    backgroundColor: '#001a3d',
     color: '#ffffff',
 }
 
@@ -121,9 +129,7 @@ const CobaltPage = () => (
                 <Identity />
             </Section>
             <Section theme={BlueTheme}>
-                {Image.GOLEMS.map((src) => (
-                    <FluidImage key={src} src={src} alt="" />
-                ))}
+                <Golems />
                 <Container>
                     <p>
                         We decided upon a character that would combine an AI and a traditional
@@ -136,12 +142,14 @@ const CobaltPage = () => (
                         that right.
                     </p>
                 </Container>
-                <Video id="golemCharacter" loop autoPlay playsInline muted />
+                <GolemCharacter />
+            </Section>
+            <Section theme={DarkBlueTheme}>
                 {/* HERE: Logos and typography. */}
                 {Image.SHIRTS.map((src) => (
                     <FluidImage key={src} src={src} alt="" />
                 ))}
-                <FluidImage src={Image.REDDIT_PAGE} alt="" />
+                <RedditPage />
             </Section>
             <Section theme={BlackTheme}>
                 <SectionHeader no={4}>
@@ -156,7 +164,7 @@ const CobaltPage = () => (
                         3D files, the first Golem integration.
                     </p>
                 </Container>
-                <FluidImage src={Image.BETA_LAUNCH} alt="" />
+                <BetaLaunchPage />
             </Section>
             <Section theme={BlueTheme}>
                 <SectionHeader no={5}>
