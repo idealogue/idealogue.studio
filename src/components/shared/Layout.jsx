@@ -1,4 +1,5 @@
 import 'normalize.css/normalize.css'
+import '../../styles/fonts.css'
 
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
