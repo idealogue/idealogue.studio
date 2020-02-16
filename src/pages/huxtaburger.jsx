@@ -10,10 +10,9 @@ import Project, { HUXTABURGER } from '$shared/Project'
 import Section from '$shared/Section'
 import SectionHeader from '$shared/SectionHeader'
 import BrowsingVideo from '$hux/BrowsingVideo'
-import FluidImage from '$shared/FluidImage'
-import Image from '$hux/Image'
 import Pics from '$hux/Pics'
 import Iconic from '$hux/Iconic'
+import Neon from '$hux/Neon'
 
 const LayoutTheme = {
     backgroundColor: '#dd2712',
@@ -101,7 +100,7 @@ const CobaltPage = () => (
                         without doubt this Hot Beef — Cold Beer neon is our favourite.
                     </p>
                 </Container>
-                <FluidImage src={Image.NEON} alt="Neon" />
+                <Neon />
                 <SectionHeader no={5}>
                     Credits
                     <Bullet />
