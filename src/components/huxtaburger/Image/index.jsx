@@ -40,10 +40,14 @@ const CBD_FRAMES = [
 ]
 
 const COLLAGE = [
-    COLLAGE_1,
-    COLLAGE_2,
-    COLLAGE_3,
-    COLLAGE_4,
+    [
+        COLLAGE_1,
+        COLLAGE_2,
+    ],
+    [
+        COLLAGE_3,
+        COLLAGE_4,
+    ],
 ]
 
 const EASTLAND_FRAMES = [

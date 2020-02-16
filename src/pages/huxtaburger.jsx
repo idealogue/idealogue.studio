@@ -12,6 +12,7 @@ import SectionHeader from '$shared/SectionHeader'
 import BrowsingVideo from '$huxtaburger/BrowsingVideo'
 import FluidImage from '$shared/FluidImage'
 import Image from '$huxtaburger/Image'
+import Pics from '$huxtaburger/Pics'
 
 const LayoutTheme = {
     backgroundColor: '#dd2712',
@@ -60,11 +61,7 @@ const CobaltPage = () => (
                         &amp; blue fly strips, with the king of beef at the centre of it all.
                     </p>
                 </Container>
-                <FluidImage src={Image.HUXTABURGER} alt="Huxtaburger" />
-                {Image.COLLAGE.map((src) => (
-                    <FluidImage key={src} src={src} alt="" />
-                ))}
-                <FluidImage src={Image.SIGN} alt="Sign" />
+                <Pics />
                 <SectionHeader no={2}>
                     Beery Browsing
                 </SectionHeader>
