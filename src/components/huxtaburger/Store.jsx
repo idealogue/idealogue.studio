@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { StoreBadge } from '$hux/Badge'
 import Image from '$hux/Image'
 
@@ -24,12 +24,38 @@ const Shadow = styled.img`
     width: 100%;
 `
 
+const smokeAnimation = keyframes`
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100%) scale(1.1);
+    }
+`
+
+const Smoke = styled.img.attrs((props) => ({
+    alt: '',
+    src: Image.SMOKE,
+    ...props,
+}))`
+    animation: 1s ease-out 1 forwards ${smokeAnimation};
+    left: ${({ posX }) => posX}px;
+    position: absolute;
+    top: ${({ posY }) => posY}px;
+`
+
 const UnstyledStore = ({ duration, smoke, slides = [], frames = [], shadow, onMouseDown: onMouseDownProp, ...props }) => {
     const [frame, setFrame] = useState(0)
 
     const [firstFrame, ...otherFrames] = frames
 
     const [slide, setSlide] = useState(0)
+
+    const [smokes, setSmokes] = useState([])
+
+    const [smokeX, smokeY] = smoke || []
 
     useEffect(() => {
         if (otherFrames.length) {
@@ -52,10 +78,14 @@ const UnstyledStore = ({ duration, smoke, slides = [], frames = [], shadow, onMo
             setSlide((current) => (current + 1) % slides.length)
         }
 
+        if (smoke) {
+            setSmokes((current) => [...current, current.length])
+        }
+
         if (onMouseDownProp) {
             onMouseDownProp(e)
         }
-    }, [slides, onMouseDownProp])
+    }, [slides, onMouseDownProp, smoke])
 
     return (
         <div
@@ -77,6 +107,9 @@ const UnstyledStore = ({ duration, smoke, slides = [], frames = [], shadow, onMo
                 </Wrapper>
             ))}
             <StoreBadge />
+            {smokes.map((key) => (
+                <Smoke key={key} posX={smokeX} posY={smokeY} />
+            ))}
         </div>
     )
 }
@@ -95,7 +128,7 @@ export const Cbd = (props) => (
     <Store
         {...props}
         duration={2000}
-        smoke
+        smoke={[53, 15]}
         frames={Image.CBD_FRAMES}
         shadow={(
             <Shadow src={Image.CBD_SHADOW} alt="" />
@@ -119,7 +152,7 @@ export const Eastland = (props) => (
     <Store
         {...props}
         duration={1000}
-        smoke
+        smoke={[55, 11]}
         frames={Image.EASTLAND_FRAMES}
         shadow={(
             <Shadow src={Image.EASTLAND_SHADOW} alt="" />
