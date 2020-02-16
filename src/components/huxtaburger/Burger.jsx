@@ -36,7 +36,6 @@ const Burger = styled(UnstyledBurger)`
     height: 140px;
     margin: 0 auto;
     position: relative;
-    top: 42px;
     width: 140px;
 
     @media (max-width: ${SM - 1}px) {
