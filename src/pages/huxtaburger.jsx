@@ -14,6 +14,8 @@ import FluidImage from '$shared/FluidImage'
 import Image from '$hux/Image'
 import Pics from '$hux/Pics'
 import { Bills, Theo, VegeDenise } from '$hux/Burger'
+import { Milkshake, Icecream, Chips } from '$hux/Cup'
+import { Cbd, Hawthorn, Eastland } from '$hux/Store'
 
 const LayoutTheme = {
     backgroundColor: '#dd2712',
@@ -88,12 +90,15 @@ const CobaltPage = () => (
                         applied it to the products we extended it to the stores, making each one
                         an individual animated icon. Try clicking the ones below.
                     </p>
-                    {/* Burgers */}
                     <Bills />
                     <Theo />
                     <VegeDenise />
-                    {/* Deserts */}
-                    {/* Venues */}
+                    <Milkshake />
+                    <Icecream />
+                    <Chips />
+                    <Cbd />
+                    <Hawthorn />
+                    <Eastland />
                 </Container>
             </Section>
             <Section theme={BlackTheme}>
