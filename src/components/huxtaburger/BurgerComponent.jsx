@@ -5,7 +5,7 @@ import { SM } from '$utils/css'
 export const Parent = styled.div`
 `
 
-const UnstyledBurgerComponent = ({ shadow, src, at, animateBy, ...props }) => (
+const UnstyledBurgerComponent = ({ shadow, src, at, animateBy, dy, ...props }) => (
     <div {...props}>
         <img src={src} alt="" />
     </div>
@@ -13,7 +13,7 @@ const UnstyledBurgerComponent = ({ shadow, src, at, animateBy, ...props }) => (
 
 const BurgerComponent = styled(UnstyledBurgerComponent)`
     position: absolute;
-    top: ${({ at }) => Math.floor(at * 100)}%;
+    top: ${({ at, dy }) => Math.floor((at + dy) * 100)}%;
     transform: translateY(0);
     transition: 300ms;
     transition-property: transform, opacity;
