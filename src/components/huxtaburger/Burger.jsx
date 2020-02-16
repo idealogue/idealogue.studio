@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import cx from 'classnames'
 import styled from 'styled-components'
 import BurgerComponent, { Parent } from '$hux/BurgerComponent'
@@ -12,8 +12,16 @@ const Inner = styled.div`
     top: 25%;
 `
 
-const UnstyledBurger = ({ children, className, ...props }) => {
-    const [open] = useState(false)
+const UnstyledBurger = ({ children, className, onMouseDown: onMouseDownProp, ...props }) => {
+    const [open, setOpen] = useState(false)
+
+    const onMouseDown = useCallback((e) => {
+        setOpen((current) => !current)
+
+        if (onMouseDownProp) {
+            onMouseDownProp(e)
+        }
+    }, [onMouseDownProp])
 
     return (
         <Parent
@@ -21,6 +29,9 @@ const UnstyledBurger = ({ children, className, ...props }) => {
             className={cx(className, {
                 open,
             })}
+            onMouseDown={onMouseDown}
+            role="button"
+            tabIndex="0"
         >
             <Inner>
                 {children}
@@ -35,6 +46,7 @@ const UnstyledBurger = ({ children, className, ...props }) => {
 const Burger = styled(UnstyledBurger)`
     height: 140px;
     margin: 0 auto;
+    outline: 0 !important;
     position: relative;
     width: 140px;
 
