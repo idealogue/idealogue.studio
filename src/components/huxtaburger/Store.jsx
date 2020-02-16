@@ -26,12 +26,15 @@ const Shadow = styled.img`
 
 const smokeAnimation = keyframes`
     0% {
+        filter: blur(0);
         opacity: 1;
         transform: translateY(0) scale(0);
     }
+
     100% {
+        filter: blur(2px);
         opacity: 0;
-        transform: translateY(-100%) scale(1.1);
+        transform: translateY(-100%) scale(1.025);
     }
 `
 
@@ -71,7 +74,7 @@ const UnstyledStore = ({ duration, smoke, slides = [], frames = [], shadow, onMo
         return () => {
             // No other frames => noop.
         }
-    }, [otherFrames])
+    }, [otherFrames, duration])
 
     const onMouseDown = useCallback((e) => {
         if (slides.length) {
@@ -90,7 +93,9 @@ const UnstyledStore = ({ duration, smoke, slides = [], frames = [], shadow, onMo
     return (
         <div
             {...props}
+            role="button"
             onMouseDown={onMouseDown}
+            tabIndex="0"
         >
             {shadow}
             <Wrapper active>
@@ -119,6 +124,7 @@ const Store = styled(UnstyledStore)`
     left: 2%;
     margin-left: auto;
     margin-right: auto;
+    outline: 0 !important;
     position: relative;
     top: 25px;
     width: 190px;
