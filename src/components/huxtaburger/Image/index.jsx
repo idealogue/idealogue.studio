@@ -32,6 +32,27 @@ import SHADOW_ICE_CREAM from './shadow--ice-cream.png'
 import SHADOW_MILKSHAKES from './shadow--milkshakes.png'
 import SIGN from './sign.jpg'
 import SMOKE from './smoke.png'
+import BACON from './burger/bacon.png'
+import BEETROOT from './burger/beetroot.png'
+import BUN_BOTTOM_1 from './burger/bun__bottom--1.png'
+import BUN_TOP from './burger/bun__top.png'
+import CHEESE_1 from './burger/cheese--1.png'
+import CHEESE_2 from './burger/cheese--2.png'
+import CHIPS from './burger/chips.png'
+import EGG from './burger/egg.png'
+import ICE_CREAM from './burger/ice-cream.png'
+import LETTUCE from './burger/lettuce.png'
+import MILKSHAKES from './burger/milkshakes.png'
+import PATTY_1 from './burger/patty--1.png'
+import PATTY_3 from './burger/patty--3.png'
+import PATTY_4 from './burger/patty--4.png'
+import PATTY_5 from './burger/patty--5.png'
+import PEPPERS from './burger/peppers.png'
+import PICKLES from './burger/pickles.png'
+import PINEAPPLE from './burger/pineapple.png'
+import SHADOW_1 from './burger/shadow--1.png'
+import TOMATO_1 from './burger/tomato--1.png'
+import TOMATO_2 from './burger/tomato--2.png'
 
 const CBD_FRAMES = [
     CBD_ANIM_00,
@@ -75,6 +96,30 @@ const HAWTHORN_CINEMA_FRAMES = [
     HAWTHORN_CINEMA_02,
     HAWTHORN_CINEMA_03,
 ]
+
+export const BurgerElement = {
+    BACON,
+    BEETROOT,
+    BUN_BOTTOM_1,
+    BUN_TOP,
+    CHEESE_1,
+    CHEESE_2,
+    CHIPS,
+    EGG,
+    ICE_CREAM,
+    LETTUCE,
+    MILKSHAKES,
+    PATTY_1,
+    PATTY_3,
+    PATTY_4,
+    PATTY_5,
+    PEPPERS,
+    PICKLES,
+    PINEAPPLE,
+    SHADOW_1,
+    TOMATO_1,
+    TOMATO_2,
+}
 
 export default {
     CBD_FRAMES,

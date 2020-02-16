@@ -13,6 +13,7 @@ import BrowsingVideo from '$huxtaburger/BrowsingVideo'
 import FluidImage from '$shared/FluidImage'
 import Image from '$huxtaburger/Image'
 import Pics from '$huxtaburger/Pics'
+import { Bills, Theo, VegeDenise } from '$huxtaburger/Burger'
 
 const LayoutTheme = {
     backgroundColor: '#dd2712',
@@ -87,7 +88,12 @@ const CobaltPage = () => (
                         applied it to the products we extended it to the stores, making each one
                         an individual animated icon. Try clicking the ones below.
                     </p>
-                    {/* HERE: Burgers */}
+                    {/* Burgers */}
+                    <Bills />
+                    <Theo />
+                    <VegeDenise />
+                    {/* Deserts */}
+                    {/* Venues */}
                 </Container>
             </Section>
             <Section theme={BlackTheme}>
