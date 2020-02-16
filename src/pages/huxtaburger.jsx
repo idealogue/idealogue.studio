@@ -9,11 +9,11 @@ import NextProject from '$shared/NextProject'
 import Project, { HUXTABURGER } from '$shared/Project'
 import Section from '$shared/Section'
 import SectionHeader from '$shared/SectionHeader'
-import BrowsingVideo from '$huxtaburger/BrowsingVideo'
+import BrowsingVideo from '$hux/BrowsingVideo'
 import FluidImage from '$shared/FluidImage'
-import Image from '$huxtaburger/Image'
-import Pics from '$huxtaburger/Pics'
-import { Bills, Theo, VegeDenise } from '$huxtaburger/Burger'
+import Image from '$hux/Image'
+import Pics from '$hux/Pics'
+import { Bills, Theo, VegeDenise } from '$hux/Burger'
 
 const LayoutTheme = {
     backgroundColor: '#dd2712',

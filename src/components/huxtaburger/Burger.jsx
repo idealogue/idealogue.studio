@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import cx from 'classnames'
 import styled from 'styled-components'
-import BurgerComponent, { Parent } from '$huxtaburger/BurgerComponent'
-import { BurgerElement } from '$huxtaburger/Image'
-import { BurgerBadge as Badge } from '$huxtaburger/Badge'
+import BurgerComponent, { Parent } from '$hux/BurgerComponent'
+import { BurgerElement } from '$hux/Image'
+import { BurgerBadge as Badge } from '$hux/Badge'
 import { SM } from '$utils/css'
 
 const Inner = styled.div`

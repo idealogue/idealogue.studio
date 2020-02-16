@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import FluidImage from '$shared/FluidImage'
 import Container from '$shared/Container'
-import Image from '$huxtaburger/Image'
+import Image from '$hux/Image'
 
 const Wrapper = styled.div`
 `

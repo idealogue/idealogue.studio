@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Image from '$huxtaburger/Image'
+import Image from '$hux/Image'
 
 const Cup = () => (
     <div />
