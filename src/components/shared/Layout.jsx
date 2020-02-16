@@ -3,6 +3,8 @@ import '../../styles/fonts.css'
 
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
+import { Helmet } from 'react-helmet'
+import { useProject } from '$shared/Project'
 
 const GlobalStyle = createGlobalStyle`
     html,
@@ -23,13 +25,18 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
-const Layout = ({ children, theme }) => (
-    <>
-        <GlobalStyle
-            backgroundColor={theme.backgroundColor}
-        />
-        {children}
-    </>
-)
+const Layout = ({ children, theme }) => {
+    const { name } = useProject()
+
+    return (
+        <>
+            <GlobalStyle
+                backgroundColor={theme.backgroundColor}
+            />
+            <Helmet title={`${name} – Idealogue`} />
+            {children}
+        </>
+    )
+}
 
 export default Layout
