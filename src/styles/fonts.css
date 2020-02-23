@@ -90,7 +90,7 @@
 @font-face {
     font-family: 'Realtime Text';
     font-style: normal;
-    font-weight: bold;
+    font-weight: 700;
     src: url('/fonts/realtime/346E82_4_0.eot');
     src: local('Realtime Text Semibold'),
             local('RealtimeText-Semibold'),
@@ -102,7 +102,7 @@
 @font-face {
     font-family: 'Sharp Sans';
     font-style: normal;
-    font-weight: bold;
+    font-weight: 700;
     src: url('/fonts/sharpsans/SharpSans-Bold.eot');
     src: local('Sharp Sans No1 Bold'),
             local('SharpSansNoOne-Bold'),

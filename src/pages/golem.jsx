@@ -18,6 +18,7 @@ import GolemCharacter from '$golem/GolemCharacter'
 import RedditPage from '$golem/RedditPage'
 import BetaLaunchPage from '$golem/BetaLaunchPage'
 import Shirts from '$golem/Shirts'
+import Brand from '$golem/Brand'
 
 const LayoutTheme = {
     backgroundColor: '#000f24',
@@ -146,6 +147,7 @@ const CobaltPage = () => (
                 <GolemCharacter />
             </Section>
             <Section theme={DarkBlueTheme}>
+                <Brand />
                 <Shirts />
                 <RedditPage />
             </Section>
