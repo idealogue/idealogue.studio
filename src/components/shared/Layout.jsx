@@ -33,7 +33,7 @@ const Layout = ({ children, theme }) => {
             <GlobalStyle
                 backgroundColor={theme.backgroundColor}
             />
-            <Helmet title={`${name} – Idealogue`} />
+            <Helmet title={`Idealogue – ${name}`} />
             {children}
         </>
     )
