@@ -61,8 +61,8 @@ const CobaltPage = () => (
                         and accessible, with a friendly voice. We also did a brief UI pass over
                         Central, their web dashboard, to clean it up.
                     </p>
-                    <ClarityImages />
                 </Container>
+                <ClarityImages />
             </Section>
             <Section theme={DarkTheme}>
                 <SectionHeader no={3}>
