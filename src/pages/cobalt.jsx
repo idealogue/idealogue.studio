@@ -75,8 +75,8 @@ const CobaltPage = () => (
                         Marty Cook to create a range of icons representing all the bug types they
                         can fix in client's applications — from access control to an SQL injection.
                     </p>
-                    <BugImages />
                 </Container>
+                <BugImages />
             </Section>
             <Section theme={LightTheme}>
                 <SectionHeader no={4}>
