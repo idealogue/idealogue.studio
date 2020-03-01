@@ -21,7 +21,7 @@ export const lineup = [
     HUXTABURGER,
 ]
 
-const projects = {
+export const projects = {
     [COBALT]: {
         id: COBALT,
         name: "Cobalt",

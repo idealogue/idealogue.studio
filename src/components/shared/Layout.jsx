@@ -26,14 +26,18 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Layout = ({ children, theme }) => {
-    const { name } = useProject()
+    const { name } = useProject() || {}
 
     return (
         <>
             <GlobalStyle
                 backgroundColor={theme.backgroundColor}
             />
-            <Helmet title={`Idealogue – ${name}`} />
+            {!!name ? (
+                <Helmet title={`Idealogue – ${name}`} />
+            ) : (
+                <Helmet title={`Idealogue`} />
+            )}
             {children}
         </>
     )
