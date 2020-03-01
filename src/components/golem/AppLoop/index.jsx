@@ -4,6 +4,7 @@ import Container from '$shared/Container'
 import CaptionedContainer from '$shared/CaptionedContainer'
 import { SM } from '$utils/css'
 import Glyph, { BOOK, PLUS, SETTINGS } from '$shared/Glyph'
+import Balance from './Balance'
 
 const Root = styled(Container)`
 `
@@ -115,120 +116,6 @@ const Screen = styled.div`
     `}
 `
 
-const Balance = styled.div`
-    background-color: #f9fbfc;
-    color: #4e4e4e;
-    line-height: 1em;
-    padding: 48px;
-    position: relative;
-    text-align: center;
-`
-
-const BalanceLabels = styled.div`
-    position: relative;
-`
-
-const Activable = styled.div`
-    line-height: 1em;
-    transform: translate(0, 0);
-    transition: 300ms ease-in-out;
-    transition-delay: 0s, 0s, 0s;
-    transition-property: visibility, opacity, transform;
-    visibility: visible;
-    width: 100%;
-
-    ${({ active }) => !active && css`
-        left: 0;
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        transition-delay: 300ms, 0s, 0s;
-        visibility: hidden;
-    `}
-`
-
-const GntLabelContainer = styled(Activable)`
-    ${({ active }) => !active && css`
-        transform: translateX(-20px);
-    `}
-`
-
-const EthLabelContainer = styled(Activable)`
-    ${({ active }) => !active && css`
-        transform: translateX(20px);
-    `}
-`
-
-const BalanceLabel = styled(Activable)``
-
-const BalanceAmounts = styled.div`
-    position: relative;
-`
-
-const GntAmountContainer = styled(Activable)`
-    ${({ active }) => !active && css`
-        transform: translateX(-20px);
-    `}
-`
-
-const BalanceAmount = styled(Activable)`
-    font-size: 48px;
-    font-weight: 300;
-    line-height: 1.5em;
-
-    ${({ active, up }) => !active && !!up && css`
-        transform: translateY(-20px);
-    `}
-
-    ${({ active, up }) => !active && !up && css`
-        transform: translateY(20px);
-    `}
-`
-
-const EthAmountContainer = styled(Activable)`
-    ${({ active }) => !active && css`
-        transform: translateX(20px);
-    `}
-`
-
-const Fees = styled.div`
-    bottom: 20px;
-    color: #cbcbcb;
-    left: 0;
-    position: absolute;
-    transition: 300ms;
-    transition-delay: 0s, 0s;
-    transition-property: visibility, opacity;
-    width: 100%;
-
-    ${({ active }) => !active && css`
-        opacity: 0;
-        transition-delay: 300ms, 0s;
-        visibility: hidden;
-    `}
-`
-
-const BalanceCurrencies = styled.div`
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    width: 100px;
-`
-
-const BalanceCurrencyContainer = styled.div`
-    color: #cbcbcb;
-    flex-basis: 100%;
-    position: relative;
-    transition: 300ms color;
-
-    ${({ active }) => !!active && css`
-        color: #4e4e4e;
-    `}
-`
-
-const BalanceCurrency = styled(Activable)`
-`
-
 const NETWORK = 'network'
 
 const TASKS = 'tasks'
@@ -277,57 +164,10 @@ const AppLoop = (props) => {
                 </Header>
                 <Body>
                     <Screen active={screen === NETWORK}>
-                        <Balance>
-                            <BalanceLabels>
-                                <GntLabelContainer active={balanceMode < 2}>
-                                    <BalanceLabel active={balanceMode === 0}>
-                                        Wallet balance
-                                    </BalanceLabel>
-                                    <BalanceLabel active={balanceMode === 1}>
-                                        Approximate wallet balance
-                                    </BalanceLabel>
-                                </GntLabelContainer>
-                                <EthLabelContainer active={balanceMode >= 2}>
-                                    <BalanceLabel active={balanceMode === 2}>
-                                        Gas balance
-                                    </BalanceLabel>
-                                    <BalanceLabel active={balanceMode === 3}>
-                                        Approximate gas balance
-                                    </BalanceLabel>
-                                </EthLabelContainer>
-                            </BalanceLabels>
-                            <BalanceAmounts>
-                                <GntAmountContainer active={balanceMode < 2}>
-                                    <BalanceAmount active={balanceMode !== 1}>10.35</BalanceAmount>
-                                    <BalanceAmount active={balanceMode === 1} up>$4.94</BalanceAmount>
-                                </GntAmountContainer>
-                                <EthAmountContainer active={balanceMode >= 2}>
-                                    <BalanceAmount active={balanceMode !== 3}>0.025</BalanceAmount>
-                                    <BalanceAmount active={balanceMode === 3} up>$5.69</BalanceAmount>
-                                </EthAmountContainer>
-                            </BalanceAmounts>
-                            <BalanceCurrencies>
-                                <BalanceCurrencyContainer active={balanceMode < 2}>
-                                    <BalanceCurrency active={balanceMode !== 1}>
-                                        GNT
-                                    </BalanceCurrency>
-                                    <BalanceCurrency active={balanceMode === 1}>
-                                        USD
-                                    </BalanceCurrency>
-                                </BalanceCurrencyContainer>
-                                <BalanceCurrencyContainer active={balanceMode >= 2}>
-                                    <BalanceCurrency active={balanceMode !== 3}>
-                                        ETH
-                                    </BalanceCurrency>
-                                    <BalanceCurrency active={balanceMode === 3}>
-                                        USD
-                                    </BalanceCurrency>
-                                </BalanceCurrencyContainer>
-                            </BalanceCurrencies>
-                            <Fees active={balanceMode === 2}>
-                                Approximately 325 tx fees
-                            </Fees>
-                        </Balance>
+                        <Balance
+                            gnt={balanceMode < 2}
+                            converted={balanceMode % 2 === 1}
+                        />
                         {/* nav */}
                         {/* resource slider */}
                         {/* footer */}
