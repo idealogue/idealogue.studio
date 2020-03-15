@@ -9,6 +9,7 @@ import Nav, { RESOURCES } from './Nav'
 import Footer from './Footer'
 import Status from './Status'
 import Button from './Button'
+import ResourceSlider from './ResourceSlider'
 
 const Root = styled(Container)`
 `
@@ -138,8 +139,11 @@ const AppLoop = (props) => {
 
     const balanceMode = modes[balanceModeX]
 
+    const [resourcePos, setResourcePos] = useState(18)
+
     const onPoke = useCallback(() => {
         setBalanceMode((current) => (current + 1) % modes.length)
+        setResourcePos(Math.floor(Math.random() * 100))
     }, [])
 
     return (
@@ -174,9 +178,7 @@ const AppLoop = (props) => {
                             converted={balanceMode % 2 === 1}
                         />
                         <Nav active={RESOURCES} />
-                        {/* nav */}
-                        {/* resource slider */}
-                        {/* footer */}
+                        <ResourceSlider position={resourcePos} />
                     </Screen>
                     <Screen active={screen === TASKS}>
                         {/* Tasks */}
