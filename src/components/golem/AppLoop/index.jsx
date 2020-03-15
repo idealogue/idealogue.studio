@@ -5,6 +5,10 @@ import CaptionedContainer from '$shared/CaptionedContainer'
 import { SM } from '$utils/css'
 import Glyph, { BOOK, PLUS, SETTINGS } from '$shared/Glyph'
 import Balance from './Balance'
+import Nav, { RESOURCES } from './Nav'
+import Footer from './Footer'
+import Status from './Status'
+import Button from './Button'
 
 const Root = styled(Container)`
 `
@@ -96,7 +100,8 @@ const Header = styled.div`
     display: flex;
     height: 60px;
     justify-content: space-between;
-    padding: 0 18px;
+    /* padding: 0 18px; */
+    padding: 0 25px;
 `
 
 const Body = styled.div`
@@ -168,6 +173,7 @@ const AppLoop = (props) => {
                             gnt={balanceMode < 2}
                             converted={balanceMode % 2 === 1}
                         />
+                        <Nav active={RESOURCES} />
                         {/* nav */}
                         {/* resource slider */}
                         {/* footer */}
@@ -176,6 +182,10 @@ const AppLoop = (props) => {
                         {/* Tasks */}
                     </Screen>
                 </Body>
+                <Footer>
+                    <Status>240 Nodes</Status>
+                    <Button>Start Golem</Button>
+                </Footer>
             </DesignPass>
             <CaptionedContainer caption="A loop of the Golem app main views" />
         </Root>
