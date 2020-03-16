@@ -136,7 +136,6 @@ const ResourceSlider = styled(UnstyledResourceSlider)`
 
     p {
         color: #cbcbcb;
-        font-family: 'Roboto', sans-serif;
         font-size: 12px;
         line-height: 18px;
         margin-top: 24px;
