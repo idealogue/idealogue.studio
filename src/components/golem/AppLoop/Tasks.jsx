@@ -94,7 +94,7 @@ const Remaining = styled(UnstyledRemaining)`
     color: #016ac9;
 `
 
-const UnstyledTasks = ({ remaining: remainingProp = 73, total = 100, ...props }) => {
+const UnstyledTasks = ({ animate, remaining: remainingProp = 75, total = 100, ...props }) => {
     const [remaining, setRemaining] = useState(remainingProp)
 
     const remainingRef = useRef({
@@ -106,15 +106,23 @@ const UnstyledTasks = ({ remaining: remainingProp = 73, total = 100, ...props })
     }, [])
 
     useEffect(() => {
-        const tween = TweenMax.to(remainingRef.current, remainingProp, {
-            remaining: 0,
-            onUpdate,
-        })
+        remainingRef.current.remaining = remainingProp
+
+        if (animate) {
+            const tween = TweenMax.to(remainingRef.current, remainingProp, {
+                remaining: 0,
+                onUpdate,
+            })
+
+            return () => {
+                tween.kill()
+            }
+        }
 
         return () => {
-            tween.kill()
+            // No animate => no op.
         }
-    }, [remainingProp])
+    }, [remainingProp, animate])
 
     const remainingFormatted = useMemo(() => (
         new Date(Math.floor(remaining) * 1000).toISOString().substr(15, 4)

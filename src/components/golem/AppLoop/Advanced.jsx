@@ -182,9 +182,9 @@ const Graph = styled(UnstyledGraph)`
     }
 `
 
-const UnstyledResource = ({ usage, total, unit, children, ...props }) => (
+const UnstyledResource = ({ reflect, usage, total, unit, children, ...props }) => (
     <div {...props}>
-        <Graph used={usage / total}>
+        <Graph used={reflect ? usage / total : 0}>
             {children}
         </Graph>
         <Numeric>
@@ -198,7 +198,7 @@ const Resource = styled(UnstyledResource)`
     text-align: center;
 `
 
-const UnstyledAdvanced = (props) => (
+const UnstyledAdvanced = ({ cpu, ram, disk, ...props }) => (
     <div {...props}>
         <Row>
             <Dropdown>
@@ -210,13 +210,13 @@ const UnstyledAdvanced = (props) => (
             </OutlinedButton>
         </Row>
         <Row>
-            <Resource usage={4} unit="cores" total={6}>
+            <Resource reflect={cpu} usage={4} unit="cores" total={6}>
                 CPU
             </Resource>
-            <Resource usage={1.8} unit="GB" total={4}>
+            <Resource reflect={ram} usage={1.8} unit="GB" total={4}>
                 RAM
             </Resource>
-            <Resource usage={700} unit="GB" total={2100}>
+            <Resource reflect={disk} usage={700} unit="GB" total={2100}>
                 Disk
             </Resource>
         </Row>

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useMemo, useEffect } from 'react'
 import styled, { css } from 'styled-components'
 import Container from '$shared/Container'
 import CaptionedContainer from '$shared/CaptionedContainer'
@@ -13,6 +13,7 @@ import ResourceSlider from './ResourceSlider'
 import History from './History'
 import Advanced from './Advanced'
 import Tasks from './Tasks'
+import useMounted from '$hooks/useMounted'
 
 const Root = styled(Container)`
     color: #cbcbcb;
@@ -134,30 +135,111 @@ const NETWORK = 'network'
 
 const TASKS = 'tasks'
 
-const modes = [0, 1, 0, 2, 3, 2]
+class SleepSustain {
+    run(millis = 1000) {
+        const self = this
+
+        return new Promise((resolve) => {
+            self.timeout = setTimeout(() => {
+                resolve()
+            }, millis)
+        })
+    }
+
+    cancel() {
+        clearTimeout(this.timeout)
+    }
+}
+
+const frames = [
+    {
+        balanceMode: 0,
+        cpu: false,
+        disk: false,
+        sustain: 1000,
+        networkScreen: RESOURCES,
+        ram: false,
+        resourcePos: 18,
+        screen: NETWORK,
+    }, {
+        balanceMode: 1,
+    }, {
+        balanceMode: 0,
+    }, {
+        balanceMode: 2,
+    }, {
+        balanceMode: 3,
+    }, {
+        balanceMode: 2,
+    }, {
+        balanceMode: 0,
+    }, {
+        resourcePos: 92,
+    }, {
+        resourcePos: 10,
+    }, {
+        resourcePos: 18,
+    }, {
+        networkScreen: HISTORY,
+    }, {
+        networkScreen: ADVANCED,
+    }, {
+        cpu: true,
+        sustain: 200,
+    }, {
+        ram: true,
+        sustain: 200,
+    }, {
+        disk: true,
+        sustain: 10000,
+    }, {
+        screen: TASKS,
+        sustain: 1000,
+    },
+]
+
+const useFrame = () => {
+    const [frameNo, setFrameNo] = useState(0)
+
+    const frame = useMemo(() => (
+        frames.slice(0, frameNo + 1).reduce((memo, frame) => ({
+            ...memo,
+            ...frame,
+        }), {})
+    ), [frameNo])
+
+    const isMounted = useMounted()
+
+    useEffect(() => {
+        const sustain = new SleepSustain()
+
+        sustain.run(frame.sustain).then(() => {
+            if (isMounted()) {
+                setFrameNo((current) => (current + 1) % frames.length)
+            }
+        })
+
+        return () => {
+            sustain.cancel()
+        }
+    }, [frame, isMounted])
+
+    return frame
+}
 
 const AppLoop = (props) => {
-    const [screen, setScreen] = useState(TASKS)
-
-    // 0 - GNT
-    // 1 - GNT -> USD (approx.)
-    // 2 - ETH
-    // 3 - ETH -> USD (approx.)
-    const [balanceModeX, setBalanceMode] = useState(0)
-
-    const balanceMode = modes[balanceModeX]
-
-    const [resourcePos, setResourcePos] = useState(18)
-
-    const [networkScreen, setNetworkScreen] = useState(ADVANCED)
-
-    const onPoke = useCallback(() => {
-        setBalanceMode((current) => (current + 1) % modes.length)
-        // setResourcePos(Math.floor(Math.random() * 100))
-    }, [])
+    const {
+        balanceMode,
+        cpu,
+        disk,
+        networkScreen,
+        ram,
+        resourcePos,
+        screen,
+    } = useFrame()
 
     return (
-        <Root {...props} onMouseDown={onPoke}>
+        <Root {...props}>
             <DesignPass>
                 <Header>
                     <HeaderInner>
@@ -196,12 +278,18 @@ const AppLoop = (props) => {
                                 <History />
                             </Screen>
                             <Screen active={networkScreen === ADVANCED}>
-                                <Advanced />
+                                <Advanced
+                                    cpu={cpu}
+                                    disk={disk}
+                                    ram={ram}
+                                />
                             </Screen>
                         </div>
                     </Screen>
                     <Screen active={screen === TASKS}>
-                        <Tasks />
+                        <Tasks
+                            animate={screen === TASKS}
+                        />
                     </Screen>
                 </Body>
                 <Footer>
