@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo, useEffect } from 'react'
+import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react'
 import styled, { css } from 'styled-components'
 import Container from '$shared/Container'
 import CaptionedContainer from '$shared/CaptionedContainer'
@@ -114,6 +114,26 @@ const Header = styled.div`
     justify-content: space-between;
     /* padding: 0 18px; */
     padding: 0 25px;
+`
+
+const HeaderWrapper = styled.div`
+    position: relative;
+`
+
+const UnstyledUnderline = ({ x, width, ...props }) => (
+    <div {...props} />
+)
+
+const Underline = styled(UnstyledUnderline)`
+    background-color: #016ac9;
+    bottom: 0;
+    height: 1px;
+    left: ${({ x }) => 107 + x}px;
+    position: absolute;
+    top: 60px;
+    transition: ${DUR}ms;
+    transition-property: width, left;
+    width: ${({ width }) => width}px;
 `
 
 const Body = styled.div`
@@ -258,31 +278,58 @@ const AppLoop = (props) => {
         screen,
     }, next] = useFrame()
 
+    const [[underlineX, underlineWidth], setUnderlineProps] = useState([0, 0])
+
+    const networkTabRef = useRef()
+
+    const tasksTabRef = useRef()
+
+    useEffect(() => {
+        const { current: networkTab } = networkTabRef
+
+        const { current: tasksTab } = tasksTabRef
+
+        if (!networkTab || !tasksTab) {
+            return
+        }
+
+        const el = screen === NETWORK ? networkTab : tasksTab
+
+        const rect = el.getBoundingClientRect()
+
+        const parentRect = el.parentElement.getBoundingClientRect()
+
+        setUnderlineProps([Math.round(rect.left - parentRect.left), Math.round(rect.width)])
+    }, [screen])
+
     return (
         <Root {...props}>
             <DesignPass>
-                <Header>
-                    <HeaderInner>
-                        <HeaderButtons>
-                            <div />
-                            <div />
-                            <div />
-                        </HeaderButtons>
-                        <Tabs>
-                            <Tab active={screen === NETWORK}>
-                                Network
-                            </Tab>
-                            <Tab active={screen === TASKS}>
-                                Tasks
-                            </Tab>
-                        </Tabs>
-                    </HeaderInner>
-                    <HeaderIcons>
-                        <Glyph source={PLUS} />
-                        <Glyph source={BOOK} />
-                        <Glyph source={SETTINGS} />
-                    </HeaderIcons>
-                </Header>
+                <HeaderWrapper>
+                    <Header>
+                        <HeaderInner>
+                            <HeaderButtons>
+                                <div />
+                                <div />
+                                <div />
+                            </HeaderButtons>
+                            <Tabs>
+                                <Tab active={screen === NETWORK} ref={networkTabRef}>
+                                    Network
+                                </Tab>
+                                <Tab active={screen === TASKS} ref={tasksTabRef}>
+                                    Tasks
+                                </Tab>
+                            </Tabs>
+                        </HeaderInner>
+                        <HeaderIcons>
+                            <Glyph source={PLUS} />
+                            <Glyph source={BOOK} />
+                            <Glyph source={SETTINGS} />
+                        </HeaderIcons>
+                    </Header>
+                    <Underline width={underlineWidth} x={underlineX} />
+                </HeaderWrapper>
                 <Body>
                     <Screen active={screen === NETWORK}>
                         <Balance
