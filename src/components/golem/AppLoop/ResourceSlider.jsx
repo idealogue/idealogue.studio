@@ -99,7 +99,7 @@ const UnstyledResourceSlider = ({ position: positionProp = 18, onTransitionFinis
     }, [])
 
     useEffect(() => {
-        const duration = Math.abs(positionProp - positionRef.current.position) * 0.03
+        const duration = Math.max(1, Math.abs(positionProp - positionRef.current.position) * 0.03)
 
         const tween = TweenMax.to(positionRef.current, duration, {
             position: positionProp,
