@@ -30,6 +30,9 @@ const DesignPass = styled.div`
     border-radius: 4px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     cursor: default;
+    display: flex;
+    flex-direction: column;
+    height: 716px;
     font-family: 'Roboto', sans-serif;
     font-size: 9px;
     margin: 0 auto;
@@ -136,9 +139,12 @@ const Underline = styled(UnstyledUnderline)`
     width: ${({ width }) => width}px;
 `
 
-const Body = styled.div`
-    min-height: 400px;
+const ScreenWrapper = styled.div`
     position: relative;
+`
+
+const Body = styled(ScreenWrapper)`
+    flex-grow: 1;
 `
 
 const Screen = styled.div`
@@ -337,7 +343,7 @@ const AppLoop = (props) => {
                             converted={balanceMode % 2 === 1}
                         />
                         <Nav active={networkScreen} />
-                        <div>
+                        <ScreenWrapper>
                             <Screen active={networkScreen === RESOURCES}>
                                 <ResourceSlider
                                     position={resourcePos}
@@ -354,7 +360,7 @@ const AppLoop = (props) => {
                                     ram={ram}
                                 />
                             </Screen>
-                        </div>
+                        </ScreenWrapper>
                     </Screen>
                     <Screen active={screen === TASKS}>
                         <Tasks
