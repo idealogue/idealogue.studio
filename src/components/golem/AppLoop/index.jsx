@@ -15,6 +15,8 @@ import Advanced from './Advanced'
 import Tasks from './Tasks'
 import useMounted from '$hooks/useMounted'
 
+const DUR = 300
+
 const Root = styled(Container)`
     color: #cbcbcb;
 
@@ -78,7 +80,7 @@ const Tab = styled.div`
     font-size: 18px;
     font-weight: bold;
     line-height: 1em;
-    transition: 200ms color;
+    transition: ${DUR}ms color;
 
     & + & {
         margin-left: 30px;
@@ -122,12 +124,14 @@ const Body = styled.div`
 const Screen = styled.div`
     opacity: 1;
     visibility: visible;
-    transition: 300ms;
+    transition: ${DUR}ms;
 
     ${({ active }) => !active && css`
         opacity: 0;
         position: absolute;
+        top: 0;
         visibility: hidden;
+        width: 100%;
     `}
 `
 
@@ -156,13 +160,14 @@ const frames = [
         balanceMode: 0,
         cpu: false,
         disk: false,
-        sustain: 1000,
+        sustain: 3000,
         networkScreen: RESOURCES,
         ram: false,
         resourcePos: 18,
         screen: NETWORK,
     }, {
         balanceMode: 1,
+        sustain: 1500,
     }, {
         balanceMode: 0,
     }, {
@@ -175,14 +180,25 @@ const frames = [
         balanceMode: 0,
     }, {
         resourcePos: 92,
+        sustain: Infinity,
+    }, {
+        sustain: 500,
     }, {
         resourcePos: 10,
+        sustain: Infinity,
+    }, {
+        sustain: 500,
     }, {
         resourcePos: 18,
+        sustain: Infinity,
+    }, {
+        sustain: 1000,
     }, {
         networkScreen: HISTORY,
+        sustain: 2000,
     }, {
         networkScreen: ADVANCED,
+        sustain: 0,
     }, {
         cpu: true,
         sustain: 200,
@@ -191,10 +207,10 @@ const frames = [
         sustain: 200,
     }, {
         disk: true,
-        sustain: 10000,
+        sustain: 2000,
     }, {
         screen: TASKS,
-        sustain: 1000,
+        sustain: 4500,
     },
 ]
 
@@ -208,27 +224,31 @@ const useFrame = () => {
         }), {})
     ), [frameNo])
 
+    const next = useCallback(() => {
+        if (isMounted()) {
+            setFrameNo((current) => (current + 1) % frames.length)
+        }
+    }, [])
+
     const isMounted = useMounted()
 
     useEffect(() => {
         const sustain = new SleepSustain()
 
-        sustain.run(frame.sustain).then(() => {
-            if (isMounted()) {
-                setFrameNo((current) => (current + 1) % frames.length)
-            }
-        })
+        if (frame.sustain !== Infinity) {
+            sustain.run(frame.sustain).then(next)
+        }
 
         return () => {
             sustain.cancel()
         }
-    }, [frame, isMounted])
+    }, [frame, isMounted, next])
 
-    return frame
+    return useMemo(() => [frame, next], [frame, next])
 }
 
 const AppLoop = (props) => {
-    const {
+    const [{
         balanceMode,
         cpu,
         disk,
@@ -236,7 +256,7 @@ const AppLoop = (props) => {
         ram,
         resourcePos,
         screen,
-    } = useFrame()
+    }, next] = useFrame()
 
     return (
         <Root {...props}>
@@ -272,7 +292,10 @@ const AppLoop = (props) => {
                         <Nav active={networkScreen} />
                         <div>
                             <Screen active={networkScreen === RESOURCES}>
-                                <ResourceSlider position={resourcePos} />
+                                <ResourceSlider
+                                    position={resourcePos}
+                                    onTransitionFinish={next}
+                                />
                             </Screen>
                             <Screen active={networkScreen === HISTORY}>
                                 <History />

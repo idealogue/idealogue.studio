@@ -4,7 +4,7 @@ import { Task as HistoryTask, Title, Separator, Details, Eta, DoneAt, Body } fro
 import Image from '$golem/Image'
 import FluidImage from '$shared/FluidImage'
 import Glyph, { SLIDE_RIGHT } from '$shared/Glyph'
-import { TweenMax } from 'gsap'
+import { TweenMax, Linear } from 'gsap'
 
 const IconWrapper = styled.div`
     height: 24px;
@@ -112,6 +112,7 @@ const UnstyledTasks = ({ animate, remaining: remainingProp = 75, total = 100, ..
             const tween = TweenMax.to(remainingRef.current, remainingProp, {
                 remaining: 0,
                 onUpdate,
+                ease: Linear.easeNone,
             })
 
             return () => {

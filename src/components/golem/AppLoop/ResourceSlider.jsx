@@ -87,7 +87,7 @@ const ProgressBar = styled.div`
     `}
 `
 
-const UnstyledResourceSlider = ({ position: positionProp = 18, ...props }) => {
+const UnstyledResourceSlider = ({ position: positionProp = 18, onTransitionFinish: onComplete, ...props }) => {
     const [position, setPosition] = useState(positionProp)
 
     const positionRef = useRef({
@@ -99,9 +99,12 @@ const UnstyledResourceSlider = ({ position: positionProp = 18, ...props }) => {
     }, [])
 
     useEffect(() => {
-        const tween = TweenMax.to(positionRef.current, 0.5, {
+        const duration = Math.abs(positionProp - positionRef.current.position) * 0.03
+
+        const tween = TweenMax.to(positionRef.current, duration, {
             position: positionProp,
             onUpdate,
+            onComplete,
         })
 
         return () => {
