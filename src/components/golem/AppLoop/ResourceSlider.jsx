@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect, useCallback } from 'react'
 import styled, { css } from 'sc'
 import Glyph, { LOW, HIGH } from '$shared/Glyph'
 import { TweenMax } from 'gsap'
+import TouchIndicator from './TouchIndicator'
 
 const UnstyledIcon = ({ source, ...props }) => (
     <div {...props}>
@@ -87,7 +88,7 @@ const ProgressBar = styled.div`
     `}
 `
 
-const UnstyledResourceSlider = ({ position: positionProp = 18, onTransitionFinish: onComplete, ...props }) => {
+const UnstyledResourceSlider = ({ position: positionProp = 18, onTransitionFinish: onComplete, showTouch, ...props }) => {
     const [position, setPosition] = useState(positionProp)
 
     const positionRef = useRef({
@@ -121,6 +122,7 @@ const UnstyledResourceSlider = ({ position: positionProp = 18, onTransitionFinis
                         <ProgressBar position={position} />
                         <Handle position={position}>
                             {position}
+                            <TouchIndicator visible={showTouch} />
                         </Handle>
                     </Inner>
                 </Track>

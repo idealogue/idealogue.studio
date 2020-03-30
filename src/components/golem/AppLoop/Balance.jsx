@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import TouchIndicator from './TouchIndicator'
 
 const BalanceLabels = styled.div`
     position: relative;
@@ -106,6 +107,10 @@ const BalanceCurrencyContainer = styled.div`
 const BalanceCurrency = styled(Activable)`
 `
 
+const Touch = ({ visible }) => !!visible && (
+    <TouchIndicator center immitateRelease visible={visible} />
+)
+
 const UnstyledBalance = ({ gnt, converted, ...props }) => (
     <div {...props}>
         <BalanceLabels>
@@ -143,6 +148,8 @@ const UnstyledBalance = ({ gnt, converted, ...props }) => (
                     $5.69
                 </BalanceAmount>
             </EthAmountContainer>
+            <Touch visible={converted} />
+            <Touch visible={!converted} />
         </BalanceAmounts>
         <BalanceCurrencies>
             <BalanceCurrencyContainer active={gnt}>
@@ -152,6 +159,7 @@ const UnstyledBalance = ({ gnt, converted, ...props }) => (
                 <BalanceCurrency active={gnt && converted}>
                     USD
                 </BalanceCurrency>
+                <Touch visible={gnt} />
             </BalanceCurrencyContainer>
             <BalanceCurrencyContainer active={!gnt}>
                 <BalanceCurrency active={gnt || !converted}>
@@ -160,6 +168,7 @@ const UnstyledBalance = ({ gnt, converted, ...props }) => (
                 <BalanceCurrency active={!gnt && converted}>
                     USD
                 </BalanceCurrency>
+                <Touch visible={!gnt} />
             </BalanceCurrencyContainer>
         </BalanceCurrencies>
         <Fees active={!gnt && !converted}>

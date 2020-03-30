@@ -14,6 +14,7 @@ import History from './History'
 import Advanced from './Advanced'
 import Tasks from './Tasks'
 import useMounted from '$hooks/useMounted'
+import TouchIndicator from './TouchIndicator'
 
 const DUR = 300
 
@@ -83,6 +84,7 @@ const Tab = styled.div`
     font-size: 18px;
     font-weight: bold;
     line-height: 1em;
+    position: relative;
     transition: ${DUR}ms color;
 
     & + & {
@@ -190,6 +192,7 @@ const frames = [
         networkScreen: RESOURCES,
         ram: false,
         resourcePos: 18,
+        showResourceSliderTouch: false,
         screen: NETWORK,
     }, {
         balanceMode: 1,
@@ -205,6 +208,9 @@ const frames = [
     }, {
         balanceMode: 0,
     }, {
+        showResourceSliderTouch: true,
+        sustain: 500,
+    }, {
         resourcePos: 92,
         sustain: Infinity,
     }, {
@@ -218,7 +224,10 @@ const frames = [
         resourcePos: 18,
         sustain: Infinity,
     }, {
-        sustain: 1000,
+        sustain: 500,
+    }, {
+        showResourceSliderTouch: false,
+        sustain: 700,
     }, {
         networkScreen: HISTORY,
         sustain: 2000,
@@ -282,6 +291,7 @@ const AppLoop = (props) => {
         ram,
         resourcePos,
         screen,
+        showResourceSliderTouch,
     }, next] = useFrame()
 
     const [[underlineX, underlineWidth], setUnderlineProps] = useState([0, 0])
@@ -322,9 +332,15 @@ const AppLoop = (props) => {
                             <Tabs>
                                 <Tab active={screen === NETWORK} ref={networkTabRef}>
                                     Network
+                                    {screen === NETWORK && (
+                                        <TouchIndicator center immitateRelease visible={screen === NETWORK} />
+                                    )}
                                 </Tab>
                                 <Tab active={screen === TASKS} ref={tasksTabRef}>
                                     Tasks
+                                    {screen === TASKS && (
+                                        <TouchIndicator center immitateRelease visible={screen === TASKS} />
+                                    )}
                                 </Tab>
                             </Tabs>
                         </HeaderInner>
@@ -346,8 +362,9 @@ const AppLoop = (props) => {
                         <ScreenWrapper>
                             <Screen active={networkScreen === RESOURCES}>
                                 <ResourceSlider
-                                    position={resourcePos}
                                     onTransitionFinish={next}
+                                    position={resourcePos}
+                                    showTouch={showResourceSliderTouch}
                                 />
                             </Screen>
                             <Screen active={networkScreen === HISTORY}>
