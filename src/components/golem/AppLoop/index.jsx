@@ -259,13 +259,13 @@ const useFrame = () => {
         }), {})
     ), [frameNo])
 
+    const isMounted = useMounted()
+
     const next = useCallback(() => {
         if (isMounted()) {
             setFrameNo((current) => (current + 1) % frames.length)
         }
-    }, [])
-
-    const isMounted = useMounted()
+    }, [isMounted])
 
     useEffect(() => {
         const sustain = new SleepSustain()

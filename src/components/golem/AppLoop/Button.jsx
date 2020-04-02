@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'sc'
 
 const Button = styled.div`

@@ -1,10 +1,11 @@
-import React, { useEffect, Fragment, useState, useCallback, useRef, useMemo } from 'react'
+import React, { useEffect, Fragment, useState, useRef, useMemo } from 'react'
 import styled from 'sc'
 import { Task as HistoryTask, Title, Separator, Details, Eta, DoneAt, Body } from './History'
 import Image from '$golem/Image'
 import FluidImage from '$shared/FluidImage'
 import Glyph, { SLIDE_RIGHT } from '$shared/Glyph'
 import { TweenMax, Linear } from 'gsap'
+import useMounted from '$hooks/useMounted'
 
 const IconWrapper = styled.div`
     height: 24px;
@@ -101,9 +102,7 @@ const UnstyledTasks = ({ animate, remaining: remainingProp = 75, total = 100, ..
         remaining: remainingProp,
     })
 
-    const onUpdate = useCallback(() => {
-        setRemaining(remainingRef.current.remaining)
-    }, [])
+    const isMounted = useMounted()
 
     useEffect(() => {
         remainingRef.current.remaining = remainingProp
@@ -111,7 +110,11 @@ const UnstyledTasks = ({ animate, remaining: remainingProp = 75, total = 100, ..
         if (animate) {
             const tween = TweenMax.to(remainingRef.current, remainingProp, {
                 remaining: 0,
-                onUpdate,
+                onUpdate: () => {
+                    if (isMounted()) {
+                        setRemaining(remainingRef.current.remaining)
+                    }
+                },
                 ease: Linear.easeNone,
             })
 
@@ -123,7 +126,7 @@ const UnstyledTasks = ({ animate, remaining: remainingProp = 75, total = 100, ..
         return () => {
             // No animate => no op.
         }
-    }, [remainingProp, animate])
+    }, [remainingProp, animate, isMounted])
 
     const remainingFormatted = useMemo(() => (
         new Date(Math.floor(remaining) * 1000).toISOString().substr(15, 4)

@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from 'react'
 import styled, { css } from 'styled-components'
-import FluidImage from '$shared/FluidImage'
 import Image from '$golem/Image'
 import CaptionedContainer from '$shared/CaptionedContainer'
 import Glyph, { SLIDE_LEFT, SLIDE_RIGHT } from '$shared/Glyph'

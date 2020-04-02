@@ -1,8 +1,9 @@
-import React, { useRef, useState, useEffect, useCallback } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import styled, { css } from 'sc'
 import Glyph, { LOW, HIGH } from '$shared/Glyph'
 import { TweenMax } from 'gsap'
 import TouchIndicator from './TouchIndicator'
+import useMounted from '$hooks/useMounted'
 
 const UnstyledIcon = ({ source, ...props }) => (
     <div {...props}>
@@ -95,23 +96,25 @@ const UnstyledResourceSlider = ({ position: positionProp = 18, onTransitionFinis
         position: positionProp,
     })
 
-    const onUpdate = useCallback(() => {
-        setPosition(Math.floor(positionRef.current.position))
-    }, [])
+    const isMounted = useMounted()
 
     useEffect(() => {
         const duration = Math.max(1, Math.abs(positionProp - positionRef.current.position) * 0.03)
 
         const tween = TweenMax.to(positionRef.current, duration, {
             position: positionProp,
-            onUpdate,
+            onUpdate: () => {
+                if (isMounted()) {
+                    setPosition(Math.floor(positionRef.current.position))
+                }
+            },
             onComplete,
         })
 
         return () => {
             tween.kill()
         }
-    }, [positionProp])
+    }, [positionProp, onComplete, isMounted])
 
     return (
         <div {...props}>

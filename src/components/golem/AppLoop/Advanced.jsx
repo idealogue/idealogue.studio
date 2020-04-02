@@ -1,7 +1,8 @@
-import React, { useRef, useState, useCallback, useEffect, useMemo } from 'react'
+import React, { useRef, useState, useEffect, useMemo } from 'react'
 import styled, { css } from 'sc'
 import arc from '$utils/arc'
 import { TweenMax } from 'gsap'
+import useMounted from '$hooks/useMounted'
 
 const Row = styled.div`
     display: flex;
@@ -132,20 +133,22 @@ const Circle = ({ angle: angleProp }) => {
         angle: angleProp,
     })
 
-    const onUpdate = useCallback(() => {
-        setAngle(Math.round(angleRef.current.angle))
-    }, [])
+    const isMounted = useMounted()
 
     useEffect(() => {
         const tween = TweenMax.to(angleRef.current, 0.5, {
             angle: angleProp,
-            onUpdate,
+            onUpdate: () => {
+                if (isMounted()) {
+                    setAngle(Math.round(angleRef.current.angle))
+                }
+            },
         })
 
         return () => {
             tween.kill()
         }
-    }, [angleProp])
+    }, [angleProp, isMounted])
 
     const d = useMemo(() => (
         arc(null, 50, 50, 48, 0, angle, 0)
