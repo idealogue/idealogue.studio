@@ -12,6 +12,7 @@ import Stream from './Stream'
 import Table from './Table'
 
 const Row = styled.div`
+    align-items: stretch;
     display: flex;
     justify-content: space-between;
 
@@ -21,16 +22,22 @@ const Row = styled.div`
 `
 
 const Cell = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    > * {
+        flex-grow: 1;
+    }
 `
 
 const UnstyledModules = (props) => (
     <div {...props}>
         <Row>
             <Cell>
-                <Chart width="560" />
+                <Chart width="560" title="Chart Module" />
             </Cell>
             <Cell>
-                <Map width="368" />
+                <Map width="368" title="Helsinki Map" />
             </Cell>
             <Cell>
                 <Table width="296" />
@@ -45,14 +52,20 @@ const UnstyledModules = (props) => (
                 </Row>
                 <Row>
                     <Cell>
-                        <Comment width="224" />
+                        <Comment width="224" title="Note">
+                            Quickly test out ideas, clean up noisy data, and visualise almost
+                            anything in minutes.
+                        </Comment>
                     </Cell>
                 </Row>
             </Cell>
             <Cell>
                 <Row>
                     <Cell>
-                        <Comment width="272" />
+                        <Comment width="272" title="Note">
+                            Streamr Core editor provides a comprehensiveset of modules to cover
+                            common use cases for visualisation, analysis and prototyping.
+                        </Comment>
                     </Cell>
                 </Row>
                 <Row>
@@ -62,7 +75,7 @@ const UnstyledModules = (props) => (
                 </Row>
             </Cell>
             <Cell>
-                <Search width="248" />
+                <Search width="248" height="341" />
             </Cell>
             <Cell>
                 <Row>
@@ -77,15 +90,10 @@ const UnstyledModules = (props) => (
                 </Row>
             </Cell>
             <Cell>
-                <EthereumCall width="224" />
+                <EthereumCall width="224" title="Ethereum Call" />
             </Cell>
         </Row>
     </div>
-    // <Chart />
-    // <Comment />
-    // <Map />
-    // <Search />
-    // <Table />
 )
 
 const Modules = styled(UnstyledModules)`

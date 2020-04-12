@@ -12,6 +12,8 @@ const EthereumCall = ({ title, ...props }) => (
             ['addedUnits'],
         ]}
         outs={[
+            null,
+            null,
             ['errors'],
             ['spentWei'],
             ['targetChangeWei'],

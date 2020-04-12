@@ -39,7 +39,7 @@ const Ports = styled.div`
     display: flex;
     justify-content: space-between;
 
-    + & {
+    & + & {
         margin-top: 4px;
     }
 `
@@ -73,7 +73,7 @@ export const Button = styled.div`
     line-height: 24px;
     padding: 0 12px;
 
-    + & {
+    & + & {
         margin-left: 8px;
     }
 `
