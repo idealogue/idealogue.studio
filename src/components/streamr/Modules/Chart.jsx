@@ -1,6 +1,6 @@
 import React from 'react'
 import Module, { Body as UnstyledBody } from '../Module'
-import styles from './chart.module.css'
+import { MEDIUM } from '$utils/css'
 
 const Body = styled(UnstyledBody)`
     color: #adadad;
@@ -38,45 +38,173 @@ const ChartLine = styled.svg`
 `
 
 const Tooltips = styled.div`
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
 `
 
 const TooltipsInner = styled.div`
 `
 
 const Tooltip = styled.div`
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 4px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+    color: #323232;
+    left: 68%;
+    line-height: 16px;
+    padding: 8px 12px;
+    padding-right: 16px;
+    position: absolute;
+    top: 43%;
+    transform: translate(-50%, 16px);
+    white-space: nowrap;
+
+    strong {
+        font-weight: ${MEDIUM};
+    }
+
+    ::before {
+        background-color: #FF5C00;
+        border: 4px solid white;
+        border-radius: 50%;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+        content: '';
+        height: 8px;
+        left: 50%;
+        position: absolute;
+        top: -24px;
+        width: 8px;
+        transform: translateX(-8px);
+    }
 `
 
 const Footer = styled.div`
+    flex-grow: 0;
 `
 
 const Inner = styled.div`
+    padding: 0 48px;
 `
 
 const XAxis = styled.div`
+    display: flex;
+    justify-content: space-between;
+    line-height: 40px;
 `
 
 const Navigator = styled.div`
+    border: solid #efefef;
+    border-width: 1px 0;
+    height: 40px;
+    position: relative;
+
+    svg {
+        display: block;
+        height: 24px;
+        position: absolute;
+        top: 8px;
+        width: 100%;
+    }
 `
 
 const Track = styled.div`
+    color: #ff5c00;
+    opacity: 0.3;
 `
 
 const HandleWrapper = styled.div`
+    height: 40px;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    width: 12.5%;
 `
 
 const Ranger = styled.div`
+    background-color: #ADADAD;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    width: 1px;
+    z-index: 1;
+
+    ::before {
+        background-color: #adadad;
+        border-radius: 2px;
+        content: '';
+        height: 16px;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 8px;
+    }
 `
 
-const RangeStart = styled.div`
+const RangeStart = styled(Ranger)`
+    left: 0;
 `
 
-const RangeEnd = styled.div`
+const RangeEnd = styled(Ranger)`
+    right: 0;
+`
+
+const RangeSelector = styled.div`
+    align-items: center;
+    color: #323232;
+    display: flex;
+    flex-grow: 0;
+    justify-content: flex-end;
+    padding: 0 24px 24px 0;
+
+    svg {
+        display: block;
+        margin-left: 8px;
+        width: 6px;
+    }
 `
 
 const Handle = styled.div`
+    background-color: #e4e4e4;
+    color: #ff5c00;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    svg {
+        left: -400%;
+        width: 800%;
+    }
 `
 
 const Stops = styled.div`
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    text-align: center;
+
+    > div {
+        box-sizing: border-box;
+        height: 40px;
+        line-height: 24px;
+        padding: 16px 0 0;
+        position: relative;
+        width: 25%;
+    }
+
+    > div::before {
+        background-color: #efefef;
+        content: '';
+        height: 100%;
+        left: 50%;
+        position: absolute;
+        top: 0;
+        width: 1px;
+    }
 `
 
 const Chart = ({ title, ...props }) => (
@@ -88,7 +216,7 @@ const Chart = ({ title, ...props }) => (
         ]}
     >
         <Body>
-            <div className={styles.rangeSelector}>
+            <RangeSelector>
                 <span>15 minutes</span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 6">
                     <path
@@ -101,7 +229,7 @@ const Chart = ({ title, ...props }) => (
                         strokeLinejoin="round"
                     />
                 </svg>
-            </div>
+            </RangeSelector>
             <Chart>
                 <ChartInner>
                     <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -165,8 +293,8 @@ const Chart = ({ title, ...props }) => (
                         <span>07:00</span>
                     </XAxis>
                 </Inner>
-                <div className={styles.navigator}>
-                    <div className={styles.track}>
+                <Navigator>
+                    <Track>
                         <svg viewBox="0 0 561 22" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                             <path
                                 // eslint-disable-next-line max-len
@@ -176,11 +304,11 @@ const Chart = ({ title, ...props }) => (
                                 vectorEffect="non-scaling-stroke"
                             />
                         </svg>
-                    </div>
-                    <div className={styles.handleWrapper}>
-                        <div className={cx(styles.ranger, styles.rangeStart)} />
-                        <div className={cx(styles.ranger, styles.rangeEnd)} />
-                        <div className={styles.handle}>
+                    </Track>
+                    <HandleWrapper>
+                        <RangeStart />
+                        <RangeEnd />
+                        <Handle>
                             <svg viewBox="0 0 561 22" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                                 <path
                                     // eslint-disable-next-line max-len
@@ -190,15 +318,15 @@ const Chart = ({ title, ...props }) => (
                                     vectorEffect="non-scaling-stroke"
                                 />
                             </svg>
-                        </div>
-                    </div>
-                    <div className={styles.stops}>
+                        </Handle>
+                    </HandleWrapper>
+                    <Stops>
                         <div>06:00</div>
                         <div>06:30</div>
                         <div>07:00</div>
                         <div>07:30</div>
-                    </div>
-                </div>
+                    </Stops>
+                </Navigator>
             </div>
         </Body>
     </Module>

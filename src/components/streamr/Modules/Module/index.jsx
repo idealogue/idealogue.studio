@@ -4,18 +4,18 @@ import Input from './Input'
 import Output from './Output'
 import { MEDIUM, PLEX_SANS } from '$utils/css'
 
-const Top = styled.div`
+export const Top = styled.div`
     flex-grow: 0;
     flex-shrink: 0;
 `
 
-const Bottom = styled.div`
+export const Bottom = styled.div`
     display: flex;
     flex-grow: 1;
     flex-shrink: 0;
 `
 
-const Header = styled.div`
+export const Header = styled.div`
     align-items: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
