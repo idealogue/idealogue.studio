@@ -2,7 +2,20 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { SM, MD, XL } from '$utils/css'
 
-const Wrapper = styled.div`
+const UnstyledBrowserFrame = ({ children, shadow, dark, ...props }) => (
+    <div {...props}>
+        <div className="buttons">
+            <div className="button" />
+            <div className="button" />
+            <div className="button" />
+        </div>
+        <div className="body">
+            {children}
+        </div>
+    </div>
+)
+
+const BrowserFrame = styled(UnstyledBrowserFrame)`
     border-radius: 4px;
     overflow: hidden;
     position: relative;
@@ -33,9 +46,11 @@ const Wrapper = styled.div`
         background-color: #62ca43;
     }
 
-    .body {
-        background-color: #ffffff;
-    }
+    ${({ dark }) => !dark && css`
+        .body {
+            background-color: #ffffff;
+        }
+    `}
 
     video {
         display: block;
@@ -75,18 +90,5 @@ const Wrapper = styled.div`
         width: 126%;
     }
 `
-
-const BrowserFrame = ({ children, shadow, ...props }) => (
-    <Wrapper {...props}>
-        <div className="buttons">
-            <div className="button" />
-            <div className="button" />
-            <div className="button" />
-        </div>
-        <div className="body">
-            {children}
-        </div>
-    </Wrapper>
-)
 
 export default BrowserFrame

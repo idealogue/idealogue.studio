@@ -34,6 +34,9 @@ const CobaltPage = () => (
                         their services into a more user-focused app called Core.
                     </p>
                 </Hero>
+            </Section>
+            <Section theme={DarkBlueTheme}>
+                {/* Brand film */}
                 <SectionHeader no={1}>
                     An introduction to realtime data
                 </SectionHeader>
@@ -50,6 +53,16 @@ const CobaltPage = () => (
                         it seemed like a good match, so we came onboard in late 2017. We first
                         worked on a website that helped to raise $30M in an initial coin offering,
                         and then turned focus to a rebrand.
+                    </p>
+                    {/* Logos and typography */}
+                    <p>
+                        The existing brand was fairly basic, but they were attached to the name, and
+                        wanted to retain some connection to the original brand. We kept the name and
+                        their orange colour, and replaced the rest. After exploring a number of
+                        directions we arrived at a stylised S shape built from the ubiquitous wi-fi
+                        mark, representing the variety of realtime data sources Streamr works with.
+                        If you'd like a deeper dive into the brand process, there's a Medium piece
+                        here about it. 
                     </p>
                 </Container>
             </Section>
@@ -69,6 +82,8 @@ const CobaltPage = () => (
                         largely invisible data products and services, along with a touch of humour.
                     </p>
                 </Container>
+                {/* Icon loops */}
+                {/* Icon grid carouself */}
             </Section>
             <Section theme={DarkBlueTheme}>
                 <SectionHeader no={3}>
@@ -91,6 +106,9 @@ const CobaltPage = () => (
                         incorporating 3D print of the buildings of midtown Manhattan.
                     </p>
                 </Container>
+                {/* Consensus video */}
+                {/* Consensus gallery row #1 */}
+                {/* Consensus gallery row #2 */}
                 <SectionHeader no={4}>
                     Core - one app to rule them all
                 </SectionHeader>
@@ -109,6 +127,8 @@ const CobaltPage = () => (
                         for building crowdsourced data products.
                     </p>
                 </Container>
+                {/* Core app rebuilt - screenshot */}
+                {/* Module grid */}
                 <SectionHeader no={5}>
                     Wrapping it all into one package
                 </SectionHeader>
@@ -122,6 +142,7 @@ const CobaltPage = () => (
                         was the design and rewriting of an all-new Docs section.
                     </p>
                 </Container>
+                {/* Pub site screenshot */}
                 <SectionHeader no={6}>
                     Credits
                     <Bullet />

@@ -16,6 +16,9 @@ const sources = {
         ['/videos/golem_character.webm', 'video/quicktime'],
         ['/videos/golem_character.mov', 'video/webm'],
     ],
+    vizor: [
+        ['/videos/vizor.mp4', 'video/mp4'],
+    ],
 }
 
 const Video = ({ id, ...props }) => (
