@@ -13,7 +13,7 @@ const UnstyledAteneum = (props) => (
             <Fragment>
                 Click above to play a 360 tour of the Helsinki Atheneum. Read more about it
                 {' '}
-                <a href="#">here</a>
+                <a href="#x">here</a>
                 .
             </Fragment>
         )}>

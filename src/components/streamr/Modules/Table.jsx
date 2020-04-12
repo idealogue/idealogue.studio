@@ -20,7 +20,7 @@ const Body = styled.div`
 `
 
 const HeadCell = styled.div`
-    font-weight: {MEDIUM};
+    font-weight: ${MEDIUM};
 `
 
 const Table = ({ title, ...props }) => (

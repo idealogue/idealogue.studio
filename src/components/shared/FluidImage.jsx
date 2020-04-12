@@ -1,6 +1,9 @@
+import React from 'react'
 import styled, { css } from 'styled-components'
 
-const FluidImage = styled.img`
+const UnstyledFluidImage = ({ fill, ...props }) => <img {...props} />
+
+const FluidImage = styled(UnstyledFluidImage)`
     display: block;
     height: auto;
     max-width: 100%;

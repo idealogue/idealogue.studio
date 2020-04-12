@@ -1,5 +1,6 @@
 import React from 'react'
-import Module, { Body as UnstyledBody } from '../Module'
+import styled from 'sc'
+import Module, { Body as UnstyledBody } from './Module'
 import { MEDIUM } from '$utils/css'
 
 const Body = styled(UnstyledBody)`
@@ -12,7 +13,7 @@ const Body = styled(UnstyledBody)`
     }
 `
 
-const Chart = styled.div`
+const ChartOuter = styled.div`
     box-sizing: border-box;
     display: flex;
     flex-grow: 1;
@@ -230,7 +231,7 @@ const Chart = ({ title, ...props }) => (
                     />
                 </svg>
             </RangeSelector>
-            <Chart>
+            <ChartOuter>
                 <ChartInner>
                     <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                         <g fill="#EFEFEF">
@@ -279,7 +280,7 @@ const Chart = ({ title, ...props }) => (
                         </TooltipsInner>
                     </Tooltips>
                 </ChartInner>
-            </Chart>
+            </ChartOuter>
             <Footer>
                 <Inner>
                     <XAxis>
@@ -327,7 +328,7 @@ const Chart = ({ title, ...props }) => (
                         <div>07:30</div>
                     </Stops>
                 </Navigator>
-            </div>
+            </Footer>
         </Body>
     </Module>
 )

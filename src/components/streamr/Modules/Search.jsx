@@ -1,12 +1,12 @@
 import React from 'react'
-import styled, { css } from 'sc'
+import styled from 'sc'
 import Module, { Header as UnstyledHeader, Top, Bottom } from './Module'
 import { MEDIUM } from '$utils/css'
 
 const Cat = styled.div`
     color: #323232;
     font-size: 12px;
-    font-weight: {MEDIUM};
+    font-weight: ${MEDIUM};
     letter-spacing: 1px;
     line-height: 32px;
     padding: 0 24px;

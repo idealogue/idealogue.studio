@@ -173,6 +173,7 @@ const Module = styled(UnstyledModule)`
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
     color: #323232;
     display: flex;
+    font-family: ${PLEX_SANS};
     flex-direction: column;
     flex-shrink: 0;
     overflow: hidden;
