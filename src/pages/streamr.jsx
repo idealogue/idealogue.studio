@@ -9,6 +9,7 @@ import NextProject from '$shared/NextProject'
 import Project, { STREAMR } from '$shared/Project'
 import Section from '$shared/Section'
 import SectionHeader from '$shared/SectionHeader'
+import PublicSiteView from '$streamr/PublicSiteView'
 
 const LayoutTheme = {
     backgroundColor: '#06042a',
@@ -142,7 +143,7 @@ const CobaltPage = () => (
                         was the design and rewriting of an all-new Docs section.
                     </p>
                 </Container>
-                {/* Pub site screenshot */}
+                <PublicSiteView />
                 <SectionHeader no={6}>
                     Credits
                     <Bullet />
