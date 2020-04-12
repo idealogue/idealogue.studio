@@ -13,6 +13,7 @@ import Section from '$shared/Section'
 import SectionHeader from '$shared/SectionHeader'
 import PublicSiteView from '$streamr/PublicSiteView'
 import Modules from '$streamr/Modules'
+import EditorMockup from '$streamr/EditorMockup'
 
 const LayoutTheme = {
     backgroundColor: '#06042a',
@@ -131,7 +132,7 @@ const CobaltPage = () => (
                         for building crowdsourced data products.
                     </p>
                 </Container>
-                {/* Core app rebuilt - screenshot */}
+                <EditorMockup />
                 <Modules />
                 <SectionHeader no={5}>
                     Wrapping it all into one package
