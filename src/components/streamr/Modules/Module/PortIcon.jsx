@@ -1,5 +1,3 @@
-// @flow
-
 import styled, { css } from 'sc'
 
 const PortIcon = styled.div`

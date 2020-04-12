@@ -1,3 +1,5 @@
+import '@ibm/plex/css/ibm-plex.css'
+
 import React from 'react'
 import Bullet from '$shared/Bullet'
 import Container from '$shared/Container'
@@ -10,6 +12,7 @@ import Project, { STREAMR } from '$shared/Project'
 import Section from '$shared/Section'
 import SectionHeader from '$shared/SectionHeader'
 import PublicSiteView from '$streamr/PublicSiteView'
+import Modules from '$streamr/Modules'
 
 const LayoutTheme = {
     backgroundColor: '#06042a',
@@ -129,7 +132,7 @@ const CobaltPage = () => (
                     </p>
                 </Container>
                 {/* Core app rebuilt - screenshot */}
-                {/* Module grid */}
+                <Modules />
                 <SectionHeader no={5}>
                     Wrapping it all into one package
                 </SectionHeader>

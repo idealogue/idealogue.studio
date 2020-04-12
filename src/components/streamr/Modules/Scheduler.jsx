@@ -1,13 +1,7 @@
-// @flow
-
 import React from 'react'
-import Module, { Styles as ModuleStyles } from '../Module'
+import Module, { Body, VerticalWedge, Footer, Buttons, Button } from '../Module'
 
-type Props = {
-    title?: ?string,
-}
-
-function Scheduler({ title, ...props }: Props) {
+function Scheduler({ title, ...props }) {
     return (
         <Module
             {...props}
@@ -25,17 +19,17 @@ function Scheduler({ title, ...props }: Props) {
                 null,
             ]}
         >
-            <div className={ModuleStyles.body}>
-                <div className={ModuleStyles.vWedge} />
-                <div className={ModuleStyles.footer}>
+            <Body>
+                <VerticalWedge />
+                <Footer>
                     <div />
-                    <div className={ModuleStyles.buttons}>
-                        <div className={ModuleStyles.button}>
+                    <Buttons>
+                        <Button>
                             + Add
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        </Button>
+                    </Buttons>
+                </Footer>
+            </Body>
         </Module>
     )
 }

@@ -1,13 +1,7 @@
-// @flow
-
 import React from 'react'
-import Module from '../Module'
+import Module from './Module'
 
-type Props = {
-    title?: ?string,
-}
-
-function Stream({ title, ...props }: Props) {
+function Stream({ title, ...props }) {
     return (
         <Module
             {...props}

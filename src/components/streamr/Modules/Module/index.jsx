@@ -1,37 +1,107 @@
-// @flow
-
-import React, { type Node, useMemo } from 'react'
-import cx from 'classnames'
+import React, { useMemo } from 'react'
+import styled, { css } from 'sc'
 import Input from './Input'
 import Output from './Output'
-import styles from './module.module.css'
+import { MEDIUM } from '$utils/css'
 
-type Props = {
-    children?: Node,
-    className?: ?string,
-    ins?: Array<any>,
-    outs?: Array<any>,
-    title: string,
-    width?: number,
-    height?: number,
-    grow?: boolean,
-}
+const Top = styled.div`
+    flex-grow: 0;
+    flex-shrink: 0;
+`
 
-function Module({
+const Bottom = styled.div`
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+`
+
+const Header = styled.div`
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    font-size: 12px;
+    font-weight: ${MEDIUM};
+    height: 40px;
+    justify-content: space-between;
+    line-height: 1;
+    padding: 0 24px;
+`
+
+const Title = styled.div``
+
+const PortsWrapper = styled.div`
+    padding: 12px 0;
+`
+
+const Ports = styled.div`
+    align-items: top;
+    display: flex;
+    justify-content: space-between;
+
+    + & {
+        margin-top: 4px;
+    }
+`
+
+const Separator = styled.div`
+    background-color: #efefef;
+    height: 1px;
+    margin: 12px 0;
+`
+
+export const Footer = styled.div`
+    border-top: 1px solid #EFEFEF;
+    display: flex;
+    flex-grow: 0;
+    justify-content: space-between;
+    padding: 8px;
+`
+
+export const Buttons = styled.div`
+    display: flex;
+    flex-shrink: 0;
+    padding-left: 8px;
+`
+
+export const Button = styled.div`
+    border-radius: 2px;
+    box-shadow: inset 0 0 0 1px #EFEFEF;
+    color: #525252;
+    font-size: 10px;
+    font-weight: ${MEDIUM};
+    line-height: 24px;
+    padding: 0 12px;
+
+    + & {
+        margin-left: 8px;
+    }
+`
+
+export const Body = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+`
+
+export const VerticalWedge = styled.div`
+    flex-grow: 1;
+`
+
+function UnstyledModule({
     children,
-    className,
     ins: insProp,
     outs: outsProp,
     title,
     width,
     height,
     grow,
-}: Props) {
+    ...props
+}) {
     const ins = insProp || []
 
     const outs = outsProp || []
 
-    const ports: Array<any> = useMemo(() => (
+    const ports = useMemo(() => (
         Array(...Array(Math.max(ins.length, outs.length)))
     ), [ins.length, outs.length])
 
@@ -47,27 +117,25 @@ function Module({
 
     return (
         <div
-            className={cx(styles.root, className, {
-                [styles.grow]: !!grow,
-            })}
+            {...props}
             style={style}
         >
-            <div className={styles.top}>
-                <div className={styles.header}>
-                    <div className={styles.title}>
+            <Top>
+                <Header>
+                    <Title>
                         {title}
-                    </div>
+                    </Title>
                     <div />
-                </div>
+                </Header>
                 {ports.length > 0 && (
-                    <div className={styles.portsWrapper}>
+                    <PortsWrapper>
                         {ports.map((el, i) => {
                             const a = ins[i]
                             const b = outs[i]
 
                             if (a === null && b === null) {
                                 // eslint-disable-next-line react/no-array-index-key
-                                return <div className={styles.separator} key={i} />
+                                return <Separator key={i} />
                             }
 
                             const inName = ((a || [])[0] || '').replace(/^[[\](){}]+\s+/g, '')
@@ -83,7 +151,7 @@ function Module({
 
                             return (
                                 // eslint-disable-next-line react/no-array-index-key
-                                <div className={styles.ports} key={i}>
+                                <Ports key={i}>
                                     {a ? (
                                         <Input
                                             name={inName}
@@ -98,21 +166,33 @@ function Module({
                                     {b ? (
                                         <Output name={outName} highlight={!!outHighlight} />
                                     ) : <div />}
-                                </div>
+                                </Ports>
                             )
                         })}
-                    </div>
+                    </PortsWrapper>
                 )}
-            </div>
-            <div className={styles.bottom}>
+            </Top>
+            <Bottom>
                 {children}
-            </div>
+            </Bottom>
         </div>
     )
 }
 
-export {
-    styles as Styles,
-}
+const Module = styled(UnstyledModule)`
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    color: #323232;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    overflow: hidden;
+    user-select: none;
+
+    ${({ grow }) => !!grow && css`
+        flex-grow: 1;
+    `}
+`
 
 export default Module

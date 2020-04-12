@@ -1,18 +1,7 @@
-// @flow
-
 import React from 'react'
 import styled from 'sc'
-import PortIcon from '../PortIcon'
-import Port, { Icon, Name } from '../Port'
-
-type Props = {
-    children?: ?string,
-    highlight?: boolean,
-    name: string,
-    square?: boolean,
-    noIcon?: boolean,
-    predefinedValue?: boolean,
-}
+import PortIcon from './PortIcon'
+import Port, { Icon, Name } from './Port'
 
 const Em = styled.em`
     font-style: italic;
@@ -39,7 +28,7 @@ function Input({
     noIcon,
     predefinedValue,
     ...props
-}: Props) {
+}) {
     const isColor = /#[a-f\d]{6}/i.test(children || '')
     const ValueTag = predefinedValue ? 'span' : Em
 

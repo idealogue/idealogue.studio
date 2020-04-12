@@ -1,5 +1,3 @@
-// @flow
-
 import styled from 'sc'
 import { PLEX_MONO, MEDIUM } from '$utils/css'
 

@@ -1,15 +1,8 @@
-// @flow
-
 import React from 'react'
-import Port, { Icon, Name } from '../Port'
-import PortIcon from '../PortIcon'
+import Port, { Icon, Name } from './Port'
+import PortIcon from './PortIcon'
 
-type Props = {
-    highlight?: boolean,
-    name: string,
-}
-
-const Output = ({ highlight, name, ...props }: Props) => (
+const Output = ({ highlight, name, ...props }) => (
     <Port {...props}>
         <Name>
             {name}
