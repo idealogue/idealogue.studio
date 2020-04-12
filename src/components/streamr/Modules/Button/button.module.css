@@ -1,0 +1,17 @@
+.body {
+  color: white;
+  font-family: var(--mono);
+  font-size: 1rem;
+  font-weight: var(--semiBold);
+  letter-spacing: 2px;
+  line-height: 3rem;
+  padding: 0 0.5rem 0.5rem;
+  text-transform: uppercase;
+}
+
+.button {
+  background-color: #0324FF;
+  border-radius: 0.25rem;
+  padding: 0 1rem;
+  text-align: center;
+}

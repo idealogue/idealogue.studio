@@ -1,0 +1,204 @@
+.root {
+}
+
+.body {
+  color: #ADADAD;
+  font-size: 0.625rem;
+}
+
+.body svg {
+  display: block;
+  overflow: visible;
+}
+
+.chart {
+  box-sizing: border-box;
+  display: flex;
+  flex-grow: 1;
+  min-height: 50px;
+  padding: 0.3125rem 3rem;
+}
+
+.chart svg {
+  height: 100%;
+}
+
+.chartInner {
+  flex-grow: 1;
+  position: relative;
+}
+
+.chartLine {
+  color: #FF5C00;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.xAxis {
+  display: flex;
+  justify-content: space-between;
+  line-height: 2.5rem;
+}
+
+.navigator {
+  border: solid #EFEFEF;
+  border-width: 1px 0;
+  height: 2.5rem;
+  position: relative;
+}
+
+.stops {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  text-align: center;
+}
+
+.stops > div {
+  box-sizing: border-box;
+  height: 2.5rem;
+  line-height: 1.5rem;
+  padding: 1rem 0 0;
+  position: relative;
+  width: 25%;
+}
+
+.stops > div::before {
+  background-color: #efefef;
+  content: '';
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  width: 1px;
+}
+
+.inner {
+  padding: 0 3rem;
+}
+
+.navigator svg {
+  display: block;
+  height: 1.5rem;
+  position: absolute;
+  top: 0.5rem;
+  width: 100%;
+}
+
+.track {
+  color: #FF5C00;
+  opacity: 0.3;
+}
+
+.handleWrapper {
+  height: 2.5rem;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  width: 12.5%;
+}
+
+.handle {
+  background-color: #E4E4E4;
+  color: #FF5C00;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.handle svg {
+  left: -400%;
+  width: 800%;
+}
+
+.ranger {
+  background-color: #ADADAD;
+  height: 2.5rem;
+  position: absolute;
+  top: 0;
+  width: 1px;
+  z-index: 1;
+}
+
+.ranger::before {
+  background-color: #adadad;
+  border-radius: 0.125rem;
+  content: '';
+  height: 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.5rem;
+}
+
+.rangeStart {
+  left: 0;
+}
+
+.rangeEnd {
+  right: 0;
+}
+
+.footer {
+  flex-grow: 0;
+}
+
+.tooltips {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.tooltip {
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.25rem;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  color: #323232;
+  left: 68%;
+  line-height: 1rem;
+  padding: 0.5rem 0.75rem;
+  padding-right: 1rem;
+  position: absolute;
+  top: 43%;
+  transform: translate(-50%, 1rem);
+  white-space: nowrap;
+}
+
+.tooltip strong {
+  font-weight: var(--medium);
+}
+
+.tooltip::before {
+  background-color: #FF5C00;
+  border: 0.25rem solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  content: '';
+  height: 0.5rem;
+  left: 50%;
+  position: absolute;
+  top: -1.5rem;
+  width: 0.5rem;
+  transform: translateX(-0.5rem);
+}
+
+.rangeSelector {
+  align-items: center;
+  color: #323232;
+  display: flex;
+  flex-grow: 0;
+  justify-content: flex-end;
+  padding: 0 1.5rem 1.5rem 0;
+}
+
+.rangeSelector svg {
+  display: block;
+  margin-left: 0.5rem;
+  width: 0.375rem;
+}

@@ -1,0 +1,44 @@
+.root {
+}
+
+.body {
+  padding-bottom: 0.75rem;
+  width: 100%;
+}
+
+.header {
+  background-color: #F8F8F8;
+  color: #A3A3A3;
+}
+
+.header > div {
+  width: 10px;
+}
+
+.header svg {
+  display: block;
+}
+
+.input {
+  border-bottom: 1px solid #EFEFEF;
+  color: #CDCDCD;
+  font-size: 0.875rem;
+  padding: 0 1.5rem;
+  line-height: 3rem;
+  white-space: nowrap;
+}
+
+.category {
+  color: #323232;
+  font-size: 0.75rem;
+  font-weight: var(--medium);
+  letter-spacing: 0.0625rem;
+  line-height: 2rem;
+  padding: 0 1.5rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.category + .category {
+  border-top: 1px solid #efefef;
+}

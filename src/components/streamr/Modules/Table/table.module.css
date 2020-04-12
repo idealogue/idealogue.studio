@@ -1,0 +1,19 @@
+.body {
+  border-top: 1px solid #EFEFEF;
+  color: #525252;
+  display: grid;
+  font-size: 0.625rem;
+  grid-template-columns: auto auto;
+  line-height: 1.5rem;
+  padding: 0 0.75rem 1rem;
+  width: 100%;
+}
+
+.body > div {
+  border-bottom: 1px solid #EFEFEF;
+  padding: 0 0 0 0.75rem;
+}
+
+.headCell {
+  font-weight: var(--medium);
+}

@@ -1,0 +1,32 @@
+.root > :first-child {
+  background-color: #F8F8F8;
+}
+
+.body {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.comment {
+  color: #2AC437;
+}
+
+.lineNumber {
+  color: #ADADAD;
+  display: inline-block;
+  white-space: pre;
+  width: 2rem;
+}
+
+.line {
+}
+
+.keyword {
+  color: #6240AF;
+}
+
+.indentation {
+  white-space: pre;
+}
