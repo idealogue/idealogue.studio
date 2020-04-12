@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'sc'
 import PortIcon from './PortIcon'
 import Port, { Icon, Name } from './Port'
+import { PLEX_SANS } from '$utils/css'
 
 const Em = styled.em`
     font-style: italic;
@@ -9,6 +10,7 @@ const Em = styled.em`
 
 const Value = styled.div`
     color: #adadad;
+    font-family: ${PLEX_SANS};
     line-height: 1rem;
     margin-left: 0.75rem;
     white-space: pre;

@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import styled, { css } from 'sc'
 import Input from './Input'
 import Output from './Output'
-import { MEDIUM } from '$utils/css'
+import { MEDIUM, PLEX_SANS } from '$utils/css'
 
 const Top = styled.div`
     flex-grow: 0;
@@ -19,6 +19,7 @@ const Header = styled.div`
     align-items: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
+    font-family: ${PLEX_SANS};
     font-size: 12px;
     font-weight: ${MEDIUM};
     height: 40px;
@@ -105,21 +106,8 @@ function UnstyledModule({
         Array(...Array(Math.max(ins.length, outs.length)))
     ), [ins.length, outs.length])
 
-    const style = {}
-
-    if (width != null) {
-        style.width = width
-    }
-
-    if (height != null) {
-        style.height = height
-    }
-
     return (
-        <div
-            {...props}
-            style={style}
-        >
+        <div {...props}>
             <Top>
                 <Header>
                     <Title>
@@ -192,6 +180,14 @@ const Module = styled(UnstyledModule)`
 
     ${({ grow }) => !!grow && css`
         flex-grow: 1;
+    `}
+
+    ${({ width }) => width != null && css`
+        width: ${Number.parseInt(width, 10)}px;
+    `}
+
+    ${({ height }) => height != null && css`
+        height: ${Number.parseInt(height, 10)}px;
     `}
 `
 

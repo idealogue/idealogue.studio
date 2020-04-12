@@ -1,5 +1,5 @@
 import React from 'react'
-import Module, { Body, VerticalWedge, Footer, Buttons, Button } from '../Module'
+import Module, { Body, VerticalWedge, Footer, Buttons, Button } from './Module'
 
 function Scheduler({ title, ...props }) {
     return (
