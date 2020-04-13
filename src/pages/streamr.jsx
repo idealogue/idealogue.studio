@@ -14,6 +14,11 @@ import SectionHeader from '$shared/SectionHeader'
 import PublicSiteView from '$streamr/PublicSiteView'
 import Modules from '$streamr/Modules'
 import EditorMockup from '$streamr/EditorMockup'
+import BrandFilm from '$streamr/BrandFilm'
+import ConsensusFilm from '$streamr/ConsensusFilm'
+import BrandElements from '$streamr/BrandElements'
+import Icons from '$streamr/Icons'
+import Placeholder from '$shared/Placeholder'
 
 const LayoutTheme = {
     backgroundColor: '#06042a',
@@ -41,7 +46,7 @@ const CobaltPage = () => (
                 </Hero>
             </Section>
             <Section theme={DarkBlueTheme}>
-                {/* Brand film */}
+                <BrandFilm />
                 <SectionHeader no={1}>
                     An introduction to realtime data
                 </SectionHeader>
@@ -59,7 +64,7 @@ const CobaltPage = () => (
                         worked on a website that helped to raise $30M in an initial coin offering,
                         and then turned focus to a rebrand.
                     </p>
-                    {/* Logos and typography */}
+                    <BrandElements />
                     <p>
                         The existing brand was fairly basic, but they were attached to the name, and
                         wanted to retain some connection to the original brand. We kept the name and
@@ -87,8 +92,12 @@ const CobaltPage = () => (
                         largely invisible data products and services, along with a touch of humour.
                     </p>
                 </Container>
-                {/* Icon loops */}
-                {/* Icon grid carouself */}
+                <Icons />
+                <Placeholder
+                    caption="A range of custom icons used across website, apps and social media"
+                >
+                    Icon grid carousel
+                </Placeholder>
             </Section>
             <Section theme={DarkBlueTheme}>
                 <SectionHeader no={3}>
@@ -111,9 +120,9 @@ const CobaltPage = () => (
                         incorporating 3D print of the buildings of midtown Manhattan.
                     </p>
                 </Container>
-                {/* Consensus video */}
-                {/* Consensus gallery row #1 */}
-                {/* Consensus gallery row #2 */}
+                <ConsensusFilm />
+                <Placeholder>Consensus gallery row #1</Placeholder>
+                <Placeholder>Consensus gallery row #2</Placeholder>
                 <SectionHeader no={4}>
                     Core - one app to rule them all
                 </SectionHeader>

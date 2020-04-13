@@ -106,6 +106,11 @@ const SLIDE_RIGHT = {
     viewBox: '0 0 510 985',
 }
 
+const PLAY = {
+    d: 'M21.034 12.637l-12.936 8.26A1.364 1.364 0 0 1 6 19.747V4.378a1.364 1.364 0 0 1 2.098-1.15l12.936 8.26a.682.682 0 0 1 0 1.15z',
+    viewBox: '0 0 24 24',
+}
+
 export {
     ARROW_LEFT,
     ARROW_RIGHT,
@@ -123,6 +128,7 @@ export {
     I4OF4,
     LOW,
     NAV,
+    PLAY,
     PLUS,
     SCROLL_INDICATOR,
     SETTINGS,

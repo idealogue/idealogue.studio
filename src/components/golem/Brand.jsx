@@ -3,34 +3,7 @@ import styled from 'styled-components'
 import Image from '$golem/Image'
 import Container from '$shared/Container'
 import Helmet from 'react-helmet'
-
-const Row = styled.div`
-    display: flex;
-    justify-content: space-between;
-
-    & + & {
-        margin-top: 96px;
-    }
-`
-
-const Cell = styled.div`
-    width: 50%;
-`
-
-const Header = styled.div`
-    border-bottom: 2px solid white;
-    font-size: 20px;
-    line-height: 1em;
-    margin-bottom: 2.5em;
-    padding-bottom: 1em;
-    width: 82%;
-`
-
-const Fontface = styled.p`
-    && {
-        line-height: 1.35;
-    }
-`
+import { Row, Cell, Header, Fontface, Mark } from '$shared/Brand'
 
 const Roboto = styled(Fontface)`
     && {
@@ -50,10 +23,6 @@ const Sharpsans = styled(Fontface)`
         font-family: 'Sharp Sans', sans-serif !important;
         font-weight: 700;
     }
-`
-
-const Mark = styled.img`
-    display: block;
 `
 
 const VerticalMark = styled(Mark)`

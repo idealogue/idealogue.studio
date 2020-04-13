@@ -1,30 +1,22 @@
 import React, { Fragment } from 'react'
 import styled from 'sc'
 import CaptionedContainer from '$shared/CaptionedContainer'
+import Placeholder from '$shared/Placeholder'
 
-const Inner = styled.div`
-    background-color: gray;
-    padding: 64px;
-`
-
-const UnstyledAteneum = (props) => (
-    <div {...props}>
-        <CaptionedContainer caption={(
+const Ateneum = (props) => (
+    <Placeholder
+        {...props}
+        caption={(
             <Fragment>
                 Click above to play a 360 tour of the Helsinki Atheneum. Read more about it
                 {' '}
                 <a href="#x">here</a>
                 .
             </Fragment>
-        )}>
-            <Inner>
-                Atheneum
-            </Inner>
-        </CaptionedContainer>
-    </div>
+        )}
+    >
+        Ateneum
+    </Placeholder>
 )
-
-const Ateneum = styled(UnstyledAteneum)`
-`
 
 export default Ateneum
