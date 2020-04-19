@@ -6,6 +6,7 @@ import { createGlobalStyle } from 'styled-components'
 import { Helmet } from 'react-helmet'
 import { useProject } from '$shared/Project'
 import Menu from '$shared/Menu'
+import ScrollDirectionProvider from '$shared/ScrollDirectionProvider'
 
 const GlobalStyle = createGlobalStyle`
     html,
@@ -49,7 +50,9 @@ const Layout = ({ children, theme }) => {
             ) : (
                 <Helmet title={`Idealogue`} />
             )}
-            {children}
+            <ScrollDirectionProvider>
+                {children}
+            </ScrollDirectionProvider>
             {!!menuOpen && (
                 <Menu onClose={closeMenu} />
             )}
