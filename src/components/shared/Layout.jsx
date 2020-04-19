@@ -1,10 +1,11 @@
 import 'normalize.css/normalize.css'
 import '../../styles/fonts.css'
 
-import React from 'react'
+import React, { useCallback, useState, useEffect } from 'react'
 import { createGlobalStyle } from 'styled-components'
 import { Helmet } from 'react-helmet'
 import { useProject } from '$shared/Project'
+import Menu from '$shared/Menu'
 
 const GlobalStyle = createGlobalStyle`
     html,
@@ -28,6 +29,16 @@ const GlobalStyle = createGlobalStyle`
 const Layout = ({ children, theme }) => {
     const { name } = useProject() || {}
 
+    const [menuOpen, setMenuOpen] = useState(false)
+
+    const closeMenu = useCallback(() => {
+        setMenuOpen(false)
+    }, [])
+
+    useEffect(() => {
+        setMenuOpen(false)
+    }, [name])
+
     return (
         <>
             <GlobalStyle
@@ -39,6 +50,9 @@ const Layout = ({ children, theme }) => {
                 <Helmet title={`Idealogue`} />
             )}
             {children}
+            {!!menuOpen && (
+                <Menu onClose={closeMenu} />
+            )}
         </>
     )
 }

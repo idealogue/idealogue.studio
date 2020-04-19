@@ -1,6 +1,4 @@
 import React, { Fragment } from 'react'
-import styled from 'sc'
-import CaptionedContainer from '$shared/CaptionedContainer'
 import Placeholder from '$shared/Placeholder'
 
 const Ateneum = (props) => (

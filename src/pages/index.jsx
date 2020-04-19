@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react'
 import Link from '$shared/Link'
-import styled, { ThemeProvider, css } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import Layout from '$shared/Layout'
 import { lineup, projects } from '$shared/Project'
 import Container from '$shared/Container'
+import { LinkList } from '$shared/Menu'
 
 const Root = styled.div`
     color: white;
@@ -49,22 +50,6 @@ const LayoutTheme = {
 const Theme = {
     color: '#ffffff',
 }
-
-const LinkList = styled.ul`
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    ${({ inline }) => !!inline && css`
-        li {
-            display: inline;
-        }
-
-        li::after {
-            content: ' ';
-        }
-    `}
-`
 
 const Separator = styled.li`
     display: block !important;
