@@ -1,7 +1,45 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext, createContext, useCallback, useMemo, useState } from 'react'
 import styled, { css, ThemeProvider, createGlobalStyle } from 'sc'
 import Link from '$shared/Link'
 import { lineup, projects } from '$shared/Project'
+
+const MenuContext = createContext({
+    close: () => {},
+    isOpen: false,
+    open: () => {},
+})
+
+export const useMenu = () => (
+    useContext(MenuContext)
+)
+
+export const MenuProvider = ({ children }) => {
+    const [isOpen, setIsOpen] = useState(false)
+
+    const open = useCallback(() => {
+        setIsOpen(true)
+    }, [])
+
+    const close = useCallback(() => {
+        setIsOpen(false)
+    }, [])
+
+    const value = useMemo(() => ({
+        close,
+        isOpen,
+        open,
+    }), [
+        close,
+        isOpen,
+        open,
+    ])
+
+    return (
+        <MenuContext.Provider value={value}>
+            {children}
+        </MenuContext.Provider>
+    )
+}
 
 const GlobalAdjustments = createGlobalStyle`
     html,
@@ -66,11 +104,13 @@ const DefaultTheme = {
     color: '#ffffff',
 }
 
-const UnstyledMenu = ({ onClose: onCloseProp, ...props }) => {
+const UnstyledMenu = (props) => {
+    const { isOpen, close } = useMenu()
+
     useEffect(() => {
         const onClose = ({ keyCode }) => {
-            if (onCloseProp && keyCode === 27) {
-                onCloseProp()
+            if (isOpen && keyCode === 27) {
+                close()
             }
         }
 
@@ -79,9 +119,9 @@ const UnstyledMenu = ({ onClose: onCloseProp, ...props }) => {
         return () => {
             window.removeEventListener('keydown', onClose)
         }
-    }, [onCloseProp])
+    }, [isOpen, close])
 
-    return (
+    return !!isOpen && (
         <ThemeProvider theme={DefaultTheme}>
             <GlobalAdjustments />
             <div {...props}>

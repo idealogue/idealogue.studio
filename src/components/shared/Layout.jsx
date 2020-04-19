@@ -1,12 +1,13 @@
 import 'normalize.css/normalize.css'
 import '../../styles/fonts.css'
 
-import React, { useCallback, useState, useEffect } from 'react'
-import { createGlobalStyle } from 'styled-components'
+import React from 'react'
+import { createGlobalStyle, css } from 'styled-components'
 import { Helmet } from 'react-helmet'
 import { useProject } from '$shared/Project'
-import Menu from '$shared/Menu'
-import ScrollDirectionProvider from '$shared/ScrollDirectionProvider'
+import Menu, { MenuProvider } from '$shared/Menu'
+import useScrollDirection from '$hooks/useScrollDirection'
+import MenuToggle from '$shared/MenuToggle'
 
 const GlobalStyle = createGlobalStyle`
     html,
@@ -25,37 +26,35 @@ const GlobalStyle = createGlobalStyle`
     body > div > div {
         height: 100%;
     }
+
+    ${({ nav }) => !nav && css`
+        body ${MenuToggle} {
+            transform: translateY(-100%);
+        }
+    `}
 `
 
 const Layout = ({ children, theme }) => {
     const { name } = useProject() || {}
 
-    const [menuOpen, setMenuOpen] = useState(false)
-
-    const closeMenu = useCallback(() => {
-        setMenuOpen(false)
-    }, [])
-
-    useEffect(() => {
-        setMenuOpen(false)
-    }, [name])
+    const direction = useScrollDirection()
 
     return (
         <>
             <GlobalStyle
                 backgroundColor={theme.backgroundColor}
+                nav={direction !== 'down'}
             />
             {!!name ? (
                 <Helmet title={`Idealogue – ${name}`} />
             ) : (
                 <Helmet title={`Idealogue`} />
             )}
-            <ScrollDirectionProvider>
+            <MenuProvider>
                 {children}
-            </ScrollDirectionProvider>
-            {!!menuOpen && (
-                <Menu onClose={closeMenu} />
-            )}
+                <MenuToggle />
+                <Menu />
+            </MenuProvider>
         </>
     )
 }

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 let options = false
 
@@ -32,13 +32,7 @@ const getScrollY = () => {
     ).scrollTop)
 }
 
-const DirectionContext = createContext(undefined)
-
-export const useScrollDirection = () => (
-    useContext(DirectionContext)
-)
-
-const ScrollDirectionProvider = ({ children }) => {
+export default () => {
     const [direction, setDirection] = useState()
 
     useEffect(() => {
@@ -67,11 +61,5 @@ const ScrollDirectionProvider = ({ children }) => {
         }
     }, [])
 
-    return (
-        <DirectionContext.Provider value={direction}>
-            {children || null}
-        </DirectionContext.Provider>
-    )
+    return direction
 }
-
-export default ScrollDirectionProvider
