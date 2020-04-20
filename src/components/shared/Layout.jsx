@@ -52,7 +52,6 @@ const Layout = ({ children, theme }) => {
             )}
             <MenuProvider>
                 {children}
-                <MenuToggle />
                 <Menu />
             </MenuProvider>
         </>

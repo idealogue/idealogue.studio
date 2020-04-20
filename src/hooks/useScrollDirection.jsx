@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 let options = false
 
-if (typeof window !== undefined) {
+if (typeof window !== 'undefined') {
     try {
         window.addEventListener('test', null, Object.defineProperty({}, 'passive', {
             // eslint-disable-next-line getter-return
