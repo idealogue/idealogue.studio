@@ -5,7 +5,8 @@ import React from 'react'
 import { createGlobalStyle, css } from 'styled-components'
 import { Helmet } from 'react-helmet'
 import { useProject } from '$shared/Project'
-import Menu, { MenuProvider } from '$shared/Menu'
+import Menu from '$shared/Menu'
+import { MenuProvider } from '$hooks/useMenu'
 import useScrollDirection from '$hooks/useScrollDirection'
 import MenuToggle from '$shared/MenuToggle'
 
@@ -30,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
     ${({ nav }) => !nav && css`
         body ${MenuToggle} {
             transform: translateY(-100%);
+            transition-delay: 200ms;
         }
     `}
 `

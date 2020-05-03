@@ -1,45 +1,9 @@
-import React, { useEffect, useContext, createContext, useCallback, useMemo, useState } from 'react'
+import React, { useEffect } from 'react'
 import styled, { css, ThemeProvider, createGlobalStyle } from 'sc'
 import Link from '$shared/Link'
 import { lineup, projects } from '$shared/Project'
-
-const MenuContext = createContext({
-    close: () => {},
-    isOpen: false,
-    open: () => {},
-})
-
-export const useMenu = () => (
-    useContext(MenuContext)
-)
-
-export const MenuProvider = ({ children }) => {
-    const [isOpen, setIsOpen] = useState(false)
-
-    const open = useCallback(() => {
-        setIsOpen(true)
-    }, [])
-
-    const close = useCallback(() => {
-        setIsOpen(false)
-    }, [])
-
-    const value = useMemo(() => ({
-        close,
-        isOpen,
-        open,
-    }), [
-        close,
-        isOpen,
-        open,
-    ])
-
-    return (
-        <MenuContext.Provider value={value}>
-            {children}
-        </MenuContext.Provider>
-    )
-}
+import { CloseButton as UnstyledCloseButton } from '$shared/MenuToggle'
+import useMenu from '$hooks/useMenu'
 
 const GlobalAdjustments = createGlobalStyle`
     html,
@@ -104,6 +68,12 @@ const DefaultTheme = {
     color: '#ffffff',
 }
 
+const CloseButton = styled(UnstyledCloseButton)`
+    position: fixed;
+    right: 0;
+    top: 0;
+`
+
 const UnstyledMenu = (props) => {
     const { isOpen, close } = useMenu()
 
@@ -125,6 +95,7 @@ const UnstyledMenu = (props) => {
         <ThemeProvider theme={DefaultTheme}>
             <GlobalAdjustments />
             <div {...props}>
+                <CloseButton onClick={close} />
                 <Inner>
                     <Wrapper>
                         <Column>

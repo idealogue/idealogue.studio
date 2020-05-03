@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'sc'
-import UnstyledGlyph, { NAV } from '$shared/Glyph'
-import { useMenu } from '$shared/Menu'
+import UnstyledGlyph, { NAV, CLOSE } from '$shared/Glyph'
+import useMenu from '$hooks/useMenu'
 
 const Glyph = styled(UnstyledGlyph)`
     display: block;
@@ -11,7 +11,7 @@ const Glyph = styled(UnstyledGlyph)`
 
 const Button = styled.button`
     appearance: none;
-    background-color: #ffffff0f;
+    background-color: transparent;
     border: 0;
     color: inherit;
     display: block;
@@ -22,6 +22,12 @@ const Button = styled.button`
     position: fixed;
     width: 140px;
 `
+
+export const CloseButton = (props) => (
+    <Button {...props} type="button">
+        <Glyph source={CLOSE} />
+    </Button>
+)
 
 const UnstyledMenuToggle = (props) => {
     const { open } = useMenu()
@@ -36,14 +42,15 @@ const UnstyledMenuToggle = (props) => {
 }
 
 const MenuToggle = styled(UnstyledMenuToggle)`
-    color: ${({ theme }) => theme.toggleColor || '#ffffff7f'};
+    color: ${({ theme }) => theme.toggleColor || '#ffffff'};
+    height: 140px;
     position: fixed;
     right: 0;
     top: 0;
     transform: translateY(0%);
-    transition: 200ms transform;
+    transition: 400ms transform;
+    transition-delay: 0ms;
     width: 140px;
-    height: 140px;
 `
 
 export default MenuToggle
