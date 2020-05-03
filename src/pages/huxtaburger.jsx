@@ -49,7 +49,7 @@ const CobaltPage = () => (
                     </p>
                 </Hero>
             </Section>
-            <Section theme={WhiteTheme}>
+            <Section theme={WhiteTheme} head>
                 <SectionHeader no={1}>
                     Milk Bar vs Diner
                 </SectionHeader>
