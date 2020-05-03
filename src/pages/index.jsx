@@ -14,6 +14,7 @@ const Root = styled.div`
     padding-top: 208px;
 
     h1 {
+        font-family: 'Publico Text';
         font-size: 45px;
         font-weight: 700;
         line-height: 1em;
