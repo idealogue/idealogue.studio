@@ -234,7 +234,7 @@ const UnstyledAdvanced = ({ cpu, ram, disk, ...props }) => (
 const Advanced = styled(UnstyledAdvanced)`
     padding: 25px 0;
 
-    p {
+    & p {
         color: #cbcbcb;
         font-size: 10px;
         line-height: 1.5em;

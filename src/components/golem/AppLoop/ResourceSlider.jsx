@@ -142,7 +142,7 @@ const UnstyledResourceSlider = ({ position: positionProp = 18, onTransitionFinis
 const ResourceSlider = styled(UnstyledResourceSlider)`
     padding: 40px 25px 40px;
 
-    p {
+    & p {
         color: #cbcbcb;
         font-size: 12px;
         line-height: 18px;
