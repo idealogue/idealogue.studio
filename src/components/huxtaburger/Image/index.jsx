@@ -60,17 +60,6 @@ const CBD_FRAMES = [
     CBD_ANIM_02,
 ]
 
-const COLLAGE = [
-    [
-        COLLAGE_1,
-        COLLAGE_2,
-    ],
-    [
-        COLLAGE_3,
-        COLLAGE_4,
-    ],
-]
-
 const EASTLAND_FRAMES = [
     EASTLAND_ANIM_00,
     EASTLAND_ANIM_01,
@@ -122,7 +111,10 @@ export default {
     CBD_FRAMES,
     CBD_SHADOW,
     CHIPS,
-    COLLAGE,
+    COLLAGE_1,
+    COLLAGE_2,
+    COLLAGE_3,
+    COLLAGE_4,
     EASTLAND_FRAMES,
     EASTLAND_SHADOW,
     HAWTHORN_CINEMA_FRAMES,

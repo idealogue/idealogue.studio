@@ -13,6 +13,7 @@ import FluidImage from '$shared/FluidImage'
 import BrowserFrame from '$shared/BrowserFrame'
 import Image from '$hive/Image'
 import NewWallet from '$hive/NewWallet'
+import Spacer from '$shared/Spacer'
 
 const LayoutTheme = {
     backgroundColor: '#edb400',
@@ -44,7 +45,7 @@ const CobaltPage = () => (
                     </p>
                 </Hero>
             </Section>
-            <Section theme={WhiteTheme}>
+            <Section theme={WhiteTheme} head tail>
                 <SectionHeader no={1}>
                     Hex Wild
                 </SectionHeader>
@@ -56,22 +57,28 @@ const CobaltPage = () => (
                         from honeycomb and created a new mark plus a range of geometric avatars
                         for the app and site.
                     </p>
-                    <Icons />
+                    <Spacer head>
+                        <Icons />
+                    </Spacer>
                 </Container>
-                <SectionHeader no={2}>
-                    Hive Wallet 1.0
-                </SectionHeader>
-                <Container>
-                    <p>
-                        The idea behind Hive Web and Hive for iOS was to make an easy to use,
-                        secure wallet for retail bitcoin – paying in stores or sending to friends.
-                        We created a new way to find other users around you wirelessly, called
-                        Waggle, after the way bees move their bodies to guide other bees.
-                    </p>
-                </Container>
-                <OldWallet />
+                <Spacer head>
+                    <SectionHeader no={2}>
+                        Hive Wallet 1.0
+                    </SectionHeader>
+                    <Container>
+                        <p>
+                            The idea behind Hive Web and Hive for iOS was to make an easy to use,
+                            secure wallet for retail bitcoin – paying in stores or sending to friends.
+                            We created a new way to find other users around you wirelessly, called
+                            Waggle, after the way bees move their bodies to guide other bees.
+                        </p>
+                    </Container>
+                </Spacer>
+                <Spacer head>
+                    <OldWallet />
+                </Spacer>
             </Section>
-            <Section theme={YellowGrayTheme}>
+            <Section theme={YellowGrayTheme} head tail>
                 <SectionHeader no={3}>
                     Hive Wallet 2.0
                 </SectionHeader>
@@ -84,9 +91,11 @@ const CobaltPage = () => (
                         and instant trading. In the process we also made it visually lighter.
                     </p>
                 </Container>
-                <NewWallet />
+                <Spacer head>
+                    <NewWallet />
+                </Spacer>
             </Section>
-            <Section theme={WhiteTheme}>
+            <Section theme={WhiteTheme} head tail>
                 <SectionHeader no={4}>
                     Hive Hosted
                 </SectionHeader>
@@ -96,25 +105,29 @@ const CobaltPage = () => (
                         system for Hive, along with a back end dashboard for clients to manage
                         their wallet, get notifications, and real time analytics.
                     </p>
-                    <BrowserFrame>
-                        <FluidImage src={Image.HOSTED} alt="Hive hosted" />
-                    </BrowserFrame>
+                    <Spacer head>
+                        <BrowserFrame>
+                            <FluidImage src={Image.HOSTED} alt="Hive hosted" />
+                        </BrowserFrame>
+                    </Spacer>
                 </Container>
-                <SectionHeader no={5}>
-                    Credits
-                </SectionHeader>
-                <Contributors>
-                    <Contributor name="Matt Innes" role="Brand, Direction, Design" />
-                    <Contributor name="Saori Kajiwara" role="UI/UX Design" />
-                    <Contributor name="Ben Jennings" role="Design, Front end code" />
-                    <Contributor name="David Hauser" role="Front end code" />
-                    <Contributor name="Wei Lu" role="Back end code" />
-                    <Contributor name="Matt Lenz" role="iOS version" />
-                </Contributors>
-                <Container>
-                    <hr />
-                </Container>
-                <NextProject />
+                <Spacer head>
+                    <SectionHeader no={5}>
+                        Credits
+                    </SectionHeader>
+                    <Contributors>
+                        <Contributor name="Matt Innes" role="Brand, Direction, Design" />
+                        <Contributor name="Saori Kajiwara" role="UI/UX Design" />
+                        <Contributor name="Ben Jennings" role="Design, Front end code" />
+                        <Contributor name="David Hauser" role="Front end code" />
+                        <Contributor name="Wei Lu" role="Back end code" />
+                        <Contributor name="Matt Lenz" role="iOS version" />
+                    </Contributors>
+                    <Container>
+                        <hr />
+                    </Container>
+                    <NextProject />
+                </Spacer>
             </Section>
         </Layout>
     </Project>

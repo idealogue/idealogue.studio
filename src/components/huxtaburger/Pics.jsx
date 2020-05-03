@@ -4,9 +4,6 @@ import FluidImage from '$shared/FluidImage'
 import Container from '$shared/Container'
 import Image from '$hux/Image'
 
-const Wrapper = styled.div`
-`
-
 const Cover = styled.div`
     overflow: hidden;
     position: relative;
@@ -44,27 +41,38 @@ const SecondaryImages = styled.div`
     }
 `
 
-const Pics = (props) => (
-    <Wrapper {...props}>
-        <Container>
-            <Inner>
-                <FluidImage src={Image.HUXTABURGER} alt="Huxtaburger" />
-            </Inner>
-        </Container>
-        {Image.COLLAGE.map(([src0, src1]) => (
-            <SecondaryImages key={src0}>
-                <SmallImageWrapper>
-                    <FluidImage src={src0} alt="" />
-                </SmallImageWrapper>
-                <SmallImageWrapper>
-                    <FluidImage src={src1} alt="" />
-                </SmallImageWrapper>
-            </SecondaryImages>
-        ))}
-        <LargeImageWrapper>
-            <img src={Image.SIGN} alt="" />
-        </LargeImageWrapper>
-    </Wrapper>
+export const Logo = () => (
+    <Container>
+        <Inner>
+            <FluidImage src={Image.HUXTABURGER} alt="Huxtaburger" />
+        </Inner>
+    </Container>
 )
 
-export default Pics
+export const CollageA = () => (
+    <SecondaryImages>
+        <SmallImageWrapper>
+            <FluidImage src={Image.COLLAGE_1} alt="" />
+        </SmallImageWrapper>
+        <SmallImageWrapper>
+            <FluidImage src={Image.COLLAGE_2} alt="" />
+        </SmallImageWrapper>
+    </SecondaryImages>
+)
+
+export const CollageB = () => (
+    <SecondaryImages>
+        <SmallImageWrapper>
+            <FluidImage src={Image.COLLAGE_3} alt="" />
+        </SmallImageWrapper>
+        <SmallImageWrapper>
+            <FluidImage src={Image.COLLAGE_4} alt="" />
+        </SmallImageWrapper>
+    </SecondaryImages>
+)
+
+export const LargeSign = () => (
+    <LargeImageWrapper>
+        <img src={Image.SIGN} alt="" />
+    </LargeImageWrapper>
+)

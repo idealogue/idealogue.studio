@@ -30,7 +30,7 @@ const NextProject = styled(UnstyledNextProject)`
     display: flex;
     font-family: 'Publico Text';
     justify-content: center;
-    padding: 5.75rem 0 14.5rem;
+    padding: 5.75rem 0 0;
 
     a {
         display: block;

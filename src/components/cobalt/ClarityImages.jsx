@@ -19,27 +19,26 @@ const AppPreview = styled.div`
     width: 140%;
 `
 
-const ClarityImages = (props) => (
-    <div {...props}>
-        <Container>
-            <Frames>
-                <PhoneFrame>
-                    <FluidImage src={Image.SCREENSHOT_MOBILE_1} alt="Clarity" />
-                </PhoneFrame>
-                <PhoneFrame>
-                    <FluidImage src={Image.SCREENSHOT_MOBILE_2} alt="Clarity" />
-                </PhoneFrame>
-                <PhoneFrame>
-                    <FluidImage src={Image.SCREENSHOT_MOBILE_3} alt="Clarity" />
-                </PhoneFrame>
-            </Frames>
-        <Container>
-        </Container>
-            <AppPreview>
-                <FluidImage src={Image.SCREENSHOT_DESKTOP} alt="Clarity" />
-            </AppPreview>
-        </Container>
-    </div>
+export const MobileShots = () => (
+    <Container>
+        <Frames>
+            <PhoneFrame>
+                <FluidImage src={Image.SCREENSHOT_MOBILE_1} alt="Clarity" />
+            </PhoneFrame>
+            <PhoneFrame>
+                <FluidImage src={Image.SCREENSHOT_MOBILE_2} alt="Clarity" />
+            </PhoneFrame>
+            <PhoneFrame>
+                <FluidImage src={Image.SCREENSHOT_MOBILE_3} alt="Clarity" />
+            </PhoneFrame>
+        </Frames>
+    </Container>
 )
 
-export default ClarityImages
+export const DesktopShot = () => (
+    <Container>
+        <AppPreview>
+            <FluidImage src={Image.SCREENSHOT_DESKTOP} alt="Clarity" />
+        </AppPreview>
+    </Container>
+)

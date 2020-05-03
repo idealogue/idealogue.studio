@@ -30,8 +30,9 @@ const Hero = styled(UnstyledHero)`
     h1 {
         font-family: 'Publico Text';
         font-size: 140px;
-        margin: 0;
         line-height: 1;
+        margin: 0;
+        padding-top: 0.5em;
     }
 
     && p {

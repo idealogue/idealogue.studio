@@ -10,9 +10,10 @@ import Project, { HUXTABURGER } from '$shared/Project'
 import Section from '$shared/Section'
 import SectionHeader from '$shared/SectionHeader'
 import BrowsingVideo from '$hux/BrowsingVideo'
-import Pics from '$hux/Pics'
+import { Logo, CollageA, CollageB, LargeSign } from '$hux/Pics'
 import Iconic from '$hux/Iconic'
 import Neon from '$hux/Neon'
+import Spacer from '$shared/Spacer'
 
 const LayoutTheme = {
     backgroundColor: '#dd2712',
@@ -49,7 +50,7 @@ const CobaltPage = () => (
                     </p>
                 </Hero>
             </Section>
-            <Section theme={WhiteTheme} head>
+            <Section theme={WhiteTheme} head tail>
                 <SectionHeader no={1}>
                     Milk Bar vs Diner
                 </SectionHeader>
@@ -61,21 +62,30 @@ const CobaltPage = () => (
                         &amp; blue fly strips, with the king of beef at the centre of it all.
                     </p>
                 </Container>
-                <Pics />
-                <SectionHeader no={2}>
-                    Beery Browsing
-                </SectionHeader>
-                <Container>
-                    <p>
-                        The key UX concept that drove the site design was simple. Users should be
-                        be able to flip through the site on a phone with one hand while holding
-                        a beer in the other. Also, early on, we decided we want to be able to see
-                        what was in the burgers by tapping them. Put another way, exploding burgers.
-                    </p>
-                    <BrowsingVideo />
-                </Container>
+                <Spacer head tail>
+                    <Logo />
+                </Spacer>
+                <CollageA />
+                <CollageB />
+                <LargeSign />
+                <Spacer head>
+                    <SectionHeader no={2}>
+                        Beery Browsing
+                    </SectionHeader>
+                    <Container>
+                        <p>
+                            The key UX concept that drove the site design was simple. Users should be
+                            be able to flip through the site on a phone with one hand while holding
+                            a beer in the other. Also, early on, we decided we want to be able to see
+                            what was in the burgers by tapping them. Put another way, exploding burgers.
+                        </p>
+                        <Spacer head>
+                            <BrowsingVideo />
+                        </Spacer>
+                    </Container>
+                </Spacer>
             </Section>
-            <Section theme={BlueTheme}>
+            <Section theme={BlueTheme} head tail>
                 <SectionHeader no={3}>
                     Making an Icon iconic
                 </SectionHeader>
@@ -88,9 +98,11 @@ const CobaltPage = () => (
                         an individual animated icon. Try clicking the ones below.
                     </p>
                 </Container>
-                <Iconic />
+                <Spacer head>
+                    <Iconic />
+                </Spacer>
             </Section>
-            <Section theme={BlackTheme}>
+            <Section theme={BlackTheme} head tail>
                 <SectionHeader no={4}>
                     Sexy Neon
                 </SectionHeader>
@@ -100,7 +112,9 @@ const CobaltPage = () => (
                         without doubt this Hot Beef — Cold Beer neon is our favourite.
                     </p>
                 </Container>
-                <Neon />
+                <Spacer head tail>
+                    <Neon />
+                </Spacer>
                 <SectionHeader no={5}>
                     Credits
                     <Bullet />

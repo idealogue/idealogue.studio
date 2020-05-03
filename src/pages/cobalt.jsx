@@ -10,8 +10,9 @@ import Bullet from '$shared/Bullet'
 import Link from '$shared/Link'
 import Contributor, { Contributors } from '$shared/Contributor'
 import LogoImage from '$cobalt/LogoImage'
-import ClarityImages from '$cobalt/ClarityImages'
+import { MobileShots, DesktopShot } from '$cobalt/ClarityImages'
 import BugImages from '$cobalt/BugImages'
+import Spacer from '$shared/Spacer'
 
 const LayoutTheme = {
     backgroundColor: '#207dbc',
@@ -39,7 +40,7 @@ const CobaltPage = () => (
                     </p>
                 </Hero>
             </Section>
-            <Section theme={LightTheme}>
+            <Section theme={LightTheme} head tail>
                 <SectionHeader no={1}>
                     Crowd Powered
                 </SectionHeader>
@@ -50,7 +51,9 @@ const CobaltPage = () => (
                         of Danish Vikings. We helped with a new name, an eyeball / combination
                         lock-inspired mark, and an approachable brand wrapped around it all.
                     </p>
-                    <LogoImage />
+                    <Spacer head tail>
+                        <LogoImage />
+                    </Spacer>
                 </Container>
                 <SectionHeader no={2}>
                     Aiming for Clarity
@@ -62,9 +65,12 @@ const CobaltPage = () => (
                         Central, their web dashboard, to clean it up.
                     </p>
                 </Container>
-                <ClarityImages />
+                <Spacer head tail>
+                    <MobileShots />
+                </Spacer>
+                <DesktopShot />
             </Section>
-            <Section theme={DarkTheme}>
+            <Section theme={DarkTheme} head tail>
                 <SectionHeader no={3}>
                     Bugs Categorised
                 </SectionHeader>
@@ -76,9 +82,11 @@ const CobaltPage = () => (
                         can fix in client's applications — from access control to an SQL injection.
                     </p>
                 </Container>
-                <BugImages />
+                <Spacer head>
+                    <BugImages />
+                </Spacer>
             </Section>
-            <Section theme={LightTheme}>
+            <Section theme={LightTheme} head tail>
                 <SectionHeader no={4}>
                     Credits
                     <Bullet />

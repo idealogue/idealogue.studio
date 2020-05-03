@@ -17,6 +17,7 @@ import RedditPage from '$golem/RedditPage'
 import BetaLaunchPage from '$golem/BetaLaunchPage'
 import Shirts from '$golem/Shirts'
 import Brand from '$golem/Brand'
+import Spacer from '$shared/Spacer'
 
 const LayoutTheme = {
     backgroundColor: '#000f24',
@@ -58,7 +59,7 @@ const CobaltPage = () => (
                     </p>
                 </Hero>
             </Section>
-            <Section theme={WhiteTheme}>
+            <Section theme={WhiteTheme} head tail>
                 <SectionHeader no={1}>
                     User Experience First
                 </SectionHeader>
@@ -71,7 +72,9 @@ const CobaltPage = () => (
                         than waiting for a brand process to run its course.
                     </p>
                 </Container>
-                <UiFirst />
+                <Spacer head tail>
+                    <UiFirst />
+                </Spacer>
                 <Container>
                     <p>
                         One key problem to solve was that there would be two very distinct user
@@ -83,10 +86,10 @@ const CobaltPage = () => (
                     </p>
                 </Container>
             </Section>
-            <Section theme={GrayishTheme}>
+            <Section theme={GrayishTheme} head tail>
                 <UiProcess />
             </Section>
-            <Section theme={BlueTheme}>
+            <Section theme={BlueTheme} head tail>
                 <SectionHeader no={2}>
                     Simple Visual Design Pass
                 </SectionHeader>
@@ -100,7 +103,9 @@ const CobaltPage = () => (
                         rendering for Blender and LuxRender.
                     </p>
                 </Container>
-                <AppLoop />
+                <Spacer head tail>
+                    <AppLoop />
+                </Spacer>
                 <Container>
                     <p>
                         The other key goal was to design something anyone could use, but also
@@ -111,7 +116,7 @@ const CobaltPage = () => (
                     </p>
                 </Container>
             </Section>
-            <Section theme={BlackTheme}>
+            <Section theme={BlackTheme} head tail>
                 <SectionHeader no={3}>
                     Visual Identity
                 </SectionHeader>
@@ -126,30 +131,36 @@ const CobaltPage = () => (
                         a conversation with an AI which is evolving consciousness.
                     </p>
                 </Container>
-                <Identity />
+                <Spacer head>
+                    <Identity />
+                </Spacer>
             </Section>
-            <Section theme={BlueTheme}>
+            <Section theme={BlueTheme} head>
                 <Golems />
-                <Container>
-                    <p>
-                        We decided upon a character that would combine an AI and a traditional
-                        Golem, along with a flexible mark that could be animated to represent the
-                        network in some way. To that end we brought on illustrator Stuart Wade,
-                        whose work we’d admired on the Monster Project. The tricky part with the
-                        character development was to find something that was part AI, part golem,
-                        without being too robotic — and without feeling too threatening or overly
-                        cute. The reaction on Reddit to an early presentation was that we got
-                        that right.
-                    </p>
-                </Container>
+                <Spacer head tail>
+                    <Container>
+                        <p>
+                            We decided upon a character that would combine an AI and a traditional
+                            Golem, along with a flexible mark that could be animated to represent the
+                            network in some way. To that end we brought on illustrator Stuart Wade,
+                            whose work we’d admired on the Monster Project. The tricky part with the
+                            character development was to find something that was part AI, part golem,
+                            without being too robotic — and without feeling too threatening or overly
+                            cute. The reaction on Reddit to an early presentation was that we got
+                            that right.
+                        </p>
+                    </Container>
+                </Spacer>
                 <GolemCharacter />
             </Section>
-            <Section theme={DarkBlueTheme}>
+            <Section theme={DarkBlueTheme} head tail>
                 <Brand />
-                <Shirts />
+                <Spacer head tail>
+                    <Shirts />
+                </Spacer>
                 <RedditPage />
             </Section>
-            <Section theme={BlackTheme}>
+            <Section theme={BlackTheme} head tail>
                 <SectionHeader no={4}>
                     Beta Launch Page
                 </SectionHeader>
@@ -162,9 +173,11 @@ const CobaltPage = () => (
                         3D files, the first Golem integration.
                     </p>
                 </Container>
-                <BetaLaunchPage />
+                <Spacer head>
+                    <BetaLaunchPage />
+                </Spacer>
             </Section>
-            <Section theme={BlueTheme}>
+            <Section theme={BlueTheme} head tail>
                 <SectionHeader no={5}>
                     Credits
                 </SectionHeader>
