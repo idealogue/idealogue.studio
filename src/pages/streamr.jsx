@@ -18,6 +18,7 @@ import BrandFilm from '$streamr/BrandFilm'
 import ConsensusFilm from '$streamr/ConsensusFilm'
 import BrandElements from '$streamr/BrandElements'
 import Icons from '$streamr/Icons'
+import IconGrid from '$streamr/IconGrid'
 import Placeholder from '$shared/Placeholder'
 import Spacer from '$shared/Spacer'
 
@@ -100,11 +101,7 @@ const CobaltPage = () => (
                 <Spacer head tail>
                     <Icons />
                 </Spacer>
-                <Placeholder
-                    caption="A range of custom icons used across website, apps and social media"
-                >
-                    Icon grid carousel
-                </Placeholder>
+                <IconGrid />
             </Section>
             <Section theme={DarkBlueTheme} head>
                 <SectionHeader no={3}>
