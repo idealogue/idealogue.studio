@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react'
-import styled, { ThemeProvider } from 'sc'
+import React from 'react'
+import styled from 'sc'
 import UnstyledGlyph, { NAV } from '$shared/Glyph'
 import { useMenu } from '$shared/Menu'
 
@@ -36,7 +36,7 @@ const UnstyledMenuToggle = (props) => {
 }
 
 const MenuToggle = styled(UnstyledMenuToggle)`
-    color: ${({ color }) => color || '#ffffff7f'};
+    color: ${({ theme }) => theme.toggleColor || '#ffffff7f'};
     position: fixed;
     right: 0;
     top: 0;
@@ -44,29 +44,6 @@ const MenuToggle = styled(UnstyledMenuToggle)`
     transition: 200ms transform;
     width: 140px;
     height: 140px;
-`
-
-const Inner = styled.div`
-    clip: rect(0, auto, auto, 0);
-    height: 100%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 140px;
-`
-
-const UnstyledWrap = ({ color, children, ...props }) => (
-    <div {...props}>
-        {children}
-        <Inner>
-            <MenuToggle color={color} />
-        </Inner>
-    </div>
-)
-
-export const Wrap = styled(UnstyledWrap)`
-    overflow: hidden;
-    position: relative;
 `
 
 export default MenuToggle

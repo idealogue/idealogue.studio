@@ -1,15 +1,32 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
+import MenuToggle from '$shared/MenuToggle'
 
-const UnstyledSection = ({ theme, ...props }) => (
+const ToggleWrapper = styled.div`
+    clip: rect(0, auto, auto, 0);
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 140px;
+`
+
+const UnstyledSection = ({ theme, children, ...props }) => (
     <ThemeProvider theme={theme}>
-        <div {...props} />
+        <div {...props}>
+            {children}
+            <ToggleWrapper>
+                <MenuToggle />
+            </ToggleWrapper>
+        </div>
     </ThemeProvider>
 )
 
 const Section = styled(UnstyledSection)`
     background-color: ${({ theme }) => theme.backgroundColor};
     color: ${({ theme }) => theme.color};
+    overflow: hidden;
+    position: relative;
 
     :first-child {
         height: 100%;

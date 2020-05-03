@@ -13,7 +13,6 @@ import BrowsingVideo from '$hux/BrowsingVideo'
 import Pics from '$hux/Pics'
 import Iconic from '$hux/Iconic'
 import Neon from '$hux/Neon'
-import { Wrap as MenuToggleWrap } from '$shared/MenuToggle'
 
 const LayoutTheme = {
     backgroundColor: '#dd2712',
@@ -42,44 +41,40 @@ const BlackTheme = {
 const CobaltPage = () => (
     <Project id={HUXTABURGER}>
         <Layout theme={LayoutTheme}>
-            <MenuToggleWrap color="#ffffff">
-                <Section theme={RedTheme}>
-                    <Hero>
-                        <p>
-                            We designed the original brand, site and print work, and have been happy
-                            to see them grow into the Melbourne icon they are today.
-                        </p>
-                    </Hero>
-                </Section>
-            </MenuToggleWrap>
-            <MenuToggleWrap color="#323232">
-                <Section theme={WhiteTheme}>
-                    <SectionHeader no={1}>
-                        Milk Bar vs Diner
-                    </SectionHeader>
-                    <Container>
-                        <p>
-                            One of the first players in the now-crowded gourmet burger scene, the
-                            original brand is a mashup of classic American diner with a 70’s Aussie
-                            milk bar typographic aesthetic — pressed metal diamonds meets red, white
-                            &amp; blue fly strips, with the king of beef at the centre of it all.
-                        </p>
-                    </Container>
-                    <Pics />
-                    <SectionHeader no={2}>
-                        Beery Browsing
-                    </SectionHeader>
-                    <Container>
-                        <p>
-                            The key UX concept that drove the site design was simple. Users should be
-                            be able to flip through the site on a phone with one hand while holding
-                            a beer in the other. Also, early on, we decided we want to be able to see
-                            what was in the burgers by tapping them. Put another way, exploding burgers.
-                        </p>
-                        <BrowsingVideo />
-                    </Container>
-                </Section>
-            </MenuToggleWrap>
+            <Section theme={RedTheme}>
+                <Hero>
+                    <p>
+                        We designed the original brand, site and print work, and have been happy
+                        to see them grow into the Melbourne icon they are today.
+                    </p>
+                </Hero>
+            </Section>
+            <Section theme={WhiteTheme}>
+                <SectionHeader no={1}>
+                    Milk Bar vs Diner
+                </SectionHeader>
+                <Container>
+                    <p>
+                        One of the first players in the now-crowded gourmet burger scene, the
+                        original brand is a mashup of classic American diner with a 70’s Aussie
+                        milk bar typographic aesthetic — pressed metal diamonds meets red, white
+                        &amp; blue fly strips, with the king of beef at the centre of it all.
+                    </p>
+                </Container>
+                <Pics />
+                <SectionHeader no={2}>
+                    Beery Browsing
+                </SectionHeader>
+                <Container>
+                    <p>
+                        The key UX concept that drove the site design was simple. Users should be
+                        be able to flip through the site on a phone with one hand while holding
+                        a beer in the other. Also, early on, we decided we want to be able to see
+                        what was in the burgers by tapping them. Put another way, exploding burgers.
+                    </p>
+                    <BrowsingVideo />
+                </Container>
+            </Section>
             <Section theme={BlueTheme}>
                 <SectionHeader no={3}>
                     Making an Icon iconic
