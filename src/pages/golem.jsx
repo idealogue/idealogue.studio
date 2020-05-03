@@ -36,11 +36,13 @@ const DarkBlueTheme = {
 const WhiteTheme = {
     backgroundColor: '#f9f9f9',
     color: '#575757',
+    captionColor: '#9e9e9e',
 }
 
 const GrayishTheme = {
     backgroundColor: '#f1f1f1',
     color: '#575757',
+    captionColor: '#9e9e9e',
 }
 
 const BlackTheme = {
