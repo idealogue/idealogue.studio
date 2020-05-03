@@ -3,6 +3,7 @@ import styled from 'sc'
 import Image from '$streamr/Image'
 import { Row, Cell, Header, Fontface, Mark } from '$shared/Brand'
 import { PLEX_MONO, PLEX_SANS } from '$utils/css'
+import Spacer from '$shared/Spacer'
 
 const LargeMark = styled(Mark)`
     margin: 0 auto;
@@ -36,7 +37,9 @@ const PlexMono = styled(Fontface)`
 
 const UnstyledBrandElements = (props) => (
     <div {...props}>
-        <LargeMark src={Image.LOGO_ROUNDED} alt="Logo" />
+        <Spacer tail>
+            <LargeMark src={Image.LOGO_ROUNDED} alt="Logo" />
+        </Spacer>
         <Row>
             <Cell>
                 <Header>Mark Vertical Lockup</Header>

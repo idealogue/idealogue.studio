@@ -19,6 +19,7 @@ import ConsensusFilm from '$streamr/ConsensusFilm'
 import BrandElements from '$streamr/BrandElements'
 import Icons from '$streamr/Icons'
 import Placeholder from '$shared/Placeholder'
+import Spacer from '$shared/Spacer'
 
 const LayoutTheme = {
     backgroundColor: '#06042a',
@@ -45,8 +46,10 @@ const CobaltPage = () => (
                     </p>
                 </Hero>
             </Section>
-            <Section theme={DarkBlueTheme}>
-                <BrandFilm />
+            <Section theme={DarkBlueTheme} tail>
+                <Spacer tail>
+                    <BrandFilm />
+                </Spacer>
                 <SectionHeader no={1}>
                     An introduction to realtime data
                 </SectionHeader>
@@ -64,7 +67,9 @@ const CobaltPage = () => (
                         worked on a website that helped to raise $30M in an initial coin offering,
                         and then turned focus to a rebrand.
                     </p>
-                    <BrandElements />
+                    <Spacer head tail>
+                        <BrandElements />
+                    </Spacer>
                     <p>
                         The existing brand was fairly basic, but they were attached to the name, and
                         wanted to retain some connection to the original brand. We kept the name and
@@ -76,7 +81,7 @@ const CobaltPage = () => (
                     </p>
                 </Container>
             </Section>
-            <Section theme={BlueTheme}>
+            <Section theme={BlueTheme} head tail>
                 <SectionHeader no={2}>
                     Creating a stylised data diorama
                 </SectionHeader>
@@ -92,14 +97,16 @@ const CobaltPage = () => (
                         largely invisible data products and services, along with a touch of humour.
                     </p>
                 </Container>
-                <Icons />
+                <Spacer head tail>
+                    <Icons />
+                </Spacer>
                 <Placeholder
                     caption="A range of custom icons used across website, apps and social media"
                 >
                     Icon grid carousel
                 </Placeholder>
             </Section>
-            <Section theme={DarkBlueTheme}>
+            <Section theme={DarkBlueTheme} head>
                 <SectionHeader no={3}>
                     Consensus New York — an early milestone
                 </SectionHeader>
@@ -123,64 +130,72 @@ const CobaltPage = () => (
                 <ConsensusFilm />
                 <Placeholder>Consensus gallery row #1</Placeholder>
                 <Placeholder>Consensus gallery row #2</Placeholder>
-                <SectionHeader no={4}>
-                    Core - one app to rule them all
-                </SectionHeader>
-                <Container>
-                    <p>
-                        Streamr had some powerful tools, included a node & cable visual editor for
-                        building realtime data processes, and a stream creation tool. Once we added
-                        the Marketplace, the divide became quite stark between old and new. We
-                        realised the main weakness was a lack of central point to manage all the
-                        resources users could create. So we designed a set of user pages to glue
-                        everything together, which we eventually renamed Core.
-                    </p>
-                    <p>
-                        Core now includes editors to create streams, canvases and dashboards, as
-                        well as products for the Marketplace, including the Data Unions feature
-                        for building crowdsourced data products.
-                    </p>
-                </Container>
-                <EditorMockup />
+                <Spacer head>
+                    <SectionHeader no={4}>
+                        Core - one app to rule them all
+                    </SectionHeader>
+                    <Container>
+                        <p>
+                            Streamr had some powerful tools, included a node & cable visual editor for
+                            building realtime data processes, and a stream creation tool. Once we added
+                            the Marketplace, the divide became quite stark between old and new. We
+                            realised the main weakness was a lack of central point to manage all the
+                            resources users could create. So we designed a set of user pages to glue
+                            everything together, which we eventually renamed Core.
+                        </p>
+                        <p>
+                            Core now includes editors to create streams, canvases and dashboards, as
+                            well as products for the Marketplace, including the Data Unions feature
+                            for building crowdsourced data products.
+                        </p>
+                    </Container>
+                </Spacer>
+                <Spacer head tail>
+                    <EditorMockup />
+                </Spacer>
                 <Modules />
-                <SectionHeader no={5}>
-                    Wrapping it all into one package
-                </SectionHeader>
-                <Container>
-                    <p>
-                        All of this was wrapped up into the full public website, launched in 2019.
-                        With the help of another of our regular collaborators, front end dev
-                        Mariusz Roliński, we wrote and designed a new site that incorporated
-                        realtime live data showing the amount of traffic passing through the
-                        Streamr Network, as well as live token prices. Another key part of this
-                        was the design and rewriting of an all-new Docs section.
-                    </p>
-                </Container>
+                <Spacer head tail>
+                    <SectionHeader no={5}>
+                        Wrapping it all into one package
+                    </SectionHeader>
+                    <Container>
+                        <p>
+                            All of this was wrapped up into the full public website, launched in 2019.
+                            With the help of another of our regular collaborators, front end dev
+                            Mariusz Roliński, we wrote and designed a new site that incorporated
+                            realtime live data showing the amount of traffic passing through the
+                            Streamr Network, as well as live token prices. Another key part of this
+                            was the design and rewriting of an all-new Docs section.
+                        </p>
+                    </Container>
+                </Spacer>
                 <PublicSiteView />
-                <SectionHeader no={6}>
-                    Credits
-                    <Bullet />
-                    <Link as="a" href="https://streamr.network/" target="_blank" rel="noopener noreferrer">
-                        Visit Streamr website
-                    </Link>
-                </SectionHeader>
-                <Contributors>
-                    <Contributor name="Ross Harrington" role="Brand design &amp; animation" />
-                    <Contributor name="Matt Innes" role="Brand, Design lead" />
-                    <Contributor name="Saori Kajiwara" role="UI/UX design" />
-                    <Contributor name="Stuart Wade" role="Illustration &amp; animation" />
-                    <br />
-                    <Contributor name="Matthew Fontana" role="Front end dev" />
-                    <Contributor name="Juha Haavisto" role=" Front end lead" />
-                    <Contributor name="Tuomas Koponen" role="Front end dev" />
-                    <Contributor name="Tim Oxley" role=" Core app lead" />
-                    <Contributor name="Henri Pihkala" role="CEO / Product lead" />
-                    <Contributor name="Mariusz Roliński" role="Public site lead" />
-                </Contributors>
-                <Container>
-                    <hr />
-                </Container>
-                <NextProject />
+                <Spacer head tail>
+                    <SectionHeader no={6}>
+                        Credits
+                        <Bullet />
+                        <Link as="a" href="https://streamr.network/" target="_blank" rel="noopener noreferrer">
+                            Visit Streamr website
+                        </Link>
+                    </SectionHeader>
+                    <Contributors>
+                        <Contributor name="Ross Harrington" role="Brand design &amp; animation" />
+                        <Contributor name="Matt Innes" role="Brand, Design lead" />
+                        <Contributor name="Saori Kajiwara" role="UI/UX design" />
+                        <Contributor name="Stuart Wade" role="Illustration &amp; animation" />
+                        <br />
+                        <Contributor name="Matthew Fontana" role="Front end dev" />
+                        <Contributor name="Juha Haavisto" role=" Front end lead" />
+                        <Contributor name="Tuomas Koponen" role="Front end dev" />
+                        <Contributor name="Tim Oxley" role=" Core app lead" />
+                        <Contributor name="Henri Pihkala" role="CEO / Product lead" />
+                        <Contributor name="Mariusz Roliński" role="Public site lead" />
+                    </Contributors>
+                    <Container>
+                        <hr />
+                    </Container>
+                    <NextProject />
+                </Spacer>
             </Section>
         </Layout>
     </Project>
