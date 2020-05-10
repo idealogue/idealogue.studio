@@ -33,6 +33,7 @@ const UnstyledGallery = ({
     children,
     defaultSlide,
     onChange,
+    currentWingSize = 0,
     ...props
 }) => {
     const [slide, setSlide] = useState(defaultSlide)
@@ -112,11 +113,15 @@ const UnstyledGallery = ({
                         {[...Array(n)].map((_, index) => {
                             const key = slide - ((n - 1) / 2) + index
 
+                            const active = Math.abs(slide - key) <= currentWingSize
+
                             return (
                                 <SlideContainer key={key}>
                                     {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                                     <div onClick={(key < slide && onPrev) || (key > slide && onNext) || undefined}>
-                                        {childArr[slideIndex(key, count)]}
+                                        {React.cloneElement(childArr[slideIndex(key, count)], {
+                                            active,
+                                        })}
                                     </div>
                                 </SlideContainer>
                             )

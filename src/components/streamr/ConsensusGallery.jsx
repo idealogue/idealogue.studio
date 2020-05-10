@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'sc'
+import styled, { css } from 'sc'
 import Image from '$streamr/Image'
 import Gallery from '$shared/Gallery'
 import Container from '$shared/Container'
@@ -10,13 +10,21 @@ const Viewport = styled.div`
     width: 600px;
 `
 
+const Slide = styled(FluidImage)`
+    transition: 200ms opacity;
+
+    ${({ active }) => !active && css`
+        opacity: 0.5;
+    `}
+`
+
 const UnstyledConsensusGallery = ({ items, ...props }) => (
     <div {...props}>
         <Container>
             <Viewport>
                 <Gallery defaultSlide={0}>
                     {items.map((src) => (
-                        <FluidImage key={src} src={src} alt="" />
+                        <Slide key={src} src={src} alt="" />
                     ))}
                 </Gallery>
             </Viewport>
