@@ -19,6 +19,10 @@ const sources = {
     vizor: [
         ['/videos/vizor.mp4', 'video/mp4'],
     ],
+    streamrIcons: [
+        ['/videos/streamr_icon_loop.mp4', 'video/mp4'],
+    ],
+
 }
 
 const Video = ({ id, ...props }) => (

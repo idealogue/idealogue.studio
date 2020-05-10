@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'sc'
 import CaptionedContainer from '$shared/CaptionedContainer'
-import FluidImage from '$shared/FluidImage'
 import Padded from '$shared/Padded'
 import Image from '$streamr/Image'
+import UnstyledVideo from '$shared/Video'
 
-const IconImage = styled(FluidImage)`
+const Video = styled(UnstyledVideo)`
     border-radius: 4px;
+    display: block;
+    max-width: 100%;
 `
 
 const Icons = (props) => (
@@ -15,7 +17,14 @@ const Icons = (props) => (
         caption="Stuart’s icon loops for Streamr’s Mini-Explainer social media series"
     >
         <Padded>
-            <IconImage src={Image.ICONS_2X} alt="Icons" fill />
+            <Video
+                id="streamrIcons"
+                poster={Image.ICONS_2X}
+                autoPlay
+                playsInline
+                muted
+                loop
+            />
         </Padded>
     </CaptionedContainer>
 )
