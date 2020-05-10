@@ -19,8 +19,9 @@ import ConsensusFilm from '$streamr/ConsensusFilm'
 import BrandElements from '$streamr/BrandElements'
 import Icons from '$streamr/Icons'
 import IconGrid from '$streamr/IconGrid'
-import Placeholder from '$shared/Placeholder'
 import Spacer from '$shared/Spacer'
+import ConsensusGallery from '$streamr/ConsensusGallery'
+import Image from '$streamr/Image'
 
 const LayoutTheme = {
     backgroundColor: '#06042a',
@@ -124,9 +125,15 @@ const CobaltPage = () => (
                         incorporating 3D print of the buildings of midtown Manhattan.
                     </p>
                 </Container>
-                <ConsensusFilm />
-                <Placeholder>Consensus gallery row #1</Placeholder>
-                <Placeholder>Consensus gallery row #2</Placeholder>
+                <Spacer head>
+                    <ConsensusFilm />
+                </Spacer>
+                <ConsensusGallery
+                    items={Image.CONSENSUS_GALLERY_A}
+                />
+                <ConsensusGallery
+                    items={Image.CONSENSUS_GALLERY_B}
+                />
                 <Spacer head>
                     <SectionHeader no={4}>
                         Core - one app to rule them all

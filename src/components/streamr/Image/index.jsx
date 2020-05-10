@@ -42,6 +42,18 @@ import MACHINE_8 from './machine8.png'
 import MACHINE_8_2X from './machine8@2x.png'
 import MACHINE_9 from './machine9.png'
 import MACHINE_9_2X from './machine9@2x.png'
+import CONSENSUS_A0 from './consensus_a0.jpg'
+import CONSENSUS_A1 from './consensus_a1.jpg'
+import CONSENSUS_A2 from './consensus_a2.jpg'
+import CONSENSUS_A0_2X from './consensus_a0@2x.png'
+import CONSENSUS_A1_2X from './consensus_a1@2x.png'
+import CONSENSUS_A2_2X from './consensus_a2@2x.png'
+import CONSENSUS_B0 from './consensus_b0.jpg'
+import CONSENSUS_B1 from './consensus_b1.jpg'
+import CONSENSUS_B2 from './consensus_b2.jpg'
+import CONSENSUS_B0_2X from './consensus_b0@2x.png'
+import CONSENSUS_B1_2X from './consensus_b1@2x.png'
+import CONSENSUS_B2_2X from './consensus_b2@2x.png'
 
 const MACHINE = [
     MACHINE_0,
@@ -79,6 +91,18 @@ const MACHINE_2X = [
     MACHINE_14_2X,
 ]
 
+const CONSENSUS_GALLERY_A = [
+    CONSENSUS_A0_2X,
+    CONSENSUS_A1_2X,
+    CONSENSUS_A2_2X,
+]
+
+const CONSENSUS_GALLERY_B = [
+    CONSENSUS_B0_2X,
+    CONSENSUS_B1_2X,
+    CONSENSUS_B2_2X,
+]
+
 export default {
     ICONS,
     ICONS_2X,
@@ -96,4 +120,6 @@ export default {
     MAP,
     PUBLIC_SITE,
     PUBLIC_SITE_2X,
+    CONSENSUS_GALLERY_A,
+    CONSENSUS_GALLERY_B,
 }
