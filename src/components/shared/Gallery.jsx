@@ -22,7 +22,7 @@ const Tape = styled(Swipeable)`
 
 export const SlideContainer = styled.div`
     flex-basis: 100%;
-    padding: 0 24px;
+    padding: 0 ${({ gutter }) => Math.floor(gutter / 2)}px;
 `
 
 export const slideIndex = (at, n) => ((at % n) + n) % n
@@ -34,6 +34,7 @@ const UnstyledGallery = ({
     defaultSlide,
     onChange,
     currentWingSize = 0,
+    gutter = 48,
     ...props
 }) => {
     const [slide, setSlide] = useState(defaultSlide)
@@ -116,7 +117,7 @@ const UnstyledGallery = ({
                             const active = Math.abs(slide - key) <= currentWingSize
 
                             return (
-                                <SlideContainer key={key}>
+                                <SlideContainer key={key} gutter={gutter}>
                                     {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
                                     <div onClick={(key < slide && onPrev) || (key > slide && onNext) || undefined}>
                                         {React.cloneElement(childArr[slideIndex(key, count)], {

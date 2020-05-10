@@ -1,21 +1,27 @@
 import React from 'react'
-import styled from 'sc'
+import styled, { css } from 'sc'
 import Image from '$streamr/Image'
 import CaptionedContainer from '$shared/CaptionedContainer'
 import FluidImage from '$shared/FluidImage'
-
-const Row = styled.div`
-    display: flex;
-    flex-basis: 100%;
-    justify-content: space-between;
-
-    & + & {
-        margin-top: 192px;
-    }
-`
+import Container from '$shared/Container'
+import Gallery from '$shared/Gallery'
 
 const Cell = styled.div`
+    transition: 200ms opacity;
     width: 264px;
+
+    ${({ active }) => !active && css`
+        opacity: 0.5;
+    `}
+`
+
+const Viewport = styled.div`
+    margin: 0 auto 0;
+    width: 368px;
+
+    & + & {
+        margin-top: 176px;
+    }
 `
 
 const Inner = styled.div`
@@ -38,19 +44,21 @@ const UnstyledIconGrid = (props) => (
         caption="A range of custom icons used across website, apps and social media"
     >
         <div {...props}>
-            <Inner>
+            <Container>
                 {[0, 5, 10].map((i) => (
-                    <Row key={i}>
-                        {Image.MACHINE_2X.slice(i, i + 5).map((src) => (
-                            <Cell key={src}>
-                                <ImageWrapper>
-                                    <FluidImage src={src} alt="" />
-                                </ImageWrapper>
-                            </Cell>
-                        ))}
-                    </Row>
+                    <Viewport key={i}>
+                        <Gallery defaultSlide={0} gutter={0} currentWingSize={1}>
+                            {Image.MACHINE_2X.slice(i, i + 5).map((src) => (
+                                <Cell key={src}>
+                                    <ImageWrapper>
+                                        <FluidImage src={src} alt="" />
+                                    </ImageWrapper>
+                                </Cell>
+                            ))}
+                        </Gallery>
+                    </Viewport>
                 ))}
-            </Inner>
+            </Container>
         </div>
     </CaptionedContainer>
 )
