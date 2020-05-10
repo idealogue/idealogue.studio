@@ -1,8 +1,9 @@
-import React, { useState, useCallback, useRef, useEffect } from 'react'
+import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react'
 import { Swipeable } from 'react-swipeable'
 import styled from 'sc'
 import gsap from 'gsap'
 import useMounted from '$hooks/useMounted'
+import Cursor from '$shared/Cursor'
 
 const Direction = {
     RIGHT: 'right',
@@ -101,6 +102,11 @@ const UnstyledGallery = ({
         animate(Direction.LEFT)
     }, [])
 
+    const directionToClick = useMemo(() => ({
+        right: onNext,
+        left: onPrev,
+    }))
+
     return (
         // eslint-disable-next-line jsx-a11y/no-static-element-interactions
         <div {...props}>
@@ -116,14 +122,18 @@ const UnstyledGallery = ({
 
                             const active = Math.abs(slide - key) <= currentWingSize
 
+                            const arrowDirection = !active ? (slide > key ? 'left' : 'right') : 'none'
+
                             return (
                                 <SlideContainer key={key} gutter={gutter}>
-                                    {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
-                                    <div onClick={(key < slide && onPrev) || (key > slide && onNext) || undefined}>
+                                    <Cursor
+                                        direction={arrowDirection}
+                                        onClick={directionToClick[arrowDirection]}
+                                    >
                                         {React.cloneElement(childArr[slideIndex(key, count)], {
                                             active,
                                         })}
-                                    </div>
+                                    </Cursor>
                                 </SlideContainer>
                             )
                         })}

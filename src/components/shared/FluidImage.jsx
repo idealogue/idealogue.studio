@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-const UnstyledFluidImage = ({ fill, alt, ...props }) => <img {...props} alt={alt} />
+const UnstyledFluidImage = ({ fill, alt, active, ...props }) => <img {...props} alt={alt} />
 
 const FluidImage = styled(UnstyledFluidImage)`
     display: block;
