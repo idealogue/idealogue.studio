@@ -24,12 +24,6 @@ const Viewport = styled.div`
     }
 `
 
-const Inner = styled.div`
-    left: -5%;
-    position: relative;
-    width: 110%;
-`
-
 const ImageWrapper = styled.div`
     height: 188px;
     left: -98px;

@@ -6,6 +6,7 @@ import Spacer from '$shared/Spacer'
 const ToggleWrapper = styled.div`
     clip: rect(0, auto, auto, 0);
     height: 100%;
+    pointer-events: none;
     position: absolute;
     right: 0;
     top: 0;

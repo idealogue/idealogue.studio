@@ -44,6 +44,7 @@ const UnstyledMenuToggle = (props) => {
 const MenuToggle = styled(UnstyledMenuToggle)`
     color: ${({ theme }) => theme.toggleColor || '#ffffff'};
     height: 140px;
+    pointer-events: all;
     position: fixed;
     right: 0;
     top: 0;

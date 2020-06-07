@@ -132,6 +132,7 @@ const UnstyledCursor = ({
     }, [onMouseLeaveProp, setDirection])
 
     return (
+        // eslint-disable-next-line jsx-a11y/no-static-element-interactions
         <div
             {...props}
             onMouseEnter={onMouseEnter}

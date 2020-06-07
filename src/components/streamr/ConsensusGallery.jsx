@@ -1,6 +1,5 @@
 import React from 'react'
 import styled, { css } from 'sc'
-import Image from '$streamr/Image'
 import Gallery from '$shared/Gallery'
 import Container from '$shared/Container'
 import FluidImage from '$shared/FluidImage'

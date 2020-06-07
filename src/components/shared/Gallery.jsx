@@ -74,7 +74,7 @@ const UnstyledGallery = ({
         if (onChange) {
             onChange(slide)
         }
-    }, [slide])
+    }, [slide, isMounted, onChange])
 
     const animate = useCallback((direction) => {
         const forward = direction === Direction.RIGHT
@@ -96,16 +96,16 @@ const UnstyledGallery = ({
 
     const onNext = useCallback(() => {
         animate(Direction.RIGHT)
-    }, [])
+    }, [animate])
 
     const onPrev = useCallback(() => {
         animate(Direction.LEFT)
-    }, [])
+    }, [animate])
 
     const directionToClick = useMemo(() => ({
         right: onNext,
         left: onPrev,
-    }))
+    }), [onNext, onPrev])
 
     return (
         // eslint-disable-next-line jsx-a11y/no-static-element-interactions
