@@ -1,19 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
 import Container from '$shared/Container'
+import { useTopic } from '$shared/Topic'
 
-const UnstyledSectionHeader = ({ no, children, ...props }) => (
-    <div {...props}>
-        <Container>
-            <div className="no">
-                {no < 10 ? `0${no}` : no}
-            </div>
-            <div className="body">
-                {children}
-            </div>
-        </Container>
-    </div>
-)
+const UnstyledSectionHeader = ({ no, children, ...props }) => {
+    const { title, hash } = useTopic()
+
+    return (
+        <div {...props}>
+            <Container>
+                <div className="no">
+                    {no < 10 ? `0${no}` : no}
+                </div>
+                <div className="body">
+                    {hash ? (
+                        <>
+                            <a href={`#${hash}`}>
+                                {title}
+                            </a>
+                            {children}
+                        </>
+                    ) : (
+                        children
+                    )}
+                </div>
+            </Container>
+        </div>
+    )
+}
 
 const SectionHeader = styled(UnstyledSectionHeader)`
     font-size: 30px;
@@ -28,6 +42,11 @@ const SectionHeader = styled(UnstyledSectionHeader)`
 
     .no {
         margin-bottom: 0.8em;
+    }
+
+    a {
+        color: inherit !important;
+        text-decoration: none !important;
     }
 `
 
