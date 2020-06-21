@@ -34,7 +34,7 @@ const WhiteTheme = {
     color: '#575757',
 }
 
-const CobaltPage = () => (
+const HivePage = () => (
     <Project id={HIVE}>
         <Layout theme={LayoutTheme}>
             <Section theme={YellowWhiteTheme}>
@@ -134,4 +134,4 @@ const CobaltPage = () => (
 )
 
 
-export default CobaltPage
+export default HivePage

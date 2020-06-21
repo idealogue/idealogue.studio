@@ -37,7 +37,7 @@ const BlueTheme = {
     color: '#ffffff',
 }
 
-const CobaltPage = () => (
+const StreamrPage = () => (
     <Project id={STREAMR}>
         <Layout theme={LayoutTheme}>
             <Section theme={DarkBlueTheme}>
@@ -205,4 +205,4 @@ const CobaltPage = () => (
     </Project>
 )
 
-export default CobaltPage
+export default StreamrPage

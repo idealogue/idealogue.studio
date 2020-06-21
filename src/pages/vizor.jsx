@@ -39,7 +39,7 @@ const MidnightBlueTheme = {
     color: '#ffffff',
 }
 
-const CobaltPage = () => (
+const VizorPage = () => (
     <Project id={VIZOR}>
         <Layout theme={LayoutTheme}>
             <Section theme={DarkBlueTheme}>
@@ -133,7 +133,7 @@ const CobaltPage = () => (
                 </SectionHeader>
                 <Container>
                     <p>
-                        The Patches editor is powerful, but seeing strong user interest in 360 media led to building a new, user-friendly app for telling stories and making tours with 360 images. Built from scratch in React, Vizor 360  is fast, light and easy to use. Try it out here.
+                        The Patches editor is powerful, but seeing strong user interest in 360 media led to building a new, user-friendly app for telling stories and making tours with 360 images. Built from scratch in React, Vizor 360 is fast, light and easy to use. Try it out here.
                     </p>
                     <Spacer head>
                         <BrowserFrame shadow dark>
@@ -193,4 +193,4 @@ const CobaltPage = () => (
     </Project>
 )
 
-export default CobaltPage
+export default VizorPage

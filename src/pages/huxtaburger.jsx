@@ -39,7 +39,7 @@ const BlackTheme = {
     color: '#ffffff',
 }
 
-const CobaltPage = () => (
+const HuxtaburgerPage = () => (
     <Project id={HUXTABURGER}>
         <Layout theme={LayoutTheme}>
             <Section theme={RedTheme}>
@@ -138,4 +138,4 @@ const CobaltPage = () => (
     </Project>
 )
 
-export default CobaltPage
+export default HuxtaburgerPage

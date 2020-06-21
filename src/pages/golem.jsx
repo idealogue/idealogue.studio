@@ -50,7 +50,7 @@ const BlackTheme = {
     color: '#ffffff',
 }
 
-const CobaltPage = () => (
+const GolemPage = () => (
     <Project id={GOLEM}>
         <Layout theme={LayoutTheme}>
             <Section theme={BlueTheme}>
@@ -197,4 +197,4 @@ const CobaltPage = () => (
     </Project>
 )
 
-export default CobaltPage
+export default GolemPage
