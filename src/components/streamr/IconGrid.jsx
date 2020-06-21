@@ -7,6 +7,7 @@ import Container from '$shared/Container'
 import Gallery from '$shared/Gallery'
 
 const Cell = styled.div`
+    margin: 0 auto;
     transition: 200ms opacity;
     width: 264px;
 
@@ -16,7 +17,7 @@ const Cell = styled.div`
 `
 
 const Viewport = styled.div`
-    margin: 0 auto 0;
+    margin: 0 auto;
     width: 368px;
 
     & + & {
