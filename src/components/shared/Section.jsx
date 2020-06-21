@@ -33,6 +33,7 @@ const Section = styled(UnstyledSection)`
     :first-child {
         height: 100%;
         max-height: 1440px;
+        min-height: 640px;
     }
 
     p {

@@ -3,29 +3,37 @@ import styled from 'styled-components'
 import { useProject } from '$shared/Project'
 import Container from '$shared/Container'
 import HeroImage from '$shared/HeroImage'
+import ScrollIndicator from '$shared/ScrollIndicator'
 
-const UnstyledHero = ({ className, children }) => {
+const UnstyledHero = ({ children, ...props }) => {
     const { name } = useProject()
 
     return (
-        <div className={className}>
-            <Container>
-                <h1>
-                    {name}
-                </h1>
-                {children}
-                <HeroImage />
-            </Container>
+        <div {...props}>
+            <div
+                css={`
+                    align-items: center;
+                    display: flex;
+                    height: 100%;
+                    text-align: center;
+                `}
+            >
+                <Container>
+                    <h1>
+                        {name}
+                    </h1>
+                    {children}
+                    <HeroImage />
+                </Container>
+            </div>
+            <ScrollIndicator />
         </div>
     )
 }
 
 const Hero = styled(UnstyledHero)`
-    align-items: center;
-    display: flex;
     height: 100%;
-    min-height: 640px;
-    text-align: center;
+    position: relative;
 
     h1 {
         font-family: 'Publico Text';
