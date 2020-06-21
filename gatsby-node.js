@@ -4,6 +4,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     actions.setWebpackConfig({
         resolve: {
             alias: {
+                '~': path.resolve(__dirname, 'src'),
                 '$hooks': path.join(__dirname, 'src/hooks'),
                 '$shared': path.join(__dirname, 'src/components/shared'),
                 '$utils': path.join(__dirname, 'src/utils'),
