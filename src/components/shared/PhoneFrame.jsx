@@ -4,7 +4,6 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
     video {
         display: block;
-        height: 510px;
         width: 298px;
     }
 
