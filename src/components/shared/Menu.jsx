@@ -3,14 +3,8 @@ import styled, { css, ThemeProvider, createGlobalStyle } from 'sc'
 import Link from '$shared/Link'
 import { lineup, projects } from '$shared/Project'
 import { CloseButton as UnstyledCloseButton } from '$shared/MenuToggle'
+import ScrollSuppressor from '$shared/ScrollSuppressor'
 import useMenu from '$hooks/useMenu'
-
-const GlobalAdjustments = createGlobalStyle`
-    html,
-    body {
-        overflow: hidden;
-    }
-`
 
 const Logo = styled.h1`
     font-family: 'Publico Text';
@@ -93,8 +87,8 @@ const UnstyledMenu = (props) => {
 
     return !!isOpen && (
         <ThemeProvider theme={DefaultTheme}>
-            <GlobalAdjustments />
             <div {...props}>
+                <ScrollSuppressor />
                 <CloseButton onClick={close} />
                 <Inner>
                     <Wrapper>
@@ -143,6 +137,7 @@ const Menu = styled(UnstyledMenu)`
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 100;
 `
 
 export default Menu
