@@ -40,7 +40,7 @@ const CobaltPage = () => (
                     </p>
                 </Hero>
             </Section>
-            <Section theme={LightTheme} head tail>
+            <Section theme={LightTheme} head tail menuToggleColor="#575757">
                 <SectionHeader no={1}>
                     Crowd Powered
                 </SectionHeader>
@@ -86,7 +86,7 @@ const CobaltPage = () => (
                     <BugImages />
                 </Spacer>
             </Section>
-            <Section theme={LightTheme} head tail>
+            <Section theme={LightTheme} head tail menuToggleColor="#575757">
                 <SectionHeader no={4}>
                     Credits
                     <Bullet />

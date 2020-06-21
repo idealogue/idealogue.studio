@@ -50,7 +50,7 @@ const HuxtaburgerPage = () => (
                     </p>
                 </Hero>
             </Section>
-            <Section theme={WhiteTheme} head tail>
+            <Section theme={WhiteTheme} head menuToggleColor="#575757">
                 <SectionHeader no={1}>
                     Milk Bar vs Diner
                 </SectionHeader>
@@ -65,9 +65,13 @@ const HuxtaburgerPage = () => (
                 <Spacer head tail>
                     <Logo />
                 </Spacer>
+            </Section>
+            <Section theme={WhiteTheme}>
                 <CollageA />
                 <CollageB />
                 <LargeSign />
+            </Section>
+            <Section theme={WhiteTheme} tail menuToggleColor="#575757">
                 <Spacer head>
                     <SectionHeader no={2}>
                         Beery Browsing

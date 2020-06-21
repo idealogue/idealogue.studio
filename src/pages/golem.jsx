@@ -61,7 +61,7 @@ const GolemPage = () => (
                     </p>
                 </Hero>
             </Section>
-            <Section theme={WhiteTheme} head tail>
+            <Section theme={WhiteTheme} head tail menuToggleColor="#575757">
                 <SectionHeader no={1}>
                     User Experience First
                 </SectionHeader>
@@ -88,7 +88,7 @@ const GolemPage = () => (
                     </p>
                 </Container>
             </Section>
-            <Section theme={GrayishTheme} head tail>
+            <Section theme={GrayishTheme} head tail menuToggleColor="#575757">
                 <UiProcess />
             </Section>
             <Section theme={BlueTheme} head tail>

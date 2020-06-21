@@ -45,7 +45,7 @@ const HivePage = () => (
                     </p>
                 </Hero>
             </Section>
-            <Section theme={WhiteTheme} head tail>
+            <Section theme={WhiteTheme} head tail menuToggleColor="#575757">
                 <SectionHeader no={1}>
                     Hex Wild
                 </SectionHeader>
@@ -78,7 +78,7 @@ const HivePage = () => (
                     <OldWallet />
                 </Spacer>
             </Section>
-            <Section theme={YellowGrayTheme} head tail>
+            <Section theme={YellowGrayTheme} head tail menuToggleColor="#575757">
                 <SectionHeader no={3}>
                     Hive Wallet 2.0
                 </SectionHeader>
@@ -95,7 +95,7 @@ const HivePage = () => (
                     <NewWallet />
                 </Spacer>
             </Section>
-            <Section theme={WhiteTheme} head tail>
+            <Section theme={WhiteTheme} head tail menuToggleColor="#575757">
                 <SectionHeader no={4}>
                     Hive Hosted
                 </SectionHeader>
