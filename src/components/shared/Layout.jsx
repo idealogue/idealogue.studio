@@ -10,6 +10,7 @@ import { MenuProvider } from '$hooks/useMenu'
 import useScrollDirection from '$hooks/useScrollDirection'
 import MenuToggle from '$shared/MenuToggle'
 import { Arrow, Provider as ArrowProvider } from '$shared/Cursor'
+import Metatags from '$shared/Metatags'
 
 const GlobalStyle = createGlobalStyle`
     html,
@@ -53,6 +54,7 @@ const Layout = ({ children, theme }) => {
             ) : (
                 <Helmet title={`Idealogue`} />
             )}
+            <Metatags />
             <MenuProvider>
                 <ArrowProvider>
                     {children}
