@@ -29,7 +29,7 @@ export const CloseButton = (props) => (
     </Button>
 )
 
-const UnstyledMenuToggle = (props) => {
+const UnstyledMenuToggle = ({ backgroundColor, ...props }) => {
     const { open } = useMenu()
 
     return (
