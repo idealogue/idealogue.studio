@@ -5,6 +5,7 @@ import Spacer from '$shared/Spacer'
 
 const ToggleWrapper = styled.div`
     clip: rect(0, auto, auto, 0);
+    color: ${({ toggleColor }) => toggleColor};
     height: 100%;
     pointer-events: none;
     position: absolute;
@@ -13,12 +14,12 @@ const ToggleWrapper = styled.div`
     width: 140px;
 `
 
-const UnstyledSection = ({ theme, children, ...props }) => (
+const UnstyledSection = ({ theme, children, menuToggleColor = '#ffffff', menuToggleBackground, ...props }) => (
     <ThemeProvider theme={theme}>
         <Spacer {...props}>
             {children}
-            <ToggleWrapper>
-                <MenuToggle />
+            <ToggleWrapper toggleColor={menuToggleColor}>
+                <MenuToggle backgroundColor={menuToggleBackground ? theme.backgroundColor : undefined} />
             </ToggleWrapper>
         </Spacer>
     </ThemeProvider>

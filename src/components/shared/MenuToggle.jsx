@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'sc'
+import styled, { css } from 'sc'
 import UnstyledGlyph, { NAV, CLOSE } from '$shared/Glyph'
 import useMenu from '$hooks/useMenu'
 
@@ -42,7 +42,7 @@ const UnstyledMenuToggle = (props) => {
 }
 
 const MenuToggle = styled(UnstyledMenuToggle)`
-    color: ${({ theme }) => theme.toggleColor || '#ffffff'};
+    color: inherit;
     height: 140px;
     pointer-events: all;
     position: fixed;
@@ -52,6 +52,10 @@ const MenuToggle = styled(UnstyledMenuToggle)`
     transition: 400ms transform;
     transition-delay: 0ms;
     width: 140px;
+
+    ${({ backgroundColor }) => !!backgroundColor && css`
+        background: linear-gradient(${backgroundColor}00, ${backgroundColor}, ${backgroundColor}, ${backgroundColor}00);
+    `}
 `
 
 export default MenuToggle

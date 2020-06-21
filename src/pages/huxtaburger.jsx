@@ -42,7 +42,7 @@ const BlackTheme = {
 const HuxtaburgerPage = () => (
     <Project id={HUXTABURGER}>
         <Layout theme={LayoutTheme}>
-            <Section theme={RedTheme}>
+            <Section theme={RedTheme} menuToggleBackground>
                 <Hero>
                     <p>
                         We designed the original brand, site and print work, and have been happy

@@ -42,7 +42,7 @@ const MidnightBlueTheme = {
 const VizorPage = () => (
     <Project id={VIZOR}>
         <Layout theme={LayoutTheme}>
-            <Section theme={DarkBlueTheme}>
+            <Section theme={DarkBlueTheme} menuToggleBackground>
                 <Hero>
                     <p>
                         Working with Helsinki-based startup Pixelface, we designed a powerful system for creating WebVR in the browser.

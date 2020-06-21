@@ -40,7 +40,7 @@ const BlueTheme = {
 const StreamrPage = () => (
     <Project id={STREAMR}>
         <Layout theme={LayoutTheme}>
-            <Section theme={DarkBlueTheme}>
+            <Section theme={DarkBlueTheme} menuToggleBackground>
                 <Hero>
                     <p>
                         We rebranded Streamr, a decentralised realtime data platform, and integrated

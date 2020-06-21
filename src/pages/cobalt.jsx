@@ -31,7 +31,7 @@ const LightTheme = {
 const CobaltPage = () => (
     <Project id={COBALT}>
         <Layout theme={LayoutTheme}>
-            <Section theme={DarkTheme}>
+            <Section theme={DarkTheme} menuToggleBackground>
                 <Hero>
                     <p>
                         Cobalt is an app security startup in San Francisco.

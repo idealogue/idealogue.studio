@@ -53,7 +53,7 @@ const BlackTheme = {
 const GolemPage = () => (
     <Project id={GOLEM}>
         <Layout theme={LayoutTheme}>
-            <Section theme={BlueTheme}>
+            <Section theme={BlueTheme} menuToggleBackground>
                 <Hero>
                     <p>
                         We worked on user experience design for the cryptocurrency-based shared

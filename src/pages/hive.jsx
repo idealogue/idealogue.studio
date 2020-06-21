@@ -37,7 +37,7 @@ const WhiteTheme = {
 const HivePage = () => (
     <Project id={HIVE}>
         <Layout theme={LayoutTheme}>
-            <Section theme={YellowWhiteTheme}>
+            <Section theme={YellowWhiteTheme} menuToggleBackground>
                 <Hero>
                     <p>
                         Hive approached us for a brand refresh and UI for their web and iOS
