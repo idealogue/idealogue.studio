@@ -19,6 +19,7 @@ import Shirts from '$golem/Shirts'
 import Brand from '$golem/Brand'
 import Spacer from '$shared/Spacer'
 import Topic from '$shared/Topic'
+import ScrollIndicator from '$shared/ScrollIndicator'
 
 const LayoutTheme = {
     backgroundColor: '#000f24',
@@ -62,6 +63,7 @@ const GolemPage = () => (
                     </p>
                 </Hero>
             </Section>
+            <ScrollIndicator.Target />
             <Topic title="User Experience First">
                 <Section theme={WhiteTheme} head tail menuToggleColor="#575757">
                     <SectionHeader no={1} />

@@ -14,6 +14,7 @@ import { MobileShots, DesktopShot } from '$cobalt/ClarityImages'
 import BugImages from '$cobalt/BugImages'
 import Spacer from '$shared/Spacer'
 import Topic from '$shared/Topic'
+import ScrollIndicator from '$shared/ScrollIndicator'
 
 const LayoutTheme = {
     backgroundColor: '#207dbc',
@@ -41,6 +42,7 @@ const CobaltPage = () => (
                     </p>
                 </Hero>
             </Section>
+            <ScrollIndicator.Target />
             <Topic title="Crowd Powered">
                 <Section theme={LightTheme} head menuToggleColor="#575757">
                     <SectionHeader no={1} />

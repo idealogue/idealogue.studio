@@ -19,6 +19,7 @@ import Ateneum from '$vizor/Ateneum'
 import ProductLaunch360 from '$vizor/ProductLaunch360'
 import CaptionedContainer from '$shared/CaptionedContainer'
 import Spacer from '$shared/Spacer'
+import ScrollIndicator from '$shared/ScrollIndicator'
 
 const LayoutTheme = {
     backgroundColor: '#ffffff',
@@ -49,6 +50,7 @@ const VizorPage = () => (
                     </p>
                 </Hero>
             </Section>
+            <ScrollIndicator.Target />
             <Section theme={NavyTheme} head tail>
                 <SectionHeader no={1}>
                     From Engi.works to Vizor

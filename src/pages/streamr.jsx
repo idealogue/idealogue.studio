@@ -23,6 +23,7 @@ import Spacer from '$shared/Spacer'
 import ConsensusGallery from '$streamr/ConsensusGallery'
 import Image from '$streamr/Image'
 import Topic from '$shared/Topic'
+import ScrollIndicator from '$shared/ScrollIndicator'
 
 const LayoutTheme = {
     backgroundColor: '#06042a',
@@ -51,6 +52,7 @@ const StreamrPage = () => (
             </Section>
             <Section theme={DarkBlueTheme} tail>
                 <BrandFilm />
+                <ScrollIndicator.Target />
                 <Topic title="An introduction to realtime data">
                     <Spacer head>
                         <SectionHeader no={1} />

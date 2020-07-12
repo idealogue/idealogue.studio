@@ -15,6 +15,7 @@ import Iconic from '$hux/Iconic'
 import Neon from '$hux/Neon'
 import Spacer from '$shared/Spacer'
 import Topic from '$shared/Topic'
+import ScrollIndicator from '$shared/ScrollIndicator'
 
 const LayoutTheme = {
     backgroundColor: '#dd2712',
@@ -51,6 +52,7 @@ const HuxtaburgerPage = () => (
                     </p>
                 </Hero>
             </Section>
+            <ScrollIndicator.Target />
             <Topic title="Milk Bar vs Diner">
                 <Section theme={WhiteTheme} head menuToggleColor="#575757">
                     <SectionHeader no={1} />
