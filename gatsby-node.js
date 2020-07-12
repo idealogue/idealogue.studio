@@ -15,6 +15,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
                 '$hux': path.join(__dirname, 'src/components/huxtaburger'),
                 '$streamr': path.join(__dirname, 'src/components/streamr'),
                 '$vizor': path.join(__dirname, 'src/components/vizor'),
+                '$team': path.join(__dirname, 'src/components/team'),
                 // We want both streamr-client and pub site to use the same
                 // instance of `styled-components`.
                 'styled-components': require.resolve('styled-components'),
