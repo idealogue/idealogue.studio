@@ -161,16 +161,7 @@ const VizorPage = () => (
             </Topic>
             <Topic title="Credits">
                 <Section theme={NavyTheme} head tail>
-                    <SectionHeader no={8}>
-                        <Bullet />
-                        <Link as="a" href="https://vizor.io/" target="_blank" rel="noopener noreferrer">
-                            Visit Vizor Patches
-                        </Link>
-                        <Bullet />
-                        <Link as="a" href="https://vizor.io/" target="_blank" rel="noopener noreferrer">
-                            Visit Vizor 360
-                        </Link>
-                    </SectionHeader>
+                    <SectionHeader no={8} />
                     <Contributors>
                         <Contributor name="Matt Innes" role="Brand, Design lead" />
                         <Contributor name="Saori Kajiwara" role="UI/UX design " />
