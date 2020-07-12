@@ -10,7 +10,7 @@ export const useTopic = () => (
 )
 
 const Topic = ({ title, children, ...props }) => {
-    const hash = (title || '').replace(/[\s\-]+/g, '-').toLowerCase()
+    const hash = (title || '').replace(/[\s-]+/g, '-').toLowerCase()
     
     const value = useMemo(() => ({
         hash,
