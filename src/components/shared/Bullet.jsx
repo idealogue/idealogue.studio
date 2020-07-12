@@ -10,6 +10,7 @@ const UnstyledBullet = ({ className }) => (
 
 const Bullet = styled(UnstyledBullet)`
     font-size: 0.5em;
+    line-height: 1em;
     margin: 0 1.5em;
     vertical-align: middle;
 `
