@@ -3,7 +3,6 @@ import styled, { css, ThemeProvider, createGlobalStyle } from 'sc'
 import Link from '$shared/Link'
 import { lineup, projects } from '$shared/Project'
 import { CloseButton as UnstyledCloseButton } from '$shared/MenuToggle'
-import ScrollSuppressor from '$shared/ScrollSuppressor'
 import useMenu from '$hooks/useMenu'
 
 const Logo = styled.h1`
@@ -66,6 +65,12 @@ const CloseButton = styled(UnstyledCloseButton)`
     position: fixed;
     right: 0;
     top: 0;
+`
+
+const ScrollSuppressor = createGlobalStyle`
+    body {
+        overflow: hidden;
+    }
 `
 
 const UnstyledMenu = (props) => {
