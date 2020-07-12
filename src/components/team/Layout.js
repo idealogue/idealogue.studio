@@ -8,7 +8,7 @@ const LayoutTheme = {
 }
 
 const DefaultTheme = {
-    backgroundColor: '#d4d4d4',
+    backgroundColor: 'transparent',
     color: '#2f2f2f',
 }
 
@@ -31,22 +31,30 @@ const Wedge = styled.div`
     flex-grow: 1;
 `
 
-const TeamPageLayout = ({ children, ...props }) => (
+const Cover = styled.div`
+    background: #d4d4d4 url(${({ url }) => url}) bottom right no-repeat;
+    background-size: cover;
+`
+
+const TeamPageLayout = ({ children, personImage, ...props }) => (
     <Layout {...props} theme={LayoutTheme}>
-        <Section
-            actConsecutive
-            theme={DefaultTheme}
-        >
-            <Inner>
-                <PersonWrapper>
-                    {children}
-                </PersonWrapper>
-            </Inner>
-        </Section>
+        <Cover url={personImage}>
+            <Section
+                actConsecutive
+                theme={DefaultTheme}
+            >
+                <Inner>
+                    <PersonWrapper>
+                        {children}
+                    </PersonWrapper>
+                </Inner>
+            </Section>
+        </Cover>
     </Layout>
 )
 
 Object.assign(TeamPageLayout, {
+    Cover,
     Wedge,
 })
 

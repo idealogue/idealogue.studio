@@ -3,9 +3,10 @@ import Person from '$shared/Person'
 import Bullet from '$shared/Bullet'
 import Link from '$shared/Link'
 import Layout from '$team/Layout'
+import Image from '$team/Image'
 
 const Matt = () => (
-    <Layout>
+    <Layout personImage={Image.MATT}>
         <Person>
             <Person.Head>
                 <Person.Name>

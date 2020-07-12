@@ -1,9 +1,11 @@
 import React from 'react'
+import styled from 'sc'
 import Layout from '$team/Layout'
+import Image from '$team/Image'
 import Person from '$shared/Person'
 
-const Saori = () => (
-    <Layout>
+const UnstyledSaori = () => (
+    <Layout personImage={Image.SAORI}>
         <div>
             <Person.OtherLink to="/team/matt" opposite>
                 Matt
@@ -38,5 +40,11 @@ const Saori = () => (
         </Person>
     </Layout>
 )
+
+const Saori = styled(UnstyledSaori)`
+    ${Layout.Cover} {
+        background-position: bottom left;
+    }
+`
 
 export default Saori
