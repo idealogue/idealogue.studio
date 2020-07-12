@@ -150,16 +150,13 @@ const VizorPage = () => (
                     <Spacer head tail>
                         <Ateneum />
                     </Spacer>
-                    <Spacer tail>
-                        <CaptionedContainer caption="The Vizor 360 product launch page">
-                            <Container>
-                                <BrowserFrame shadow dark>
-                                    <FluidImage src={Image.EDITOR_1} alt="" fill />
-                                </BrowserFrame>
-                            </Container>
-                        </CaptionedContainer>
-                    </Spacer>
-                    <ProductLaunch360 />
+                    <CaptionedContainer caption="The Vizor 360 product launch page">
+                        <Container>
+                            <BrowserFrame shadow dark>
+                                <FluidImage src={Image.EDITOR_1} alt="" fill />
+                            </BrowserFrame>
+                        </Container>
+                    </CaptionedContainer>
                 </Section>
             </Topic>
             <Topic title="Credits">
