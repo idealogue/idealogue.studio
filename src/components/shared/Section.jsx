@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider, css } from 'styled-components'
 import MenuToggle from '$shared/MenuToggle'
 import Spacer from '$shared/Spacer'
 
@@ -14,7 +14,7 @@ const ToggleWrapper = styled.div`
     width: 140px;
 `
 
-const UnstyledSection = ({ theme, children, menuToggleColor = '#ffffff', menuToggleBackground, ...props }) => (
+const UnstyledSection = ({ theme, children, menuToggleColor = '#ffffff', menuToggleBackground, actConsecutive, ...props }) => (
     <ThemeProvider theme={theme}>
         <Spacer {...props}>
             {children}
@@ -31,11 +31,13 @@ const Section = styled(UnstyledSection)`
     overflow: hidden;
     position: relative;
 
-    :first-child {
-        height: 100%;
-        max-height: 1440px;
-        min-height: 640px;
-    }
+    ${({ actConsecutive }) => !actConsecutive && css`
+        :first-child {
+            height: 100%;
+            max-height: 1440px;
+            min-height: 640px;
+        }
+    `}
 
     p {
         font-family: 'Publico Text';
