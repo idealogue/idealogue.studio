@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import CaptionedContainer from '$shared/CaptionedContainer'
-import styled from 'sc'
 
 const Ateneum = (props) => (
     <CaptionedContainer
@@ -21,6 +20,7 @@ const Ateneum = (props) => (
         >
             <svg viewBox="0 0 16 9" xmlns="http://www.w3.org/2000/svg" />
             <iframe
+                title="The Helsinki Ateneum"
                 src="http://vizor-proto-04.herokuapp.com/"
                 css={`
                     border: 0;
