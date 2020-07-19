@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://idealogue2.mariusz.io',
+    siteUrl: 'https://idealogue.mariusz.io',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
