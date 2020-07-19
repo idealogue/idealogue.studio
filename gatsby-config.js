@@ -1,7 +1,7 @@
-// TODO: Update this file.
-
 module.exports = {
-  siteMetadata: {},
+  siteMetadata: {
+    siteUrl: 'https://idealogue2.mariusz.io',
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -29,5 +29,6 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-cname',
   ],
 }
