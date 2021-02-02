@@ -1,6 +1,8 @@
+const siteUrl = 'https://idealogue.mariusz.io'
+
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://idealogue.mariusz.io',
+    siteUrl,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
