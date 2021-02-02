@@ -1,9 +1,27 @@
 import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react'
-import { Swipeable } from 'react-swipeable'
+import { useSwipeable } from 'react-swipeable'
 import styled from 'sc'
 import gsap from 'gsap'
 import useMounted from '$hooks/useMounted'
 import Cursor from '$shared/Cursor'
+
+const Swipeable = ({ className, children, innerRef, ...props }) => {
+    const handlers = useSwipeable(props)
+
+    const ref = (r) => {
+        handlers.ref(r)
+
+        if (typeof innerRef === 'function') {
+            innerRef(r)
+        }
+    }
+
+    return (
+        <div {...handlers} className={className} ref={ref}>
+            {children}
+        </div>
+    )
+}
 
 const Direction = {
     RIGHT: 'right',
