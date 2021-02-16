@@ -59,7 +59,7 @@ const GolemPage = () => (
                 <Hero>
                     <p>
                         We worked on user experience design for the cryptocurrency-based shared
-                        computing project, as well as a brand that didn’t see the light of day.
+                        computing project, as&nbsp;well as a brand that didn’t see the light of day.
                     </p>
                 </Hero>
             </Section>

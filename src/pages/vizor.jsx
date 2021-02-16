@@ -44,7 +44,8 @@ const VizorPage = () => (
             <Section theme={DarkBlueTheme} menuToggleBackground>
                 <Hero>
                     <p>
-                        Working with Helsinki-based startup Pixelface, we designed a powerful system for creating WebVR in the browser.
+                        Working with Helsinki-based startup Pixelface, we designed a powerful system
+                        for creating WebVR in&nbsp;the&nbsp;browser.
                     </p>
                 </Hero>
             </Section>

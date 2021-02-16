@@ -42,7 +42,7 @@ const HivePage = () => (
             <Section theme={YellowWhiteTheme} menuToggleBackground>
                 <Hero>
                     <p>
-                        Hive approached us for a brand refresh and UI for their web and iOS
+                        Hive approached us for a brand refresh and UI for their&nbsp;web and iOS
                         Bitcoin wallets.
                     </p>
                 </Hero>

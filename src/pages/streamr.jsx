@@ -46,7 +46,7 @@ const StreamrPage = () => (
                 <Hero>
                     <p>
                         We rebranded Streamr, a decentralised realtime data platform, and integrated
-                        their services into a more user-focused app called Core.
+                        their services into a&nbsp;more&nbsp;user-focused app called Core.
                     </p>
                 </Hero>
             </Section>
