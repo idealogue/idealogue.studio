@@ -14,7 +14,20 @@ module.exports = {
             },
         },
         'gatsby-transformer-sharp',
-        'gatsby-plugin-sharp',
+        {
+            resolve: 'gatsby-plugin-sharp',
+            options: {
+                defaultQuality: 100,
+                failOnError: true,
+                stripMetadata: true,
+            },
+        },
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                path: `${__dirname}/src/components`,
+            },
+        },
         // {
         //   resolve: `gatsby-plugin-manifest`,
         //   options: {

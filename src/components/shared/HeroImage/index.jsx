@@ -1,34 +1,36 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useProject } from '$shared/Project'
-import cobalt from './cobalt.gif'
-import golem from './golem.png'
-import hive from './hive.png'
-import huxtaburger from './huxtaburger.png'
-import streamr from './streamr.png'
-import vizor from './vizor.png'
+import CobaltImage from './CobaltImage'
+import GolemImage from './GolemImage'
+import HiveImage from './HiveImage'
+import HuxImage from './HuxImage'
+import StreamrImage from './StreamrImage'
+import VizorImage from './VizorImage'
 
 const images = {
-    cobalt,
-    golem,
-    hive,
-    huxtaburger,
-    streamr,
-    vizor,
+    cobalt: CobaltImage,
+    golem: GolemImage,
+    hive: HiveImage,
+    huxtaburger: HuxImage,
+    streamr: StreamrImage,
+    vizor: VizorImage,
 }
 
 const UnstyledHeroImage = (props) => {
     const { id, name } = useProject()
 
+    const Img = images[id]
+
     return (
-        <img {...props} src={images[id]} alt={name} />
+        <Img {...props} alt={name} />
     )
 }
 
 const HeroImage = styled(UnstyledHeroImage)`
-    display: block;
-    height: 160px;
-    width: 160px;
+    height: 136px;
+    margin: 0 auto;
+    width: 136px;
 `
 
 export default HeroImage
