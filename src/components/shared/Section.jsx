@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { ThemeProvider, css } from 'styled-components'
 import MenuToggle from '$shared/MenuToggle'
 import Spacer from '$shared/Spacer'
+import { SM, MD, LG } from '$utils/css'
 
 const ToggleWrapper = styled.div`
     clip: rect(0, auto, auto, 0);
@@ -41,9 +42,21 @@ const Section = styled(UnstyledSection)`
 
     p {
         font-family: 'Publico Text';
-        font-size: 24px;
-        line-height: 40px;
+        font-size: 16px;
+        line-height: 1.875em;
         margin: 0;
+
+        @media (min-width: ${SM}px) {
+            font-size: 18px;
+        }
+
+        @media (min-width: ${MD}px) {
+            font-size: 21px;
+        }
+
+        @media (min-width: ${LG}px) {
+            font-size: 25px;
+        }
     }
 
     p + p {

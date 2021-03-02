@@ -1,34 +1,37 @@
 import React from 'react'
 import styled, { css } from 'sc'
-import { MD, LG } from '$utils/css'
+import { SM, MD, LG } from '$utils/css'
 
-const UnstyledSpacer = ({ head, tail, ...props }) => (
-    <div {...props} />
-)
+const Spacer = styled.div`
+    ${({ head, scale = 1 }) => !!head && css`
+        padding-top: ${96 * scale}px;
 
-const Spacer = styled(UnstyledSpacer)`
-    ${({ head }) => !!head && css`
-        padding-top: 48px;
+        @media (min-width: ${SM}px) {
+            padding-top: ${144 * scale}px;
+        }
 
         @media (min-width: ${MD}px) {
-            padding-top: 104px;
+            padding-top: ${168 * scale}px;
         }
 
         @media (min-width: ${LG}px) {
-            padding-top: 240px;
+            padding-top: ${240 * scale}px;
         }
     `}
 
+    ${({ tail, scale = 1 }) => !!tail && css`
+        padding-bottom: ${96 * scale}px;
 
-    ${({ tail }) => !!tail && css`
-        padding-bottom: 48px;
+        @media (min-width: ${SM}px) {
+            padding-bottom: ${144 * scale}px;
+        }
 
         @media (min-width: ${MD}px) {
-            padding-bottom: 104px;
+            padding-bottom: ${168 * scale}px;
         }
 
         @media (min-width: ${LG}px) {
-            padding-bottom: 240px;
+            padding-bottom: ${240 * scale}px;
         }
     `}
 `

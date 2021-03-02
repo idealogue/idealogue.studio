@@ -53,7 +53,7 @@ const CobaltPage = () => (
                             of Danish Vikings. We helped with a new name, an eyeball / combination
                             lock-inspired mark, and an approachable brand wrapped around it all.
                         </p>
-                        <Spacer head>
+                        <Spacer head scale={0.6}>
                             <LogoImage />
                         </Spacer>
                     </Container>
@@ -69,10 +69,10 @@ const CobaltPage = () => (
                             Central, their web dashboard, to clean it up.
                         </p>
                     </Container>
-                    <Spacer head>
+                    <Spacer head tail scale={0.6}>
                         <MobileShots />
                     </Spacer>
-                    <Spacer head tail>
+                    <Spacer tail>
                         <DesktopShot />
                     </Spacer>
                 </Section>
@@ -88,7 +88,7 @@ const CobaltPage = () => (
                             can fix in client's applications — from access control to an SQL injection.
                         </p>
                     </Container>
-                    <Spacer head>
+                    <Spacer head scale={0.6}>
                         <BugImages />
                     </Spacer>
                 </Section>

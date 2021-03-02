@@ -6,19 +6,19 @@ const Container = styled.div`
     padding: 0 32px;
 
     @media (min-width: ${SM}px) {
-        max-width: 540px
+        max-width: 510px
     }
 
     @media (min-width: ${MD}px) {
-        max-width: 720px;
+        max-width: 690px;
     }
 
     @media (min-width: ${LG}px) {
-        max-width: 865px;
+        max-width: 835px;
     }
 
     @media (min-width: ${XL}px) {
-        max-width: 900px;
+        max-width: 870px;
     }
 `
 

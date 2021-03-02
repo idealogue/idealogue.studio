@@ -10,7 +10,7 @@ const Row = styled.div`
     justify-content: space-between;
 
     & + & {
-        margin-top: 96px;
+        margin-top: 80px;
     }
 `
 
