@@ -4,7 +4,7 @@ import { useProject } from '$shared/Project'
 import Container from '$shared/Container'
 import HeroImage from '$shared/HeroImage'
 import ScrollIndicator from '$shared/ScrollIndicator'
-import { SM, MD, LG, XL } from '$utils/css'
+import { MD, LG, XL } from '$utils/css'
 
 const Inner = styled.div`
     align-items: center;

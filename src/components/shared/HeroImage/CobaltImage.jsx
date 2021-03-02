@@ -1,5 +1,4 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
 import Img from '$shared/GatsbyImage'
 import Cobalt from './cobalt.gif'
 
