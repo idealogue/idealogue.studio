@@ -1,4 +1,3 @@
-import React from 'react'
 import styled, { css } from 'sc'
 import { SM, MD, LG } from '$utils/css'
 
