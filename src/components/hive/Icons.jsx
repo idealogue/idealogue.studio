@@ -3,15 +3,16 @@ import styled from 'styled-components'
 import FluidImage from '$shared/FluidImage'
 import Image from '$hive/Image'
 
-const Wrapper = styled.div`
-    margin: 0 auto;
-    max-width: 628px;
-`
-
-const Icons = (props) => (
-    <Wrapper {...props}>
+const UnstyledIcons = (props) => (
+    <div {...props}>
         <FluidImage src={Image.ICONS} alt="Icons" />
-    </Wrapper>
+    </div>
 )
+
+const Icons = styled(UnstyledIcons)`
+    margin: 0 auto;
+    max-width: 80%;
+    width: 628px;
+`
 
 export default Icons

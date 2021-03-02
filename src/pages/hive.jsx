@@ -78,7 +78,7 @@ const HivePage = () => (
                             </p>
                         </Container>
                     </Spacer>
-                    <Spacer head>
+                    <Spacer head scale={0.6}>
                         <OldWallet />
                     </Spacer>
                 </Section>
@@ -95,7 +95,7 @@ const HivePage = () => (
                             and instant trading. In the process we also made it visually lighter.
                         </p>
                     </Container>
-                    <Spacer head>
+                    <Spacer head scale={0.6}>
                         <NewWallet />
                     </Spacer>
                 </Section>
@@ -109,7 +109,7 @@ const HivePage = () => (
                             system for Hive, along with a back end dashboard for clients to manage
                             their wallet, get notifications, and real time analytics.
                         </p>
-                        <Spacer head>
+                        <Spacer head scale={0.6}>
                             <BrowserFrame>
                                 <FluidImage src={Image.HOSTED} alt="Hive hosted" />
                             </BrowserFrame>
