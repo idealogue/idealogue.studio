@@ -4,7 +4,7 @@ import { useProject } from '$shared/Project'
 import Container from '$shared/Container'
 import HeroImage from '$shared/HeroImage'
 import ScrollIndicator from '$shared/ScrollIndicator'
-import { MD, LG, XL } from '$utils/css'
+import { SM, MD, LG, XL } from '$utils/css'
 
 const Inner = styled.div`
     align-items: center;
@@ -47,35 +47,44 @@ const Hero = styled(UnstyledHero)`
 
     && p {
         font-family: 'Lab Grotesque';
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 200;
-        line-height: 30px;
-        margin: 48px auto;
+        line-height: 1.5em;
+        margin: 32px auto;
+        max-width: 22.5em;
     }
 
     img {
         margin: 0 auto;
     }
 
+    @media (min-width: ${SM}px) {
+        h1 {
+            font-size: 72px;
+        }
+
+        && p {
+            font-size: 18px;
+            margin: 40px auto;
+            max-width: 22.5em;
+        }
+    }
+
     @media (min-width: ${MD}px) {
         h1 {
-            font-size: 88px;
+            font-size: 105px;
+        }
+
+        && p {
+            font-size: 16px;
+            margin: 48px auto;
+            max-width: 22em;
         }
     }
 
     @media (min-width: ${LG}px) {
         h1 {
-            font-size: 115px;
-        }
-    }
-
-    @media (min-width: ${XL}px) {
-        h1 {
             font-size: 140px;
-        }
-
-        && p {
-            max-width: 24em;
         }
     }
 `

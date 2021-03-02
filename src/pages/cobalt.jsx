@@ -37,8 +37,7 @@ const CobaltPage = () => (
                 <Hero>
                     <p>
                         Cobalt is an app security startup in San Francisco.
-                        <br />
-                        We helped them with a brand and site.
+                        We helped them with a&nbsp;brand and&nbsp;site.
                     </p>
                 </Hero>
             </Section>

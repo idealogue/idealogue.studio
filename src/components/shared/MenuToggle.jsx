@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { css } from 'sc'
 import UnstyledGlyph, { NAV, CLOSE } from '$shared/Glyph'
 import useMenu from '$hooks/useMenu'
+import { SM } from '$utils/css'
 
 const Glyph = styled(UnstyledGlyph)`
     display: block;
@@ -15,12 +16,17 @@ const Button = styled.button`
     border: 0;
     color: inherit;
     display: block;
-    height: 140px;
+    height: 90px;
     margin: 0;
     outline: 0;
     padding: 0;
     position: fixed;
-    width: 140px;
+    width: 90px;
+
+    @media (min-width: ${SM}px) {
+        height: 140px;
+        width: 140px;
+    }
 `
 
 export const CloseButton = (props) => (
@@ -43,7 +49,7 @@ const UnstyledMenuToggle = ({ backgroundColor, ...props }) => {
 
 const MenuToggle = styled(UnstyledMenuToggle)`
     color: inherit;
-    height: 140px;
+    height: 90px;
     pointer-events: all;
     position: fixed;
     right: 0;
@@ -51,11 +57,16 @@ const MenuToggle = styled(UnstyledMenuToggle)`
     transform: translateY(0%);
     transition: 400ms transform;
     transition-delay: 0ms;
-    width: 140px;
+    width: 90px;
 
     ${({ backgroundColor }) => !!backgroundColor && css`
         background: linear-gradient(${backgroundColor}00, ${backgroundColor}, ${backgroundColor}, ${backgroundColor}00);
     `}
+
+    @media (min-width: ${SM}px) {
+        height: 140px;
+        width: 140px;
+    }
 `
 
 export default MenuToggle
