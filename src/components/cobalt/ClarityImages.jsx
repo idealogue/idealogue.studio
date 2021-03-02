@@ -4,19 +4,54 @@ import FluidImage from '$shared/FluidImage'
 import PhoneFrame from '$shared/PhoneFrame'
 import Image from '$cobalt/Image'
 import Container from '$shared/Container'
+import Display from '$shared/Display'
+import { SM, LG, MD } from '$utils/css'
 
 const Frames = styled.div`
-    display: flex;
-    justify-content: space-between;
-    left: -12%;
-    position: relative;
-    width: 124%;
+    ${PhoneFrame} {
+        margin: 0 auto;
+    }
+
+    @media (min-width: ${SM}px) {
+        ${PhoneFrame} {
+            width: 240px;
+        }
+    }
+
+    @media (min-width: ${MD}px) {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 94%;
+
+        ${PhoneFrame} {
+            margin: 0;
+            width: 280px;
+        }
+    }
+
+    @media (min-width: ${LG}px) {
+        left: -8%;
+        position: relative;
+        width: 116%;
+
+        ${PhoneFrame} {
+            width: 250px;
+        }
+    }
 `
 
 const AppPreview = styled.div`
-    left: -20%;
-    position: relative;
-    width: 140%;
+    @media (min-width: ${MD}px) {
+        left: -10%;
+        position: relative;
+        width: 120%;
+    }
+
+    @media (min-width: ${LG}px) {
+        left: -16%;
+        width: 132%;
+    }
 `
 
 export const MobileShots = () => (
@@ -24,13 +59,15 @@ export const MobileShots = () => (
         <Frames>
             <PhoneFrame>
                 <FluidImage src={Image.SCREENSHOT_MOBILE_1} alt="Clarity" />
+                {/* <FluidImage src={Image.SCREENSHOT_MOBILE_2} alt="Clarity" /> */}
+                {/* <FluidImage src={Image.SCREENSHOT_MOBILE_3} alt="Clarity" /> */}
             </PhoneFrame>
-            <PhoneFrame>
+            <Display as={PhoneFrame} xs="none" md="block">
                 <FluidImage src={Image.SCREENSHOT_MOBILE_2} alt="Clarity" />
-            </PhoneFrame>
-            <PhoneFrame>
+            </Display>
+            <Display as={PhoneFrame} xs="none" lg="block">
                 <FluidImage src={Image.SCREENSHOT_MOBILE_3} alt="Clarity" />
-            </PhoneFrame>
+            </Display>
         </Frames>
     </Container>
 )

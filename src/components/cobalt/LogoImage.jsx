@@ -3,15 +3,16 @@ import styled from 'styled-components'
 import FluidImage from '$shared/FluidImage'
 import Image from '$cobalt/Image'
 
-const Wrapper = styled.div`
-    max-width: 180px;
-    margin: 0 auto;
-`
-
-const LogoImage = (props) => (
-    <Wrapper {...props}>
+const UnstyledLogoImage = (props) => (
+    <div {...props}>
         <FluidImage src={Image.LOGO} alt="Cobalt logo" />
-    </Wrapper>
+    </div>
 )
+
+const LogoImage = styled(UnstyledLogoImage)`
+    margin: 0 auto;
+    max-width: 70%;
+    width: 180px;
+`
 
 export default LogoImage

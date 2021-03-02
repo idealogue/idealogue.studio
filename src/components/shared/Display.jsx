@@ -13,7 +13,7 @@ const Display = styled.div`
     `}
 
     ${({ md }) => md != null && css`
-        @media (min-width: ${MG}px) {
+        @media (min-width: ${MD}px) {
             display: ${md} !important;
         }
     `}

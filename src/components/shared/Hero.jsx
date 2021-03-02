@@ -76,7 +76,7 @@ const Hero = styled(UnstyledHero)`
         }
 
         && p {
-            font-size: 16px;
+            font-size: 18px;
             margin: 48px auto;
             max-width: 22em;
         }
@@ -85,6 +85,10 @@ const Hero = styled(UnstyledHero)`
     @media (min-width: ${LG}px) {
         h1 {
             font-size: 140px;
+        }
+
+        && p {
+            font-size: 20px;
         }
     }
 `
