@@ -69,10 +69,12 @@ const CobaltPage = () => (
                             Central, their web dashboard, to clean it up.
                         </p>
                     </Container>
-                    <Spacer head tail>
+                    <Spacer head>
                         <MobileShots />
                     </Spacer>
-                    <DesktopShot />
+                    <Spacer head tail>
+                        <DesktopShot />
+                    </Spacer>
                 </Section>
             </Topic>
             <Topic title="Bugs Categorised">
