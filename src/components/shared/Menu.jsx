@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import styled, { ThemeProvider, createGlobalStyle } from 'sc'
+import styled, { css, ThemeProvider, createGlobalStyle } from 'sc'
 import Link from '$shared/Link'
 import { lineup, projects } from '$shared/Project'
 import { CloseButton as UnstyledCloseButton } from '$shared/MenuToggle'
@@ -19,9 +19,15 @@ export const LinkList = styled.ul`
     margin: 0;
     padding: 0;
 
-    li:last-child {
-        font-size: 30px;
-    }
+    ${({ inline }) => !!inline && css`
+        li {
+            display: inline;
+        }
+
+        li::after {
+            content: ' ';
+        }
+    `}
 `
 
 const Inner = styled.div`
@@ -71,7 +77,7 @@ const UnstyledMenu = (props) => {
                 <CloseButton onClick={close} />
                 <Inner>
                     <Wrapper>
-                        <LinkList inline>
+                        <LinkList>
                             {lineup.map((id, index) => (
                                 <li key={id}>
                                     <Link to={projects[id].href}>
@@ -102,6 +108,10 @@ const Menu = styled(UnstyledMenu)`
     top: 0;
     width: 100%;
     z-index: 100;
+
+    ${LinkList} li:last-child {
+        font-size: 30px;
+    }
 `
 
 export default Menu
