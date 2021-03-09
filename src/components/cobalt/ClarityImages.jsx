@@ -59,8 +59,8 @@ export const MobileShots = () => (
         <Frames>
             <PhoneFrame>
                 <FluidImage src={Image.SCREENSHOT_MOBILE_1} alt="Clarity" />
-                {/* <FluidImage src={Image.SCREENSHOT_MOBILE_2} alt="Clarity" /> */}
-                {/* <FluidImage src={Image.SCREENSHOT_MOBILE_3} alt="Clarity" /> */}
+                <FluidImage src={Image.SCREENSHOT_MOBILE_2} alt="Clarity" />
+                <FluidImage src={Image.SCREENSHOT_MOBILE_3} alt="Clarity" />
             </PhoneFrame>
             <Display as={PhoneFrame} xs="none" md="block">
                 <FluidImage src={Image.SCREENSHOT_MOBILE_2} alt="Clarity" />

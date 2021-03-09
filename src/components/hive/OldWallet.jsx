@@ -51,9 +51,9 @@ const UnstyledOldWallet = (props) => (
             <Inner>
                 <PhoneFrame>
                     <FluidImage src={Image.MOBILE_1} alt="Wallet" />
-                    {/* <FluidImage src={Image.MOBILE_2} alt="Wallet" /> */}
-                    {/* <FluidImage src={Image.MOBILE_3} alt="Wallet" /> */}
-                    {/* <FluidImage src={Image.MOBILE_4} alt="Wallet" /> */}
+                    <FluidImage src={Image.MOBILE_2} alt="Wallet" />
+                    <FluidImage src={Image.MOBILE_3} alt="Wallet" />
+                    <FluidImage src={Image.MOBILE_4} alt="Wallet" />
                 </PhoneFrame>
                 <Display as={PhoneFrame} xs="none" md="block">
                     <FluidImage src={Image.MOBILE_2} alt="Wallet" />
