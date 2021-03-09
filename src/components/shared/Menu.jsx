@@ -1,30 +1,16 @@
 import React, { useEffect } from 'react'
-import styled, { css, ThemeProvider, createGlobalStyle } from 'sc'
+import styled, { ThemeProvider, createGlobalStyle } from 'sc'
 import Link from '$shared/Link'
 import { lineup, projects } from '$shared/Project'
 import { CloseButton as UnstyledCloseButton } from '$shared/MenuToggle'
 import useMenu from '$hooks/useMenu'
 
-const Logo = styled.h1`
-    font-family: 'Publico Text';
-    font-size: inherit;
-    font-weight: 600;
-    line-height: 40px;
-    margin: 0;
-`
-
 const Wrapper = styled.div`
     display: flex;
-    font-size: 30px;
+    font-size: 64px;
+    line-height: 100px;
     margin: 0 auto;
     width: 672px;
-`
-
-const Column = styled.div`
-    flex-basis: 100%;
-    line-height: 40px;
-    padding: ${({ right }) => right ? '0 0 0 64px' : '0 64px 0 0'};
-    width: 272px;
 `
 
 export const LinkList = styled.ul`
@@ -33,21 +19,9 @@ export const LinkList = styled.ul`
     margin: 0;
     padding: 0;
 
-    & + & {
-        border-top: 1px solid #ffffff7f;
-        margin-top: 48px;
-        padding-top: 48px;
+    li:last-child {
+        font-size: 30px;
     }
-
-    ${({ inline }) => !!inline && css`
-        li {
-            display: inline;
-        }
-
-        li::after {
-            content: ' ';
-        }
-    `}
 `
 
 const Inner = styled.div`
@@ -58,7 +32,7 @@ const Inner = styled.div`
 `
 
 const DefaultTheme = {
-    color: '#ffffff',
+    color: '#06042a',
 }
 
 const CloseButton = styled(UnstyledCloseButton)`
@@ -97,35 +71,20 @@ const UnstyledMenu = (props) => {
                 <CloseButton onClick={close} />
                 <Inner>
                     <Wrapper>
-                        <Column>
-                            <Logo>
-                                Idealogue
-                            </Logo>
-                        </Column>
-                        <Column right>
-                            <LinkList>
-                                <li>
-                                    <Link to="/">Top page</Link>
+                        <LinkList inline>
+                            {lineup.map((id, index) => (
+                                <li key={id}>
+                                    <Link to={projects[id].href}>
+                                        {projects[id].name}
+                                    </Link>
                                 </li>
-                            </LinkList>
-                            <LinkList inline>
-                                {lineup.map((id, index) => (
-                                    <li key={id}>
-                                        <Link to={projects[id].href}>
-                                            {projects[id].name}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </LinkList>
-                            <LinkList>
-                                <li>
-                                    <Link to="/team/matt">Matt Innes</Link>
-                                </li>
-                                <li>
-                                    <Link to="/team/saori">Saori Kajiwara</Link>
-                                </li>
-                            </LinkList>
-                        </Column>
+                            ))}
+                            <li>
+                                <Link to="/">
+                                    &rarr; Back to the top page
+                                </Link>
+                            </li>
+                        </LinkList>
                     </Wrapper>
                 </Inner>
             </div>
@@ -134,8 +93,8 @@ const UnstyledMenu = (props) => {
 }
 
 const Menu = styled(UnstyledMenu)`
-    background-color: #06042a;
-    color: white;
+    background-color: #fcfcfc;
+    color: #06042a;
     height: 100%;
     left: 0;
     overflow: auto;

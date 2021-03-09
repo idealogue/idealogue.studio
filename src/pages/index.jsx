@@ -7,7 +7,7 @@ import Container from '$shared/Container'
 import { LinkList } from '$shared/Menu'
 
 const Root = styled.div`
-    color: white;
+    color: #06042a;
     font-size: 50px;
     font-weight: bold;
     line-height: 72px;
@@ -24,7 +24,7 @@ const Root = styled.div`
     h2 {
         font-size: 30px;
         line-height: 1em;
-        border-bottom: 1px solid #ffffff7f;
+        border-bottom: 1px solid #06042a7f;
         margin: 256px 0 64px;
         padding: 0 0 16px;
     }
@@ -45,11 +45,11 @@ const Root = styled.div`
 `
 
 const LayoutTheme = {
-    backgroundColor: '#06042a',
+    backgroundColor: '#fcfcfc',
 }
 
 const Theme = {
-    color: '#ffffff',
+    color: '#06042a',
 }
 
 const Separator = styled.li`
@@ -81,10 +81,7 @@ const IndexPage = () => (
                     <h2>Team</h2>
                     <LinkList>
                         <li>
-                            <Link to="/team/matt">Matt Innes</Link>
-                        </li>
-                        <li>
-                            <Link to="/team/saori">Saori Kajiwara</Link>
+                            <Link to="/team/">About us</Link>
                         </li>
                     </LinkList>
                     <footer>
@@ -100,7 +97,7 @@ const IndexPage = () => (
                             {' '}
                             <Link
                                 as="a"
-                                href="http://mariusz.io"
+                                href="https://www.mariusz.io"
                                 rel="noopener noreferrer"
                                 target="_blank"
                             >
