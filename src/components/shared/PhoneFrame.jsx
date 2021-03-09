@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react'
 import styled, { css } from 'styled-components'
 import { SM, MD } from '$utils/css'
+import XofY from './XofY'
 
 const Content = styled.div`
     position: relative;
@@ -52,6 +53,9 @@ const UnstyledPhoneFrame = ({ children, ...props }) => {
 
     return (
         <div {...props}>
+            {n > 1 && (
+                <XofY x={slideNo + 1} y={n} bg="#ffffff" color="#d5d5d5" />
+            )}
             <svg viewBox="0 0 320 77" xmlns="http://www.w3.org/2000/svg">
                 <g fill="none" fillRule="evenodd">
                     <path d="M320 77V44c0-24.535-17.674-44-41.87-44H43.864C19.335 0 0 19.465 0 44v33h320z" fill="#D5D5D5"/>
@@ -93,6 +97,7 @@ const UnstyledPhoneFrame = ({ children, ...props }) => {
 
 const PhoneFrame = styled(UnstyledPhoneFrame)`
     max-width: 70%;
+    position: relative;
     width: 200px;
 
     svg,
@@ -101,9 +106,25 @@ const PhoneFrame = styled(UnstyledPhoneFrame)`
         width: 100%;
     }
 
+    ${XofY} {
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: translate(-50%, -50%);
+        max-width: 72px;
+        width: 28%;
+        z-index: 4;
+    }
+
     @media (min-width: ${SM}px) {
         max-width: none;
         width: 320px;
+    }
+
+    @media (min-width: ${MD}px) {
+        ${XofY} {
+            display: none;
+        }
     }
 `
 
