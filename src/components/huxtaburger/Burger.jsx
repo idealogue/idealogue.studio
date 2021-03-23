@@ -36,7 +36,7 @@ const UnstyledBurger = ({ children, className, onMouseDown: onMouseDownProp, ...
             <Inner>
                 {children}
             </Inner>
-            <Badge>
+            <Badge visible={!open}>
                 Tap!
             </Badge>
         </Parent>

@@ -22,6 +22,7 @@ const UnstyledBurgerComponent = ({ shadow, src, at, animateBy, dy, ...props }) =
             left: 20%;
             opacity: 0.25;
             width: 100%;
+            transition-duration: 200ms;
 
             @media (max-width: ${SM - 1}px) {
                 ${Parent}.open & {
@@ -47,7 +48,7 @@ const BurgerComponent = styled(UnstyledBurgerComponent)`
     position: absolute;
     top: ${({ at, dy }) => Math.floor((at + dy) * 100)}%;
     transform: translateY(0);
-    transition: 300ms;
+    transition: 400ms;
     transition-property: transform, opacity;
     transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550), ease-in-out;
 

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { SM } from '$utils/css'
 
 const Badge = styled.div`
@@ -7,8 +7,8 @@ const Badge = styled.div`
     font-family: 'Lab Grotesque';
     font-weight: bold;
     height: 4em;
+    line-height: 4em;
     opacity: 1.0;
-    padding-top: 1.1em;
     position: absolute;
     text-align: center;
     width: 4em;
@@ -21,7 +21,16 @@ const Badge = styled.div`
 export const BurgerBadge = styled(Badge)`
     right: -8%;
     top: -7%;
-    transition: 300ms ease-in-out opacity;
+    transform: scale(1.0);
+    transition: 120ms ease-in-out;
+    transition-delay: 0.2s;
+    transition-property: opacity, transform;
+
+    ${({ visible }) => !visible && css`
+        opacity: 0;
+        transform: scale(0.9);
+        transition-delay: 0s;
+    `}
 `
 
 export const StoreBadge = styled(Badge)`

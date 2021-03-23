@@ -111,7 +111,9 @@ const UnstyledStore = ({ duration, smoke, slides = [], frames = [], shadow, onMo
                     <img src={src} alt="" />
                 </Wrapper>
             ))}
-            <StoreBadge />
+            <StoreBadge>
+                Tap!
+            </StoreBadge>
             {smokes.map((key) => (
                 <Smoke key={key} posX={smokeX} posY={smokeY} />
             ))}
