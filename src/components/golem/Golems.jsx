@@ -3,6 +3,9 @@ import styled, { css } from 'styled-components'
 import Image from '$golem/Image'
 import CaptionedContainer from '$shared/CaptionedContainer'
 import Glyph, { SLIDE_LEFT, SLIDE_RIGHT } from '$shared/Glyph'
+import Caption from '$shared/Caption'
+import XofY from '$shared/XofY'
+import { SM } from '$utils/css'
 
 const UnstyledSlide = ({ active, src, ...props }) => (
     <div {...props}>
@@ -69,18 +72,22 @@ const Button = styled.button`
 `
 
 const NavBar = styled.div`
-    display: flex;
-    justify-content: space-between;
+    display: none;
     left: 0;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
+
+    @media (min-width: ${SM}px) {
+        display: flex;
+        justify-content: space-between;
+    }
 `
 
 const count = Image.GOLEMS.length
 
-const Golems = (props) => {
+const UnstyledGolems = (props) => {
     const [slide, setSlide] = useState(0)
 
     const next = useCallback(() => {
@@ -107,8 +114,32 @@ const Golems = (props) => {
                         </Button>
                     </NavBar>
                 </Slider>
+                <XofY x={slide + 1} y={3} onClick={next} />
             </CaptionedContainer>
         </div>
     )
 }
+
+const Golems = styled(UnstyledGolems)`
+    ${Caption} {
+        display: none;
+    }
+
+    ${XofY} {
+        margin: 72px auto 0;
+        width: 56px;
+    }
+
+    @media (min-width: ${SM}px) {
+        ${XofY} {
+            display: none;
+        }
+
+        ${Caption} {
+            display: block;
+        }
+    }
+
+`
+
 export default Golems

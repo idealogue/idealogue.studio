@@ -4,19 +4,36 @@ import FluidImage from '$shared/FluidImage'
 import Image from '$golem/Image'
 import Container from '$shared/Container'
 import CaptionedContainer from '$shared/CaptionedContainer'
+import { SM, MD } from '$utils/css'
 
-const Wrapper = styled(Container)`
+const Inner = styled.div`
+    padding: 0 8px;
+
+    @media (min-width: ${SM}px) {
+        padding: 0 16px;
+    }
+
+    @media (min-width: ${MD}px) {
+        padding: 0 32px;
+    }
+`
+
+const UnstyledUiFirst = ({ className }) => (
+    <div className={className}>
+        <Container>
+            <CaptionedContainer caption="The original Golem Alpha interface">
+                <Inner>
+                    <FluidImage src={Image.UX_FIRST} alt="UI First" />
+                </Inner>
+            </CaptionedContainer>
+        </Container>
+    </div>
+)
+
+const UiFirst = styled(UnstyledUiFirst)`
     img {
         margin: 0 auto;
     }
 `
-
-const UiFirst = () => (
-    <Wrapper>
-        <CaptionedContainer caption="The original Golem Alpha interface">
-            <FluidImage src={Image.UX_FIRST} alt="UI First" />
-        </CaptionedContainer>
-    </Wrapper>
-)
 
 export default UiFirst

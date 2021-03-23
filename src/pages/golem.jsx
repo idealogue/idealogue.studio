@@ -76,19 +76,21 @@ const GolemPage = () => (
                             than waiting for a brand process to run its course.
                         </p>
                     </Container>
-                    <Spacer head tail>
+                    <Spacer head scale={0.6}>
                         <UiFirst />
                     </Spacer>
-                    <Container>
-                        <p>
-                            One key problem to solve was that there would be two very distinct user
-                            types, Providers, who would run the app to earn digital tokens in return
-                            for their compute power, and Requesters who would pay to use the network
-                            to run tasks. Some of these users would do both, but many would not. This
-                            led to us dividing the UI for these groups. We explored these ideas with
-                            a number of wireframes and interaction prototypes.
-                        </p>
-                    </Container>
+                    <Spacer head>
+                        <Container>
+                            <p>
+                                One key problem to solve was that there would be two very distinct user
+                                types, Providers, who would run the app to earn digital tokens in return
+                                for their compute power, and Requesters who would pay to use the network
+                                to run tasks. Some of these users would do both, but many would not. This
+                                led to us dividing the UI for these groups. We explored these ideas with
+                                a number of wireframes and interaction prototypes.
+                            </p>
+                        </Container>
+                    </Spacer>
                 </Section>
                 <Section theme={GrayishTheme} head tail menuToggleColor="#575757">
                     <UiProcess />
@@ -107,18 +109,20 @@ const GolemPage = () => (
                             rendering for Blender and LuxRender.
                         </p>
                     </Container>
-                    <Spacer head tail>
+                    <Spacer head scale={0.6}>
                         <AppLoop />
                     </Spacer>
-                    <Container>
-                        <p>
-                            The other key goal was to design something anyone could use, but also
-                            something that power users could customise to their liking. We had to push
-                            quite hard to keep the simple slide-to-allocate resources on the Network
-                            view, but balanced it out with an advanced setup for users comfortable with
-                            tweaking parameters.
-                        </p>
-                    </Container>
+                    <Spacer head>
+                        <Container>
+                            <p>
+                                The other key goal was to design something anyone could use, but also
+                                something that power users could customise to their liking. We had to push
+                                quite hard to keep the simple slide-to-allocate resources on the Network
+                                view, but balanced it out with an advanced setup for users comfortable with
+                                tweaking parameters.
+                            </p>
+                        </Container>
+                    </Spacer>
                 </Section>
             </Topic>
             <Topic title="Visual Identity">
@@ -135,7 +139,7 @@ const GolemPage = () => (
                             a conversation with an AI which is evolving consciousness.
                         </p>
                     </Container>
-                    <Spacer head>
+                    <Spacer head scale={0.6}>
                         <Identity />
                     </Spacer>
                 </Section>
@@ -177,7 +181,7 @@ const GolemPage = () => (
                             3D files, the first Golem integration.
                         </p>
                     </Container>
-                    <Spacer head>
+                    <Spacer head scale={0.6}>
                         <BetaLaunchPage />
                     </Spacer>
                 </Section>

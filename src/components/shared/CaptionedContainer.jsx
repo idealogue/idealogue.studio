@@ -1,26 +1,29 @@
 import React from 'react'
 import styled from 'styled-components'
-import UnstyledCaption from '$shared/Caption'
+import PrestyledCaption from '$shared/Caption'
+import { SM, MD } from '$utils/css'
 
-const Wrapper = styled.div`
+const Caption = styled(PrestyledCaption)`
+    margin-top: 56px;
+
+    @media (min-width: ${SM}px) {
+        margin-top: 88px;
+    }
+
+    @media (min-width: ${MD}px) {}
 `
 
-const Body = styled.div`
-`
-
-const Caption = styled(UnstyledCaption)`
-    margin-top: 88px;
-`
-
-const CaptionedContainer = ({ caption, children, ...props }) => (
-    <Wrapper {...props}>
-        <Body>
+const UnstyledCaptionedContainer = ({ caption, children, ...props }) => (
+    <div {...props}>
+        <div>
             {children}
-        </Body>
+        </div>
         <Caption>
             {caption}
         </Caption>
-    </Wrapper>
+    </div>
 )
+
+const CaptionedContainer = styled(UnstyledCaptionedContainer)``
 
 export default CaptionedContainer
