@@ -8,9 +8,10 @@ import Link from '$shared/Link'
 import NextProject from '$shared/NextProject'
 import Project, { HUXTABURGER } from '$shared/Project'
 import Section from '$shared/Section'
+import Display from '$shared/Display'
 import SectionHeader from '$shared/SectionHeader'
 import BrowsingVideo from '$hux/BrowsingVideo'
-import { Logo, CollageA, CollageB, LargeSign } from '$hux/Pics'
+import { Logo, CollageA, CollageB, Collage, LargeSign } from '$hux/Pics'
 import Iconic from '$hux/Iconic'
 import Neon from '$hux/Neon'
 import Spacer from '$shared/Spacer'
@@ -69,8 +70,9 @@ const HuxtaburgerPage = () => (
                     </Spacer>
                 </Section>
                 <Section theme={WhiteTheme}>
-                    <CollageA />
-                    <CollageB />
+                    <Display as={CollageA} xs="none" sm="block" />
+                    <Display as={CollageB} xs="none" sm="block" />
+                    <Display as={Collage} sm="none" />
                     <LargeSign />
                 </Section>
             </Topic>

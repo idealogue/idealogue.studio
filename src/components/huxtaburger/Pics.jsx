@@ -3,34 +3,15 @@ import styled from 'styled-components'
 import FluidImage from '$shared/FluidImage'
 import Container from '$shared/Container'
 import Image from '$hux/Image'
+import { MD } from '$utils/css'
 
-const Cover = styled.div`
-    overflow: hidden;
-    position: relative;
-
-    img {
-        height: auto;
-        left: 50%;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-    }
-`
-
-const LargeImageWrapper = styled(Cover)`
-    background-color: #000000;
-    height: 1024px;
-`
-
-const SmallImageWrapper = styled(Cover)`
+const SmallImage = styled.div`
+    background-image: url(${({ src }) => src});
+    background-size: cover;
+    background-position: center;
     float: left;
     height: 512px;
     width: 50%;
-`
-
-const Inner = styled.div`
-    padding: 0 96px;
 `
 
 const SecondaryImages = styled.div`
@@ -41,38 +22,56 @@ const SecondaryImages = styled.div`
     }
 `
 
-export const Logo = () => (
+export const Inner = styled.div`
+    padding: 0 32px;
+
+    @media (min-width: ${MD}px) {
+        padding: 0 96px;
+    }
+`
+
+export const Logo = (props) => (
     <Container>
         <Inner>
-            <FluidImage src={Image.HUXTABURGER} alt="Huxtaburger" />
+            <FluidImage {...props} src={Image.HUXTABURGER} alt="Huxtaburger" />
         </Inner>
     </Container>
 )
 
-export const CollageA = () => (
-    <SecondaryImages>
-        <SmallImageWrapper>
-            <FluidImage src={Image.COLLAGE_1} alt="" />
-        </SmallImageWrapper>
-        <SmallImageWrapper>
-            <FluidImage src={Image.COLLAGE_2} alt="" />
-        </SmallImageWrapper>
+export const CollageA = ({ className }) => (
+    <SecondaryImages className={className}>
+        <SmallImage src={Image.COLLAGE_1} />
+        <SmallImage src={Image.COLLAGE_2} />
     </SecondaryImages>
 )
 
-export const CollageB = () => (
-    <SecondaryImages>
-        <SmallImageWrapper>
-            <FluidImage src={Image.COLLAGE_3} alt="" />
-        </SmallImageWrapper>
-        <SmallImageWrapper>
-            <FluidImage src={Image.COLLAGE_4} alt="" />
-        </SmallImageWrapper>
+export const CollageB = ({ className }) => (
+    <SecondaryImages className={className}>
+        <SmallImage src={Image.COLLAGE_3} />
+        <SmallImage src={Image.COLLAGE_4} />
     </SecondaryImages>
 )
 
-export const LargeSign = () => (
-    <LargeImageWrapper>
-        <img src={Image.SIGN} alt="" />
-    </LargeImageWrapper>
+const UnstyledLargeSign = (props) => (
+    <img {...props} src={Image.SIGN} alt="" />
 )
+
+const UnstyledCollage = ({ className }) => (
+    <div className={className}>
+        <img src={Image.COLLAGE_1} alt="" />
+        <img src={Image.COLLAGE_2} alt="" />
+        <img src={Image.COLLAGE_3} alt="" />
+        <img src={Image.COLLAGE_4} alt="" />
+    </div>
+)
+
+export const Collage = styled(UnstyledCollage)`
+    img {
+        display: block;
+        width: 100%;
+    }
+`
+
+export const LargeSign = styled(UnstyledLargeSign)`
+    width: 100%;
+`

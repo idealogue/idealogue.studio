@@ -3,15 +3,18 @@ import styled from 'styled-components'
 import Video from '$shared/Video'
 import PhoneFrame from '$shared/PhoneFrame'
 
-const Wrapper = styled.div`
-`
-
-const BrowsingVideo = (props) => (
-    <Wrapper {...props}>
+const UnstyledBrowsingVideo = (props) => (
+    <div {...props}>
         <PhoneFrame>
             <Video id="hux" loop autoPlay playsInline muted />
         </PhoneFrame>
-    </Wrapper>
+    </div>
 )
+
+const BrowsingVideo = styled(UnstyledBrowsingVideo)`
+    ${PhoneFrame} {
+        margin: 0 auto;
+    }
+`
 
 export default BrowsingVideo
