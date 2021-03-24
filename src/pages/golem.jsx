@@ -15,10 +15,12 @@ import Golems from '$golem/Golems'
 import GolemCharacter from '$golem/GolemCharacter'
 import RedditPage from '$golem/RedditPage'
 import BetaLaunchPage from '$golem/BetaLaunchPage'
+import BetaLaunchPageMobile from '$golem/BetaLaunchPageMobile'
 import Shirts from '$golem/Shirts'
 import Brand from '$golem/Brand'
 import Spacer from '$shared/Spacer'
 import Topic from '$shared/Topic'
+import Display from '$shared/Display'
 import ScrollIndicator from '$shared/ScrollIndicator'
 
 const LayoutTheme = {
@@ -163,10 +165,12 @@ const GolemPage = () => (
                 </Section>
                 <Section theme={DarkBlueTheme} head tail>
                     <Brand />
-                    <Spacer head tail>
-                        <Shirts />
-                    </Spacer>
-                    <RedditPage />
+                    <Display xs="none" md="block">
+                        <Spacer head tail>
+                            <Shirts />
+                        </Spacer>
+                        <RedditPage />
+                    </Display>
                 </Section>
             </Topic>
             <Topic title="Beta Launch Page">
@@ -182,7 +186,8 @@ const GolemPage = () => (
                         </p>
                     </Container>
                     <Spacer head scale={0.6}>
-                        <BetaLaunchPage />
+                        <Display as={BetaLaunchPage} xs="none" md="block" />
+                        <Display as={BetaLaunchPageMobile} md="none" />
                     </Spacer>
                 </Section>
             </Topic>

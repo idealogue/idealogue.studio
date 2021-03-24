@@ -139,7 +139,6 @@ const Golems = styled(UnstyledGolems)`
             display: block;
         }
     }
-
 `
 
 export default Golems

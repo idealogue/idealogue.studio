@@ -1,4 +1,5 @@
 import styled from 'sc'
+import { MD, LG } from '$utils/css'
 
 export const Row = styled.div`
     display: flex;
@@ -15,11 +16,19 @@ export const Cell = styled.div`
 
 export const Header = styled.div`
     border-bottom: 2px solid white;
-    font-size: 20px;
+    font-size: 14px;
     line-height: 1em;
     margin-bottom: 2.5em;
     padding-bottom: 1em;
     width: 82%;
+
+    @media (min-width: ${MD}px) {
+        font-size: 16px;
+    }
+
+    @media (min-width: ${LG}px) {
+        font-size: 20px;
+    }
 `
 
 export const Fontface = styled.p`

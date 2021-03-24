@@ -1,13 +1,21 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useReducer } from 'react'
+import styled, { css } from 'styled-components'
 import Image from '$golem/Image'
 import Container from '$shared/Container'
+import Display from '$shared/Display'
+import XofY from '$shared/XofY'
 import Helmet from 'react-helmet'
-import { Row, Cell, Header, Fontface, Mark } from '$shared/Brand'
+import { Row as PrestyledRow, Cell as PrestyledCell, Header as PrestyledHeader, Fontface, Mark } from '$shared/Brand'
+import { MD, LG } from '$utils/css'
 
 const Roboto = styled(Fontface)`
     && {
         font-family: 'Roboto', sans-serif !important;
+        font-size: 18px;
+
+        @media (min-width: ${LG}px) {
+            font-size: 21px;
+        }
     }
 `
 
@@ -21,7 +29,12 @@ const Realtime = styled(Fontface)`
 const Sharpsans = styled(Fontface)`
     && {
         font-family: 'Sharp Sans', sans-serif !important;
+        font-size: 16px;
         font-weight: 700;
+
+        @media (min-width: ${LG}px) {
+            font-size: 21px;
+        }
     }
 `
 
@@ -31,21 +44,38 @@ const VerticalMark = styled(Mark)`
 
 const HorizontalMark = styled(Mark)`
     width: 320px;
+
+    @media (min-width: ${MD}px) {
+        width: 240px;
+    }
+
+    @media (min-width: ${LG}px) {
+        width: 320px;
+    }
 `
 
 const ColorRect = styled.div`
     background-color: ${({ code }) => code || '#f00'};
     border-radius: 4px;
-    height: 69px;
+    height: 54px;
     margin-bottom: 1.5em;
-    width: 69px;
+    width: 54px;
+
+    @media (min-width: ${LG}px) {
+        height: 69px;
+        width: 69px;
+    }
 `
 
 const Color = styled.div`
     color: #d4d4d4;
-    font-size: 12px;
+    font-size: 10px;
     line-height: 1;
     text-align: center;
+
+    @media (min-width: ${LG}px) {
+        font-size: 12px;
+    }
 `
 
 const Colors = styled.div`
@@ -54,92 +84,160 @@ const Colors = styled.div`
     width: 82%;
 `
 
-const Brand = (props) => (
-    <div {...props}>
-        <Container>
-            <Row>
-                <Cell>
-                    <Header>Mark Animated</Header>
-                    <VerticalMark src={Image.MARK_ANIMATED} alt="" />
-                </Cell>
-                <Cell>
-                    <Header>Display Face</Header>
-                    <Realtime>
-                        Realtime Text
-                        <br/>
-                        ABCDEFGHIJKLMNOPQRSTUVWXYZ
-                        <br/>
-                        abcdefghijklmnopqrstuvwxyz
-                        <br/>
-                        1234567890 $£&amp;
-                    </Realtime>
-                </Cell>
-            </Row>
-            <Row>
-                <Cell>
-                    <Header>Mark Vertical Lockup</Header>
-                    <VerticalMark src={Image.MARK_VERTICAL} alt="" />
-                </Cell>
-                <Cell>
-                    <Header>Headlines</Header>
-                    <Sharpsans>
-                        Sharp Sans
-                        <br />
-                        ABCDEFGHIJKLMNOPQRSTUVWXYZ
-                        <br />
-                        abcdefghijklmnopqrstuvwxyz
-                        <br />
-                        1234567890 $£&amp;
-                    </Sharpsans>
-                </Cell>
-            </Row>
-            <Row>
-                <Cell>
-                    <Header>Mark Horizontal Lockup</Header>
-                    <HorizontalMark src={Image.MARK_HORIZONTAL} alt="" />
-                </Cell>
-                <Cell>
-                    <Header>UI &amp; Body</Header>
-                    <Helmet>
-                        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" />
-                    </Helmet>
-                    <Roboto>
-                        Roboto
-                        <br />
-                        ABCDEFGHIJKLMNOPQRSTUVWXYZ
-                        <br />
-                        abcdefghijklmnopqrstuvwxyz
-                        <br />
-                        1234567890 $£&amp;
-                    </Roboto>
-                </Cell>
-            </Row>
-            <Row>
-                <Cell>
-                    <Header>Brass Stage Colours</Header>
-                    <Colors>
-                        <Color>
-                            <ColorRect code="#005DD5" />
-                            <strong>#005DD5</strong>
-                        </Color>
-                        <Color>
-                            <ColorRect code="#FFC442" />
-                            <strong>#FFC442</strong>
-                        </Color>
-                        <Color>
-                            <ColorRect code="#37C481" />
-                            <strong>#37C481</strong>
-                        </Color>
-                        <Color>
-                            <ColorRect code="#B5B5B5" />
-                            <strong>#B5B5B5</strong>
-                        </Color>
-                    </Colors>
-                </Cell>
-                <Cell />
-            </Row>
-        </Container>
-    </div>
-)
+const Cell = styled(PrestyledCell)`
+    @media (max-width: ${MD - 1}px) {
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        visibility: hidden;
+        transition: 200ms;
+        transition-property: visibility, opacity;
+        transition-delay: 200ms, 0s;
+
+        ${({ current }) => !!current && css`
+            opacity: 1;
+            position: relative;
+            transition-delay: 0s;
+            transition-delay: 200ms;
+            visibility: visible;
+        `}
+    }
+`
+
+const Header = styled(PrestyledHeader)`
+    @media (max-width: ${MD - 1}px) {
+        width: 100%;
+    }
+`
+
+const Inner = styled.div`
+    @media (max-width: ${MD - 1}px) {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: 200px;
+        justify-content: center;
+    }
+`
+
+const Row = styled(PrestyledRow)`
+    @media (max-width: ${MD - 1}px) {
+        margin-top: 0 !important;
+    }
+`
+
+const Position = styled.div`
+    position: relative;
+`
+
+const UnstyledBrand = (props) => {
+    const [slide, next] = useReducer((x) => (x + 1) % 3, 0)
+
+    return (
+        <div {...props}>
+            <Container>
+                <Position>
+                    <Row>
+                        <Cell current={slide === 0}>
+                            <Header>Mark Animated</Header>
+                            <Inner>
+                                <VerticalMark src={Image.MARK_ANIMATED} alt="" />
+                            </Inner>
+                        </Cell>
+                        <Display as={Cell} xs="none" md="block">
+                            <Header>Display Face</Header>
+                            <Realtime>
+                                Realtime Text
+                                <br/>
+                                ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                                <br/>
+                                abcdefghijklmnopqrstuvwxyz
+                                <br/>
+                                1234567890 $£&amp;
+                            </Realtime>
+                        </Display>
+                    </Row>
+                    <Row>
+                        <Cell current={slide === 1}>
+                            <Header>Mark Vertical Lockup</Header>
+                            <Inner>
+                                <VerticalMark src={Image.MARK_VERTICAL} alt="" />
+                            </Inner>
+                        </Cell>
+                        <Display as={Cell} xs="none" md="block">
+                            <Header>Headlines</Header>
+                            <Sharpsans>
+                                Sharp Sans
+                                <br />
+                                ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                                <br />
+                                abcdefghijklmnopqrstuvwxyz
+                                <br />
+                                1234567890 $£&amp;
+                            </Sharpsans>
+                        </Display>
+                    </Row>
+                    <Row>
+                        <Cell current={slide === 2}>
+                            <Header>Mark Horizontal Lockup</Header>
+                            <Inner>
+                                <HorizontalMark src={Image.MARK_HORIZONTAL} alt="" />
+                            </Inner>
+                        </Cell>
+                        <Display as={Cell} xs="none" md="block">
+                            <Header>UI &amp; Body</Header>
+                            <Helmet>
+                                <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" />
+                            </Helmet>
+                            <Roboto>
+                                Roboto
+                                <br />
+                                ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                                <br />
+                                abcdefghijklmnopqrstuvwxyz
+                                <br />
+                                1234567890 $£&amp;
+                            </Roboto>
+                        </Display>
+                    </Row>
+                    <Display as={Row} xs="none" md="flex">
+                        <Cell>
+                            <Header>Brass Stage Colours</Header>
+                            <Colors>
+                                <Color>
+                                    <ColorRect code="#005DD5" />
+                                    <strong>#005DD5</strong>
+                                </Color>
+                                <Color>
+                                    <ColorRect code="#FFC442" />
+                                    <strong>#FFC442</strong>
+                                </Color>
+                                <Color>
+                                    <ColorRect code="#37C481" />
+                                    <strong>#37C481</strong>
+                                </Color>
+                                <Color>
+                                    <ColorRect code="#B5B5B5" />
+                                    <strong>#B5B5B5</strong>
+                                </Color>
+                            </Colors>
+                        </Cell>
+                        <Cell />
+                    </Display>
+                </Position>
+                <Display as={XofY} md="none" x={slide + 1} y={3} onClick={next} />
+            </Container>
+        </div>
+    )
+}
+
+const Brand = styled(UnstyledBrand)`
+    ${XofY} {
+        margin: 88px auto 0;
+        width: 56px;
+    }
+`
 
 export default Brand

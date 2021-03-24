@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Image from '$golem/Image'
 import FluidImage from '$shared/FluidImage'
 import Container from '$shared/Container'
+import { LG } from '$utils/css'
 
 const Row = styled.div`
     display: flex;
@@ -15,7 +16,11 @@ const Row = styled.div`
 `
 
 const Cell = styled.div`
-    width: 264px;
+    width: 216px;
+
+    @media (min-width: ${LG}px) {
+        width: 264px;
+    }
 `
 
 const Inner = styled.div`

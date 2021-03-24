@@ -5,15 +5,16 @@ import FluidImage from '$shared/FluidImage'
 import Image from '$golem/Image'
 import BrowserFrame from '$shared/BrowserFrame'
 
-const Wrapper = styled(Container)`
-`
-
-const BetaLaunchPage = (props) => (
-    <Wrapper {...props}>
-        <BrowserFrame>
-            <FluidImage src={Image.BETA_LAUNCH} alt="" />
-        </BrowserFrame>
-    </Wrapper>
+const UnstyledBetaLaunchPage = (props) => (
+    <div {...props}>
+        <Container>
+            <BrowserFrame>
+                <FluidImage src={Image.BETA_LAUNCH} alt="" />
+            </BrowserFrame>
+        </Container>
+    </div>
 )
+
+const BetaLaunchPage = styled(UnstyledBetaLaunchPage)``
 
 export default BetaLaunchPage
