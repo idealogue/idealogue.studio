@@ -47,14 +47,14 @@ const Slide = styled(UnstyledSlide)`
 `
 
 const UnstyledPhoneFrame = ({ children, ...props }) => {
-    const [slideNo, incSlideNo] = useReducer((x) => (x + 1) % React.Children.count(children), 0)
+    const [slide, next] = useReducer((x) => (x + 1) % React.Children.count(children), 0)
 
     const n = React.Children.count(children)
 
     return (
         <div {...props}>
             {n > 1 && (
-                <XofY x={slideNo + 1} y={n} bg="#ffffff" color="#d5d5d5" />
+                <XofY x={slide + 1} y={n} bg="#ffffff" color="#d5d5d5" onClick={next} />
             )}
             <svg viewBox="0 0 320 77" xmlns="http://www.w3.org/2000/svg">
                 <g fill="none" fillRule="evenodd">
@@ -74,9 +74,9 @@ const UnstyledPhoneFrame = ({ children, ...props }) => {
                             </Slide>
                             {React.Children.map(children, (child, index) => (
                                 <Slide
-                                    current={index === slideNo}
-                                    previous={index === (n + slideNo - 1) % n}
-                                    onMouseDown={incSlideNo}
+                                    current={index === slide}
+                                    previous={index === (n + slide - 1) % n}
+                                    onMouseDown={next}
                                 >
                                     {child}
                                 </Slide>
