@@ -43,7 +43,7 @@ const VerticalMark = styled(Mark)`
 `
 
 const HorizontalMark = styled(Mark)`
-    width: 320px;
+    width: 272px;
 
     @media (min-width: ${MD}px) {
         width: 240px;
@@ -235,7 +235,7 @@ const UnstyledBrand = (props) => {
 
 const Brand = styled(UnstyledBrand)`
     ${XofY} {
-        margin: 88px auto 0;
+        margin: 72px auto 0;
         width: 56px;
     }
 `
