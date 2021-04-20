@@ -20,8 +20,6 @@ jobs:
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
         with:
-          domain: idealogue.mariusz.io
-          fqdn: true
           commit_message: Bump
           target_branch: gh-pages
           build_dir: .
