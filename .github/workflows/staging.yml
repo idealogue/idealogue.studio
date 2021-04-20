@@ -22,6 +22,6 @@ jobs:
         with:
           commit_message: Bump
           target_branch: gh-pages
-          build_dir: .
+          build_dir: public
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
