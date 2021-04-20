@@ -5,42 +5,93 @@ import Layout from '$shared/Layout'
 import { lineup, projects } from '$shared/Project'
 import Container from '$shared/Container'
 import { LinkList } from '$shared/Menu'
+import Display from '$shared/Display'
+import { SM, MD, LG } from '$utils/css'
 
 const Root = styled.div`
     color: #06042a;
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
-    line-height: 72px;
-    padding-top: 208px;
+    line-height: 50px;
+    padding-top: 122px;
 
     h1 {
         font-family: 'Publico Text';
-        font-size: 45px;
+        font-size: 28px;
         font-weight: 700;
+        letter-spacing: -0.014px;
         line-height: 1em;
-        margin: 0 0 168px;
+        margin: 0 0 108px;
     }
 
     h2 {
-        font-size: 30px;
-        line-height: 1em;
         border-bottom: 1px solid #06042a7f;
-        margin: 256px 0 64px;
+        font-size: 20px;
+        line-height: 1em;
+        margin: 118px 0 40px;
         padding: 0 0 16px;
-    }
-
-    footer {
-        display: flex;
-        font-size: 16px;
-        justify-content: space-between;
-        line-height: 1.5em;
-        margin-top: 256px;
-        padding: 96px;
-        padding-left: 0;
     }
 
     p {
         margin: 0;
+    }
+
+    footer {
+        font-size: 14px;
+        line-height: 24px;
+        margin-top: 118px;
+        padding-bottom: 40px;
+    }
+
+    footer p + p {
+        margin-top: 44px;
+    }
+
+    @media (min-width: ${MD}px) {
+        h1 {
+            font-size: 40px;
+            letter-spacing: -0.2px;
+            margin-bottom: 68px;
+        }
+
+        h2 {
+            margin: 108px 0 40px;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 168px;
+            padding-bottom: 108px;
+            padding: 0 0 32px;
+        }
+
+        footer p + p {
+            margin: 0;
+        }
+    }
+
+    @media (min-width: ${LG}px) {
+        font-size: 50px;
+        line-height: 72px;
+        padding-top: 208px;
+
+        h1 {
+            font-size: 45px;
+            margin-bottom: 168px;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin: 256px 0 64px;
+        }
+
+        footer {
+            font-size: 16px;
+            margin-top: 256px;
+            padding: 96px;
+            padding-left: 0;
+        }
     }
 `
 
@@ -78,10 +129,10 @@ const IndexPage = () => (
                             </Fragment>
                         ))}
                     </LinkList>
-                    <h2>Team</h2>
+                    <h2>About</h2>
                     <LinkList>
                         <li>
-                            <Link to="/team/">About us</Link>
+                            <Link to="/team/">Team</Link>
                         </li>
                     </LinkList>
                     <footer>
@@ -92,7 +143,7 @@ const IndexPage = () => (
                             <br />
                             Melbourne Australia
                         </p>
-                        <p>
+                        <Display as="p" xs="none" md="block">
                             Build by
                             {' '}
                             <Link
@@ -125,8 +176,8 @@ const IndexPage = () => (
                             </Link>
                             {' '}
                             by Commercial Type
-                        </p>
-                        <p>
+                        </Display>
+                        <Display as="p" xs="none" md="block">
                             <Link as="a" href="mailto:matt@idealogue.io">
                                 Email us
                             </Link>
@@ -140,8 +191,30 @@ const IndexPage = () => (
                                 Twitter
                             </Link>
                             <br />
-                            That’s all ✌
-                        </p>
+                            That’s all
+                            {' '}
+                            <span role="img" aria-label="Cheers!">
+                                ✌
+                            </span>
+                        </Display>
+                        <Display
+                            as="p"
+                            md="none"
+                            css={`
+                                font-size: 1.25em;
+                            `}
+                        >
+                            <Link as="a" href="mailto:matt@idealogue.io">
+                                &rarr; Send us an email
+                            </Link>
+                        </Display>
+                        <Display as="p" md="none">
+                            That’s all
+                            {' '}
+                            <span role="img" aria-label="Cheers!">
+                                ✌
+                            </span>
+                        </Display>
                     </footer>
                 </Container>
             </Root>

@@ -4,13 +4,30 @@ import Link from '$shared/Link'
 import { lineup, projects } from '$shared/Project'
 import { CloseButton as UnstyledCloseButton } from '$shared/MenuToggle'
 import useMenu from '$hooks/useMenu'
+import { SM, MD, LG } from '$utils/css'
 
 const Wrapper = styled.div`
     display: flex;
-    font-size: 64px;
-    line-height: 100px;
+    font-size: 30px;
+    line-height: 56px;
     margin: 0 auto;
-    width: 672px;
+    max-width: 344px;
+    padding: 0 32px;
+    width: 100%;
+
+    @media (min-width: ${MD}px) {
+        font-size: 40px;
+        line-height: 64px;
+        max-width: none;
+        padding: 0;
+        width: 344px;
+    }
+
+    @media (min-width: ${LG}px) {
+        font-size: 64px;
+        line-height: 100px;
+        width: 672px;
+    }
 `
 
 export const LinkList = styled.ul`
@@ -34,7 +51,19 @@ const Inner = styled.div`
     align-items: center;
     display: flex;
     height: 100%;
-    min-height: 700px;
+    min-height: 540px;
+
+    @media (min-width: ${SM}px) {
+        min-height: 640px;
+    }
+
+    @media (min-width: ${MD}px) {
+        min-height: 720px;
+    }
+
+    @media (min-width: ${LG}px) {
+        min-height: 1000px;
+    }
 `
 
 const DefaultTheme = {
@@ -110,7 +139,14 @@ const Menu = styled(UnstyledMenu)`
     z-index: 100;
 
     ${LinkList} li:last-child {
-        font-size: 30px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    @media (min-width: ${LG}px) {
+        ${LinkList} li:last-child {
+            font-size: 30px;
+        }
     }
 `
 
