@@ -1,22 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { StaticImage } from 'gatsby-plugin-image'
 import { useProject } from '$shared/Project'
-import CobaltImage from './CobaltImage'
-import GolemImage from './GolemImage'
-import HiveImage from './HiveImage'
-import HuxImage from './HuxImage'
-import StreamrImage from './StreamrImage'
-import VizorImage from './VizorImage'
 import { SM, MD, LG } from '$utils/css'
-
-const images = {
-    cobalt: CobaltImage,
-    golem: GolemImage,
-    hive: HiveImage,
-    huxtaburger: HuxImage,
-    streamr: StreamrImage,
-    vizor: VizorImage,
-}
+import CobaltImage from './CobaltImage'
 
 const Img = styled.div`
     height: 102px;
@@ -39,14 +26,15 @@ const Img = styled.div`
     }
 `
 
-const UnstyledHeroImage = (props) => {
-    const { id, name } = useProject()
-
-    return (
-        <Img {...props} as={images[id]} alt={name} />
-    )
+const images = {
+    cobalt: <CobaltImage as={Img} />,
+    golem: <StaticImage as={Img} src="golem.png" alt="Golem" />,
+    hive: <StaticImage as={Img} src="hive.png" alt="Hive" />,
+    huxtaburger: <StaticImage as={Img} src="huxtaburger.png" alt="Huxtaburger" />,
+    streamr: <StaticImage as={Img} src="streamr.png" alt="Streamr" />,
+    vizor: <StaticImage as={Img} src="vizor.png" alt="Vizor" />,
 }
 
-const HeroImage = styled(UnstyledHeroImage)``
-
-export default HeroImage
+export default function HeroImage() {
+    return images[useProject().id]
+}

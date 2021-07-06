@@ -5,7 +5,7 @@ import MOBILE_2 from './mobile_2.jpg'
 import MOBILE_3 from './mobile_3.jpg'
 import MOBILE_4 from './mobile_4.jpg'
 
-export default {
+const ALL = {
     HOSTED,
     ICONS,
     MOBILE_1,
@@ -13,3 +13,5 @@ export default {
     MOBILE_3,
     MOBILE_4,
 }
+
+export default ALL

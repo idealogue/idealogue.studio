@@ -31,7 +31,7 @@ const BUGS = [
     BUG_12,
 ]
 
-export default {
+const ALL = {
     BUGS,
     LOGO,
     SCREENSHOT_DESKTOP,
@@ -39,3 +39,5 @@ export default {
     SCREENSHOT_MOBILE_2,
     SCREENSHOT_MOBILE_3,
 }
+
+export default ALL

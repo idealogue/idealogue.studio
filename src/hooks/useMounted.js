@@ -1,6 +1,6 @@
 import { useRef, useEffect, useCallback } from 'react'
 
-export default () => {
+export default function useMounted() {
     const ref = useRef(true)
 
     useEffect(() => () => {

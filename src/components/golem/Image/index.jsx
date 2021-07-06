@@ -36,7 +36,7 @@ const SHIRTS = [
     SHIRT_5,
 ]
 
-export default {
+const ALL = {
     BETA_LAUNCH_MOBILE,
     BETA_LAUNCH,
     BLENDER,
@@ -53,3 +53,5 @@ export default {
     UI_PROCESS,
     UX_FIRST,
 }
+
+export default ALL

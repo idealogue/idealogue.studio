@@ -1,7 +1,9 @@
 import MATT from './assets/matt.jpg'
 import SAORI from './assets/saori.jpg'
 
-export default {
+const ALL = {
     MATT,
     SAORI,
 }
+
+export default ALL

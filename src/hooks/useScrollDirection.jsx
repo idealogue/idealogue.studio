@@ -32,7 +32,7 @@ const getScrollY = () => {
     ).scrollTop)
 }
 
-export default () => {
+export default function useScrollDirection() {
     const [direction, setDirection] = useState()
 
     useEffect(() => {

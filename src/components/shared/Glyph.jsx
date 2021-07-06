@@ -136,8 +136,10 @@ export {
     SLIDE_RIGHT,
 }
 
-export default ({ source: { d, viewBox }, ...props }) => (
-    <svg {...props} viewBox={viewBox} xmlns="http://www.w3.org/2000/svg">
-        <path d={d} fill="currentColor" />
-    </svg>
-)
+export default function Glyph({ source: { d, viewBox }, ...props }) {
+    return (
+        <svg {...props} viewBox={viewBox} xmlns="http://www.w3.org/2000/svg">
+            <path d={d} fill="currentColor" />
+        </svg>
+    )
+}

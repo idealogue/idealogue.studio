@@ -45,7 +45,7 @@ const Body = styled.div`
     width: 100%;
 `
 
-const Search = ({ height, width, ...props }) => (
+const SearchModule = ({ height, width, ...props }) => (
     <div {...props}>
         <Top>
             <Header>
@@ -90,6 +90,6 @@ const Search = ({ height, width, ...props }) => (
     </div>
 )
 
-export default (props) => (
-    <Module {...props} as={Search} />
-)
+export default function Search(props) {
+    return <Module {...props} as={SearchModule} />
+}

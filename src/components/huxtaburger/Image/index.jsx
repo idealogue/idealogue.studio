@@ -107,7 +107,7 @@ export const BurgerElement = {
     TOMATO_2,
 }
 
-export default {
+const ALL = {
     CBD_FRAMES,
     CBD_SHADOW,
     CHIPS,
@@ -130,3 +130,5 @@ export default {
     SIGN,
     SMOKE,
 }
+
+export default ALL

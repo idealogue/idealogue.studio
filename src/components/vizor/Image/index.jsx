@@ -29,7 +29,7 @@ const ASSETS = [
     ASSET_9,
 ]
 
-export default {
+const ALL = {
     ASSETS,
     EDITOR_0,
     EDITOR_1,
@@ -41,3 +41,5 @@ export default {
     UI_1,
     UI_2,
 }
+
+export default ALL

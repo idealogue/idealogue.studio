@@ -103,7 +103,7 @@ const CONSENSUS_GALLERY_B = [
     CONSENSUS_B2_2X,
 ]
 
-export default {
+const ALL = {
     ICONS,
     ICONS_2X,
     BRAND_FILM_POSTER,
@@ -123,3 +123,5 @@ export default {
     CONSENSUS_GALLERY_A,
     CONSENSUS_GALLERY_B,
 }
+
+export default ALL

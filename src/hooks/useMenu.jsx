@@ -34,6 +34,6 @@ export const MenuProvider = ({ children }) => {
     )
 }
 
-export default () => (
-    useContext(MenuContext)
-)
+export default function useMenu() {
+    return useContext(MenuContext)
+}

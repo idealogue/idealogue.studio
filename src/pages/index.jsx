@@ -6,7 +6,7 @@ import { lineup, projects } from '$shared/Project'
 import Container from '$shared/Container'
 import { LinkList } from '$shared/Menu'
 import Display from '$shared/Display'
-import { SM, MD, LG } from '$utils/css'
+import { MD, LG } from '$utils/css'
 
 const Root = styled.div`
     color: #06042a;
