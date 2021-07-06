@@ -1,5 +1,4 @@
 import React, { useState, useCallback } from 'react'
-import cx from 'classnames'
 import styled from 'styled-components'
 import BurgerComponent, { Parent } from '$hux/BurgerComponent'
 import { BurgerElement } from '$hux/Image'
@@ -26,9 +25,7 @@ const UnstyledBurger = ({ children, className, onMouseDown: onMouseDownProp, ...
     return (
         <Parent
             {...props}
-            className={cx(className, {
-                open,
-            })}
+            className={className}
             onMouseDown={onMouseDown}
             role="button"
             tabIndex="0"
@@ -42,6 +39,8 @@ const UnstyledBurger = ({ children, className, onMouseDown: onMouseDownProp, ...
         </Parent>
     )
 }
+
+// TODO: Gotta fix the .open class handling.
 
 const Burger = styled(UnstyledBurger)`
     height: 140px;
