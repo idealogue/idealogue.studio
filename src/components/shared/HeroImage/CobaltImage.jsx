@@ -8,7 +8,6 @@ export default function CobaltImage({ as: Tag = 'div' }) {
             as={Tag}
             alt="Cobalt"
             image={{
-                backgroundColor: 'transparent',
                 height: 243,
                 images: {
                     fallback: {
