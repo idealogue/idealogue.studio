@@ -14,16 +14,18 @@ module.exports = {
         //     },
         // },
         'gatsby-plugin-image',
-        'gatsby-transformer-sharp',
         {
             resolve: 'gatsby-plugin-sharp',
             options: {
-                backgroundColor: 'transparent',
-                defaultQuality: 100,
+                defaults: {
+                    placeholder: 'none',
+                    quality: 100,
+                },
                 failOnError: true,
                 stripMetadata: true,
             },
         },
+        'gatsby-transformer-sharp',
         {
             resolve: 'gatsby-source-filesystem',
             options: {
