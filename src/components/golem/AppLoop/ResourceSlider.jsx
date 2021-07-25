@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
 import styled, { css } from 'sc'
 import Glyph, { LOW, HIGH } from '$shared/Glyph'
-import { TweenMax } from 'gsap'
+import gsap from 'gsap'
 import TouchIndicator from './TouchIndicator'
 import useMounted from '$hooks/useMounted'
 
@@ -48,12 +48,10 @@ const Inner = styled.div`
 const Handle = styled.div`
     background-color: #ffffff;
     border-radius: 50%;
-    /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     color: #37c481;
     height: 24px;
     height: 32px;
-    left: ${({ position }) => Math.floor(position)}%;
     line-height: 24px;
     line-height: 32px;
     position: absolute;
@@ -78,7 +76,6 @@ const ProgressBar = styled.div`
     height: 100%;
     max-width: 100%;
     transition: 500ms ease-in-out background-color;
-    width: ${({ position }) => Math.floor(position)}%;
 
     ${({ position }) => position >= 75 && css`
         background-color: #fec62e;
@@ -101,11 +98,11 @@ const UnstyledResourceSlider = ({ position: positionProp = 18, onTransitionFinis
     useEffect(() => {
         const duration = Math.max(1, Math.abs(positionProp - positionRef.current.position) * 0.03)
 
-        const tween = TweenMax.to(positionRef.current, duration, {
+        const tween = gsap.to(positionRef.current, duration, {
             position: positionProp,
             onUpdate: () => {
                 if (isMounted()) {
-                    setPosition(Math.floor(positionRef.current.position))
+                    setPosition(positionRef.current.position)
                 }
             },
             onComplete,
@@ -122,9 +119,19 @@ const UnstyledResourceSlider = ({ position: positionProp = 18, onTransitionFinis
                 <Icon source={LOW} />
                 <Track>
                     <Inner>
-                        <ProgressBar position={position} />
-                        <Handle position={position}>
-                            {position}
+                        <ProgressBar
+                            position={position}
+                            style={{
+                                width: `${position}%`,
+                            }}
+                        />
+                        <Handle
+                            position={position}
+                            style={{
+                                left: `${position}%`,
+                            }}
+                        >
+                            {Math.floor(position)}
                             <TouchIndicator visible={showTouch} />
                         </Handle>
                     </Inner>
