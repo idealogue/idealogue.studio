@@ -1,5 +1,6 @@
 import React, { useState, useCallback, useMemo, useEffect, useRef } from 'react'
 import styled, { css } from 'styled-components'
+import { useInViewport } from 'react-in-viewport'
 import Container from '$shared/Container'
 import CaptionedContainer from '$shared/CaptionedContainer'
 import { SM } from '$utils/css'
@@ -212,17 +213,17 @@ const frames = [
         sustain: 500,
     }, {
         resourcePos: 92,
-        sustain: Infinity,
+        sustain: Number.POSITIVE_INFINITY,
     }, {
         sustain: 500,
     }, {
         resourcePos: 10,
-        sustain: Infinity,
+        sustain: Number.POSITIVE_INFINITY,
     }, {
         sustain: 500,
     }, {
         resourcePos: 18,
-        sustain: Infinity,
+        sustain: Number.POSITIVE_INFINITY,
     }, {
         sustain: 500,
     }, {
@@ -249,8 +250,10 @@ const frames = [
     },
 ]
 
-const useFrame = () => {
+const useFrame = (inViewport) => {
     const [frameNo, setFrameNo] = useState(0)
+
+    const sustainRef = useRef(new SleepSustain())
 
     const frame = useMemo(() => (
         frames.slice(0, frameNo + 1).reduce((memo, frame) => ({
@@ -268,21 +271,27 @@ const useFrame = () => {
     }, [isMounted])
 
     useEffect(() => {
-        const sustain = new SleepSustain()
+        const { current: sustain } = sustainRef
 
-        if (frame.sustain !== Infinity) {
-            sustain.run(frame.sustain).then(next)
+        if (inViewport) {
+            if (frame.sustain !== Number.POSITIVE_INFINITY) {
+                sustain.run(frame.sustain).then(next)
+            }
         }
 
         return () => {
             sustain.cancel()
         }
-    }, [frame, isMounted, next])
+    }, [frame, isMounted, next, inViewport])
 
     return useMemo(() => [frame, next], [frame, next])
 }
 
 const AppLoop = (props) => {
+    const rootRef = useRef()
+
+    const { inViewport } = useInViewport(rootRef, undefined, undefined, {})
+
     const [{
         balanceMode,
         cpu,
@@ -292,7 +301,7 @@ const AppLoop = (props) => {
         resourcePos,
         screen,
         showResourceSliderTouch,
-    }, next] = useFrame()
+    }, next] = useFrame(inViewport)
 
     const [[underlineX, underlineWidth], setUnderlineProps] = useState([0, 0])
 
@@ -319,7 +328,7 @@ const AppLoop = (props) => {
     }, [screen])
 
     return (
-        <Root {...props}>
+        <Root {...props} ref={rootRef}>
             <DesignPass>
                 <HeaderWrapper>
                     <Header>
