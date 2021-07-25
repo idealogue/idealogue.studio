@@ -24,14 +24,14 @@ const Item = styled.div`
     ${({ active }) => !!active && css`
         color: #4e4e4e;
     `}
-    
-    ${({ middle }) => !!middle && css`
-        text-align: center;
+`
 
-        & + & {
-            text-align: right;
-        }
-    `}
+const MiddleItem = styled(Item)`
+    text-align: center;
+
+    & + ${Item} {
+        text-align: right;
+    }
 `
 
 const UnstyledNav = ({ active, ...props }) => (
@@ -39,10 +39,10 @@ const UnstyledNav = ({ active, ...props }) => (
         <Item active={active === RESOURCES}>
             Resources
         </Item>
-        <Item active={active === HISTORY} middle>
+        <MiddleItem active={active === HISTORY}>
             History
             <Touch visible={active === HISTORY} />
-        </Item>
+        </MiddleItem>
         <Item active={active === ADVANCED}>
             <span>
                 Advanced
