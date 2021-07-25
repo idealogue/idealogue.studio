@@ -287,6 +287,35 @@ const useFrame = (inViewport) => {
     return useMemo(() => [frame, next], [frame, next])
 }
 
+const PlusGlyph = styled(Glyph).attrs(() => ({ source: PLUS }))`
+    && {
+        display: none;
+
+        @media (min-width: 455px) {
+            display: block;
+        }
+    }
+`
+
+const BookGlyph = styled(Glyph).attrs(() => ({ source: BOOK }))`
+    && {
+        display: none;
+
+        @media (min-width: 420px) {
+            display: block;
+        }
+    }
+`
+const SettingsGlyph = styled(Glyph).attrs(() => ({ source: SETTINGS }))`
+    && {
+        display: none;
+
+        @media (min-width: 386px) {
+            display: block;
+        }
+    }
+`
+
 const AppLoop = (props) => {
     const rootRef = useRef()
 
@@ -354,9 +383,9 @@ const AppLoop = (props) => {
                             </Tabs>
                         </HeaderInner>
                         <HeaderIcons>
-                            <Glyph source={PLUS} />
-                            <Glyph source={BOOK} />
-                            <Glyph source={SETTINGS} />
+                            <PlusGlyph />
+                            <BookGlyph />
+                            <SettingsGlyph />
                         </HeaderIcons>
                     </Header>
                     <Underline width={underlineWidth} x={underlineX} />

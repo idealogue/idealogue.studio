@@ -48,6 +48,7 @@ const Inner = styled.div`
 const Handle = styled.div`
     background-color: #ffffff;
     border-radius: 50%;
+    /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     color: #37c481;
     height: 24px;

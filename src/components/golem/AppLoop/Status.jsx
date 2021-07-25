@@ -32,6 +32,7 @@ const Circle = styled.div`
     border-radius: 50%;
     border-width: 2px;
     box-sizing: border-box;
+    flex-shrink: 0;
     /* height: 9px; */
     height: 12px;
     margin-right: 0.5em;
@@ -53,13 +54,18 @@ const UnstyledStatus = ({ children, processing, ...props }) => (
         <Circle breathe={processing}>
             <Animation />
         </Circle>
-        {children}
+        <span>{children}</span>
     </div>
 )
 
 const Status = styled(UnstyledStatus)`
     align-items: center;
     display: flex;
+
+    > span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 `
 
 export default Status

@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react'
 import styled, { css } from 'sc'
 import arc from '$utils/arc'
-import { TweenMax } from 'gsap'
+import gsap from 'gsap'
 import useMounted from '$hooks/useMounted'
 
 const Row = styled.div`
@@ -46,7 +46,12 @@ const OutlinedButton = styled(Input)`
     flex: 0 1 46%;
     font-weight: bold;
     margin-left: 25px;
+    min-width: 0%;
+    overflow: hidden;
+    padding: 0 4px;
     text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 `
 
 const Arrow = styled.div`
@@ -105,6 +110,7 @@ const Numeric = styled(UnstyledNumeric)`
     display: flex;
     margin-top: 24px;
     text-align: center;
+    white-space: nowrap;
 
     > div {
         flex: 1;
@@ -136,7 +142,7 @@ const Circle = ({ angle: angleProp }) => {
     const isMounted = useMounted()
 
     useEffect(() => {
-        const tween = TweenMax.to(angleRef.current, 0.5, {
+        const tween = gsap.to(angleRef.current, 0.5, {
             angle: angleProp,
             onUpdate: () => {
                 if (isMounted()) {
@@ -176,11 +182,11 @@ const Graph = styled(UnstyledGraph)`
 
     svg {
         display: block;
-        height: 60px;
-        margin: 0 auto;
-        width: 60px;
-
+        /* height: 60px; */
         height: 100px;
+        margin: 0 auto;
+        max-width: 100%;
+        /* width: 60px; */
         width: 100px;
     }
 `
@@ -191,7 +197,7 @@ const UnstyledResource = ({ reflect, usage, total, unit, children, ...props }) =
             {children}
         </Graph>
         <Numeric>
-            {usage} {unit}
+            <span>{usage} {unit}</span>
         </Numeric>
     </div>
 )
@@ -199,6 +205,10 @@ const UnstyledResource = ({ reflect, usage, total, unit, children, ...props }) =
 const Resource = styled(UnstyledResource)`
     width: 28%;
     text-align: center;
+
+    ${Numeric} span {
+        white-space: nowrap;
+    }
 `
 
 const UnstyledAdvanced = ({ cpu, ram, disk, ...props }) => (
@@ -238,6 +248,8 @@ const Advanced = styled(UnstyledAdvanced)`
         color: #cbcbcb;
         font-size: 10px;
         line-height: 1.5em;
+        max-height: 4.5em;
+        overflow: hidden;
         padding: 0 20px;
         text-align: center;
     }
