@@ -38,11 +38,12 @@ const smokeAnimation = keyframes`
     }
 `
 
-const Smoke = styled.img.attrs((props) => ({
+const SmokeAttrs = (props) => ({
     alt: '',
     src: Image.SMOKE,
-    ...props,
-}))`
+})
+
+const Smoke = styled.img.attrs(SmokeAttrs)`
     animation: 1s ease-out 1 forwards ${smokeAnimation};
     left: ${({ posX }) => posX}px;
     position: absolute;

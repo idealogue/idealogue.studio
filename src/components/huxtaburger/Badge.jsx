@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { SM } from '$utils/css'
+import { Parent } from '$hux/BurgerComponent'
 
 const Badge = styled.div`
     background: #ee4734;
@@ -26,11 +27,19 @@ export const BurgerBadge = styled(Badge)`
     transition-delay: 0.2s;
     transition-property: opacity, transform;
 
-    ${({ visible }) => !visible && css`
+    ${Parent}.open & {
+        @media (max-width: ${SM - 1}px) {
+            opacity: 0;
+            transform: scale(0.9);
+            transition-delay: 0s;
+        }
+    }
+
+    @media (min-width: ${SM}px) {
         opacity: 0;
         transform: scale(0.9);
         transition-delay: 0s;
-    `}
+    }
 `
 
 export const StoreBadge = styled(Badge)`

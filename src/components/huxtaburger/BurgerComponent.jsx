@@ -1,50 +1,20 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
+import React, { useContext } from 'react'
+import styled, { css, ThemeContext } from 'styled-components'
 import { SM } from '$utils/css'
 
 export const Parent = styled.div``
 
-const UnstyledBurgerComponent = ({ shadow, src, at, animateBy, dy, ...props }) => {
-    const Tag = styled.div`
-        @media (max-width: ${SM - 1}px) {
-            ${Parent}.open & {
-                transform: translateY(${Math.floor(animateBy * 100)}%);
-            }
-        }
+const UnstyledBurgerComponent = ({ shadow, src, at, animateBy, dy, className }) => (
+    <div className={className}>
+        <img src={src} alt="" />
+    </div>
+)
 
-        @media (min-width: ${SM}px) {
-            ${Parent}:hover & {
-                transform: translateY(${Math.floor(animateBy * 100)}%);
-            }
-        }
+const BurgerComponentAttrs = ({ className, cid }) => ({
+    className: `${className || ''} ${cid}`.trim(),
+})
 
-        ${!!shadow && css`
-            left: 20%;
-            opacity: 0.25;
-            width: 100%;
-            transition-duration: 200ms;
-
-            @media (max-width: ${SM - 1}px) {
-                ${Parent}.open & {
-                    opacity: 0;
-                }
-            }
-
-            @media (min-width: ${SM}px) {
-                ${Parent}:hover & {
-                    opacity: 0;
-                }
-            }
-        `}
-    `
-
-    return (
-        <Tag {...props}>
-            <img src={src} alt="" />
-        </Tag>
-    )
-}
-const BurgerComponent = styled(UnstyledBurgerComponent)`
+const BurgerComponent = styled(UnstyledBurgerComponent).attrs(BurgerComponentAttrs)`
     position: absolute;
     top: ${({ at, dy }) => Math.floor((at + dy) * 100)}%;
     transform: translateY(0);
@@ -56,6 +26,39 @@ const BurgerComponent = styled(UnstyledBurgerComponent)`
         height: 100%;
         width: 100%;
     }
+
+    ${({ shadow, cid, animateBy }) => css`
+        @media (max-width: ${SM - 1}px) {
+            ${Parent}.open &.${cid} {
+                transform: translateY(${Math.floor(animateBy * 100)}%);
+            }
+        }
+
+        @media (min-width: ${SM}px) {
+            ${Parent}:hover &.${cid} {
+                transform: translateY(${Math.floor(animateBy * 100)}%);
+            }
+        }
+
+        ${!!shadow && css`
+            left: 20%;
+            opacity: 0.25;
+            transition-duration: 200ms;
+            width: 100%;
+
+            @media (max-width: ${SM - 1}px) {
+                ${Parent}.open &.${cid} {
+                    opacity: 0;
+                }
+            }
+
+            @media (min-width: ${SM}px) {
+                ${Parent}:hover &.${cid} {
+                    opacity: 0;
+                }
+            }
+        `}
+    `}
 `
 
 export default BurgerComponent
