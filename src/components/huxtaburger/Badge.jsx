@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { SM } from '$utils/css'
 import { Parent } from '$hux/BurgerComponent'
 

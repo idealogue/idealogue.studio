@@ -1,4 +1,4 @@
-import React, { useCallback, useReducer, useMemo } from 'react'
+import React, { useCallback, useReducer } from 'react'
 import styled from 'styled-components'
 import BurgerComponent, { Parent } from '$hux/BurgerComponent'
 import { BurgerElement } from '$hux/Image'

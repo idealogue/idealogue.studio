@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import styled, { css, ThemeContext } from 'styled-components'
+import React from 'react'
+import styled, { css } from 'styled-components'
 import { SM } from '$utils/css'
 
 export const Parent = styled.div``
