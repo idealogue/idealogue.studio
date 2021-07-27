@@ -1,4 +1,4 @@
-import styled from 'sc'
+import styled from 'styled-components'
 
 const Button = styled.div`
     background-color: #0169ca;

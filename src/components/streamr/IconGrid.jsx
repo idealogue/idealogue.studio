@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from 'sc'
+import styled, { css } from 'styled-components'
 import Image from '$streamr/Image'
 import CaptionedContainer from '$shared/CaptionedContainer'
 import FluidImage from '$shared/FluidImage'

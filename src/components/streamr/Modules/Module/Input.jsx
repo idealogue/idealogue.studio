@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'sc'
+import styled from 'styled-components'
 import PortIcon from './PortIcon'
 import Port, { Icon, Name } from './Port'
 import { PLEX_SANS } from '$utils/css'

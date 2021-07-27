@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import styled, { css } from 'sc'
+import styled, { css } from 'styled-components'
 import Input from './Input'
 import Output from './Output'
 import { MEDIUM, PLEX_SANS } from '$utils/css'

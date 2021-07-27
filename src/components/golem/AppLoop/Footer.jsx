@@ -1,5 +1,5 @@
 import React, { Children } from 'react'
-import styled from 'sc'
+import styled from 'styled-components'
 
 const UnstyledFooter = ({ children, ...props }) => (
     <div {...props}>

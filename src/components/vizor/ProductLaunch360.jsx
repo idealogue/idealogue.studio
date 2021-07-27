@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'sc'
+import styled from 'styled-components'
 
 const UnstyledProductLaunch360 = (props) => (
     <div {...props}>

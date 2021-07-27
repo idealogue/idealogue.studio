@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'sc'
+import styled from 'styled-components'
 import Module, { Body, VerticalWedge } from './Module'
 import { PLEX_MONO, SEMIBOLD } from '$utils/css'
 

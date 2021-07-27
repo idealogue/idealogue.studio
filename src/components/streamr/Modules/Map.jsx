@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'sc'
+import styled from 'styled-components'
 import Module from './Module'
 import Image from '$streamr/Image'
 import { BOLD } from '$utils/css'

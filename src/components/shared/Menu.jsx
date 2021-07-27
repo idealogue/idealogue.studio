@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import styled, { css, ThemeProvider, createGlobalStyle } from 'sc'
+import styled, { css, ThemeProvider, createGlobalStyle } from 'styled-components'
 import Link from '$shared/Link'
 import Front from '$shared/Front'
 import { lineup, projects, useProject } from '$shared/Project'

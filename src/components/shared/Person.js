@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from 'sc'
+import styled, { css } from 'styled-components'
 import { BOLD } from '$utils/css'
 import Link from '$shared/Link'
 import Glyph, { ARROW_LEFT, ARROW_RIGHT } from '$shared/Glyph'

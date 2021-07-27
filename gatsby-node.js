@@ -19,7 +19,6 @@ exports.onCreateWebpackConfig = ({ actions }) => {
                 // We want both streamr-client and pub site to use the same
                 // instance of `styled-components`.
                 'styled-components': require.resolve('styled-components'),
-                'sc': require.resolve('styled-components'),
                 react: require.resolve('react'),
             },
         },

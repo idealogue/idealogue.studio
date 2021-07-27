@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'sc'
+import styled from 'styled-components'
 import Image from '$streamr/Image'
 import { Row, Cell, Header, Fontface, Mark } from '$shared/Brand'
 import { PLEX_MONO, PLEX_SANS } from '$utils/css'

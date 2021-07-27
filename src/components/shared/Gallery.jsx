@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react'
 import { useSwipeable } from 'react-swipeable'
-import styled from 'sc'
+import styled from 'styled-components'
 import gsap from 'gsap'
 import useMounted from '$hooks/useMounted'
 import Cursor from '$shared/Cursor'

@@ -1,4 +1,4 @@
-import styled from 'sc'
+import styled from 'styled-components'
 
 const Padded = styled.div`
     margin: 0 auto;

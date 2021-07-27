@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'sc'
+import styled from 'styled-components'
 import Layout from '$shared/Layout'
 import Section from '$shared/Section'
 

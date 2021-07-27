@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'sc'
+import styled from 'styled-components'
 import Image from './Image'
 import FluidImage from '$shared/FluidImage'
 

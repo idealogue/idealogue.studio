@@ -1,4 +1,4 @@
-import styled from 'sc'
+import styled from 'styled-components'
 import { PLEX_MONO, MEDIUM } from '$utils/css'
 
 export const Icon = styled.div`

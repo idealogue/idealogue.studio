@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from 'sc'
+import styled, { css } from 'styled-components'
 import TouchIndicator from './TouchIndicator'
 
 export const RESOURCES = 'resources'

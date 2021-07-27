@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import Glyph, { SCROLL_INDICATOR } from '$shared/Glyph'
-import styled, { keyframes } from 'sc'
+import styled, { keyframes } from 'styled-components'
 import { scroller as scroll } from 'react-scroll'
 import { SM } from '$utils/css'
 

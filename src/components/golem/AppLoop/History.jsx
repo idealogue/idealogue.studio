@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'sc'
+import styled from 'styled-components'
 
 const Reward = styled.div`
     color: #4e4e4e;

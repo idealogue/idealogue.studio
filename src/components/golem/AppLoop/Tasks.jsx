@@ -1,5 +1,5 @@
 import React, { useEffect, Fragment, useState, useRef, useMemo } from 'react'
-import styled from 'sc'
+import styled from 'styled-components'
 import { Task as HistoryTask, Title, Separator, Details, Eta, DoneAt, Body } from './History'
 import Image from '$golem/Image'
 import FluidImage from '$shared/FluidImage'

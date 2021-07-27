@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'sc'
+import styled from 'styled-components'
 import CaptionedContainer from '$shared/CaptionedContainer'
 
 const Inner = styled.div`

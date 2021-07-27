@@ -1,4 +1,4 @@
-import styled, { css } from 'sc'
+import styled, { css } from 'styled-components'
 
 const PortIcon = styled.div`
     border: 1px solid #adadad;

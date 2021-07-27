@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'sc'
+import styled from 'styled-components'
 import Module, { Body as UnstyledBody } from './Module'
 import { MEDIUM } from '$utils/css'
 

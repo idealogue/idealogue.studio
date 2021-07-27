@@ -1,4 +1,4 @@
-import styled from 'sc'
+import styled from 'styled-components'
 import { MD, LG } from '$utils/css'
 
 export const Row = styled.div`

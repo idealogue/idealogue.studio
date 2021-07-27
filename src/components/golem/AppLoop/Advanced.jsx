@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react'
-import styled, { css } from 'sc'
+import styled, { css } from 'styled-components'
 import arc from '$utils/arc'
 import gsap from 'gsap'
 import useMounted from '$hooks/useMounted'

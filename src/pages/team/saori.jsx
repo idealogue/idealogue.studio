@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'sc'
+import styled from 'styled-components'
 import Layout from '$team/Layout'
 import Image from '$team/Image'
 import Person from '$shared/Person'

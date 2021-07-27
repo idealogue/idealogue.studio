@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'sc'
+import styled from 'styled-components'
 import Button from './Button'
 import Chart from './Chart'
 import Comment from './Comment'

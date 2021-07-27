@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from 'sc'
+import styled, { css } from 'styled-components'
 import UnstyledGlyph, { NAV, CLOSE } from '$shared/Glyph'
 import useMenu from '$hooks/useMenu'
 import { SM } from '$utils/css'

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback, createContext, useContext, useMemo } from 'react'
-import styled, { createGlobalStyle } from 'sc'
+import styled, { createGlobalStyle } from 'styled-components'
 
 const Direction = {
     LEFT: 'left',

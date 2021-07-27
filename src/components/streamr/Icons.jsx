@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'sc'
+import styled from 'styled-components'
 import CaptionedContainer from '$shared/CaptionedContainer'
 import Padded from '$shared/Padded'
 import Image from '$streamr/Image'

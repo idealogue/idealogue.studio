@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useRef } from 'react'
-import styled, { css } from 'sc'
+import styled, { css } from 'styled-components'
 import PlayButton, { DarkTheme } from '$streamr/PlayButton'
 
 const Inner = styled.div`

@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
-import styled, { css } from 'sc'
+import styled, { css } from 'styled-components'
 import Glyph, { LOW, HIGH } from '$shared/Glyph'
 import gsap from 'gsap'
 import TouchIndicator from './TouchIndicator'
