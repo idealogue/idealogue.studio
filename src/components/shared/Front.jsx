@@ -1,14 +1,9 @@
-import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 
 export default function Front({ children }) {
-    const [portal, setPortal] = useState(null)
+    if (typeof document !== 'undefined') {
+        return createPortal(children, document.getElementById('__front'))
+    }
 
-    useEffect(() => {
-        if (typeof document !== 'undefined') {
-            setPortal(createPortal(children, document.getElementById('__front')))
-        }
-    }, [children])
-
-    return portal
+    return null
 }
