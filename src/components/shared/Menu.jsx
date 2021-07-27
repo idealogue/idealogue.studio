@@ -105,7 +105,7 @@ const Root = styled.div`
 const UnstyledMenu = ({ className }) => {
     const { isOpen, close } = useMenu()
 
-    const { id: projectId } = useProject()
+    const project = useProject() || {}
 
     useEffect(() => {
         const onClose = ({ key }) => {
@@ -156,7 +156,7 @@ const UnstyledMenu = ({ className }) => {
                                         <Link
                                             to={projects[id].href}
                                             onClick={(e) => {
-                                                if (projectId === id) {
+                                                if (project.id === id) {
                                                     close()
                                                     e.preventDefault()
                                                 }
