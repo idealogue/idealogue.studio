@@ -1,4 +1,6 @@
-exports.onPreRenderHTML = ({ pathname, getHeadComponents, replaceHeadComponents }) => {
+import React from 'react'
+
+export function onPreRenderHTML({ pathname, getHeadComponents, replaceHeadComponents }) {
     const headComponents = getHeadComponents()
 
     const ref = [...headComponents]
@@ -15,4 +17,10 @@ exports.onPreRenderHTML = ({ pathname, getHeadComponents, replaceHeadComponents 
     })
 
     replaceHeadComponents(headComponents)
+}
+
+export function onRenderBody({ setPostBodyComponents }) {
+    setPostBodyComponents([
+        <div id="__front" key="__front" />
+    ])
 }

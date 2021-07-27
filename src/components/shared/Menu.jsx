@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled, { css, ThemeProvider, createGlobalStyle } from 'sc'
 import Link from '$shared/Link'
+import Front from '$shared/Front'
 import { lineup, projects } from '$shared/Project'
 import { CloseButton as UnstyledCloseButton } from '$shared/MenuToggle'
 import useMenu from '$hooks/useMenu'
+import useMounted from '$hooks/useMounted'
 import { SM, MD, LG } from '$utils/css'
 
 const Wrapper = styled.div`
@@ -77,17 +79,35 @@ const CloseButton = styled(UnstyledCloseButton)`
 `
 
 const ScrollSuppressor = createGlobalStyle`
+    html,
     body {
         overflow: hidden;
     }
 `
 
-const UnstyledMenu = (props) => {
+const Root = styled.div`
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.35s;
+    transition-delay: 0.35s, 0s;
+    transition-property: visibility, opacity;
+    visibility: hidden;
+
+    ${({ visible }) => !!visible && css`
+        opacity: 1;
+        pointer-events: all;
+        transition-delay: 0s;
+        transition-duration: 0.1s;
+        visibility: visible;
+    `}
+`
+
+const UnstyledMenu = ({ className }) => {
     const { isOpen, close } = useMenu()
 
     useEffect(() => {
-        const onClose = ({ keyCode }) => {
-            if (isOpen && keyCode === 27) {
+        const onClose = ({ key }) => {
+            if (isOpen && key === 'Escape') {
                 close()
             }
         }
@@ -99,31 +119,54 @@ const UnstyledMenu = (props) => {
         }
     }, [isOpen, close])
 
-    return !!isOpen && (
-        <ThemeProvider theme={DefaultTheme}>
-            <div {...props}>
-                <ScrollSuppressor />
-                <CloseButton onClick={close} />
-                <Inner>
-                    <Wrapper>
-                        <LinkList>
-                            {lineup.map((id, index) => (
-                                <li key={id}>
-                                    <Link to={projects[id].href}>
-                                        {projects[id].name}
+    const [lockScroll, setLockScroll] = useState(false)
+
+    const isMounted = useMounted()
+
+    useEffect(() => {
+        if (!isOpen) {
+            setLockScroll(false)
+            return () => {}
+        }
+
+        const timeout = setTimeout(() => {
+            if (isMounted()) {
+                setLockScroll(true)
+            }
+        }, 500)
+
+        return () => {
+            clearTimeout(timeout)
+        }
+    }, [isOpen, isMounted])
+
+    return (
+        <Front>
+            <ThemeProvider theme={DefaultTheme}>
+                <Root className={className} visible={isOpen}>
+                    {!!lockScroll && <ScrollSuppressor />}
+                    <CloseButton onClick={close} />
+                    <Inner>
+                        <Wrapper>
+                            <LinkList>
+                                {lineup.map((id) => (
+                                    <li key={id}>
+                                        <Link to={projects[id].href}>
+                                            {projects[id].name}
+                                        </Link>
+                                    </li>
+                                ))}
+                                <li>
+                                    <Link to="/">
+                                        &rarr; Back to the top page
                                     </Link>
                                 </li>
-                            ))}
-                            <li>
-                                <Link to="/">
-                                    &rarr; Back to the top page
-                                </Link>
-                            </li>
-                        </LinkList>
-                    </Wrapper>
-                </Inner>
-            </div>
-        </ThemeProvider>
+                            </LinkList>
+                        </Wrapper>
+                    </Inner>
+                </Root>
+            </ThemeProvider>
+        </Front>
     )
 }
 
