@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled, { css, ThemeProvider, createGlobalStyle } from 'sc'
 import Link from '$shared/Link'
 import Front from '$shared/Front'
-import { lineup, projects } from '$shared/Project'
+import { lineup, projects, useProject } from '$shared/Project'
 import { CloseButton as UnstyledCloseButton } from '$shared/MenuToggle'
 import useMenu from '$hooks/useMenu'
 import useMounted from '$hooks/useMounted'
@@ -105,6 +105,8 @@ const Root = styled.div`
 const UnstyledMenu = ({ className }) => {
     const { isOpen, close } = useMenu()
 
+    const { id: projectId } = useProject()
+
     useEffect(() => {
         const onClose = ({ key }) => {
             if (isOpen && key === 'Escape') {
@@ -151,7 +153,15 @@ const UnstyledMenu = ({ className }) => {
                             <LinkList>
                                 {lineup.map((id) => (
                                     <li key={id}>
-                                        <Link to={projects[id].href}>
+                                        <Link
+                                            to={projects[id].href}
+                                            onClick={(e) => {
+                                                if (projectId === id) {
+                                                    close()
+                                                    e.preventDefault()
+                                                }
+                                            }}
+                                        >
                                             {projects[id].name}
                                         </Link>
                                     </li>
