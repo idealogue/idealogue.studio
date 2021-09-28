@@ -42,7 +42,7 @@ export default function useScrollDirection() {
 
         const update = () => {
             const scrollY = getScrollY()
-            setDirection(scrollY < lastScrollY ? 'up' : 'down')
+            setDirection(scrollY <= lastScrollY ? 'up' : 'down')
             lastScrollY = scrollY
             scrolled = false
         }
