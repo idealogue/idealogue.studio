@@ -9,7 +9,7 @@ const Caption = styled.em`
     font-style: italic;
     font-weight: 400;
     line-height: 1.5em;
-    padding: 0 1em;
+    padding: 0 2em;
     text-align: center;
 
 
