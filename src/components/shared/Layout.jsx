@@ -25,8 +25,8 @@ const GlobalStyle = createGlobalStyle`
 
     html,
     body,
-    body > div,
-    body > div > div {
+    #___gatsby,
+    #gatsby-focus-wrapper {
         height: 100%;
     }
 
