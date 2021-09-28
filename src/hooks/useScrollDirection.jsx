@@ -26,6 +26,7 @@ const getScrollY = () => {
     }
 
     return Math.round(window.pageYOffset || (
+        // eslint-disable-next-line no-sequences
         d = window.document,
         b = d.body,
         html = d.documentElement, html || b.parentNode || b
