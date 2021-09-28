@@ -3,10 +3,12 @@ import styled, { css } from 'styled-components'
 import Gallery from '$shared/Gallery'
 import Container from '$shared/Container'
 import FluidImage from '$shared/FluidImage'
+import { MD, LG } from '$utils/css'
 
 const Viewport = styled.div`
     margin: 0 auto;
     width: 600px;
+    max-width: 84%;
 `
 
 const Slide = styled(FluidImage)`
@@ -32,7 +34,15 @@ const UnstyledConsensusGallery = ({ items, ...props }) => (
 )
 
 const ConsensusGallery = styled(UnstyledConsensusGallery)`
-    margin-top: 48px;
+    margin-top: 96px;
+
+    @media (min-width: ${MD}px) {
+        margin-top: 128px;
+    }
+    
+    @media (min-width: ${LG}px) {
+        margin-top: 48px;
+    }
 `
 
 export default ConsensusGallery

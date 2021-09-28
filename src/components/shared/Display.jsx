@@ -1,32 +1,36 @@
 import styled, { css } from 'styled-components'
 import { SM, MD, LG, XL } from '$utils/css'
 
+function value(x) {
+    return x === true ? 'block' : x
+}
+
 const Display = styled.div`
     ${({ xs }) => xs != null && css`
-        display: ${xs} !important;
+        display: ${value(xs)} !important;
     `}
 
     ${({ sm }) => sm != null && css`
         @media (min-width: ${SM}px) {
-            display: ${sm} !important;
+            display: ${value(sm)} !important;
         }
     `}
 
     ${({ md }) => md != null && css`
         @media (min-width: ${MD}px) {
-            display: ${md} !important;
+            display: ${value(md)} !important;
         }
     `}
 
     ${({ lg }) => lg != null && css`
         @media (min-width: ${LG}px) {
-            display: ${lg} !important;
+            display: ${value(lg)} !important;
         }
     `}
 
     ${({ xl }) => xl != null && css`
         @media (min-width: ${XL}px) {
-            display: ${xl} !important;
+            display: ${value(xl)} !important;
         }
     `}
 `

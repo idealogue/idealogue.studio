@@ -2,8 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 import CaptionedContainer from '$shared/CaptionedContainer'
 import FluidImage from '$shared/FluidImage'
-import Padded from '$shared/Padded'
+import PrestyledPadded from '$shared/Padded'
 import Image from '$streamr/Image'
+import { LG } from '$utils/css'
+
+const Padded = styled(PrestyledPadded)`
+    @media (max-width: ${LG - 1}px) {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+`
 
 const MockupImage = styled(FluidImage)`
     border-radius: 2px;

@@ -20,6 +20,7 @@ import BrandElements from '$streamr/BrandElements'
 import Icons from '$streamr/Icons'
 import IconGrid from '$streamr/IconGrid'
 import Spacer from '$shared/Spacer'
+import Display from '$shared/Display'
 import ConsensusGallery from '$streamr/ConsensusGallery'
 import Image from '$streamr/Image'
 import Topic from '$shared/Topic'
@@ -130,12 +131,22 @@ const StreamrPage = () => (
                     <Spacer head>
                         <ConsensusFilm />
                     </Spacer>
-                    <ConsensusGallery
-                        items={Image.CONSENSUS_GALLERY_A}
-                    />
-                    <ConsensusGallery
-                        items={Image.CONSENSUS_GALLERY_B}
-                    />
+                    <Display xs="none" lg>
+                        <ConsensusGallery
+                            items={Image.CONSENSUS_GALLERY_A}
+                        />
+                        <ConsensusGallery
+                            items={Image.CONSENSUS_GALLERY_B}
+                        />
+                    </Display>
+                    <Display lg="none">
+                        <ConsensusGallery
+                            items={[
+                                ...Image.CONSENSUS_GALLERY_A,
+                                ...Image.CONSENSUS_GALLERY_B,
+                            ]}
+                        />
+                    </Display>
                 </Section>
             </Topic>
             <Topic title="Core - one app to rule them all">

@@ -101,7 +101,9 @@ const UnstyledModules = (props) => (
 
 const Modules = styled(UnstyledModules)`
     > div {
-        margin: 0 auto;
+        left: 50%;
+        position: relative;
+        transform: translateX(-50%);
         width: 1272px;
     }
 `

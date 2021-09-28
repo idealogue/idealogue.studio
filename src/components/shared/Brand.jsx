@@ -18,12 +18,13 @@ export const Header = styled.div`
     border-bottom: 2px solid white;
     font-size: 14px;
     line-height: 1em;
-    margin-bottom: 2.5em;
+    margin-bottom: 2em;
     padding-bottom: 1em;
     width: 82%;
 
     @media (min-width: ${MD}px) {
         font-size: 16px;
+        margin-bottom: 4em;
     }
 
     @media (min-width: ${LG}px) {

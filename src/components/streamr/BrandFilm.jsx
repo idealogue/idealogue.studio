@@ -8,7 +8,7 @@ import { LG } from '$utils/css'
 
 const Padded = styled(PrestyledPadded)`
     @media (max-width: ${LG - 1}px) {
-        padding-left: 0px;
+        padding-left: 0;
         padding-right: 0;
     }
 `
