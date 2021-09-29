@@ -175,7 +175,16 @@ const StreamrPage = () => (
                             <p>
                                 Core now includes editors to create streams, canvases and dashboards, as
                                 well as products for the Marketplace, including the Data Unions feature
-                                for building crowdsourced data products.
+                                for building crowdsourced data products. Try it out&nbsp;
+                                <Link
+                                    nodecor
+                                    href="https://streamr.network/core"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                >
+                                    here
+                                </Link>
+                                .
                             </p>
                         </Container>
                     </Spacer>
