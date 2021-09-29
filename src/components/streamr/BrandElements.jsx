@@ -6,14 +6,27 @@ import { PLEX_MONO, PLEX_SANS, LG, MD } from '$utils/css'
 import Spacer from '$shared/Spacer'
 import Display from '$shared/Display'
 
-const LargeMark = styled(Mark)`
+const LargeMarkWrap = styled.div`
     margin: 0 auto;
     max-width: 50%;
+    position: relative;
     width: 240px;
-    
+
+    > div {
+        padding-top: 100%;
+    }
+
     @media (min-width: ${LG}px) {
         width: 298px;
     }
+`
+
+const LargeMark = styled(Mark)`
+    height: 150%;
+    left: -25%;
+    position: absolute;
+    top: -25%;
+    width: 150%;
 `
 
 const VerticalMark = styled(Mark)`
@@ -96,7 +109,10 @@ const Row = styled(PrestyledRow)`
 const UnstyledBrandElements = (props) => (
     <div {...props}>
         <Spacer tail>
-            <LargeMark src={Image.LOGO_ROUNDED} alt="Logo" />
+            <LargeMarkWrap>
+                <div />
+                <LargeMark src={Image.LOGO} alt="Logo" />
+            </LargeMarkWrap>
         </Spacer>
         <Row>
             <Cell>

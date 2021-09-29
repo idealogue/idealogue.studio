@@ -54,6 +54,7 @@ import CONSENSUS_A2_2X from './consensus_a2@2x.png'
 import CONSENSUS_B0_2X from './consensus_b0@2x.png'
 import CONSENSUS_B1_2X from './consensus_b1@2x.png'
 import CONSENSUS_B2_2X from './consensus_b2@2x.png'
+import LOGO from './logo.gif'
 
 const MACHINE = [
     MACHINE_0,
@@ -112,6 +113,7 @@ const ALL = {
     CONSENSUS_POSTER_2X,
     EDITOR_MOCKUP,
     EDITOR_MOCKUP_2X,
+    LOGO,
     LOGO_HORIZONTAL,
     LOGO_ROUNDED,
     LOGO_VERTICAL,
