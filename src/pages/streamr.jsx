@@ -81,7 +81,17 @@ const StreamrPage = () => (
                                 directions we arrived at a stylised S shape built from the ubiquitous wi-fi
                                 mark, representing the variety of realtime data sources Streamr works with.
                                 If you'd like a deeper dive into the brand process, there's a Medium piece
-                                here about it. 
+                                {' '}
+                                <Link
+                                    nodecor
+                                    href="https://medium.com/streamrblog/upgrading-streamrs-identity-eeef677018ca"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                >
+                                    here
+                                </Link>
+                                {' '}
+                                about it.
                             </p>
                         </Container>
                     </Spacer>

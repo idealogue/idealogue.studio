@@ -17,6 +17,14 @@ export default styled(UnstyledLink)`
         text-decoration: none;
     }
 
+    p &,
+    p &:active,
+    p &:focus,
+    p &:hover,
+    p &:visited {
+        text-decoration: underline;
+    }
+
     ${({ nodecor }) => !nodecor && css`
         position: relative;
 
