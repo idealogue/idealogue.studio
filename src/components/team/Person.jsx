@@ -39,7 +39,7 @@ const Person = styled(UnstyledPerson)`
         font-size: 12px;
         font-weight: ${REGULAR};
         line-height: normal;
-        margin: 0.5em 0 28px;
+        margin: 0.5em 0 26px;
     }
 
     p {
