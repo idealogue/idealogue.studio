@@ -45,7 +45,8 @@ export default function TeamPage() {
                         A native of Shizuoka, Japan, Saori holds a&nbsp;degree in Communication
                         Design from Swinburne Design School, Melbourne. She&nbsp;has worked as an
                         illustrator and designer in Melbourne and Tokyo. She is most comfortable
-                        building animations and&nbsp;prototypes with her toolkit of Sketch, Figma, Invision and After Effects.
+                        building animations and&nbsp;prototypes with her toolkit of Sketch, Figma,
+                        Invision and After Effects.
                     </Person>
                 </Collection>
             </Section>
