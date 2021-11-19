@@ -13,7 +13,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
                 '$golem': path.join(__dirname, 'src/components/golem'),
                 '$hive': path.join(__dirname, 'src/components/hive'),
                 '$hux': path.join(__dirname, 'src/components/huxtaburger'),
-                '$streamr': path.join(__dirname, 'src/components/streamr'),
+                '$streamr': path.join(__dirname, 'src/components/pages/streamr'),
                 '$vizor': path.join(__dirname, 'src/components/vizor'),
                 '$team': path.join(__dirname, 'src/components/team'),
                 // We want both streamr-client and pub site to use the same
