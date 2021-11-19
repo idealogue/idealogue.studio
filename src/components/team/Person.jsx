@@ -22,8 +22,11 @@ const Person = styled(UnstyledPerson)`
     width: 312px;
 
     img {
+        aspect-ratio: 13 / 8;
+        background: #f0f0f0;
         display: block;
         margin-bottom: 28px;
+        width: 100%;
     }
 
     h2 {
