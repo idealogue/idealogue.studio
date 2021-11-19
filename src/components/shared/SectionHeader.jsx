@@ -10,7 +10,12 @@ const Body = styled.div`
 `
 
 const No = styled(Body)`
+    font-size: 30px;
     margin-bottom: 0.8em;
+
+    @media (min-width: ${SM}px) {
+        font-size: inherit;
+    }
 `
 
 const UnstyledSectionHeader = ({ no, children, ...props }) => {

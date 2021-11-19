@@ -11,39 +11,36 @@ import NextProject from '$shared/NextProject'
 import Project, { STREAMR } from '$shared/Project'
 import Section from '$shared/Section'
 import SectionHeader from '$shared/SectionHeader'
-import PublicSiteView from '$streamr/PublicSiteView'
 import Modules from '$streamr/Modules'
 import EditorMockup from '$streamr/EditorMockup'
 import BrandFilm from '$streamr/BrandFilm'
-import ConsensusFilm from '$streamr/ConsensusFilm'
-import BrandElements from '$streamr/BrandElements'
-import Icons from '$streamr/Icons'
 import IconGrid from '$streamr/IconGrid'
 import Spacer from '$shared/Spacer'
-import Display from '$shared/Display'
-import ConsensusGallery from '$streamr/ConsensusGallery'
-import Image from '$streamr/Image'
+import CaptionedContainer from '$shared/CaptionedContainer'
 import Topic from '$shared/Topic'
 import ScrollIndicator from '$shared/ScrollIndicator'
 
 const LayoutTheme = {
-    backgroundColor: '#06042a',
+    backgroundColor: '#f3f3f3',
+    color: '#7c7c7c',
 }
 
-const DarkBlueTheme = {
-    backgroundColor: '#06042a',
-    color: '#ffffff',
+const MainTheme = {
+    backgroundColor: '#fafafa',
+    color: '#06042A',
+    captionColor: '#7c7c7c',
 }
 
-const BlueTheme = {
-    backgroundColor: '#09006d',
-    color: '#ffffff',
+const SecondaryTheme = {
+    backgroundColor: '#f3f3f3',
+    color: '#06042A',
+    captionColor: '#7c7c7c',
 }
 
 const StreamrPage = () => (
     <Project id={STREAMR}>
         <Layout theme={LayoutTheme}>
-            <Section theme={DarkBlueTheme} menuToggleBackground>
+            <Section theme={MainTheme} menuToggleBackground menuToggleColor="currentColor">
                 <Hero>
                     <p>
                         We rebranded Streamr, a decentralised realtime data platform, and integrated
@@ -51,169 +48,169 @@ const StreamrPage = () => (
                     </p>
                 </Hero>
             </Section>
-            <Section theme={DarkBlueTheme} tail>
-                <BrandFilm />
+            <Section theme={MainTheme} tail menuToggleColor="currentColor">
                 <ScrollIndicator.Target />
-                <Topic title="An introduction to realtime data">
+                <Topic title="A decentralised global data network">
                     <Spacer head>
                         <SectionHeader no={1} />
                         <Container>
                             <p>
-                                When we first met them in 2017, Streamr had a big vision for the future
-                                of realtime data economy, and a powerful but somewhat rough visual
-                                programming app already working. They were planning to build a global
-                                peer-to-peer realtime data network, with nodes incentivised by an ERC-20
-                                crypto token, DATA.
-                            </p>
-                            <p>
-                                Given our experience with both crypto and visual programming systems,
-                                it seemed like a good match, so we came onboard in late 2017. We first
-                                worked on a website that helped to raise $30M in an initial coin offering,
-                                and then turned focus to a rebrand.
-                            </p>
-                            <Spacer head tail>
-                                <BrandElements />
-                            </Spacer>
-                            <p>
-                                The existing brand was fairly basic, but they were attached to the name, and
-                                wanted to retain some connection to the original brand. We kept the name and
-                                their orange colour, and replaced the rest. After exploring a number of
-                                directions we arrived at a stylised S shape built from the ubiquitous wi-fi
-                                mark, representing the variety of realtime data sources Streamr works with.
-                                If you'd like a deeper dive into the brand process, there's a Medium piece
-                                {' '}
-                                <Link
-                                    nodecor
-                                    href="https://medium.com/streamrblog/upgrading-streamrs-identity-eeef677018ca"
-                                    rel="noopener noreferrer"
-                                    target="_blank"
-                                >
-                                    here
-                                </Link>
-                                {' '}
-                                about it.
+                                We joined Zug-based Finnish startup Streamr in late 2017. Their
+                                vision for a decentralised realtime data network was appealing, and
+                                our experience with crypto and VPL-type systems were a good match
+                                for their needs. Matt took a C-level design role, and we redesigned
+                                the brand, designed and guided to implementation a set of new apps,
+                                and led the design and front end teams there for three years.
                             </p>
                         </Container>
                     </Spacer>
                 </Topic>
+                <Spacer head scale={0.6}>
+                    <BrandFilm />
+                </Spacer>
             </Section>
-            <Topic title="Creating a stylised data diorama">
-                <Section theme={BlueTheme} head tail>
+            <Topic title="Bringing the brand to life">
+                <Section theme={MainTheme} menuToggleColor="currentColor">
                     <SectionHeader no={2} />
                     <Container>
                         <p>
                             Streamr CEO, Henri Pihkala, and I preferred to avoid the sci-fi cliches
-                            that seem to be ever-present in the crypto world, and instead aimed
-                            to visualise a semi-realistic, near-future world that works in different
-                            ways to our present day. A stylised but detailed 3D world, seen as a kind
-                            of data diorama was the starting point. To help us realise this we brought
-                            on one of our regular collaborators, the illustrator Stuart Wade. His
-                            detailed isometric illustrations and animations helped visualise Streamr’s
+                            that seem to be ever-present in the crypto world, and instead aimed to
+                            visualise a semi-realistic, near-future world that proposed Streamr’s
+                            vision was close at hand. A stylised but detailed 3D world, seen as a
+                            kind of data diorama was the starting point. To help us realise this we
+                            brought on one of our regular collaborators, the illustrator Stuart Wade.
+                            His detailed isometric illustrations and animations helped visualise the
                             largely invisible data products and services, along with a touch of humour.
                         </p>
                     </Container>
-                    <Spacer head tail>
-                        <Icons />
+                    <Spacer head>
+                        <IconGrid />
                     </Spacer>
-                    <IconGrid />
                 </Section>
             </Topic>
-            <Topic title="Consensus New York — an early milestone">
-                <Section theme={DarkBlueTheme} head>
+            <Topic title="Product design — Data Marketplace">
+                <Section theme={MainTheme} head menuToggleColor="currentColor">
                     <SectionHeader no={3} />
                     <Container>
                         <p>
-                            The first new app to roll out was a brand new Data Marketplace MVP, which
-                            from the start of design to launch at the Consensus conference in May 2018
-                            was a touch over 3 months — probably the fastest we've ever turned around
-                            an entire app from scratch. Launch was a bit hectic, and the app MVP was
-                            a bit rough, but it was well received, and certainly was a trial by fire
-                            for the whole design and front end teams.
-                        </p>
-                        <p>
-                            We worked with London agency Accept & Proceed who did a great job
-                            of creating a room build and various data installations, including
-                            robots building real-world infographics from a Streamr data feed, an AR
-                            installation using a 3D printed car body, and a pollution sensing diorama
-                            incorporating 3D print of the buildings of midtown Manhattan.
+                            The first app we worked on, the decentralised data marketplace, went
+                            from drawing board to MVP launch at Consensus New York 2018 in less than
+                            three months. Essentially a graphical front end to the data products
+                            which are Ethereum smart contracts, it was a good exercise in building
+                            and shipping something fast. Visit the app.
                         </p>
                     </Container>
-                    <Spacer head>
-                        <ConsensusFilm />
-                    </Spacer>
-                    <Display xs="none" lg>
-                        <ConsensusGallery
-                            items={Image.CONSENSUS_GALLERY_A}
-                        />
-                        <ConsensusGallery
-                            items={Image.CONSENSUS_GALLERY_B}
-                        />
-                    </Display>
-                    <Display lg="none">
-                        <ConsensusGallery
-                            items={[
-                                ...Image.CONSENSUS_GALLERY_A,
-                                ...Image.CONSENSUS_GALLERY_B,
-                            ]}
-                        />
-                    </Display>
                 </Section>
             </Topic>
-            <Topic title="Core - one app to rule them all">
-                <Section theme={DarkBlueTheme}>
-                    <Spacer head>
+            <Section head theme={MainTheme}>
+                <Section head tail theme={SecondaryTheme} actConsecutive>
+                    <CaptionedContainer
+                        caption="Management, product detail and browse views for the Marketplace"
+                    >
+                        <Container style={{ textAlign: 'center' }}>
+                            Placeholder.
+                        </Container>
+                    </CaptionedContainer>
+                </Section>
+            </Section>
+            <Topic title="Product design — Core app">
+                <Section theme={MainTheme} menuToggleColor="currentColor">
+                    <Spacer head tail>
                         <SectionHeader no={4} />
                         <Container>
                             <p>
-                                Streamr had some powerful tools, included a node & cable visual editor for
-                                building realtime data processes, and a stream creation tool. Once we added
-                                the Marketplace, the divide became quite stark between old and new. We
-                                realised the main weakness was a lack of central point to manage all the
-                                resources users could create. So we designed a set of user pages to glue
-                                everything together, which we eventually renamed Core.
+                                After the introduction of the Marketplace, tools and user resources
+                                were a bit all over the place. There was a VPL-type visual editor
+                                for building realtime data processes, and a stream creation tool. We
+                                gathered the resources and tools into a single app we named Core,
+                                which enabled management of streams, publishing products, and later,
+                                Data Unions from a single interface.
                             </p>
                             <p>
-                                Core now includes editors to create streams, canvases and dashboards, as
-                                well as products for the Marketplace, including the Data Unions feature
-                                for building crowdsourced data products. Try it out&nbsp;
-                                <Link
-                                    nodecor
-                                    href="https://streamr.network/core"
-                                    rel="noopener noreferrer"
-                                    target="_blank"
-                                >
-                                    here
-                                </Link>
-                                .
+                                Working with Tim Oxley, we also redesigned and rebuilt the VPL editor,
+                                bringing it into the Core app as the Canvas editor. As of 2021 the
+                                editor has been retired as it needs to be fully decentralised to be
+                                useful, but the Core app itself has been decentralised, and you can
+                                try it out here.
                             </p>
                         </Container>
                     </Spacer>
+                </Section>
+                <Section tail theme={SecondaryTheme}>
                     <Spacer head tail>
                         <EditorMockup />
                     </Spacer>
                     <Modules />
                 </Section>
             </Topic>
-            <Topic title="Wrapping it all into one package">
-                <Section theme={DarkBlueTheme}>
+            <Topic title="Product design — Network Explorer">
+                <Section theme={MainTheme} menuToggleColor="currentColor">
                     <Spacer head tail>
                         <SectionHeader no={5} />
                         <Container>
                             <p>
-                                All of this was wrapped up into the full public website, launched in 2019.
-                                With the help of another of our regular collaborators, front end dev
-                                Mariusz Roliński, we wrote and designed a new site that incorporated
-                                realtime live data showing the amount of traffic passing through the
-                                Streamr Network, as well as live token prices. Another key part of this
-                                was the design and rewriting of an all-new Docs section.
+                                For the 2021 launch of the first public version of the network, where
+                                anyone could run a node, we designed an app to visualise the network,
+                                allow users to see streams and the nodes carrying them, and view a range
+                                of metrics for the overall network, nodes and streams. Rollout was
+                                a little rocky as up to 90,000 nodes piled into the third testnet in
+                                October 2021, but as the app matures it should provide an essential
+                                window into the operation of the global network. Try the app here.
                             </p>
                         </Container>
                     </Spacer>
-                    <PublicSiteView />
+                </Section>
+                <Section theme={MainTheme} menuToggleColor="currentColor">
+                    <Section head tail theme={SecondaryTheme} actConsecutive>
+                        <CaptionedContainer
+                            caption="Users can explore the map or search for streams and nodes"
+                        >
+                            <Container style={{ textAlign: 'center' }}>
+                                Network explorer (Placeholder)
+                            </Container>
+                        </CaptionedContainer>
+                    </Section>
+                </Section>
+            </Topic>
+            <Topic title="Websites">
+                <Section theme={MainTheme} menuToggleColor="currentColor">
+                    <Spacer head tail>
+                        <SectionHeader no={6} />
+                        <Container>
+                            <p>
+                                While we designed and shipped several major project website
+                                iterations, the 2021 milestone website was the most involved.
+                                We gave the brand a refresh to make it feel lighter and wrapped
+                                that around a new site which focuses more squarely on the Web3
+                                audience, with more realtime data,  a more technical focus and
+                                a more modular design for easier updating.
+                            </p>
+                            <p>
+                                With the help of Demoscene WebGL speciaIist Simppa, and our
+                                regular collaborator Mariusz Rolinski we created an interactive
+                                visualiser for the network that ended up handling the 35,000
+                                node testnet and still managed  a quick load time & high frame
+                                rates. We also produced an animated token economics explainer
+                                with Stuart Wade, who created the icons. Visit the site.
+                            </p>
+                        </Container>
+                    </Spacer>
+                </Section>
+                <Section theme={MainTheme} menuToggleColor="currentColor">
+                    <Section head tail theme={SecondaryTheme} actConsecutive>
+                        <CaptionedContainer
+                            caption="The Brubeck milestone website in 2021 introduced a live network visualiser"
+                        >
+                            <Container style={{ textAlign: 'center' }}>
+                                Network explorer (Brubeck site)
+                            </Container>
+                        </CaptionedContainer>
+                    </Section>
                 </Section>
             </Topic>
             <Topic title="Credits">
-                <Section theme={DarkBlueTheme}>
+                <Section theme={MainTheme} menuToggleColor="currentColor">
                     <Spacer head tail>
                         <SectionHeader no={6}>
                             <Bullet />
@@ -222,17 +219,16 @@ const StreamrPage = () => (
                             </Link>
                         </SectionHeader>
                         <Contributors>
-                            <Contributor name="Ross Harrington" role="Brand design &amp; animation" />
-                            <Contributor name="Matt Innes" role="Brand, Design lead" />
+                            <Contributor name="Matt Innes" role="Brand, design lead" />
                             <Contributor name="Saori Kajiwara" role="UI/UX design" />
+                            <Contributor name="Ross Harrington" role="Brand design" />
                             <Contributor name="Stuart Wade" role="Illustration &amp; animation" />
                             <br />
-                            <Contributor name="Matthew Fontana" role="Front end dev" />
-                            <Contributor name="Juha Haavisto" role=" Front end lead" />
+                            <Contributor name="Juha Haavisto" role="Front end lead" />
                             <Contributor name="Tuomas Koponen" role="Front end dev" />
-                            <Contributor name="Tim Oxley" role=" Core app lead" />
-                            <Contributor name="Henri Pihkala" role="CEO / Product lead" />
+                            <Contributor name="Tim Oxley" role="Canvas editor lead" />
                             <Contributor name="Mariusz Roliński" role="Public site lead" />
+                            <Contributor name="Simppa" role="WebGL visualiser build" />
                         </Contributors>
                         <Container>
                             <hr />

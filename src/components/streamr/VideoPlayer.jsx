@@ -3,8 +3,10 @@ import styled, { css } from 'styled-components'
 import PlayButton, { DarkTheme } from '$streamr/PlayButton'
 
 const Inner = styled.div`
+    border-radius: 8px;
     margin: 0 auto;
     max-width: 1432px;
+    overflow: hidden;
     position: relative;
     transition: 200ms opacity;
 

@@ -14,7 +14,7 @@ const Padded = styled(PrestyledPadded)`
 `
 
 const BrandFilm = (props) => (
-    <CaptionedContainer {...props} caption="We worked with motion studio 21_19 to produce an animated brand film">
+    <CaptionedContainer {...props} caption="A Streamr Network intro video we produced with motion studio 21_19">
         <Padded>
             <VideoPlayer
                 poster={Image.BRAND_FILM_POSTER_2X}

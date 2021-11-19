@@ -32,7 +32,7 @@ const Cell = styled.div`
 `
 
 const UnstyledModules = (props) => (
-    <CaptionedContainer {...props} caption="Some of the modules used in the Core canvas editor">
+    <CaptionedContainer {...props} caption="Various modules from the canvas editor">
         <div>
             <Row>
                 <Cell>
