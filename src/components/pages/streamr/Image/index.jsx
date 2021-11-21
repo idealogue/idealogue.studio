@@ -12,36 +12,43 @@ import LOGO_VERTICAL from './logo_vertical.svg'
 import MAP from './map.jpg'
 import PUBLIC_SITE from './public_site.jpg'
 import PUBLIC_SITE_2X from './public_site@2x.jpg'
-import MACHINE_0 from './machine0.png'
-import MACHINE_0_2X from './machine0@2x.png'
-import MACHINE_1 from './machine1.png'
-import MACHINE_1_2X from './machine1@2x.png'
-import MACHINE_10 from './machine10.png'
-import MACHINE_10_2X from './machine10@2x.png'
-import MACHINE_11 from './machine11.png'
-import MACHINE_11_2X from './machine11@2x.png'
-import MACHINE_12 from './machine12.png'
-import MACHINE_12_2X from './machine12@2x.png'
-import MACHINE_13 from './machine13.png'
-import MACHINE_13_2X from './machine13@2x.png'
-import MACHINE_14 from './machine14.png'
-import MACHINE_14_2X from './machine14@2x.png'
-import MACHINE_2 from './machine2.png'
-import MACHINE_2_2X from './machine2@2x.png'
-import MACHINE_3 from './machine3.png'
-import MACHINE_3_2X from './machine3@2x.png'
-import MACHINE_4 from './machine4.png'
-import MACHINE_4_2X from './machine4@2x.png'
-import MACHINE_5 from './machine5.png'
-import MACHINE_5_2X from './machine5@2x.png'
-import MACHINE_6 from './machine6.png'
-import MACHINE_6_2X from './machine6@2x.png'
-import MACHINE_7 from './machine7.png'
-import MACHINE_7_2X from './machine7@2x.png'
-import MACHINE_8 from './machine8.png'
-import MACHINE_8_2X from './machine8@2x.png'
-import MACHINE_9 from './machine9.png'
-import MACHINE_9_2X from './machine9@2x.png'
+import APPLICATION from './icons/application.png'
+import APPLICATION_2X from './icons/application@2x.png'
+import BRAND from './icons/brand.png'
+import BRAND_2X from './icons/brand@2x.png'
+import COREAPP from './icons/coreApp.png'
+import COREAPP_2X from './icons/coreApp@2x.png'
+import DATAFUND from './icons/dataFund.png'
+import DATAFUND_2X from './icons/dataFund@2x.png'
+import DATAUNION from './icons/dataUnion.png'
+import DATAUNION_2X from './icons/dataUnion@2x.png'
+import DEV from './icons/dev.png'
+import DEV_2X from './icons/dev@2x.png'
+import ECOSYSTEM from './icons/ecosystem.png'
+import ECOSYSTEM_2X from './icons/ecosystem@2x.png'
+import ETHEREUM from './icons/ethereum.png'
+import ETHEREUM_2X from './icons/ethereum@2x.png'
+import GOVERNANCE from './icons/governance.png'
+import GOVERNANCE_2X from './icons/governance@2x.png'
+import MARKETPLACE from './icons/marketplace.png'
+import MARKETPLACE_2X from './icons/marketplace@2x.png'
+import NODE from './icons/node.png'
+import NODE_2X from './icons/node@2x.png'
+import ROADMAP from './icons/roadmap.png'
+import ROADMAP_2X from './icons/roadmap@2x.png'
+import STREAM from './icons/stream.png'
+import STREAM_2X from './icons/stream@2x.png'
+import TECHSTACK from './icons/techStack.png'
+import TECHSTACK_2X from './icons/techStack@2x.png'
+import UIUX from './icons/uiux.png'
+import UIUX_2X from './icons/uiux@2x.png'
+import MARKETPLACE_L0 from './marketplace/layer0.jpg'
+import MARKETPLACE_L0_2X from './marketplace/layer0@2x.jpg'
+import MARKETPLACE_L1 from './marketplace/layer1.jpg'
+import MARKETPLACE_L1_2X from './marketplace/layer1@2x.jpg'
+import MARKETPLACE_L2 from './marketplace/layer2.jpg'
+import MARKETPLACE_L2_2X from './marketplace/layer2@2x.jpg'
+
 // import CONSENSUS_A0 from './consensus_a0.jpg'
 // import CONSENSUS_A1 from './consensus_a1.jpg'
 // import CONSENSUS_A2 from './consensus_a2.jpg'
@@ -56,40 +63,28 @@ import CONSENSUS_B1_2X from './consensus_b1@2x.png'
 import CONSENSUS_B2_2X from './consensus_b2@2x.png'
 import LOGO from './logo.gif'
 
-const MACHINE = [
-    MACHINE_0,
-    MACHINE_1,
-    MACHINE_2,
-    MACHINE_3,
-    MACHINE_4,
-    MACHINE_5,
-    MACHINE_6,
-    MACHINE_7,
-    MACHINE_8,
-    MACHINE_9,
-    MACHINE_10,
-    MACHINE_11,
-    MACHINE_12,
-    MACHINE_13,
-    MACHINE_14,
+export const MACHINE_IMAGES = [
+    [STREAM, STREAM_2X],
+    [APPLICATION, APPLICATION_2X],
+    [DATAFUND, DATAFUND_2X],
+    [GOVERNANCE, GOVERNANCE_2X],
+    [ECOSYSTEM, ECOSYSTEM_2X],
+    [NODE, NODE_2X],
+    [COREAPP, COREAPP_2X],
+    [DATAUNION, DATAUNION_2X],
+    [ETHEREUM, ETHEREUM_2X],
+    [MARKETPLACE, MARKETPLACE_2X],
+    [TECHSTACK, TECHSTACK_2X],
+    [ROADMAP, ROADMAP_2X],
+    [BRAND, BRAND_2X],
+    [UIUX, UIUX_2X],
+    [DEV, DEV_2X],
 ]
 
-const MACHINE_2X = [
-    MACHINE_0_2X,
-    MACHINE_1_2X,
-    MACHINE_2_2X,
-    MACHINE_3_2X,
-    MACHINE_4_2X,
-    MACHINE_5_2X,
-    MACHINE_6_2X,
-    MACHINE_7_2X,
-    MACHINE_8_2X,
-    MACHINE_9_2X,
-    MACHINE_10_2X,
-    MACHINE_11_2X,
-    MACHINE_12_2X,
-    MACHINE_13_2X,
-    MACHINE_14_2X,
+export const MARKETPLACE_LAYERS = [
+    [MARKETPLACE_L0, MARKETPLACE_L0_2X],
+    [MARKETPLACE_L1, MARKETPLACE_L1_2X],
+    [MARKETPLACE_L2, MARKETPLACE_L2_2X],
 ]
 
 const CONSENSUS_GALLERY_A = [
@@ -117,8 +112,6 @@ const ALL = {
     LOGO_HORIZONTAL,
     LOGO_ROUNDED,
     LOGO_VERTICAL,
-    MACHINE,
-    MACHINE_2X,
     MAP,
     PUBLIC_SITE,
     PUBLIC_SITE_2X,

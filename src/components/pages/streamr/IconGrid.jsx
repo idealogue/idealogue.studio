@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import { useMediaQuery } from 'react-responsive'
-import Image from '$streamr/Image'
+import { MACHINE_IMAGES } from '$streamr/Image'
 import CaptionedContainer from '$shared/CaptionedContainer'
 import FluidImage from '$shared/FluidImage'
 import Gallery from '$shared/Gallery'
@@ -71,10 +71,10 @@ const UnstyledIconGrid = (props) => {
                 {[0, 5, 10].map((i) => (
                     <Viewport key={i}>
                         <Gallery defaultSlide={0} gutter={0} currentWingSize={xl ? 1 : 0}>
-                            {Image.MACHINE_2X.slice(i, i + 5).map((src) => (
+                            {MACHINE_IMAGES.slice(i, i + 5).map(([src, src2x]) => (
                                 <Cell key={src}>
                                     <ImageWrapper>
-                                        <FluidImage src={src} alt="" />
+                                        <FluidImage src={src} srcSet={`${src2x} 2x`} alt="" />
                                     </ImageWrapper>
                                 </Cell>
                             ))}
@@ -85,10 +85,10 @@ const UnstyledIconGrid = (props) => {
             <Display md="none" {...props}>
                 <Viewport>
                     <Gallery defaultSlide={0} gutter={0} currentWingSize={xl ? 1 : 0}>
-                        {Image.MACHINE_2X.map((src) => (
+                        {MACHINE_IMAGES.map(([src, src2x]) => (
                             <Cell key={src}>
                                 <ImageWrapper>
-                                    <FluidImage src={src} alt="" />
+                                    <FluidImage src={src} srcSet={`${src2x} 2x`} alt="" />
                                 </ImageWrapper>
                             </Cell>
                         ))}

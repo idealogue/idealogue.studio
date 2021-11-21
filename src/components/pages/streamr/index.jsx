@@ -19,6 +19,7 @@ import Spacer from '$shared/Spacer'
 import CaptionedContainer from '$shared/CaptionedContainer'
 import Topic from '$shared/Topic'
 import ScrollIndicator from '$shared/ScrollIndicator'
+import CoreMarketplace from './CoreMarketplace'
 
 const LayoutTheme = {
     backgroundColor: '#f3f3f3',
@@ -108,8 +109,8 @@ const StreamrPage = () => (
                     <CaptionedContainer
                         caption="Management, product detail and browse views for the Marketplace"
                     >
-                        <Container style={{ textAlign: 'center' }}>
-                            Placeholder.
+                        <Container>
+                            <CoreMarketplace />
                         </Container>
                     </CaptionedContainer>
                 </Section>
