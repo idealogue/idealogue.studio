@@ -42,11 +42,17 @@ const Tape = styled(Swipeable)`
 export const SlideContainer = styled.div`
     flex-basis: 100%;
     padding: 0 ${({ gutter }) => Math.floor(gutter / 2)}px;
+    transition: 0.5s opacity;
+
+    :first-child,
+    :last-child {
+        opacity: 0;
+    }
 `
 
 export const slideIndex = (at, n) => ((at % n) + n) % n
 
-const windowSize = 5
+const windowSize = 7
 
 const UnstyledGallery = ({
     children,
