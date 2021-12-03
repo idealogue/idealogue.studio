@@ -22,7 +22,7 @@ const playVideo = async (video) => {
     }
 }
 
-const UnstyledVideoPlayer = ({ src, poster, children, $aspect, ...props }) => {
+const UnstyledVideoPlayer = ({ poster, children, $aspect, ...props }) => {
     const [active, activate] = useReducer(() => true, false)
 
     const videoRef = useRef()
