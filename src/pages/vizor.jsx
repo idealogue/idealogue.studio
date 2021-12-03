@@ -85,7 +85,9 @@ const VizorPage = () => (
                         </p>
                         <Spacer head>
                             <BrowserFrame shadow dark>
-                                <Video id="vizor" loop autoPlay playsInline muted />
+                                <Video loop autoPlay playsInline muted>
+                                    <source src="/videos/vizor.mp4" type="video/mp4" />
+                                </Video>
                             </BrowserFrame>
                         </Spacer>
                     </Container>

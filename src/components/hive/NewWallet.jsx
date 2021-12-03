@@ -6,7 +6,11 @@ import { SM, MD } from '$utils/css'
 
 const UnstyledNewWallet = (props) => (
     <PhoneFrame {...props}>
-        <Video id="hive" loop autoPlay playsInline muted />
+        <Video loop autoPlay playsInline muted>
+            <source src="/videos/hive.mp4" type="video/mp4" />
+            <source src="/videos/hive.webm" type="video/webm" />
+            <source src="/videos/hive.mov" type="video/quicktime" />
+        </Video>
     </PhoneFrame>
 )
 

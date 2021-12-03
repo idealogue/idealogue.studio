@@ -1,6 +1,7 @@
-import React, { useState, useCallback, useRef } from 'react'
-import styled, { css } from 'styled-components'
-import PlayButton, { DarkTheme } from '$streamr/PlayButton'
+import React, { useCallback, useRef, useReducer } from 'react'
+import styled from 'styled-components'
+import PlayButton from '$streamr/PlayButton'
+import Video from '$shared/Video'
 
 const Inner = styled.div`
     border-radius: 8px;
@@ -9,33 +10,6 @@ const Inner = styled.div`
     overflow: hidden;
     position: relative;
     transition: 200ms opacity;
-
-    svg {
-        display: block;
-    }
-
-    > svg {
-        visibility: hidden;
-    }
-`
-
-const Video = styled.video`
-    display: block;
-    left: 0;
-    opacity: 1;
-    position: absolute;
-    top: 0;
-    transition: 500ms;
-    transition-delay: 0s, 0s;
-    transition-property: visibility, opacity;
-    visibility: visible;
-    width: 100%;
-
-    ${({ active }) => !active && css`
-        opacity: 0;
-        visibility: hidden;
-        transition-delay: 500ms, 0s;
-    `}
 `
 
 const playVideo = async (video) => {
@@ -48,65 +22,34 @@ const playVideo = async (video) => {
     }
 }
 
-const pauseVideo = (video) => {
-    if (video) {
-        video.pause()
-    }
-}
-
-const VideoPlayer = ({ src, shortSrc, poster, sizeRatio = '16x9', ...props }) => {
-    const [playSample, setPlaySample] = useState(true)
+const UnstyledVideoPlayer = ({ src, poster, children, $aspect, ...props }) => {
+    const [active, activate] = useReducer(() => true, false)
 
     const videoRef = useRef()
 
-    const shortRef = useRef()
-
     const onClick = useCallback(() => {
-        setPlaySample(false)
+        activate()
         playVideo(videoRef.current)
-        pauseVideo(shortRef.current)
     }, [])
-
-    const [width, height] = sizeRatio.split(/x/)
 
     return (
         <Inner {...props}>
-            {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
             <Video
-                active={playSample}
-                autoPlay
-                loop
-                muted
-                playsInline
-                poster={poster}
-                preload="metadata"
-                ref={shortRef}
-            >
-                <source
-                    src={shortSrc}
-                    type="video/mp4"
-                />
-            </Video>
-            <Video
-                active={!playSample}
-                controls
+                $aspect={$aspect}
+                controls={active}
                 poster={poster}
                 preload="metadata"
                 ref={videoRef}
             >
-                <source
-                    src={src}
-                    type="video/mp4"
-                />
+                {children}
             </Video>
-            {playSample && (
-                <PlayButton theme={DarkTheme} onClick={onClick} />
+            {!active && (
+                <PlayButton onClick={onClick} />
             )}
-            <svg viewBox={`0 0 ${width} ${height}`}>
-                <rect x="0" y="0" width="100%" height="100%" />
-            </svg>
         </Inner>
     )
 }
+
+const VideoPlayer = styled(UnstyledVideoPlayer)``
 
 export default VideoPlayer

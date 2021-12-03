@@ -6,7 +6,11 @@ import PhoneFrame from '$shared/PhoneFrame'
 const UnstyledBrowsingVideo = (props) => (
     <div {...props}>
         <PhoneFrame>
-            <Video id="hux" loop autoPlay playsInline muted />
+            <Video loop autoPlay playsInline muted>
+                <source src="/videos/hux.mp4" type="video/mp4" />
+                <source src="/videos/hux.webm" type="video/webm" />
+                <source src="/videos/hux.mov" type="video/quicktime" />
+            </Video>
         </PhoneFrame>
     </div>
 )

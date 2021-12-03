@@ -1,20 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 import CaptionedContainer from '$shared/CaptionedContainer'
-import FluidImage from '$shared/FluidImage'
-import PrestyledPadded from '$shared/Padded'
-import Image from '$streamr/Image'
-import { LG } from '$utils/css'
+import PrestyledVideo from '$shared/Video'
+import Overgrow from './Overgrow'
 
-const Padded = styled(PrestyledPadded)`
-    @media (max-width: ${LG - 1}px) {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
-`
-
-const MockupImage = styled(FluidImage)`
-    border-radius: 2px;
+const Video = styled(PrestyledVideo)`
+    border-radius: 8px;
+    filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.06));
 `
 
 const EditorMockup = (props) => (
@@ -22,9 +14,11 @@ const EditorMockup = (props) => (
         {...props}
         caption="Creating a realtime canvas in the Core app"
     >
-        <Padded>
-            <MockupImage src={Image.EDITOR_MOCKUP_2X} alt="Editor mockup" fill />
-        </Padded>
+        <Overgrow>
+            <Video loop autoPlay playsInline muted>
+                <source src="/videos/streamr_core.mp4" type="video/mp4" />
+            </Video>
+        </Overgrow>
     </CaptionedContainer>
 )
 

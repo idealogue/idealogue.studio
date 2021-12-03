@@ -20,6 +20,8 @@ import CaptionedContainer from '$shared/CaptionedContainer'
 import Topic from '$shared/Topic'
 import ScrollIndicator from '$shared/ScrollIndicator'
 import CoreMarketplace from './CoreMarketplace'
+import NetworkExplorerMock from './NetworkExplorerMock'
+import BrubeckScreencast from './BrubeckScreencast'
 
 const LayoutTheme = {
     backgroundColor: '#f3f3f3',
@@ -164,13 +166,9 @@ const StreamrPage = () => (
                 </Section>
                 <Section theme={MainTheme} menuToggleColor="currentColor">
                     <Section head tail theme={SecondaryTheme} actConsecutive>
-                        <CaptionedContainer
+                        <NetworkExplorerMock
                             caption="Users can explore the map or search for streams and nodes"
-                        >
-                            <Container style={{ textAlign: 'center' }}>
-                                Network explorer (Placeholder)
-                            </Container>
-                        </CaptionedContainer>
+                        />
                     </Section>
                 </Section>
             </Topic>
@@ -188,8 +186,8 @@ const StreamrPage = () => (
                                 a more modular design for easier updating.
                             </p>
                             <p>
-                                With the help of Demoscene WebGL speciaIist Simppa, and our
-                                regular collaborator Mariusz Rolinski we created an interactive
+                                With the help of Demoscene WebGL specialist Simppa, and our
+                                regular collaborator Mariusz Roliński we created an interactive
                                 visualiser for the network that ended up handling the 35,000
                                 node testnet and still managed a quick load time & high frame
                                 rates. We also produced an animated token economics explainer
@@ -200,13 +198,9 @@ const StreamrPage = () => (
                 </Section>
                 <Section theme={MainTheme} menuToggleColor="currentColor">
                     <Section head tail theme={SecondaryTheme} actConsecutive>
-                        <CaptionedContainer
+                        <BrubeckScreencast
                             caption="The Brubeck milestone website in 2021 introduced a live network visualiser"
-                        >
-                            <Container style={{ textAlign: 'center' }}>
-                                Network explorer (Brubeck site)
-                            </Container>
-                        </CaptionedContainer>
+                        />
                     </Section>
                 </Section>
             </Topic>

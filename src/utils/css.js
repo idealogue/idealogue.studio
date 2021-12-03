@@ -21,3 +21,9 @@ export const PLEX_SANS = "'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif"
 export const LAB = "'Lab Grotesque', 'Helvetica Neue', Arial, sans-serif"
 
 export const PUBLICO = "'Publico Text'"
+
+export const TABLET = `(min-width: ${MD}px)`
+
+export const DESKTOP = `(min-width: ${LG}px)`
+
+export const XLDESKTOP = `(min-width: ${XL}px)`

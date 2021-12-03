@@ -35,7 +35,11 @@ const CaptionWrapper = styled.div`
 
 const UnstyledGolemCharacter = (props) => (
     <div {...props}>
-        <Video id="golemCharacter" loop autoPlay playsInline muted />
+        <Video loop autoPlay playsInline muted>
+            <source src="/videos/golem_character.mp4" type="video/mp4" />
+            <source src="/videos/golem_character.webm" type="video/webm" />
+            <source src="/videos/golem_character.mov" type="video/quicktime" />
+        </Video>
         <Display as={Container} xs="none" sm="block">
             <CaptionWrapper>
                 <Caption>
@@ -46,11 +50,6 @@ const UnstyledGolemCharacter = (props) => (
     </div>
 )
 
-const GolemCharacter = styled(UnstyledGolemCharacter)`
-    video {
-        display: block;
-        width: 100%;
-    }
-`
+const GolemCharacter = styled(UnstyledGolemCharacter)``
 
 export default GolemCharacter

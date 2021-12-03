@@ -1,10 +1,8 @@
 import React from 'react'
 import styled, { css, ThemeProvider } from 'styled-components'
 import UnstyledGlyph, { PLAY } from '$shared/Glyph'
-// import { TABLET } from '~utils/styled'
 
 const TABLET = 800
-
 
 export const DefaultTheme = {
     backgroundColor: '#ffffff',

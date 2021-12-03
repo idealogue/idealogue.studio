@@ -1,37 +1,9 @@
-import React from 'react'
+import styled from 'styled-components'
 
-const sources = {
-    hive: [
-        ['/videos/hive.mp4', 'video/mp4'],
-        ['/videos/hive.webm', 'video/quicktime'],
-        ['/videos/hive.mov', 'video/webm'],
-    ],
-    hux: [
-        ['/videos/hux.mp4', 'video/mp4'],
-        ['/videos/hux.webm', 'video/quicktime'],
-        ['/videos/hux.mov', 'video/webm'],
-    ],
-    golemCharacter: [
-        ['/videos/golem_character.mp4', 'video/mp4'],
-        ['/videos/golem_character.webm', 'video/quicktime'],
-        ['/videos/golem_character.mov', 'video/webm'],
-    ],
-    vizor: [
-        ['/videos/vizor.mp4', 'video/mp4'],
-    ],
-    streamrIcons: [
-        ['/videos/streamr_icon_loop.mp4', 'video/mp4'],
-    ],
-
-}
-
-const Video = ({ id, ...props }) => (
-    // eslint-disable-next-line jsx-a11y/media-has-caption
-    <video {...props}>
-        {sources[id].map(([src, type]) => (
-            <source key={type} src={src} type={type} />
-        ))}
-    </video>
-)
+const Video = styled.video`
+    aspect-ratio: ${({ $aspect }) => $aspect};
+    display: block;
+    width: 100%;
+`
 
 export default Video
