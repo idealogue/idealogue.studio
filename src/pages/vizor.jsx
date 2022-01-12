@@ -56,7 +56,11 @@ const VizorPage = () => (
                     <SectionHeader no={1} />
                     <Container>
                         <p>
-                            The app we saw in mid-2015, then known as Engi, was very rough, but powerful. It had its own WebGL-based realtime 3D graphics engine, a ton of shaders and effects, the ability to output to stereo VR views, and a deep visual programming interface. We renamed it Vizor and created a new brand style for it.
+                            The app we saw in mid-2015, then known as Engi, was very rough, but
+                            powerful. It had its own WebGL-based realtime 3D graphics engine, a ton
+                            of shaders and effects, the ability to output to stereo VR views, and a
+                            deep visual programming interface. We renamed it Vizor and created a new
+                            brand style for it.
                         </p>
                         <Spacer head>
                             <FluidImage src={Image.GRID} alt="" />
@@ -69,7 +73,11 @@ const VizorPage = () => (
                     <SectionHeader no={2} />
                     <Container>
                         <p>
-                            One of our first tasks was to clean up the programming UI. It could do almost anything, but was a confusing mess of tiny icons, unclear connections and hard to fathom structure. We introduced a colour scheme for patch types, accordions, clearer connections, and a consistent structure.
+                            One of our first tasks was to clean up the programming UI. It could do
+                            almost anything, but was a confusing mess of tiny icons, unclear
+                            connections and hard to fathom structure. We introduced a colour scheme
+                            for patch types, accordions, clearer connections, and
+                            a consistent structure.
                         </p>
                         <Spacer head>
                             <Modules />
@@ -82,7 +90,11 @@ const VizorPage = () => (
                     <SectionHeader no={3} />
                     <Container>
                         <p>
-                            The visual programming editor, now renamed Patches and open-source, is a fast and fluid webGL-based 3D editor with switchable cameras and single-click to publish. We introduced a unique circular grid centred around the user, for easy VR composing, as well as bold, highly visible icons for HMD and lights. Try it out here.
+                            The visual programming editor, now renamed Patches and open-source, is
+                            a fast and fluid webGL-based 3D editor with switchable cameras and
+                            single-click to publish. We introduced a unique circular grid centred
+                            around the user, for easy VR composing, as well as bold, highly visible
+                            icons for HMD and lights.
                         </p>
                         <Spacer head>
                             <BrowserFrame shadow dark>
@@ -99,7 +111,9 @@ const VizorPage = () => (
                     <SectionHeader no={4} />
                     <Container>
                         <p>
-                            Content on Vizor ranges from 360 photos to immersive stories, infographics and visual experiments. The player was designed for simplicity across 2D and VR views on desktops and mobile.
+                            Content on Vizor ranges from 360 photos to immersive stories,
+                            infographics and visual experiments. The player was designed for
+                            simplicity across 2D and VR views on desktops and mobile.
                         </p>
                     </Container>
                     <Spacer head>
@@ -112,7 +126,10 @@ const VizorPage = () => (
                     <SectionHeader no={5} />
                     <Container>
                         <p>
-                            With a fully web-based file system, users needed to be able to have public and private views of their projects, along with drafts and public projects to keep things tidy. We prototyped and created this from the ground up, as it didn’t exist in the original prototype.
+                            With a fully web-based file system, users needed to be able to have
+                            public and private views of their projects, along with drafts and public
+                            projects to keep things tidy. We prototyped and created this from the
+                            ground up, as it didn&apos;t exist in the original prototype.
                         </p>
                         <Spacer head>
                             <BrowserFrame shadow dark>
@@ -127,7 +144,10 @@ const VizorPage = () => (
                     <SectionHeader no={6} />
                     <Container>
                         <p>
-                            Due to the need to keep polygon counts and file sizes down for a reasonable page load time, we worked with illustrator Jeremy Edelblut to develop a playful, low-poly style to use across 3D icons for the editor, as well as library assets for users to build with.
+                            Due to the need to keep polygon counts and file sizes down for a
+                            reasonable page load time, we worked with illustrator Jeremy Edelblut
+                            to develop a playful, low-poly style to use across 3D icons for the
+                            editor, as well as library assets for users to build with.
                         </p>
                     </Container>
                     <Spacer head>
@@ -140,7 +160,10 @@ const VizorPage = () => (
                     <SectionHeader no={7} />
                     <Container>
                         <p>
-                            The Patches editor is powerful, but seeing strong user interest in 360 media led to building a new, user-friendly app for telling stories and making tours with 360 images. Built from scratch in React, Vizor 360 is fast, light and easy to use.
+                            The Patches editor is powerful, but seeing strong user interest in 360
+                            media led to building a new, user-friendly app for telling stories and
+                            making tours with 360 images. Built from scratch in React, Vizor 360 is
+                            fast, light and easy to use.
                         </p>
                         <Spacer head>
                             <BrowserFrame shadow dark>
