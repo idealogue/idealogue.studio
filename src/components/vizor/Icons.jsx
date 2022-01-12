@@ -13,12 +13,24 @@ const Row = styled.div`
     justify-content: space-between;
 
     & + & {
-        margin-top: 96px;
+        margin-top: 64px;
+    }
+
+    @media (min-width: ${MD}px) {
+        & + & {
+            margin-top: 96px;
+        }
     }
 `
 
 const Cell = styled.div`
-    width: 100%;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 256px;
+
+    img {
+        margin: 0 auto;
+    }
 
     @media (min-width: ${SM}px) {
         width: 144px;
@@ -34,7 +46,7 @@ const Cell = styled.div`
 `
 
 const Inner = styled.div`
-    @media (min-width: ${MD}px) {
+    @media (min-width: ${SM}px) {
         left: -5%;
         position: relative;
         width: 110%;
@@ -150,7 +162,7 @@ const UnstyledIcons = (props) => {
 
 const Icons = styled(UnstyledIcons)`
     ${XofY} {
-        margin: 32px auto 0;
+        margin: 64px auto 0;
         width: 56px;
     }
 
