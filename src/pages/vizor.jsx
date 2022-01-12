@@ -8,6 +8,7 @@ import Section from '$shared/Section'
 import Container from '$shared/Container'
 import Contributor, { Contributors } from '$shared/Contributor'
 import Image from '$vizor/Image'
+import Vizor360 from '$vizor/Vizor360'
 import FluidImage from '$shared/FluidImage'
 import Video from '$shared/Video'
 import BrowserFrame from '$shared/BrowserFrame'
@@ -139,11 +140,11 @@ const VizorPage = () => (
                     <SectionHeader no={7} />
                     <Container>
                         <p>
-                            The Patches editor is powerful, but seeing strong user interest in 360 media led to building a new, user-friendly app for telling stories and making tours with 360 images. Built from scratch in React, Vizor 360 is fast, light and easy to use. Try it out here.
+                            The Patches editor is powerful, but seeing strong user interest in 360 media led to building a new, user-friendly app for telling stories and making tours with 360 images. Built from scratch in React, Vizor 360 is fast, light and easy to use.
                         </p>
                         <Spacer head>
                             <BrowserFrame shadow dark>
-                                <FluidImage src={Image.EDITOR_0} alt="" fill />
+                                <Vizor360 />
                             </BrowserFrame>
                         </Spacer>
                     </Container>
