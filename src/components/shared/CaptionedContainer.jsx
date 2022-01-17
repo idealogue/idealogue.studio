@@ -1,17 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 import PrestyledCaption from '$shared/Caption'
-import { SM, MD } from '$utils/css'
+import { SM, TABLET, DESKTOP } from '$utils/css'
 
 const Caption = styled(PrestyledCaption)`
-    margin-top: 16px;
+    margin-top: 20px;
 
     @media (min-width: ${SM}px) {
-        margin-top: 24px;
+        margin-top: 32px;
     }
     
-    @media (min-width: ${MD}px) {
-        margin-top: 40px;
+    @media ${TABLET} {
+        margin-top: 48px;
+    }
+
+    @media ${DESKTOP} {
+        margin-top: 64px;
     }
 `
 

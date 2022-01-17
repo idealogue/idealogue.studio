@@ -19,9 +19,14 @@ import CaptionedContainer from '$shared/CaptionedContainer'
 import Spacer from '$shared/Spacer'
 import ScrollIndicator from '$shared/ScrollIndicator'
 import Topic from '../components/shared/Topic'
+import PlatformImage from '$vizor/Image/platform.jpg'
+import PlatformImage2x from '$vizor/Image/platform@2x.jpg'
+import LaunchPageImage from '$vizor/Image/launchPage.jpg'
+import LaunchPageImage2x from '$vizor/Image/launchPage@2x.jpg'
+import EditorImage from '$vizor/Image/editor.jpg'
 
 const LayoutTheme = {
-    backgroundColor: '#ffffff',
+    backgroundColor: '#040322',
 }
 
 const DarkBlueTheme = {
@@ -133,7 +138,7 @@ const VizorPage = () => (
                         </p>
                         <Spacer head>
                             <BrowserFrame shadow dark>
-                                <FluidImage src={Image.PLATFORM} alt="" fill />
+                                <FluidImage src={PlatformImage2x} srcSet={`${PlatformImage}, ${PlatformImage2x} 2x`} alt="" fill />
                             </BrowserFrame>
                         </Spacer>
                     </Container>
@@ -167,7 +172,7 @@ const VizorPage = () => (
                         </p>
                         <Spacer head>
                             <BrowserFrame shadow dark>
-                                <Vizor360 />
+                                <FluidImage src={EditorImage} alt="" fill />
                             </BrowserFrame>
                         </Spacer>
                     </Container>
@@ -177,10 +182,13 @@ const VizorPage = () => (
                     <CaptionedContainer caption="The Vizor 360 product launch page">
                         <Container>
                             <BrowserFrame shadow dark>
-                                <FluidImage src={Image.EDITOR_1} alt="" fill />
+                                <FluidImage src={LaunchPageImage2x} srcSet={`${LaunchPageImage}, ${LaunchPageImage2x} 2x`} alt="" fill />
                             </BrowserFrame>
                         </Container>
                     </CaptionedContainer>
+                </Section>
+                <Section theme={NavyTheme} head>
+                    <Vizor360 />
                 </Section>
             </Topic>
             <Topic title="Credits">

@@ -12,7 +12,6 @@ import EDITOR_1 from './editor_1.jpg'
 import GRID from './grid.png'
 import HEAD_SECTION from './head_section.png'
 import PHONE_FRAMES from './phone_frames.png'
-import PLATFORM from './platform.png'
 import UI_0 from './ui_0.png'
 import UI_1 from './ui_1.png'
 import UI_2 from './ui_2.png'
@@ -36,7 +35,6 @@ const ALL = {
     GRID,
     HEAD_SECTION,
     PHONE_FRAMES,
-    PLATFORM,
     UI_0,
     UI_1,
     UI_2,
