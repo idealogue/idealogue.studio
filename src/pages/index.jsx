@@ -129,10 +129,10 @@ const IndexPage = () => (
                             </Fragment>
                         ))}
                     </LinkList>
-                    <h2>About</h2>
+                    <h2>Team</h2>
                     <LinkList>
                         <li>
-                            <Link to="/team/">Team</Link>
+                            <Link to="/team/">About us</Link>
                         </li>
                     </LinkList>
                     <footer>
