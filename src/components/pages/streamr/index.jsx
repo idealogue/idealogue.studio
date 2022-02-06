@@ -22,6 +22,7 @@ import ScrollIndicator from '$shared/ScrollIndicator'
 import CoreMarketplace from './CoreMarketplace'
 import NetworkExplorerMock from './NetworkExplorerMock'
 import BrubeckScreencast from './BrubeckScreencast'
+import Surround from '$shared/Surround'
 
 const LayoutTheme = {
     backgroundColor: '#f3f3f3',
@@ -79,7 +80,7 @@ const StreamrPage = () => (
                         <p>
                             Streamr CEO, Henri Pihkala, and I preferred to avoid the sci-fi cliches
                             that seem to be ever-present in the crypto world, and instead aimed to
-                            visualise a semi-realistic, near-future world that proposed Streamr’s
+                            visualise a semi-realistic, near-future world that proposed Streamr&apos;s
                             vision was close at hand. A stylised but detailed 3D world, seen as a
                             kind of data diorama was the starting point. To help us realise this we
                             brought on one of our regular collaborators, the illustrator Stuart Wade.
@@ -101,7 +102,16 @@ const StreamrPage = () => (
                             from drawing board to MVP launch at Consensus New York 2018 in less than
                             three months. Essentially a graphical front end to the data products
                             which are Ethereum smart contracts, it was a good exercise in building
-                            and shipping something fast. Visit the app.
+                            and shipping something fast.
+                            <Surround suffix="." prefix=" ">
+                                <a
+                                    href="https://streamr.network/marketplace"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                >
+                                    Visit the app
+                                </a>
+                            </Surround>
                         </p>
                     </Container>
                 </Section>
@@ -135,7 +145,16 @@ const StreamrPage = () => (
                                 bringing it into the Core app as the Canvas editor. As of 2021 the
                                 editor has been retired as it needs to be fully decentralised to be
                                 useful, but the Core app itself has been decentralised, and you can
-                                try it out here.
+                                try it out
+                                <Surround prefix=" " suffix=".">
+                                    <a
+                                        href="https://streamr.network/core"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                    >
+                                        here
+                                    </a>
+                                </Surround>
                             </p>
                         </Container>
                     </Spacer>
@@ -159,7 +178,16 @@ const StreamrPage = () => (
                                 of metrics for the overall network, nodes and streams. Rollout was
                                 a little rocky as up to 90,000 nodes piled into the third testnet in
                                 October 2021, but as the app matures it should provide an essential
-                                window into the operation of the global network. Try the app here.
+                                window into the operation of the global network. Try the app
+                                <Surround prefix=" " suffix=".">
+                                    <a
+                                        href="https://streamr.network/network-explorer"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                    >
+                                        here
+                                    </a>
+                                </Surround>
                             </p>
                         </Container>
                     </Spacer>
@@ -191,7 +219,16 @@ const StreamrPage = () => (
                                 visualiser for the network that ended up handling the 35,000
                                 node testnet and still managed a quick load time & high frame
                                 rates. We also produced an animated token economics explainer
-                                with Stuart Wade, who created the icons. Visit the site.
+                                with Stuart Wade, who created the icons.
+                                <Surround prefix=" " suffix=".">
+                                    <a
+                                        href="https://streamr.network/"
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                    >
+                                        Visit the site
+                                    </a>
+                                </Surround>
                             </p>
                         </Container>
                     </Spacer>

@@ -63,6 +63,10 @@ const Section = styled(UnstyledSection)`
         margin-top: 40px;
     }
 
+    p a {
+        color: inherit !important;
+    }
+
     hr {
         background-color: ${({ theme }) => theme.color};
         border: 0;
