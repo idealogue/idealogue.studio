@@ -58,8 +58,8 @@ const ImageWrapper = styled.div`
 `
 
 const UnstyledIconGrid = (props) => {
-    const xl = useMediaQuery({
-        query: `(min-width: ${XL}px)`,
+    const lg = useMediaQuery({
+        query: `(min-width: ${LG}px)`,
     })
 
     return (
@@ -70,7 +70,7 @@ const UnstyledIconGrid = (props) => {
             <Display xs="none" md {...props}>
                 {[0, 5, 10].map((i) => (
                     <Viewport key={i}>
-                        <Gallery defaultSlide={0} gutter={0} currentWingSize={xl ? 1 : 0}>
+                        <Gallery defaultSlide={0} gutter={0} currentWingSize={lg ? 1 : 0}>
                             {MACHINE_IMAGES.slice(i, i + 5).map(([src, src2x]) => (
                                 <Cell key={src}>
                                     <ImageWrapper>
@@ -84,7 +84,7 @@ const UnstyledIconGrid = (props) => {
             </Display>
             <Display md="none" {...props}>
                 <Viewport>
-                    <Gallery defaultSlide={0} gutter={0} currentWingSize={xl ? 1 : 0}>
+                    <Gallery defaultSlide={0} gutter={0} currentWingSize={0}>
                         {MACHINE_IMAGES.map(([src, src2x]) => (
                             <Cell key={src}>
                                 <ImageWrapper>
