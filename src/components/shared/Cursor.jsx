@@ -131,7 +131,7 @@ const UnstyledCursor = ({
         if (onMouseEnterProp) {
             onMouseEnterProp()
         }
-    }, [onMouseEnterProp, setDirection, direction, color])
+    }, [onMouseEnterProp, setDirection, direction, setColor, color])
 
     const onMouseLeave = useCallback(() => {
         setDirection(Direction.NONE)

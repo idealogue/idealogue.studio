@@ -7,7 +7,7 @@ import FluidImage from '$shared/FluidImage'
 import Gallery from '$shared/Gallery'
 import Display from '$shared/Display'
 import Caption from '$shared/Caption'
-import { MD, XL, LG } from '$utils/css'
+import { MD, LG } from '$utils/css'
 
 const Cell = styled.div`
     margin: 0 auto;
