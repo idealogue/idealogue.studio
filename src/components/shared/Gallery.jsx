@@ -151,6 +151,7 @@ const UnstyledGallery = ({
                             return (
                                 <SlideContainer key={key} gutter={gutter}>
                                     <Cursor
+                                        color="#0324ff"
                                         direction={arrowDirection}
                                         onClick={directionToClick[arrowDirection]}
                                     >

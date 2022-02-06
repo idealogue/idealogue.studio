@@ -10,6 +10,8 @@ const Direction = {
 const Context = createContext({
     direction: Direction.NONE,
     setDirection: () => {},
+    color: undefined,
+    setColor: () => {},
 })
 
 const useArrowCursor = () => (
@@ -19,11 +21,16 @@ const useArrowCursor = () => (
 export const Provider = ({ children }) => {
     const [direction, setDirection] = useState(Direction.NONE)
 
+    const [color, setColor] = useState()
+
     const value = useMemo(() => ({
         direction,
         setDirection,
+        color,
+        setColor,
     }), [
         direction,
+        color,
     ])
 
     return (
@@ -43,7 +50,9 @@ const NoCursor = createGlobalStyle`
 const UnstyledArrow = ({ ...props }) => {
     const rootRef = useRef()
 
-    const left = useArrowCursor().direction === Direction.LEFT
+    const { direction, color = '#ffffff' } = useArrowCursor()
+
+    const left = direction === Direction.LEFT
 
     useEffect(() => {
         const onMouseMove = ({ clientX, clientY }) => {
@@ -72,12 +81,12 @@ const UnstyledArrow = ({ ...props }) => {
             <svg viewBox="0 0 67 51" xmlns="http://www.w3.org/2000/svg">
                 {left ? (
                     <path
-                        fill="currentColor"
+                        fill={color}
                         d="M25.145 0L0 25.145l25.145 25.146 2.829-2.829L7.658 27.145h59.268v-4H7.656L27.974 2.828z"
                     />
                 ) : (
                     <path
-                        fill="currentColor"
+                        fill={color}
                         d="M41.78 0l25.146 25.145L41.78 50.291l-2.828-2.829 20.316-20.317H0v-4h59.27L38.952 2.828z"
                     />
                 )}
@@ -87,7 +96,6 @@ const UnstyledArrow = ({ ...props }) => {
 }
 
 const ArrowInner = styled(UnstyledArrow)`
-    color: #ffffff;
     pointer-events: none;
     position: fixed;
     transform: translate(-50%, -50%);
@@ -109,19 +117,21 @@ export const Arrow = () => (
 const UnstyledCursor = ({
     children,
     direction = Direction.LEFT,
+    color,
     onMouseEnter: onMouseEnterProp,
     onMouseLeave: onMouseLeaveProp,
     ...props
 }) => {
-    const { setDirection } = useArrowCursor()
+    const { setDirection, setColor } = useArrowCursor()
 
     const onMouseEnter = useCallback(() => {
         setDirection(direction)
+        setColor(color)
 
         if (onMouseEnterProp) {
             onMouseEnterProp()
         }
-    }, [onMouseEnterProp, setDirection, direction])
+    }, [onMouseEnterProp, setDirection, direction, color])
 
     const onMouseLeave = useCallback(() => {
         setDirection(Direction.NONE)
@@ -143,7 +153,6 @@ const UnstyledCursor = ({
     )
 }
 
-const Cursor = styled(UnstyledCursor)`
-`
+const Cursor = styled(UnstyledCursor)``
 
 export default Cursor
