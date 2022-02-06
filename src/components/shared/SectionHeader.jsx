@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Container from '$shared/Container'
 import { useTopic } from '$shared/Topic'
+import Display from '$shared/Display'
 import { SM, MD, LG } from '$utils/css'
 
 const Body = styled.div`
@@ -19,7 +20,7 @@ const No = styled(Body)`
 `
 
 const UnstyledSectionHeader = ({ no, children, ...props }) => {
-    const { title, hash } = useTopic()
+    const { title, hash, mobileTitle } = useTopic()
 
     return (
         <div {...props}>
@@ -31,7 +32,18 @@ const UnstyledSectionHeader = ({ no, children, ...props }) => {
                     {hash ? (
                         <>
                             <a href={`#${hash}`}>
-                                {title}
+                                {title === mobileTitle ? (
+                                    title
+                                ) : (
+                                    <>
+                                        <Display as="span" md="none">
+                                            {mobileTitle}
+                                        </Display>
+                                        <Display as="span" xs="none" md="inline">
+                                            {title}
+                                        </Display>
+                                    </>
+                                )}
                             </a>
                             {children}
                         </>

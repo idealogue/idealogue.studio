@@ -67,7 +67,10 @@ const StreamrPage = () => (
             </Section>
             <Section theme={MainTheme} tail menuToggleColor="currentColor">
                 <ScrollIndicator.Target />
-                <Topic title="A decentralised global data network">
+                <Topic
+                    mobileTitle="A decentralised data network"
+                    title="A decentralised global data network"
+                >
                     <Spacer head>
                         <SectionHeader no={1} />
                         <Container>
@@ -106,7 +109,10 @@ const StreamrPage = () => (
                     </Spacer>
                 </Section>
             </Topic>
-            <Topic title="Product design — Data Marketplace">
+            <Topic
+                mobileTitle="Data Marketplace design"
+                title="Product design — Data Marketplace"
+            >
                 <Section theme={MainTheme} head menuToggleColor="currentColor">
                     <SectionHeader no={3} />
                     <Container>
@@ -132,15 +138,23 @@ const StreamrPage = () => (
             <Section head theme={MainTheme}>
                 <Section head tail theme={SecondaryTheme} actConsecutive>
                     <CaptionedContainer
-                        caption="Management, product detail and browse views for the Marketplace"
-                    >
+                        caption={(
+                            <>
+                                Management, product detail and browse
+                                <Display as="br" md="none" />
+                                views for the Marketplace
+                            </>
+                        )}>
                         <Container>
                             <CoreMarketplace />
                         </Container>
                     </CaptionedContainer>
                 </Section>
             </Section>
-            <Topic title="Product design — Core app">
+            <Topic
+                mobileTitle="Core app design"
+                title="Product design — Core app"
+            >
                 <Section theme={MainTheme} menuToggleColor="currentColor">
                     <Spacer head tail>
                         <SectionHeader no={4} />
@@ -179,7 +193,10 @@ const StreamrPage = () => (
                     <Modules />
                 </Section>
             </Topic>
-            <Topic title="Product design — Network Explorer">
+            <Topic
+                mobileTitle="Network Explorer"
+                title="Product design — Network Explorer"
+            >
                 <Section theme={MainTheme} menuToggleColor="currentColor">
                     <Spacer head tail>
                         <SectionHeader no={5} />
@@ -208,7 +225,14 @@ const StreamrPage = () => (
                 <Section theme={MainTheme} menuToggleColor="currentColor">
                     <Section head tail theme={SecondaryTheme} actConsecutive>
                         <NetworkExplorerMock
-                            caption="Users can explore the map or search for streams and nodes"
+                            caption={(
+                                <>
+                                    Users can explore the map or
+                                    {' '}
+                                    <Display as="br" md="none" />
+                                    search for streams and nodes
+                                </>
+                            )}
                         />
                     </Section>
                 </Section>
