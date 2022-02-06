@@ -2,8 +2,7 @@ import React, { useReducer } from 'react'
 import styled from 'styled-components'
 import Arctic from './Image/arctic360.jpg'
 import PlayImage from './triangle.svg'
-import { TABLET } from '$utils/css'
-import { DESKTOP } from '../../utils/css'
+import { TABLET, DESKTOP } from '$utils/css'
 
 const Inner = styled.div`
     margin: 0 auto;
