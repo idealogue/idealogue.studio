@@ -6,23 +6,23 @@ import { SM, MD, LG } from '$utils/css'
 import CobaltImage from './CobaltImage'
 
 const Img = styled.div`
-    height: 102px;
+    height: 120px;
     margin: 0 auto;
-    width: 102px;
+    width: 120px;
 
     @media (min-width: ${SM}px) {
-        height: 116px;
-        width: 116px;
+        height: 144px;
+        width: 144px;
     }
 
     @media (min-width: ${MD}px) {
-        height: 134px;
-        width: 134px;
+        height: 160px;
+        width: 160px;
     }
 
     @media (min-width: ${LG}px) {
-        height: 160px;
-        width: 160px;
+        height: 192px;
+        width: 192px;
     }
 `
 
@@ -31,7 +31,7 @@ const images = {
     golem: <StaticImage as={Img} src="golem.png" alt="Golem" />,
     hive: <StaticImage as={Img} src="hive.png" alt="Hive" />,
     huxtaburger: <StaticImage as={Img} src="huxtaburger.png" alt="Huxtaburger" />,
-    streamr: <StaticImage as={Img} src="streamr.png" alt="Streamr" />,
+    streamr: <StaticImage as={Img} src="streamr@2x.png" alt="Streamr" />,
     vizor: <StaticImage as={Img} src="vizor.png" alt="Vizor" />,
 }
 
