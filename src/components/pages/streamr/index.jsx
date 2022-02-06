@@ -23,6 +23,7 @@ import CoreMarketplace from './CoreMarketplace'
 import NetworkExplorerMock from './NetworkExplorerMock'
 import BrubeckScreencast from './BrubeckScreencast'
 import Surround from '$shared/Surround'
+import Display from '$shared/Display'
 
 const LayoutTheme = {
     backgroundColor: '#f3f3f3',
@@ -47,8 +48,20 @@ const StreamrPage = () => (
             <Section theme={MainTheme} menuToggleBackground menuToggleColor="currentColor">
                 <Hero>
                     <p>
-                        We rebranded Streamr, a decentralised realtime data platform, and integrated
-                        their services into a&nbsp;more&nbsp;user-focused app called Core.
+                        <Display as="span" xs sm="none">
+                            We created a brand, websites and
+                            <br />
+                            a set of applications for Streamr,
+                            <br />
+                            a web3 real-time data startup.
+                        </Display>
+                        <Display as="span" xs="none" sm>
+                            We created a brand, websites and a set
+                            <br />
+                            of decentralised applications for Streamr,
+                            <br />
+                            a Web3 real-time data startup.
+                        </Display>
                     </p>
                 </Hero>
             </Section>

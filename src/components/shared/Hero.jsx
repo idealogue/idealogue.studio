@@ -47,7 +47,7 @@ const Hero = styled(UnstyledHero)`
 
     && p {
         font-family: 'Lab Grotesque';
-        font-size: 16px;
+        font-size: 20px;
         font-weight: 200;
         line-height: 1.5em;
         margin: 32px auto;
