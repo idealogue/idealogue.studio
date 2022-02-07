@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import CaptionedContainer from '$shared/CaptionedContainer'
 import PrestyledPadded from '$shared/Padded'
 import VideoPlayer from '$streamr/VideoPlayer'
-import Still2x from './streamrStill.jpg'
+import Still2x from './Image/Streamr_Vid_Poster@2x.jpg'
 import { LG } from '$utils/css'
 
 const Padded = styled(PrestyledPadded)`
@@ -17,7 +17,7 @@ const UnstyledBrandFilm = (props) => (
     <CaptionedContainer {...props} caption="A Streamr Network intro video we produced with motion studio 21_19">
         <Padded>
             <VideoPlayer poster={Still2x}>
-                <source src="/videos/streamr.mp4" type="video/mp4" />
+                <source src="/videos/streamr_promo.mp4" type="video/mp4" />
             </VideoPlayer>
         </Padded>
     </CaptionedContainer>
