@@ -2,7 +2,7 @@ name: Site
 on:
   push:
     tags:
-      - v*.*.*-rc.*
+      - v*.*.*
 jobs:
   publish:
     runs-on: ubuntu-latest
