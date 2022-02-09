@@ -141,7 +141,7 @@ const IndexPage = () => (
                     </LinkList>
                     <footer>
                         <p>
-                            242 Victoria Street
+                            Level 1, 34 Breese St
                             <br />
                             Brunswick 3056
                             <br />
