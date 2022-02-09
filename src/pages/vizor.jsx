@@ -24,6 +24,7 @@ import PlatformImage2x from '$vizor/Image/platform@2x.jpg'
 import LaunchPageImage from '$vizor/Image/launchPage.jpg'
 import LaunchPageImage2x from '$vizor/Image/launchPage@2x.jpg'
 import EditorImage from '$vizor/Image/editor.jpg'
+import EditorImage2x from '$vizor/Image/editor@2x.jpg'
 import PlayerPics from '$vizor/PlayerPics'
 
 const LayoutTheme = {
@@ -173,7 +174,7 @@ const VizorPage = () => (
                         </p>
                         <Spacer head>
                             <BrowserFrame shadow dark>
-                                <FluidImage src={EditorImage} alt="" fill />
+                                <FluidImage src={EditorImage2x} srcSet={`${EditorImage}, ${EditorImage2x} 2x`} alt="" fill />
                             </BrowserFrame>
                         </Spacer>
                     </Container>
