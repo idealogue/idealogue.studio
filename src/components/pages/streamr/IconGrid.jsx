@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useReducer, useEffect } from 'react'
 import styled, { css } from 'styled-components'
 import { useMediaQuery } from 'react-responsive'
 import { MACHINE_IMAGES } from '$streamr/Image'
@@ -7,7 +7,7 @@ import FluidImage from '$shared/FluidImage'
 import Gallery from '$shared/Gallery'
 import Display from '$shared/Display'
 import Caption from '$shared/Caption'
-import { MD, LG } from '$utils/css'
+import { MD, LG, XL } from '$utils/css'
 
 const Cell = styled.div`
     margin: 0 auto;
@@ -58,9 +58,28 @@ const ImageWrapper = styled.div`
 `
 
 const UnstyledIconGrid = (props) => {
-    const lg = useMediaQuery({
-        query: `(min-width: ${LG}px)`,
+    const xl = useMediaQuery({
+        query: `(min-width: ${XL}px)`,
     })
+
+    const [cache, nudgeMediaQuery] = useReducer(() => 1, 0)
+
+    useEffect(() => {
+        let cancelled = false
+
+        // `useMediaQuery` needs a "nudge". This way we force a re-render when the SSR-ed page loads
+        // in the browser for the first time.
+        const timeoutId = setTimeout(() => {
+            if (!cancelled) {
+                nudgeMediaQuery()
+            }
+        }, 0)
+
+        return () => {
+            cancelled = true
+            clearTimeout(timeoutId)
+        }
+    }, [])
 
     return (
         <CaptionedContainer
@@ -70,7 +89,7 @@ const UnstyledIconGrid = (props) => {
             <Display xs="none" md {...props}>
                 {[0, 5, 10].map((i) => (
                     <Viewport key={i}>
-                        <Gallery defaultSlide={0} gutter={0} currentWingSize={lg ? 1 : 0}>
+                        <Gallery key={cache} defaultSlide={0} gutter={0} currentWingSize={xl ? 1 : 0}>
                             {MACHINE_IMAGES.slice(i, i + 5).map(([src, src2x]) => (
                                 <Cell key={src}>
                                     <ImageWrapper>
