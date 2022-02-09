@@ -36,6 +36,10 @@ const Root = styled.div`
         margin: 0;
     }
 
+    p a {
+        text-decoration: none !important;
+    }
+
     footer {
         font-size: 14px;
         line-height: 24px;
