@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback, createContext, useContext, useMemo } from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
+import { TABLET } from '$utils/css'
+import isMobileDevice from '$utils/isMobileDevice'
 
 const Direction = {
     LEFT: 'left',
@@ -41,9 +43,11 @@ export const Provider = ({ children }) => {
 }
 
 const NoCursor = createGlobalStyle`
-    html,
-    body {
-        cursor: none !important;
+    @media ${TABLET} {
+        html,
+        body {
+            cursor: none !important;
+        }
     }
 `
 
@@ -102,9 +106,15 @@ const ArrowInner = styled(UnstyledArrow)`
     z-index: 1000;
 
     svg {
-        display: block;
+        display: none;
         height: 51px;
         width: 67px;
+    }
+
+    @media ${TABLET} {
+        svg {
+            display: block;
+        }
     }
 `
 
@@ -125,6 +135,10 @@ const UnstyledCursor = ({
     const { setDirection, setColor } = useArrowCursor()
 
     const onMouseEnter = useCallback(() => {
+        if (isMobileDevice()) {
+            return
+        }
+
         setDirection(direction)
         setColor(color)
 
