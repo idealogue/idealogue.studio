@@ -24,6 +24,7 @@ import PlatformImage2x from '$vizor/Image/platform@2x.jpg'
 import LaunchPageImage from '$vizor/Image/launchPage.jpg'
 import LaunchPageImage2x from '$vizor/Image/launchPage@2x.jpg'
 import EditorImage from '$vizor/Image/editor.jpg'
+import PlayerPics from '$vizor/PlayerPics'
 
 const LayoutTheme = {
     backgroundColor: '#040322',
@@ -122,7 +123,7 @@ const VizorPage = () => (
                         </p>
                     </Container>
                     <Spacer head>
-                        <FluidImage src={Image.PHONE_FRAMES} alt="" fill />
+                        <PlayerPics />
                     </Spacer>
                 </Section>
             </Topic>
