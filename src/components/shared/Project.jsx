@@ -13,7 +13,6 @@ export const HIVE = 'hive'
 export const HUXTABURGER = 'huxtaburger'
 
 export const lineup = [
-    STREAMR,
     GOLEM,
     VIZOR,
     COBALT,
