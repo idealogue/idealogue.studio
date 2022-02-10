@@ -4,9 +4,9 @@
 
 - `npm ci` to install deps,
 - `npm start` to play around locally, and
-- `npm build` to compile the statics.
+- `npm run build` to compile the statics.
 
-### Staging deployment
+### Deployment
 
-- `npm version prerelease --preid=rc` to get a staging-like version.
-- `git push <remote> <rc tag>` to get it deployed to `gh-pages` branch in the current repo.
+- `npm version <patch|minor|…>` to get a tag and a version commit.
+- `git push master <tag aka version>` to get it deployed to `gh-pages` branch in the current repo.
