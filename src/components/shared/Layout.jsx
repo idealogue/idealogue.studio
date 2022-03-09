@@ -3,8 +3,6 @@ import '../../styles/fonts.css'
 
 import React from 'react'
 import { createGlobalStyle, css } from 'styled-components'
-import { Helmet } from 'react-helmet'
-import { useProject } from '$shared/Project'
 import Menu from '$shared/Menu'
 import { MenuProvider } from '$hooks/useMenu'
 import useScrollDirection from '$hooks/useScrollDirection'
@@ -39,8 +37,6 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Layout = ({ children, theme }) => {
-    const { name } = useProject() || {}
-
     const direction = useScrollDirection()
 
     return (
@@ -49,11 +45,6 @@ const Layout = ({ children, theme }) => {
                 backgroundColor={theme.backgroundColor}
                 nav={direction !== 'down'}
             />
-            {!!name ? (
-                <Helmet title={`Idealogue – ${name}`} />
-            ) : (
-                <Helmet title={`Idealogue`} />
-            )}
             <Metatags />
             <MenuProvider>
                 <ArrowProvider>
