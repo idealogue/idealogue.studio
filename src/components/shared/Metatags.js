@@ -31,6 +31,7 @@ const Metatags = () => {
                     <meta property="og:image:type" content="image/png" />
                     <meta property="og:image:width" content="1200" />
                     <meta property="og:image" content={socialPosterUrl} />
+                    <meta name="twitter:card" content="summary_large_image" />
                 </Helmet>
             )}
         </>
