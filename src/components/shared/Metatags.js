@@ -29,8 +29,8 @@ const Metatags = () => {
                 <Helmet>
                     <meta property="og:image:height" content="600" />
                     <meta property="og:image:type" content="image/png" />
-                    <meta property="og:image:url" content={socialPosterUrl} />
                     <meta property="og:image:width" content="1200" />
+                    <meta property="og:image" content={socialPosterUrl} />
                 </Helmet>
             )}
         </>
