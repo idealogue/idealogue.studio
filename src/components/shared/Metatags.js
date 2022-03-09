@@ -16,8 +16,7 @@ const Metatags = () => {
                 <title>{title}</title>
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="idealogue.studio" />
-                <meta property="og:description" content={desc} />
-                <meta name="description" content={desc} />
+                <meta property="og:description" name="description" content={desc} />
                 <meta name="version" content={pkg.version} />
                 <link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
                 <link href="/images/touch-icon.png" rel="apple-touch-icon" />
