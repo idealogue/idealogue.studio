@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 import PhoneFrame from '$shared/PhoneFrame'
-import Video from '$shared/Video'
+import AutoPlayingVideo from '$shared/AutoPlayingVideo'
 import { SM, MD } from '$utils/css'
 
 const UnstyledNewWallet = (props) => (
     <PhoneFrame {...props}>
-        <Video loop autoPlay playsInline muted>
+        <AutoPlayingVideo loop playsInline muted>
             <source src="/videos/hive.mp4" type="video/mp4" />
             <source src="/videos/hive.webm" type="video/webm" />
             <source src="/videos/hive.mov" type="video/quicktime" />
-        </Video>
+        </AutoPlayingVideo>
     </PhoneFrame>
 )
 

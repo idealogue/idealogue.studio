@@ -2,10 +2,10 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import CaptionedContainer from '$shared/CaptionedContainer'
 import { TABLET, DESKTOP } from '$utils/css'
-import PrestyledVideo from '$shared/Video'
+import PrestyledAutoPlayingVideo from '$shared/AutoPlayingVideo'
 import Overgrow from './Overgrow'
 
-const Video = styled(PrestyledVideo)`
+const AutoPlayingVideo = styled(PrestyledAutoPlayingVideo)`
     border-radius: 10px;
 
     ${({ $mobile }) => !!$mobile && css`
@@ -41,15 +41,15 @@ const BrubeckScreencast = ({ caption, ...props }) => (
         caption={caption}
     >
         <Overgrow>
-            <Video loop autoPlay playsInline muted $mobile>
+            <AutoPlayingVideo loop playsInline muted $mobile>
                 <source src="/videos/brubeckMobile.mp4" type="video/mp4" />
-            </Video>
-            <Video loop autoPlay playsInline muted $tablet>
+            </AutoPlayingVideo>
+            <AutoPlayingVideo loop playsInline muted $tablet>
                 <source src="/videos/brubeckTablet.mp4" type="video/mp4" />
-            </Video>
-            <Video loop autoPlay playsInline muted $desktop>
+            </AutoPlayingVideo>
+            <AutoPlayingVideo loop playsInline muted $desktop>
                 <source src="/videos/brubeckDesktop.mp4" type="video/mp4" />
-            </Video>
+            </AutoPlayingVideo>
         </Overgrow>
     </CaptionedContainer>
 )

@@ -10,7 +10,7 @@ import Contributor, { Contributors } from '$shared/Contributor'
 import Image from '$vizor/Image'
 import Vizor360 from '$vizor/Vizor360'
 import FluidImage from '$shared/FluidImage'
-import Video from '$shared/Video'
+import AutoPlayingVideo from '$shared/AutoPlayingVideo'
 import BrowserFrame from '$shared/BrowserFrame'
 import Modules from '$vizor/Modules'
 import Icons from '$vizor/Icons'
@@ -105,9 +105,9 @@ const VizorPage = () => (
                         </p>
                         <Spacer head>
                             <BrowserFrame shadow dark>
-                                <Video loop autoPlay playsInline muted>
+                                <AutoPlayingVideo loop playsInline muted>
                                     <source src="/videos/vizor.mp4" type="video/mp4" />
-                                </Video>
+                                </AutoPlayingVideo>
                             </BrowserFrame>
                         </Spacer>
                     </Container>

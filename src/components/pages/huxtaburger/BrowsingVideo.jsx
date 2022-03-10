@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-import Video from '$shared/Video'
+import AutoPlayingVideo from '$shared/AutoPlayingVideo'
 import PhoneFrame from '$shared/PhoneFrame'
 
 const UnstyledBrowsingVideo = (props) => (
     <div {...props}>
         <PhoneFrame>
-            <Video loop autoPlay playsInline muted>
+            <AutoPlayingVideo loop playsInline muted>
                 <source src="/videos/hux.mp4" type="video/mp4" />
                 <source src="/videos/hux.webm" type="video/webm" />
                 <source src="/videos/hux.mov" type="video/quicktime" />
-            </Video>
+            </AutoPlayingVideo>
         </PhoneFrame>
     </div>
 )
