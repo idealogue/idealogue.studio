@@ -6,7 +6,7 @@ import pkg from '~/../package'
 const Metatags = () => {
     const {
         desc = 'We work with startups to create great digital products we believe in.',
-        socialPosterUrl,
+        socialPosterUrl = 'https://idealogue.studio/images/Idealogue-share.png',
         title = 'Idealogue',
     } = useProject() || {}
 
