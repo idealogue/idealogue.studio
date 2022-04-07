@@ -7,8 +7,7 @@
             local('LabGrotesque-Light'),
             url('/fonts/LabGrotesque-Light.eot') format('embedded-opentype'),
             url('/fonts/LabGrotesque-Light.woff2') format('woff2'),
-            url('/fonts/LabGrotesque-Light.woff') format('woff'),
-            url('/fonts/LabGrotesque-Light.tff')  format('truetype');
+            url('/fonts/LabGrotesque-Light.woff') format('woff');
 }
 
 @font-face {
@@ -20,8 +19,19 @@
             local('LabGrotesque-Regular'),
             url('/fonts/LabGrotesque-Regular.eot') format('embedded-opentype'),
             url('/fonts/LabGrotesque-Regular.woff2') format('woff2'),
-            url('/fonts/LabGrotesque-Regular.woff') format('woff'),
-            url('/fonts/LabGrotesque-Regular.tff')  format('truetype');
+            url('/fonts/LabGrotesque-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Lab Grotesque';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/LabGrotesque-Medium.eot');
+    src: local('Lab Grotesque Medium'),
+            local('LabGrotesque-Medium'),
+            url('/fonts/LabGrotesque-Medium.eot') format('embedded-opentype'),
+            url('/fonts/LabGrotesque-Medium.woff2') format('woff2'),
+            url('/fonts/LabGrotesque-Medium.woff') format('woff');
 }
 
 @font-face {
@@ -33,8 +43,7 @@
             local('LabGrotesque-Bold'),
             url('/fonts/LabGrotesque-Bold.eot') format('embedded-opentype'),
             url('/fonts/LabGrotesque-Bold.woff2') format('woff2'),
-            url('/fonts/LabGrotesque-Bold.woff') format('woff'),
-            url('/fonts/LabGrotesque-Bold.tff')  format('truetype');
+            url('/fonts/LabGrotesque-Bold.woff') format('woff');
 }
 
 @font-face {

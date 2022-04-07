@@ -42,6 +42,7 @@ const Root = styled.div`
 
     footer {
         font-size: 14px;
+        font-weight: 500;
         line-height: 24px;
         margin-top: 118px;
         padding-bottom: 40px;
