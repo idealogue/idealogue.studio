@@ -199,7 +199,7 @@ const IndexPage = () => (
                             That’s all
                             {' '}
                             <span role="img" aria-label="Cheers!">
-                                ✌
+                                &#x270c;&#xfe0f;{/* ✌ */}
                             </span>
                         </Display>
                         <Display
@@ -217,7 +217,7 @@ const IndexPage = () => (
                             That’s all
                             {' '}
                             <span role="img" aria-label="Cheers!">
-                                ✌
+                                &#x270c;&#xfe0f;{/* ✌ */}
                             </span>
                         </Display>
                     </footer>
