@@ -1,0 +1,1 @@
+{"version":3,"file":"component---src-pages-404-jsx-ad7e141fc72929e5cd15.js","mappings":"kHAIA,UAJqB,iBACjB","sources":["webpack://idealogue/./src/pages/404.jsx"],"sourcesContent":["const NotFoundPage = () => (\n    '404'\n)\n\nexport default NotFoundPage\n"],"names":[],"sourceRoot":""}

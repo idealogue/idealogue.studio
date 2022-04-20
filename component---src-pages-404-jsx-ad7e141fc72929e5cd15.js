@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkidealogue=self.webpackChunkidealogue||[]).push([[256],{1657:function(e,u,n){n.r(u);u.default=function(){return"404"}}}]);
+//# sourceMappingURL=component---src-pages-404-jsx-ad7e141fc72929e5cd15.js.map
