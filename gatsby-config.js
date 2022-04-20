@@ -1,4 +1,4 @@
-const siteUrl = 'https://idealogue.mariusz.io'
+const siteUrl = 'https://idealogue.studio'
 
 module.exports = {
     siteMetadata: {
