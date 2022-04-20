@@ -196,7 +196,7 @@ const IndexPage = () => (
                                 Twitter
                             </Link>
                             <br />
-                            That’s all
+                            That&apos;s all
                             {' '}
                             <span role="img" aria-label="Cheers!">
                                 &#x270c;&#xfe0f;{/* ✌ */}
@@ -214,7 +214,7 @@ const IndexPage = () => (
                             </Link>
                         </Display>
                         <Display as="p" md="none">
-                            That’s all
+                            That&apos;s all
                             {' '}
                             <span role="img" aria-label="Cheers!">
                                 &#x270c;&#xfe0f;{/* ✌ */}
