@@ -31,7 +31,7 @@ const images = {
     golem: <StaticImage as={Img} src="golem.png" alt="Golem" />,
     hive: <StaticImage as={Img} src="hive.png" alt="Hive" />,
     huxtaburger: <StaticImage as={Img} src="huxtaburger.png" alt="Huxtaburger" />,
-    streamr: <StaticImage as={Img} src="streamr@2x.png" alt="Streamr" />,
+    streamr: <StaticImage as={Img} src="streamr.png" alt="Streamr" />,
     vizor: <StaticImage as={Img} src="vizor.png" alt="Vizor" />,
 }
 
