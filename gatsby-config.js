@@ -20,6 +20,7 @@ module.exports = {
                 defaults: {
                     placeholder: 'none',
                     quality: 100,
+                    formats: ['auto'],
                 },
                 failOnError: true,
                 stripMetadata: true,
