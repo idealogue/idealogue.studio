@@ -1,23 +1,34 @@
 import React from 'react'
 
-export function onPreRenderHTML({ pathname, getHeadComponents, replaceHeadComponents }) {
+function getElementPrio(el) {
+    switch (el.type) {
+        case 'title':
+            return 4
+        case 'meta':
+            return 3
+        case 'link':
+            if (el.props.rel === 'preload') {
+                return 2
+            }
+
+            return 1
+        default:
+            return 0
+    }
+}
+
+export function onPreRenderHTML({ getHeadComponents, replaceHeadComponents }) {
     const headComponents = getHeadComponents()
 
     const ref = [...headComponents]
 
-    headComponents.sort((a, b) => {
-        switch (true) {
-            case a.type === 'meta' && b.type !== 'meta':
-                return -1
-            case a.type !== 'meta' && b.type === 'meta':
-                return 1
-            default:
-                return ref.indexOf(a) - ref.indexOf(b)
-        }
-    })
+    ref.sort((a, b) => (
+        getElementPrio(b) - getElementPrio(a)
+    ))
 
-    replaceHeadComponents(headComponents)
+    replaceHeadComponents(ref)
 }
+
 
 export function onRenderBody({ setPostBodyComponents }) {
     setPostBodyComponents([
