@@ -1,12 +1,17 @@
-import React, { useReducer } from 'react'
-import styled, { css } from 'styled-components'
 import Image from '$golem/Image'
+import {
+    Fontface,
+    Mark,
+    Cell as PrestyledCell,
+    Header as PrestyledHeader,
+    Row as PrestyledRow,
+} from '$shared/Brand'
 import Container from '$shared/Container'
 import Display from '$shared/Display'
 import XofY from '$shared/XofY'
-import Helmet from 'react-helmet'
-import { Row as PrestyledRow, Cell as PrestyledCell, Header as PrestyledHeader, Fontface, Mark } from '$shared/Brand'
-import { MD, LG } from '$utils/css'
+import { LG, MD } from '$utils/css'
+import React, { useReducer } from 'react'
+import styled, { css } from 'styled-components'
 
 const Roboto = styled(Fontface)`
     && {
@@ -96,13 +101,15 @@ const Cell = styled(PrestyledCell)`
         transition-property: visibility, opacity;
         transition-delay: 200ms, 0s;
 
-        ${({ current }) => !!current && css`
-            opacity: 1;
-            position: relative;
-            transition-delay: 0s;
-            transition-delay: 200ms;
-            visibility: visible;
-        `}
+        ${({ current }) =>
+            !!current &&
+            css`
+                opacity: 1;
+                position: relative;
+                transition-delay: 0s;
+                transition-delay: 200ms;
+                visibility: visible;
+            `}
     }
 `
 
@@ -143,18 +150,21 @@ const UnstyledBrand = (props) => {
                         <Cell current={slide === 0}>
                             <Header>Mark Animated</Header>
                             <Inner>
-                                <VerticalMark src={Image.MARK_ANIMATED} alt="" />
+                                <VerticalMark
+                                    src={Image.MARK_ANIMATED}
+                                    alt=""
+                                />
                             </Inner>
                         </Cell>
                         <Display as={Cell} xs="none" md="block">
                             <Header>Display Face</Header>
                             <Realtime>
                                 Realtime Text
-                                <br/>
+                                <br />
                                 ABCDEFGHIJKLMNOPQRSTUVWXYZ
-                                <br/>
+                                <br />
                                 abcdefghijklmnopqrstuvwxyz
-                                <br/>
+                                <br />
                                 1234567890 $£&amp;
                             </Realtime>
                         </Display>
@@ -163,7 +173,10 @@ const UnstyledBrand = (props) => {
                         <Cell current={slide === 1}>
                             <Header>Mark Vertical Lockup</Header>
                             <Inner>
-                                <VerticalMark src={Image.MARK_VERTICAL} alt="" />
+                                <VerticalMark
+                                    src={Image.MARK_VERTICAL}
+                                    alt=""
+                                />
                             </Inner>
                         </Cell>
                         <Display as={Cell} xs="none" md="block">
@@ -183,14 +196,14 @@ const UnstyledBrand = (props) => {
                         <Cell current={slide === 2}>
                             <Header>Mark Horizontal Lockup</Header>
                             <Inner>
-                                <HorizontalMark src={Image.MARK_HORIZONTAL} alt="" />
+                                <HorizontalMark
+                                    src={Image.MARK_HORIZONTAL}
+                                    alt=""
+                                />
                             </Inner>
                         </Cell>
                         <Display as={Cell} xs="none" md="block">
                             <Header>UI &amp; Body</Header>
-                            <Helmet>
-                                <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" />
-                            </Helmet>
                             <Roboto>
                                 Roboto
                                 <br />
@@ -227,7 +240,13 @@ const UnstyledBrand = (props) => {
                         <Cell />
                     </Display>
                 </Position>
-                <Display as={XofY} md="none" x={slide + 1} y={3} onClick={next} />
+                <Display
+                    as={XofY}
+                    md="none"
+                    x={slide + 1}
+                    y={3}
+                    onClick={next}
+                />
             </Container>
         </div>
     )

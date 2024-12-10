@@ -1,12 +1,13 @@
-import React, { Fragment } from 'react'
-import Link from '$shared/Link'
-import styled, { ThemeProvider } from 'styled-components'
-import Layout from '$shared/Layout'
-import { lineup, projects } from '$shared/Project'
 import Container from '$shared/Container'
-import { LinkList } from '$shared/Menu'
 import Display from '$shared/Display'
-import { MD, LG } from '$utils/css'
+import Layout from '$shared/Layout'
+import Link from '$shared/Link'
+import { LinkList } from '$shared/Menu'
+import { lineup, projects } from '$shared/Project'
+import { LG, MD } from '$utils/css'
+import React, { Fragment } from 'react'
+import styled, { ThemeProvider } from 'styled-components'
+import { Seo } from '../components/Seo'
 
 const Root = styled.div`
     color: #06042a;
@@ -112,119 +113,119 @@ const Separator = styled.li`
     display: block !important;
 `
 
-const IndexPage = () => (
-    <Layout theme={LayoutTheme}>
-        <ThemeProvider theme={Theme}>
-            <Root>
-                <Container>
-                    <h1>Idealogue</h1>
-                    <p>We work with startups to create great&nbsp;digital products we believe in.</p>
-                    <h2>Projects</h2>
-                    <LinkList inline>
-                        {lineup.map((id, index) => (
-                            <Fragment key={id}>
-                                <li>
-                                    <Link to={projects[id].href}>
-                                        {projects[id].name}
-                                    </Link>
-                                </li>
-                                {(index + 1) % 3 === 0 && (
-                                    <Separator />
-                                )}
-                            </Fragment>
-                        ))}
-                    </LinkList>
-                    <h2>Team</h2>
-                    <LinkList>
-                        <li>
-                            <Link to="/team/">About us</Link>
-                        </li>
-                    </LinkList>
-                    <footer>
+export default function IndexPage() {
+    return (
+        <Layout theme={LayoutTheme}>
+            <ThemeProvider theme={Theme}>
+                <Root>
+                    <Container>
+                        <h1>Idealogue</h1>
                         <p>
-                            Level 1, 34 Breese St
-                            <br />
-                            Brunswick 3056
-                            <br />
-                            Melbourne Australia
+                            We work with startups to create great&nbsp;digital
+                            products we believe in.
                         </p>
-                        <Display as="p" xs="none" md="block">
-                            Build by
-                            {' '}
-                            <Link
-                                as="a"
-                                href="https://www.mariusz.io"
-                                rel="noopener noreferrer"
-                                target="_blank"
+                        <h2>Projects</h2>
+                        <LinkList inline>
+                            {lineup.map((id, index) => (
+                                <Fragment key={id}>
+                                    <li>
+                                        <Link to={projects[id].href}>
+                                            {projects[id].name}
+                                        </Link>
+                                    </li>
+                                    {(index + 1) % 3 === 0 && <Separator />}
+                                </Fragment>
+                            ))}
+                        </LinkList>
+                        <h2>Team</h2>
+                        <LinkList>
+                            <li>
+                                <Link to="/team/">About us</Link>
+                            </li>
+                        </LinkList>
+                        <footer>
+                            <p>
+                                Level 1, 34 Breese St
+                                <br />
+                                Brunswick 3056
+                                <br />
+                                Melbourne Australia
+                            </p>
+                            <Display as="p" xs="none" md="block">
+                                Build by{' '}
+                                <Link
+                                    as="a"
+                                    href="https://www.mariusz.io"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                >
+                                    Mariusz
+                                </Link>
+                                <br />
+                                <Link
+                                    as="a"
+                                    href="https://lettersfromsweden.se/font/lab-grotesque/"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                >
+                                    Lab Grotesque
+                                </Link>{' '}
+                                by Letters from Sweden
+                                <br />
+                                <Link
+                                    as="a"
+                                    href="https://commercialtype.com/catalog/publico"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                >
+                                    Publico
+                                </Link>{' '}
+                                by Commercial Type
+                            </Display>
+                            <Display as="p" xs="none" md="block">
+                                <Link as="a" href="mailto:matt@idealogue.io">
+                                    Email us
+                                </Link>
+                                <br />
+                                <Link
+                                    as="a"
+                                    href="https://twitter.com/idealogue"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                >
+                                    Twitter
+                                </Link>
+                                <br />
+                                That&apos;s all{' '}
+                                <span role="img" aria-label="Cheers!">
+                                    &#x270c;&#xfe0f;{/* ✌ */}
+                                </span>
+                            </Display>
+                            <Display
+                                as="p"
+                                md="none"
+                                css={`
+                                    font-size: 1.25em;
+                                `}
                             >
-                                Mariusz
-                            </Link>
-                            <br />
-                            <Link
-                                as="a"
-                                href="https://lettersfromsweden.se/font/lab-grotesque/"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                            >
-                                Lab Grotesque
-                            </Link>
-                            {' '}
-                            by Letters from Sweden
-                            <br />
-                            <Link
-                                as="a"
-                                href="https://commercialtype.com/catalog/publico"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                            >
-                                Publico
-                            </Link>
-                            {' '}
-                            by Commercial Type
-                        </Display>
-                        <Display as="p" xs="none" md="block">
-                            <Link as="a" href="mailto:matt@idealogue.io">
-                                Email us
-                            </Link>
-                            <br />
-                            <Link
-                                as="a"
-                                href="https://twitter.com/idealogue"
-                                rel="noopener noreferrer"
-                                target="_blank"
-                            >
-                                Twitter
-                            </Link>
-                            <br />
-                            That&apos;s all
-                            {' '}
-                            <span role="img" aria-label="Cheers!">
-                                &#x270c;&#xfe0f;{/* ✌ */}
-                            </span>
-                        </Display>
-                        <Display
-                            as="p"
-                            md="none"
-                            css={`
-                                font-size: 1.25em;
-                            `}
-                        >
-                            <Link as="a" href="mailto:matt@idealogue.io">
-                                &rarr; Send us an email
-                            </Link>
-                        </Display>
-                        <Display as="p" md="none">
-                            That&apos;s all
-                            {' '}
-                            <span role="img" aria-label="Cheers!">
-                                &#x270c;&#xfe0f;{/* ✌ */}
-                            </span>
-                        </Display>
-                    </footer>
-                </Container>
-            </Root>
-        </ThemeProvider>
-    </Layout>
-)
+                                <Link as="a" href="mailto:matt@idealogue.io">
+                                    &rarr; Send us an email
+                                </Link>
+                            </Display>
+                            <Display as="p" md="none">
+                                That&apos;s all{' '}
+                                <span role="img" aria-label="Cheers!">
+                                    &#x270c;&#xfe0f;{/* ✌ */}
+                                </span>
+                            </Display>
+                        </footer>
+                    </Container>
+                </Root>
+            </ThemeProvider>
+        </Layout>
+    )
+}
 
-export default IndexPage
+export const Head = () => {
+    return <Seo />
+}

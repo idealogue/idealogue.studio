@@ -1,8 +1,8 @@
-import React from 'react'
-import styled, { ThemeProvider, css } from 'styled-components'
 import MenuToggle from '$shared/MenuToggle'
 import Spacer from '$shared/Spacer'
-import { SM, MD, LG } from '$utils/css'
+import { LG, MD, SM } from '$utils/css'
+import React from 'react'
+import styled, { ThemeProvider, css } from 'styled-components'
 
 const ToggleWrapper = styled.div`
     clip: rect(0, auto, auto, 0);
@@ -15,12 +15,23 @@ const ToggleWrapper = styled.div`
     width: 140px;
 `
 
-const UnstyledSection = ({ theme, children, menuToggleColor = '#ffffff', menuToggleBackground, actConsecutive, ...props }) => (
+const UnstyledSection = ({
+    theme = {},
+    children,
+    menuToggleColor = '#ffffff',
+    menuToggleBackground,
+    actConsecutive,
+    ...props
+}) => (
     <ThemeProvider theme={theme}>
         <Spacer {...props}>
             {children}
             <ToggleWrapper toggleColor={menuToggleColor}>
-                <MenuToggle backgroundColor={menuToggleBackground ? theme.backgroundColor : undefined} />
+                <MenuToggle
+                    backgroundColor={
+                        menuToggleBackground ? theme.backgroundColor : undefined
+                    }
+                />
             </ToggleWrapper>
         </Spacer>
     </ThemeProvider>
@@ -32,13 +43,15 @@ const Section = styled(UnstyledSection)`
     overflow: hidden;
     position: relative;
 
-    ${({ actConsecutive }) => !actConsecutive && css`
-        :first-child {
-            height: 100%;
-            max-height: 1440px;
-            min-height: 640px;
-        }
-    `}
+    ${({ actConsecutive }) =>
+        !actConsecutive &&
+        css`
+            :first-child {
+                height: 100%;
+                max-height: 1440px;
+                min-height: 640px;
+            }
+        `}
 
     p {
         font-family: 'Publico Text';
