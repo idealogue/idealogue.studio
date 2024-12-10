@@ -23,14 +23,16 @@ const Slide = styled(UnstyledSlide)`
     visibility: visible;
     width: 100%;
 
-    ${({ active }) => !active && css`
-        left: 0;
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        transition-delay: 500ms, 0s;
-        visibility: hidden;
-    `}
+    ${({ active }) =>
+        !active &&
+        css`
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            transition-delay: 500ms, 0s;
+            visibility: hidden;
+        `}
 
     svg,
     img {
@@ -103,7 +105,12 @@ const UnstyledGolems = (props) => {
             <CaptionedContainer caption="Final Brass Golem character poses">
                 <Slider>
                     {Image.GOLEMS.map((src, index) => (
-                        <Slide key={src} src={src} alt="" active={slide === index} />
+                        <Slide
+                            key={src}
+                            src={src}
+                            alt=""
+                            active={slide === index}
+                        />
                     ))}
                     <NavBar>
                         <Button type="button" onClick={prev}>

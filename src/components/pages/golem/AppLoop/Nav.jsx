@@ -8,9 +8,8 @@ export const HISTORY = 'history'
 
 export const ADVANCED = 'advanced'
 
-const Touch = ({ visible }) => !!visible && (
-    <TouchIndicator center immitateRelease visible={visible} />
-)
+const Touch = ({ visible }) =>
+    !!visible && <TouchIndicator center immitateRelease visible={visible} />
 
 const Item = styled.div`
     flex: 0 1 100%;
@@ -21,9 +20,11 @@ const Item = styled.div`
         position: relative;
     }
 
-    ${({ active }) => !!active && css`
-        color: #4e4e4e;
-    `}
+    ${({ active }) =>
+        !!active &&
+        css`
+            color: #4e4e4e;
+        `}
 `
 
 const MiddleItem = styled(Item)`
@@ -36,9 +37,7 @@ const MiddleItem = styled(Item)`
 
 const UnstyledNav = ({ active, ...props }) => (
     <div {...props}>
-        <Item active={active === RESOURCES}>
-            Resources
-        </Item>
+        <Item active={active === RESOURCES}>Resources</Item>
         <MiddleItem active={active === HISTORY}>
             History
             <Touch visible={active === HISTORY} />

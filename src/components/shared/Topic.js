@@ -6,22 +6,19 @@ const Context = createContext({
     title: undefined,
 })
 
-export const useTopic = () => (
-    useContext(Context)
-)
+export const useTopic = () => useContext(Context)
 
 const Topic = ({ title, mobileTitle = title, children, ...props }) => {
     const hash = (title || '').replace(/[\s-]+/g, '-').toLowerCase()
-    
-    const value = useMemo(() => ({
-        hash,
-        mobileTitle,
-        title,
-    }), [
-        hash,
-        mobileTitle,
-        title,
-    ])
+
+    const value = useMemo(
+        () => ({
+            hash,
+            mobileTitle,
+            title,
+        }),
+        [hash, mobileTitle, title]
+    )
 
     return (
         <Context.Provider {...props} value={value}>

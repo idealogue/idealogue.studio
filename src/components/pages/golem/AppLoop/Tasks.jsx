@@ -1,6 +1,14 @@
 import React, { useEffect, Fragment, useState, useRef, useMemo } from 'react'
 import styled from 'styled-components'
-import { Task as HistoryTask, Title, Separator, Details, Eta, DoneAt, Body } from './History'
+import {
+    Task as HistoryTask,
+    Title,
+    Separator,
+    Details,
+    Eta,
+    DoneAt,
+    Body,
+} from './History'
 import Image from '$golem/Image'
 import FluidImage from '$shared/FluidImage'
 import Glyph, { SLIDE_RIGHT } from '$shared/Glyph'
@@ -49,18 +57,14 @@ const CompletenessCloak = styled.div.attrs(({ progress }) => ({
 
 const UnstyledTask = ({ title, eta, doneAt, completness, ...props }) => (
     <HistoryTask as="div" {...props}>
-        {completness !== null && (
-            <CompletenessCloak progress={completness} />
-        )}
+        {completness !== null && <CompletenessCloak progress={completness} />}
         <Body>
             <Left>
                 <IconWrapper>
                     <FluidImage src={Image.BLENDER} alt="" />
                 </IconWrapper>
                 <div>
-                    <Title>
-                        {title}
-                    </Title>
+                    <Title>{title}</Title>
                     <Details>
                         <Eta>{eta}</Eta>
                         {!!doneAt && (
@@ -86,16 +90,19 @@ const Task = styled(UnstyledTask)`
 `
 
 const UnstyledRemaining = ({ children, ...props }) => (
-    <span {...props}>
-        {children}
-    </span>
+    <span {...props}>{children}</span>
 )
 
 const Remaining = styled(UnstyledRemaining)`
     color: #016ac9;
 `
 
-const UnstyledTasks = ({ animate, remaining: remainingProp = 75, total = 100, ...props }) => {
+const UnstyledTasks = ({
+    animate,
+    remaining: remainingProp = 75,
+    total = 100,
+    ...props
+}) => {
     const [remaining, setRemaining] = useState(remainingProp)
 
     const remainingRef = useRef({
@@ -128,9 +135,11 @@ const UnstyledTasks = ({ animate, remaining: remainingProp = 75, total = 100, ..
         }
     }, [remainingProp, animate, isMounted])
 
-    const remainingFormatted = useMemo(() => (
-        new Date(Math.floor(remaining) * 1000).toISOString().substr(15, 4)
-    ), [remaining])
+    const remainingFormatted = useMemo(
+        () =>
+            new Date(Math.floor(remaining) * 1000).toISOString().substr(15, 4),
+        [remaining]
+    )
 
     return (
         <div {...props}>

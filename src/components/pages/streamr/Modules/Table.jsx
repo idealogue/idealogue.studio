@@ -24,28 +24,18 @@ const HeadCell = styled.div`
 `
 
 const Table = ({ title, ...props }) => (
-    <Module
-        {...props}
-        title={title || 'Table'}
-        ins={[
-            ['batch'],
-            ['in4+'],
-        ]}
-    >
+    <Module {...props} title={title || 'Table'} ins={[['batch'], ['in4+']]}>
         <Body>
-            <HeadCell>
-                timestamp
-            </HeadCell>
-            <HeadCell>
-                batch
-            </HeadCell>
+            <HeadCell>timestamp</HeadCell>
+            <HeadCell>batch</HeadCell>
             {Array(...Array(11)).map((el, i) => {
                 const sec = `${6 + i < 10 ? '0' : ''}${6 + i}`
 
-                const msec = ((s) => (
+                const msec = ((s) =>
                     // Prepend leading zeros…
-                    `${'000'.substr(0, 3 - s.length)}${s}`
-                ))(`${Math.floor(Math.random() * 1000)}`)
+                    `${'000'.substr(0, 3 - s.length)}${s}`)(
+                    `${Math.floor(Math.random() * 1000)}`
+                )
 
                 return (
                     // eslint-disable-next-line react/no-array-index-key

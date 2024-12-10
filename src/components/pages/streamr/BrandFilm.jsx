@@ -14,7 +14,10 @@ const Padded = styled(PrestyledPadded)`
 `
 
 const UnstyledBrandFilm = (props) => (
-    <CaptionedContainer {...props} caption="A Streamr Network intro video we produced with motion studio 21_19">
+    <CaptionedContainer
+        {...props}
+        caption="A Streamr Network intro video we produced with motion studio 21_19"
+    >
         <Padded>
             <VideoPlayer poster={Still2x}>
                 <source src="/videos/streamr_promo.mp4" type="video/mp4" />

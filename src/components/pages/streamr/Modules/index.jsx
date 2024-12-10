@@ -32,7 +32,10 @@ const Cell = styled.div`
 `
 
 const UnstyledModules = (props) => (
-    <CaptionedContainer {...props} caption="Various modules from the canvas editor">
+    <CaptionedContainer
+        {...props}
+        caption="Various modules from the canvas editor"
+    >
         <div>
             <Row>
                 <Cell>
@@ -55,8 +58,8 @@ const UnstyledModules = (props) => (
                     <Row>
                         <Cell>
                             <Comment width="224" title="Note">
-                                Quickly test out ideas, clean up noisy data, and visualise almost
-                                anything in minutes.
+                                Quickly test out ideas, clean up noisy data, and
+                                visualise almost anything in minutes.
                             </Comment>
                         </Cell>
                     </Row>
@@ -65,8 +68,9 @@ const UnstyledModules = (props) => (
                     <Row>
                         <Cell>
                             <Comment width="272" title="Note">
-                                Streamr Core editor provides a comprehensiveset of modules to cover
-                                common use cases for visualisation, analysis and prototyping.
+                                Streamr Core editor provides a comprehensiveset
+                                of modules to cover common use cases for
+                                visualisation, analysis and prototyping.
                             </Comment>
                         </Cell>
                     </Row>

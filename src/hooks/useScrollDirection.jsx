@@ -4,16 +4,20 @@ let options = false
 
 if (typeof window !== 'undefined') {
     try {
-        window.addEventListener('test', null, Object.defineProperty({}, 'passive', {
-            // eslint-disable-next-line getter-return
-            get: function() {
-                options = {
-                    passive: true,
-                    capture: false,
-                }
-            }
-        }))
-    } catch(err) {
+        window.addEventListener(
+            'test',
+            null,
+            Object.defineProperty({}, 'passive', {
+                // eslint-disable-next-line getter-return
+                get: function () {
+                    options = {
+                        passive: true,
+                        capture: false,
+                    }
+                },
+            })
+        )
+    } catch (err) {
         // No-op.
     }
 }
@@ -25,12 +29,14 @@ const getScrollY = () => {
         return 0
     }
 
-    return Math.round(window.pageYOffset || (
-        // eslint-disable-next-line no-sequences
-        d = window.document,
-        b = d.body,
-        html = d.documentElement, html || b.parentNode || b
-    ).scrollTop)
+    return Math.round(
+        window.pageYOffset ||
+            // eslint-disable-next-line no-sequences
+            ((d = window.document),
+            (b = d.body),
+            (html = d.documentElement),
+            html || b.parentNode || b).scrollTop
+    )
 }
 
 export default function useScrollDirection() {

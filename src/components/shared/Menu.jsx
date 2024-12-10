@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import styled, { css, ThemeProvider, createGlobalStyle } from 'styled-components'
+import styled, {
+    css,
+    ThemeProvider,
+    createGlobalStyle,
+} from 'styled-components'
 import Link from '$shared/Link'
 import Front from '$shared/Front'
 import { lineup, projects, useProject } from '$shared/Project'
@@ -38,15 +42,17 @@ export const LinkList = styled.ul`
     margin: 0;
     padding: 0;
 
-    ${({ inline }) => !!inline && css`
-        li {
-            display: inline;
-        }
+    ${({ inline }) =>
+        !!inline &&
+        css`
+            li {
+                display: inline;
+            }
 
-        li::after {
-            content: ' ';
-        }
-    `}
+            li::after {
+                content: ' ';
+            }
+        `}
 `
 
 const Inner = styled.div`
@@ -93,13 +99,15 @@ const Root = styled.div`
     transition-property: visibility, opacity;
     visibility: hidden;
 
-    ${({ visible }) => !!visible && css`
-        opacity: 1;
-        pointer-events: all;
-        transition-delay: 0s;
-        transition-duration: 0.1s;
-        visibility: visible;
-    `}
+    ${({ visible }) =>
+        !!visible &&
+        css`
+            opacity: 1;
+            pointer-events: all;
+            transition-delay: 0s;
+            transition-duration: 0.1s;
+            visibility: visible;
+        `}
 `
 
 const UnstyledMenu = ({ className }) => {

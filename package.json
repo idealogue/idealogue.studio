@@ -29,6 +29,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "prettify": "prettier --write .",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

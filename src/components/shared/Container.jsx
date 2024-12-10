@@ -6,7 +6,7 @@ const Container = styled.div`
     padding: 0 32px;
 
     @media (min-width: ${SM}px) {
-        max-width: 510px
+        max-width: 510px;
     }
 
     @media (min-width: ${MD}px) {

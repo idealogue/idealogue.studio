@@ -86,8 +86,6 @@ const ScrollIndicator = styled(UnstyledScrollIndicator)`
     }
 `
 
-ScrollIndicator.Target = () => (
-    <div id={ID} />
-)
+ScrollIndicator.Target = () => <div id={ID} />
 
 export default ScrollIndicator

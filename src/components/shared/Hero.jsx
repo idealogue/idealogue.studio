@@ -20,9 +20,7 @@ const UnstyledHero = ({ children, ...props }) => {
         <div {...props}>
             <Inner>
                 <Container>
-                    <h1>
-                        {name}
-                    </h1>
+                    <h1>{name}</h1>
                     {children}
                     <HeroImage />
                 </Container>

@@ -52,9 +52,7 @@ export const CollageB = ({ className }) => (
     </SecondaryImages>
 )
 
-const UnstyledLargeSign = (props) => (
-    <img {...props} src={Image.SIGN} alt="" />
-)
+const UnstyledLargeSign = (props) => <img {...props} src={Image.SIGN} alt="" />
 
 const UnstyledCollage = ({ className }) => (
     <div className={className}>

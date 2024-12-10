@@ -15,26 +15,32 @@ const Activable = styled.div`
     visibility: visible;
     width: 100%;
 
-    ${({ active }) => !active && css`
-        left: 0;
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        transition-delay: 300ms, 0s, 0s;
-        visibility: hidden;
-    `}
+    ${({ active }) =>
+        !active &&
+        css`
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            transition-delay: 300ms, 0s, 0s;
+            visibility: hidden;
+        `}
 `
 
 const GntLabelContainer = styled(Activable)`
-    ${({ active }) => !active && css`
-        transform: translateX(-20px);
-    `}
+    ${({ active }) =>
+        !active &&
+        css`
+            transform: translateX(-20px);
+        `}
 `
 
 const EthLabelContainer = styled(Activable)`
-    ${({ active }) => !active && css`
-        transform: translateX(20px);
-    `}
+    ${({ active }) =>
+        !active &&
+        css`
+            transform: translateX(20px);
+        `}
 `
 
 const BalanceLabel = styled(Activable)``
@@ -44,9 +50,11 @@ const BalanceAmounts = styled.div`
 `
 
 const GntAmountContainer = styled(Activable)`
-    ${({ active }) => !active && css`
-        transform: translateX(-20px);
-    `}
+    ${({ active }) =>
+        !active &&
+        css`
+            transform: translateX(-20px);
+        `}
 `
 
 const BalanceAmount = styled(Activable)`
@@ -54,19 +62,27 @@ const BalanceAmount = styled(Activable)`
     font-weight: 300;
     line-height: 1.5em;
 
-    ${({ active, up }) => !active && !!up && css`
-        transform: translateY(-20px);
-    `}
+    ${({ active, up }) =>
+        !active &&
+        !!up &&
+        css`
+            transform: translateY(-20px);
+        `}
 
-    ${({ active, up }) => !active && !up && css`
-        transform: translateY(20px);
-    `}
+    ${({ active, up }) =>
+        !active &&
+        !up &&
+        css`
+            transform: translateY(20px);
+        `}
 `
 
 const EthAmountContainer = styled(Activable)`
-    ${({ active }) => !active && css`
-        transform: translateX(20px);
-    `}
+    ${({ active }) =>
+        !active &&
+        css`
+            transform: translateX(20px);
+        `}
 `
 
 const Fees = styled.div`
@@ -79,11 +95,13 @@ const Fees = styled.div`
     transition-property: visibility, opacity;
     width: 100%;
 
-    ${({ active }) => !active && css`
-        opacity: 0;
-        transition-delay: 300ms, 0s;
-        visibility: hidden;
-    `}
+    ${({ active }) =>
+        !active &&
+        css`
+            opacity: 0;
+            transition-delay: 300ms, 0s;
+            visibility: hidden;
+        `}
 `
 
 const BalanceCurrencies = styled.div`
@@ -99,33 +117,29 @@ const BalanceCurrencyContainer = styled.div`
     position: relative;
     transition: 300ms color;
 
-    ${({ active }) => !!active && css`
-        color: #4e4e4e;
-    `}
+    ${({ active }) =>
+        !!active &&
+        css`
+            color: #4e4e4e;
+        `}
 `
 
-const BalanceCurrency = styled(Activable)`
-`
+const BalanceCurrency = styled(Activable)``
 
-const Touch = ({ visible }) => !!visible && (
-    <TouchIndicator center immitateRelease visible={visible} />
-)
+const Touch = ({ visible }) =>
+    !!visible && <TouchIndicator center immitateRelease visible={visible} />
 
 const UnstyledBalance = ({ gnt, converted, ...props }) => (
     <div {...props}>
         <BalanceLabels>
             <GntLabelContainer active={gnt}>
-                <BalanceLabel active={!converted}>
-                    Wallet balance
-                </BalanceLabel>
+                <BalanceLabel active={!converted}>Wallet balance</BalanceLabel>
                 <BalanceLabel active={converted}>
                     Approximate wallet balance
                 </BalanceLabel>
             </GntLabelContainer>
             <EthLabelContainer active={!gnt}>
-                <BalanceLabel active={!converted}>
-                    Gas balance
-                </BalanceLabel>
+                <BalanceLabel active={!converted}>Gas balance</BalanceLabel>
                 <BalanceLabel active={converted}>
                     Approximate gas balance
                 </BalanceLabel>
@@ -133,17 +147,13 @@ const UnstyledBalance = ({ gnt, converted, ...props }) => (
         </BalanceLabels>
         <BalanceAmounts>
             <GntAmountContainer active={gnt}>
-                <BalanceAmount active={!gnt || !converted}>
-                    10.35
-                </BalanceAmount>
+                <BalanceAmount active={!gnt || !converted}>10.35</BalanceAmount>
                 <BalanceAmount active={gnt && converted} up>
                     $4.94
                 </BalanceAmount>
             </GntAmountContainer>
             <EthAmountContainer active={!gnt}>
-                <BalanceAmount active={gnt || !converted}>
-                    0.025
-                </BalanceAmount>
+                <BalanceAmount active={gnt || !converted}>0.025</BalanceAmount>
                 <BalanceAmount active={!gnt && converted} up>
                     $5.69
                 </BalanceAmount>
@@ -156,9 +166,7 @@ const UnstyledBalance = ({ gnt, converted, ...props }) => (
                 <BalanceCurrency active={!gnt || !converted}>
                     GNT
                 </BalanceCurrency>
-                <BalanceCurrency active={gnt && converted}>
-                    USD
-                </BalanceCurrency>
+                <BalanceCurrency active={gnt && converted}>USD</BalanceCurrency>
                 <Touch visible={gnt} />
             </BalanceCurrencyContainer>
             <BalanceCurrencyContainer active={!gnt}>
@@ -171,9 +179,7 @@ const UnstyledBalance = ({ gnt, converted, ...props }) => (
                 <Touch visible={!gnt} />
             </BalanceCurrencyContainer>
         </BalanceCurrencies>
-        <Fees active={!gnt && !converted}>
-            Approximately 325 tx fees
-        </Fees>
+        <Fees active={!gnt && !converted}>Approximately 325 tx fees</Fees>
     </div>
 )
 

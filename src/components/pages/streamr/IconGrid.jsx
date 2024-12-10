@@ -14,9 +14,11 @@ const Cell = styled.div`
     transition: 200ms opacity;
     width: 192px;
 
-    ${({ active }) => !active && css`
-        opacity: 0.5;
-    `}
+    ${({ active }) =>
+        !active &&
+        css`
+            opacity: 0.5;
+        `}
 
     @media (min-width: ${MD}px) {
         width: 264px;
@@ -89,14 +91,25 @@ const UnstyledIconGrid = (props) => {
             <Display xs="none" md {...props}>
                 {[0, 5, 10].map((i) => (
                     <Viewport key={i}>
-                        <Gallery key={cache} defaultSlide={0} gutter={0} currentWingSize={xl ? 1 : 0}>
-                            {MACHINE_IMAGES.slice(i, i + 5).map(([src, src2x]) => (
-                                <Cell key={src}>
-                                    <ImageWrapper>
-                                        <FluidImage src={src} srcSet={`${src2x} 2x`} alt="" />
-                                    </ImageWrapper>
-                                </Cell>
-                            ))}
+                        <Gallery
+                            key={cache}
+                            defaultSlide={0}
+                            gutter={0}
+                            currentWingSize={xl ? 1 : 0}
+                        >
+                            {MACHINE_IMAGES.slice(i, i + 5).map(
+                                ([src, src2x]) => (
+                                    <Cell key={src}>
+                                        <ImageWrapper>
+                                            <FluidImage
+                                                src={src}
+                                                srcSet={`${src2x} 2x`}
+                                                alt=""
+                                            />
+                                        </ImageWrapper>
+                                    </Cell>
+                                )
+                            )}
                         </Gallery>
                     </Viewport>
                 ))}
@@ -107,7 +120,11 @@ const UnstyledIconGrid = (props) => {
                         {MACHINE_IMAGES.map(([src, src2x]) => (
                             <Cell key={src}>
                                 <ImageWrapper>
-                                    <FluidImage src={src} srcSet={`${src2x} 2x`} alt="" />
+                                    <FluidImage
+                                        src={src}
+                                        srcSet={`${src2x} 2x`}
+                                        alt=""
+                                    />
                                 </ImageWrapper>
                             </Cell>
                         ))}

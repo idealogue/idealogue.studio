@@ -63,13 +63,17 @@ const Handle = styled.div`
     width: 24px;
     width: 32px;
 
-    ${({ position }) => position >= 75 && css`
-        color: #fec62e;
-    `}
+    ${({ position }) =>
+        position >= 75 &&
+        css`
+            color: #fec62e;
+        `}
 
-    ${({ position }) => position >= 90 && css`
-        color: #f65a23;
-    `}
+    ${({ position }) =>
+        position >= 90 &&
+        css`
+            color: #f65a23;
+        `}
 `
 
 const ProgressBar = styled.div`
@@ -78,16 +82,25 @@ const ProgressBar = styled.div`
     max-width: 100%;
     transition: 500ms ease-in-out background-color;
 
-    ${({ position }) => position >= 75 && css`
-        background-color: #fec62e;
-    `}
+    ${({ position }) =>
+        position >= 75 &&
+        css`
+            background-color: #fec62e;
+        `}
 
-    ${({ position }) => position >= 90 && css`
-        background-color: #f65a23;
-    `}
+    ${({ position }) =>
+        position >= 90 &&
+        css`
+            background-color: #f65a23;
+        `}
 `
 
-const UnstyledResourceSlider = ({ position: positionProp = 18, onTransitionFinish: onComplete, showTouch, ...props }) => {
+const UnstyledResourceSlider = ({
+    position: positionProp = 18,
+    onTransitionFinish: onComplete,
+    showTouch,
+    ...props
+}) => {
     const [position, setPosition] = useState(positionProp)
 
     const positionRef = useRef({
@@ -97,7 +110,10 @@ const UnstyledResourceSlider = ({ position: positionProp = 18, onTransitionFinis
     const isMounted = useMounted()
 
     useEffect(() => {
-        const duration = Math.max(1, Math.abs(positionProp - positionRef.current.position) * 0.03)
+        const duration = Math.max(
+            1,
+            Math.abs(positionProp - positionRef.current.position) * 0.03
+        )
 
         const tween = gsap.to(positionRef.current, duration, {
             position: positionProp,
@@ -140,8 +156,9 @@ const UnstyledResourceSlider = ({ position: positionProp = 18, onTransitionFinis
                 <Icon source={HIGH} />
             </Slider>
             <p>
-                Use the slider to choose how much of your machine’s resources (CPU, RAM and disk space)
-                Golem can use. More power means more potential income.
+                Use the slider to choose how much of your machine’s resources
+                (CPU, RAM and disk space) Golem can use. More power means more
+                potential income.
             </p>
         </div>
     )

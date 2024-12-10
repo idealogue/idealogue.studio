@@ -92,9 +92,11 @@ const Tab = styled.div`
         margin-left: 30px;
     }
 
-    ${({ active }) => !!active && css`
-        color: #4e4e4e;
-    `}
+    ${({ active }) =>
+        !!active &&
+        css`
+            color: #4e4e4e;
+        `}
 `
 
 const HeaderIcons = styled.div`
@@ -126,9 +128,7 @@ const HeaderWrapper = styled.div`
     position: relative;
 `
 
-const UnstyledUnderline = ({ x, width, ...props }) => (
-    <div {...props} />
-)
+const UnstyledUnderline = ({ x, width, ...props }) => <div {...props} />
 
 const Underline = styled(UnstyledUnderline)`
     background-color: #016ac9;
@@ -155,13 +155,15 @@ const Screen = styled.div`
     visibility: visible;
     transition: ${DUR}ms;
 
-    ${({ active }) => !active && css`
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        visibility: hidden;
-        width: 100%;
-    `}
+    ${({ active }) =>
+        !active &&
+        css`
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            visibility: hidden;
+            width: 100%;
+        `}
 `
 
 const NETWORK = 'network'
@@ -195,56 +197,76 @@ const frames = [
         resourcePos: 18,
         showResourceSliderTouch: false,
         screen: NETWORK,
-    }, {
+    },
+    {
         balanceMode: 1,
         sustain: 1500,
-    }, {
+    },
+    {
         balanceMode: 0,
-    }, {
+    },
+    {
         balanceMode: 2,
-    }, {
+    },
+    {
         balanceMode: 3,
-    }, {
+    },
+    {
         balanceMode: 2,
-    }, {
+    },
+    {
         balanceMode: 0,
-    }, {
+    },
+    {
         showResourceSliderTouch: true,
         sustain: 500,
-    }, {
+    },
+    {
         resourcePos: 92,
         sustain: Number.POSITIVE_INFINITY,
-    }, {
+    },
+    {
         sustain: 500,
-    }, {
+    },
+    {
         resourcePos: 10,
         sustain: Number.POSITIVE_INFINITY,
-    }, {
+    },
+    {
         sustain: 500,
-    }, {
+    },
+    {
         resourcePos: 18,
         sustain: Number.POSITIVE_INFINITY,
-    }, {
+    },
+    {
         sustain: 500,
-    }, {
+    },
+    {
         showResourceSliderTouch: false,
         sustain: 700,
-    }, {
+    },
+    {
         networkScreen: HISTORY,
         sustain: 2000,
-    }, {
+    },
+    {
         networkScreen: ADVANCED,
         sustain: 0,
-    }, {
+    },
+    {
         cpu: true,
         sustain: 200,
-    }, {
+    },
+    {
         ram: true,
         sustain: 200,
-    }, {
+    },
+    {
         disk: true,
         sustain: 2000,
-    }, {
+    },
+    {
         screen: TASKS,
         sustain: 4500,
     },
@@ -255,12 +277,17 @@ const useFrame = (inViewport) => {
 
     const sustainRef = useRef(new SleepSustain())
 
-    const frame = useMemo(() => (
-        frames.slice(0, frameNo + 1).reduce((memo, frame) => ({
-            ...memo,
-            ...frame,
-        }), {})
-    ), [frameNo])
+    const frame = useMemo(
+        () =>
+            frames.slice(0, frameNo + 1).reduce(
+                (memo, frame) => ({
+                    ...memo,
+                    ...frame,
+                }),
+                {}
+            ),
+        [frameNo]
+    )
 
     const isMounted = useMounted()
 
@@ -321,16 +348,19 @@ const AppLoop = (props) => {
 
     const { inViewport } = useInViewport(rootRef, undefined, undefined, {})
 
-    const [{
-        balanceMode,
-        cpu,
-        disk,
-        networkScreen,
-        ram,
-        resourcePos,
-        screen,
-        showResourceSliderTouch,
-    }, next] = useFrame(inViewport)
+    const [
+        {
+            balanceMode,
+            cpu,
+            disk,
+            networkScreen,
+            ram,
+            resourcePos,
+            screen,
+            showResourceSliderTouch,
+        },
+        next,
+    ] = useFrame(inViewport)
 
     const [[underlineX, underlineWidth], setUnderlineProps] = useState([0, 0])
 
@@ -353,7 +383,10 @@ const AppLoop = (props) => {
 
         const parentRect = el.parentElement.getBoundingClientRect()
 
-        setUnderlineProps([Math.round(rect.left - parentRect.left), Math.round(rect.width)])
+        setUnderlineProps([
+            Math.round(rect.left - parentRect.left),
+            Math.round(rect.width),
+        ])
     }, [screen])
 
     return (
@@ -368,16 +401,30 @@ const AppLoop = (props) => {
                                 <div />
                             </HeaderButtons>
                             <Tabs>
-                                <Tab active={screen === NETWORK} ref={networkTabRef}>
+                                <Tab
+                                    active={screen === NETWORK}
+                                    ref={networkTabRef}
+                                >
                                     Network
                                     {screen === NETWORK && (
-                                        <TouchIndicator center immitateRelease visible={screen === NETWORK} />
+                                        <TouchIndicator
+                                            center
+                                            immitateRelease
+                                            visible={screen === NETWORK}
+                                        />
                                     )}
                                 </Tab>
-                                <Tab active={screen === TASKS} ref={tasksTabRef}>
+                                <Tab
+                                    active={screen === TASKS}
+                                    ref={tasksTabRef}
+                                >
                                     Tasks
                                     {screen === TASKS && (
-                                        <TouchIndicator center immitateRelease visible={screen === TASKS} />
+                                        <TouchIndicator
+                                            center
+                                            immitateRelease
+                                            visible={screen === TASKS}
+                                        />
                                     )}
                                 </Tab>
                             </Tabs>
@@ -409,23 +456,19 @@ const AppLoop = (props) => {
                                 <History />
                             </Screen>
                             <Screen active={networkScreen === ADVANCED}>
-                                <Advanced
-                                    cpu={cpu}
-                                    disk={disk}
-                                    ram={ram}
-                                />
+                                <Advanced cpu={cpu} disk={disk} ram={ram} />
                             </Screen>
                         </ScreenWrapper>
                     </Screen>
                     <Screen active={screen === TASKS}>
-                        <Tasks
-                            animate={screen === TASKS}
-                        />
+                        <Tasks animate={screen === TASKS} />
                     </Screen>
                 </Body>
                 <Footer>
                     <Status processing={screen === TASKS}>
-                        {screen === NETWORK ? '240 Nodes' : '1 task in progress'}
+                        {screen === NETWORK
+                            ? '240 Nodes'
+                            : '1 task in progress'}
                     </Status>
                     {screen === NETWORK ? (
                         <Button>Start Golem</Button>

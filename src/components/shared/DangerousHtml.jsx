@@ -1,6 +1,11 @@
 import React from 'react'
 
-const DangerousHtml = ({ tag: Tag, children: __html, dangerouslySetInnerHTML, ...props }) => (
+const DangerousHtml = ({
+    tag: Tag,
+    children: __html,
+    dangerouslySetInnerHTML,
+    ...props
+}) => (
     <Tag
         {...props}
         dangerouslySetInnerHTML={{

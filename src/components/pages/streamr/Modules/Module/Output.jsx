@@ -4,9 +4,7 @@ import PortIcon from './PortIcon'
 
 const Output = ({ highlight, name, ...props }) => (
     <Port {...props}>
-        <Name>
-            {name}
-        </Name>
+        <Name>{name}</Name>
         <Icon>
             <PortIcon highlight={highlight} />
         </Icon>

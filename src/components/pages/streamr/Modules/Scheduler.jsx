@@ -14,19 +14,14 @@ function Scheduler({ title, ...props }) {
                 ['{} from', '00 : 00'],
                 ['{} to', '00 : 00'],
             ]}
-            outs={[
-                ['value'],
-                null,
-            ]}
+            outs={[['value'], null]}
         >
             <Body>
                 <VerticalWedge />
                 <Footer>
                     <div />
                     <Buttons>
-                        <Button>
-                            + Add
-                        </Button>
+                        <Button>+ Add</Button>
                     </Buttons>
                 </Footer>
             </Body>

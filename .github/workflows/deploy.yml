@@ -7,17 +7,14 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v2
-      -
-        name: Build
+      - name: Build
         run: |
           npm ci
           npm run build
           echo "idealogue.studio" > public/CNAME
-      -
-        name: Deploy
+      - name: Deploy
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
         with:

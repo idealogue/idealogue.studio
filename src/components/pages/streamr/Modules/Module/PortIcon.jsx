@@ -7,14 +7,18 @@ const PortIcon = styled.div`
     margin: 0 auto;
     width: 6px;
 
-    ${({ square }) => !!square && css`
-        border-radius: 0;
-    `}
+    ${({ square }) =>
+        !!square &&
+        css`
+            border-radius: 0;
+        `}
 
-    ${({ highlight }) => !!highlight && css`
-        border-color: #0324ff;
-        position: relative;
-    `}
+    ${({ highlight }) =>
+        !!highlight &&
+        css`
+            border-color: #0324ff;
+            position: relative;
+        `}
 `
 
 export default PortIcon

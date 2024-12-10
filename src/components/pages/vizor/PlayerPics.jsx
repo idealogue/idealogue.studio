@@ -28,7 +28,12 @@ const UnstyledRow = forwardRef(({ className, items }, ref) => (
             {[0, 1, 2].map((i) => (
                 <Fragment key={i}>
                     {items.map(([url, url2x], index) => (
-                        <img src={url} srcSet={`${url2x} 2x`} alt="" key={index} />
+                        <img
+                            src={url}
+                            srcSet={`${url2x} 2x`}
+                            alt=""
+                            key={index}
+                        />
                     ))}
                 </Fragment>
             ))}
@@ -42,7 +47,7 @@ const Row = styled(UnstyledRow)`
         left: 50%;
         position: relative;
         transform: translateX(-50%);
-        width: ${({ items }) => ((192 + 40) * items.length * 3) - 40}px;
+        width: ${({ items }) => (192 + 40) * items.length * 3 - 40}px;
     }
 
     & + & {
@@ -60,7 +65,7 @@ const Row = styled(UnstyledRow)`
 
     @media ${TABLET} {
         > div {
-            width: ${({ items }) => ((256 + 48) * items.length * 3) - 48}px;
+            width: ${({ items }) => (256 + 48) * items.length * 3 - 48}px;
         }
 
         & + & {
@@ -78,7 +83,7 @@ const Row = styled(UnstyledRow)`
 
     @media ${DESKTOP} {
         > div {
-            width: ${({ items }) => ((451 + 104) * items.length * 3) - 104}px;
+            width: ${({ items }) => (451 + 104) * items.length * 3 - 104}px;
         }
 
         & + & {
@@ -95,11 +100,24 @@ const Row = styled(UnstyledRow)`
     }
 `
 
-const Row0 = [[player0, player02x], [player1, player12x], [player2, player22x]]
+const Row0 = [
+    [player0, player02x],
+    [player1, player12x],
+    [player2, player22x],
+]
 
-const Row1 = [[player3, player32x], [player4, player42x], [player5, player52x], [player6, player62x]]
+const Row1 = [
+    [player3, player32x],
+    [player4, player42x],
+    [player5, player52x],
+    [player6, player62x],
+]
 
-const Row2 = [[player7, player72x], [player8, player82x], [player9, player92x]]
+const Row2 = [
+    [player7, player72x],
+    [player8, player82x],
+    [player9, player92x],
+]
 
 function UnstyledPlayerPics({ className }) {
     const ref = useRef(null)

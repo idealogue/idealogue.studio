@@ -25,9 +25,7 @@ const UnstyledSectionHeader = ({ no, children, ...props }) => {
     return (
         <div {...props}>
             <Container>
-                <No>
-                    {no < 10 ? `0${no}` : no}
-                </No>
+                <No>{no < 10 ? `0${no}` : no}</No>
                 <Body>
                     {hash ? (
                         <>
@@ -39,7 +37,11 @@ const UnstyledSectionHeader = ({ no, children, ...props }) => {
                                         <Display as="span" md="none">
                                             {mobileTitle}
                                         </Display>
-                                        <Display as="span" xs="none" md="inline">
+                                        <Display
+                                            as="span"
+                                            xs="none"
+                                            md="inline"
+                                        >
                                             {title}
                                         </Display>
                                     </>

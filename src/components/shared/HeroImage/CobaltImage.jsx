@@ -15,10 +15,12 @@ export default function CobaltImage({ as: Tag = 'div' }) {
                         srcSet: `${src} 243w`,
                         sizes: '(min-width: 243px) 243px, 100vw',
                     },
-                    sources: [{
-                        src,
-                        srcSet: `${src} 243w`,
-                    }],
+                    sources: [
+                        {
+                            src,
+                            srcSet: `${src} 243w`,
+                        },
+                    ],
                 },
                 layout: 'constrained',
                 width: 243,

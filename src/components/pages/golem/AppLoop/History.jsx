@@ -43,20 +43,14 @@ const UnstyledTask = ({ reward, title, eta, doneAt, ...props }) => (
     <div {...props}>
         <Body>
             <Inner>
-                <Title>
-                    {title}
-                </Title>
+                <Title>{title}</Title>
                 <Details>
                     <Eta>{eta}</Eta>
                     <Separator />
-                    <DoneAt>
-                        {doneAt}
-                    </DoneAt>
+                    <DoneAt>{doneAt}</DoneAt>
                 </Details>
             </Inner>
-            <Reward>
-                {reward}
-            </Reward>
+            <Reward>{reward}</Reward>
         </Body>
     </div>
 )

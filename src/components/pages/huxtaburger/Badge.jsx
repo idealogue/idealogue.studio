@@ -9,7 +9,7 @@ const Badge = styled.div`
     font-weight: bold;
     height: 4em;
     line-height: 4em;
-    opacity: 1.0;
+    opacity: 1;
     position: absolute;
     text-align: center;
     width: 4em;
@@ -22,7 +22,7 @@ const Badge = styled.div`
 export const BurgerBadge = styled(Badge)`
     right: -8%;
     top: -7%;
-    transform: scale(1.0);
+    transform: scale(1);
     transition: 120ms ease-in-out;
     transition-delay: 0.2s;
     transition-property: opacity, transform;

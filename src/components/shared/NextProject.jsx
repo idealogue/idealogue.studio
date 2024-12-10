@@ -10,13 +10,9 @@ const UnstyledNextProject = ({ className, children }) => {
     return (
         <div className={className}>
             <div>
-                <div className="label">
-                    Next Project
-                </div>
+                <div className="label">Next Project</div>
                 <div className="inner">
-                    <Link to={href}>
-                        {name}
-                    </Link>
+                    <Link to={href}>{name}</Link>
                     <Link nodecor to={href}>
                         <Glyph source={ARROW_RIGHT} />
                     </Link>

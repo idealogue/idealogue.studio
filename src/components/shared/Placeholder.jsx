@@ -19,7 +19,6 @@ const UnstyledPlaceholder = ({ caption, children, ...props }) => (
     </div>
 )
 
-const Placeholder = styled(UnstyledPlaceholder)`
-`
+const Placeholder = styled(UnstyledPlaceholder)``
 
 export default Placeholder

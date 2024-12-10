@@ -43,12 +43,7 @@ const UnstyledMap = ({ title, ...props }) => (
     <Module
         {...props}
         title={title || 'Map'}
-        ins={[
-            ['ID'],
-            ['Heading'],
-            ['Latitude'],
-            ['Longitude'],
-        ]}
+        ins={[['ID'], ['Heading'], ['Latitude'], ['Longitude']]}
     >
         <Body>
             <MapImage src={Image.MAP} alt="Map" />

@@ -6,9 +6,7 @@ function Stream({ title, ...props }) {
         <Module
             {...props}
             title={title || 'Stream'}
-            ins={[
-                ['Stream'],
-            ]}
+            ins={[['Stream']]}
             outs={[
                 ['Vehicle'],
                 ['Speed'],

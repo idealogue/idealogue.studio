@@ -5,12 +5,8 @@ import { SM, MD, LG } from '$utils/css'
 
 const Contributor = ({ name, role, ...props }) => (
     <div {...props}>
-        <strong>
-            {name}
-        </strong>
-        <span>
-            {role}
-        </span>
+        <strong>{name}</strong>
+        <span>{role}</span>
     </div>
 )
 

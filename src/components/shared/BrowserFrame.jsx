@@ -9,9 +9,7 @@ const UnstyledBrowserFrame = ({ children, shadow, dark, ...props }) => (
             <div className="button" />
             <div className="button" />
         </div>
-        <div className="body">
-            {children}
-        </div>
+        <div className="body">{children}</div>
     </div>
 )
 
@@ -20,9 +18,13 @@ const BrowserFrame = styled(UnstyledBrowserFrame)`
     overflow: hidden;
     position: relative;
 
-    ${({ shadow }) => shadow && css`
-        box-shadow: ${shadow === 'light' ? '0 1px 3px rgba(black, 0.025)' : '0 2px 4px rgba(black, 0.2)'};
-    `}
+    ${({ shadow }) =>
+        shadow &&
+        css`
+            box-shadow: ${shadow === 'light'
+                ? '0 1px 3px rgba(black, 0.025)'
+                : '0 2px 4px rgba(black, 0.2)'};
+        `}
 
     .buttons {
         background: #d8d8d8;
@@ -46,11 +48,13 @@ const BrowserFrame = styled(UnstyledBrowserFrame)`
         background-color: #62ca43;
     }
 
-    ${({ dark }) => !dark && css`
-        .body {
-            background-color: #ffffff;
-        }
-    `}
+    ${({ dark }) =>
+        !dark &&
+        css`
+            .body {
+                background-color: #ffffff;
+            }
+        `}
 
     video {
         display: block;

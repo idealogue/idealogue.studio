@@ -5,9 +5,7 @@ import { XLDESKTOP } from '$utils/css'
 
 const UnstyledOvergrow = ({ className, children }) => (
     <Container>
-        <div className={className}>
-            {children}
-        </div>
+        <div className={className}>{children}</div>
     </Container>
 )
 

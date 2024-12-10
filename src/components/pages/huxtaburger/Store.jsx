@@ -4,7 +4,7 @@ import { StoreBadge } from '$hux/Badge'
 import Image from '$hux/Image'
 
 const Wrapper = styled.div`
-    display: ${({ active }) => active ? 'block' : 'none'};
+    display: ${({ active }) => (active ? 'block' : 'none')};
     height: 100%;
     left: 0;
     position: absolute;
@@ -50,7 +50,15 @@ const Smoke = styled.img.attrs(SmokeAttrs)`
     top: ${({ posY }) => posY}px;
 `
 
-const UnstyledStore = ({ duration, smoke, slides = [], frames = [], shadow, onMouseDown: onMouseDownProp, ...props }) => {
+const UnstyledStore = ({
+    duration,
+    smoke,
+    slides = [],
+    frames = [],
+    shadow,
+    onMouseDown: onMouseDownProp,
+    ...props
+}) => {
     const [frame, setFrame] = useState(0)
 
     const [firstFrame, ...otherFrames] = frames
@@ -63,9 +71,12 @@ const UnstyledStore = ({ duration, smoke, slides = [], frames = [], shadow, onMo
 
     useEffect(() => {
         if (otherFrames.length) {
-            const ivl = setInterval(() => {
-                setFrame((current) => (current + 1) % otherFrames.length)
-            }, Math.floor(duration / otherFrames.length))
+            const ivl = setInterval(
+                () => {
+                    setFrame((current) => (current + 1) % otherFrames.length)
+                },
+                Math.floor(duration / otherFrames.length)
+            )
 
             return () => {
                 clearInterval(ivl)
@@ -77,27 +88,25 @@ const UnstyledStore = ({ duration, smoke, slides = [], frames = [], shadow, onMo
         }
     }, [otherFrames, duration])
 
-    const onMouseDown = useCallback((e) => {
-        if (slides.length) {
-            setSlide((current) => (current + 1) % slides.length)
-        }
+    const onMouseDown = useCallback(
+        (e) => {
+            if (slides.length) {
+                setSlide((current) => (current + 1) % slides.length)
+            }
 
-        if (smoke) {
-            setSmokes((current) => [...current, current.length])
-        }
+            if (smoke) {
+                setSmokes((current) => [...current, current.length])
+            }
 
-        if (onMouseDownProp) {
-            onMouseDownProp(e)
-        }
-    }, [slides, onMouseDownProp, smoke])
+            if (onMouseDownProp) {
+                onMouseDownProp(e)
+            }
+        },
+        [slides, onMouseDownProp, smoke]
+    )
 
     return (
-        <div
-            {...props}
-            role="button"
-            onMouseDown={onMouseDown}
-            tabIndex="0"
-        >
+        <div {...props} role="button" onMouseDown={onMouseDown} tabIndex="0">
             {shadow}
             <Wrapper active>
                 <img src={firstFrame} alt="" />
@@ -112,9 +121,7 @@ const UnstyledStore = ({ duration, smoke, slides = [], frames = [], shadow, onMo
                     <img src={src} alt="" />
                 </Wrapper>
             ))}
-            <StoreBadge>
-                Tap!
-            </StoreBadge>
+            <StoreBadge>Tap!</StoreBadge>
             {smokes.map((key) => (
                 <Smoke key={key} posX={smokeX} posY={smokeY} />
             ))}
@@ -139,9 +146,7 @@ export const Cbd = (props) => (
         duration={2000}
         smoke={[53, 15]}
         frames={Image.CBD_FRAMES}
-        shadow={(
-            <Shadow src={Image.CBD_SHADOW} alt="" />
-        )}
+        shadow={<Shadow src={Image.CBD_SHADOW} alt="" />}
     />
 )
 
@@ -151,9 +156,7 @@ export const Hawthorn = (props) => (
         duration={500}
         slides={Image.HAWTHORN_CINEMA_FRAMES}
         frames={Image.HAWTHORN_FRAMES}
-        shadow={(
-            <Shadow src={Image.HAWTHORN_SHADOW} alt="" />
-        )}
+        shadow={<Shadow src={Image.HAWTHORN_SHADOW} alt="" />}
     />
 )
 
@@ -163,9 +166,7 @@ export const Eastland = (props) => (
         duration={1000}
         smoke={[55, 11]}
         frames={Image.EASTLAND_FRAMES}
-        shadow={(
-            <Shadow src={Image.EASTLAND_SHADOW} alt="" />
-        )}
+        shadow={<Shadow src={Image.EASTLAND_SHADOW} alt="" />}
     />
 )
 

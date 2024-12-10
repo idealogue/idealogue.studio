@@ -9,7 +9,7 @@ const Caption = styled(PrestyledCaption)`
     @media (min-width: ${SM}px) {
         margin-top: 32px;
     }
-    
+
     @media ${TABLET} {
         margin-top: 48px;
     }
@@ -21,12 +21,8 @@ const Caption = styled(PrestyledCaption)`
 
 const UnstyledCaptionedContainer = ({ caption, children, ...props }) => (
     <div {...props}>
-        <div>
-            {children}
-        </div>
-        <Caption>
-            {caption}
-        </Caption>
+        <div>{children}</div>
+        <Caption>{caption}</Caption>
     </div>
 )
 

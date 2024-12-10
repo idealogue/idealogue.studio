@@ -12,7 +12,6 @@ const UnstyledNeon = (props) => (
     </div>
 )
 
-const Neon = styled(UnstyledNeon)`
-`
+const Neon = styled(UnstyledNeon)``
 
 export default Neon

@@ -104,7 +104,10 @@ const UnstyledPlayButton = ({ className, onClick }) => (
         <TextWrap>
             <Inner>
                 <h4>Watch the Vizor 360 Intro</h4>
-                <p>A demo video we created for Oculus OC4 showing Vizor 360 being used in collaboration with the British Museum.</p>
+                <p>
+                    A demo video we created for Oculus OC4 showing Vizor 360
+                    being used in collaboration with the British Museum.
+                </p>
             </Inner>
         </TextWrap>
         <PlayIcon />

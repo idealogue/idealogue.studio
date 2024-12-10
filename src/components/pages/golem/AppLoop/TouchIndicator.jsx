@@ -41,9 +41,11 @@ const Touch = styled(Shape)`
     background-color: #737373;
     animation-name: ${animateTouch};
 
-    ${({ release }) => !!release && css`
-        animation-play-state: running;
-    `}
+    ${({ release }) =>
+        !!release &&
+        css`
+            animation-play-state: running;
+        `}
 `
 
 const Release = styled(Shape)`
@@ -52,11 +54,14 @@ const Release = styled(Shape)`
     background-color: #b3b3b3;
 `
 
-const UnstyledTouchIndicator = ({ immitateRelease, visible, center, ...props }) => (
+const UnstyledTouchIndicator = ({
+    immitateRelease,
+    visible,
+    center,
+    ...props
+}) => (
     <div {...props}>
-        {!!(immitateRelease && visible) && (
-            <Release />
-        )}
+        {!!(immitateRelease && visible) && <Release />}
         <Touch release={immitateRelease && visible} />
     </div>
 )
@@ -72,17 +77,21 @@ const TouchIndicator = styled(UnstyledTouchIndicator)`
     transition-property: visibility, opacity;
     visibility: hidden;
 
-    ${({ center }) => !!center && css`
-        bottom: auto;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    `}
+    ${({ center }) =>
+        !!center &&
+        css`
+            bottom: auto;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        `}
 
-    ${({ visible }) => !!visible && css`
-        opacity: 1;
-        transition-delay: 0s, 0s;
-        visibility: visible;
-    `}
+    ${({ visible }) =>
+        !!visible &&
+        css`
+            opacity: 1;
+            transition-delay: 0s, 0s;
+            visibility: visible;
+        `}
 `
 
 export default TouchIndicator

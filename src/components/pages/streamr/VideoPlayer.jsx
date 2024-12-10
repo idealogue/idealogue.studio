@@ -43,9 +43,7 @@ const UnstyledVideoPlayer = ({ poster, children, $aspect, ...props }) => {
             >
                 {children}
             </Video>
-            {!active && (
-                <PlayButton onClick={onClick} />
-            )}
+            {!active && <PlayButton onClick={onClick} />}
         </Inner>
     )
 }

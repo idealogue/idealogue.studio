@@ -51,7 +51,7 @@ const Separator = styled.div`
 `
 
 export const Footer = styled.div`
-    border-top: 1px solid #EFEFEF;
+    border-top: 1px solid #efefef;
     display: flex;
     flex-grow: 0;
     justify-content: space-between;
@@ -66,7 +66,7 @@ export const Buttons = styled.div`
 
 export const Button = styled.div`
     border-radius: 2px;
-    box-shadow: inset 0 0 0 1px #EFEFEF;
+    box-shadow: inset 0 0 0 1px #efefef;
     color: #525252;
     font-size: 10px;
     font-weight: ${MEDIUM};
@@ -102,17 +102,16 @@ function UnstyledModule({
 
     const outs = outsProp || []
 
-    const ports = useMemo(() => (
-        Array(...Array(Math.max(ins.length, outs.length)))
-    ), [ins.length, outs.length])
+    const ports = useMemo(
+        () => Array(...Array(Math.max(ins.length, outs.length))),
+        [ins.length, outs.length]
+    )
 
     return (
         <div {...props}>
             <Top>
                 <Header>
-                    <Title>
-                        {title}
-                    </Title>
+                    <Title>{title}</Title>
                     <div />
                 </Header>
                 {ports.length > 0 && (
@@ -126,15 +125,28 @@ function UnstyledModule({
                                 return <Separator key={i} />
                             }
 
-                            const inName = ((a || [])[0] || '').replace(/^[[\](){}]+\s+/g, '')
-                            const inPrefix = (((a || [])[0] || '').match(/^([[\](){}]+)\s+/) || [])[1] || null
+                            const inName = ((a || [])[0] || '').replace(
+                                /^[[\](){}]+\s+/g,
+                                ''
+                            )
+                            const inPrefix =
+                                (((a || [])[0] || '').match(
+                                    /^([[\](){}]+)\s+/
+                                ) || [])[1] || null
                             const [, inValue, predefined] = a || []
-                            const inSquare = inPrefix === '[]' || inPrefix === '[[]]'
-                            const inHighlight = inPrefix === '[[]]' || inPrefix === '()'
+                            const inSquare =
+                                inPrefix === '[]' || inPrefix === '[[]]'
+                            const inHighlight =
+                                inPrefix === '[[]]' || inPrefix === '()'
                             const inNoIcon = inPrefix === '{}'
 
-                            const outName = ((b || [])[0] || '').replace(/^[()]+\s+/g, '')
-                            const outPrefix = (((b || [])[0] || '').match(/^([()]+)\s+/) || [])[1] || null
+                            const outName = ((b || [])[0] || '').replace(
+                                /^[()]+\s+/g,
+                                ''
+                            )
+                            const outPrefix =
+                                (((b || [])[0] || '').match(/^([()]+)\s+/) ||
+                                    [])[1] || null
                             const outHighlight = outPrefix === '()'
 
                             return (
@@ -150,19 +162,24 @@ function UnstyledModule({
                                         >
                                             {inValue}
                                         </Input>
-                                    ) : <div />}
+                                    ) : (
+                                        <div />
+                                    )}
                                     {b ? (
-                                        <Output name={outName} highlight={!!outHighlight} />
-                                    ) : <div />}
+                                        <Output
+                                            name={outName}
+                                            highlight={!!outHighlight}
+                                        />
+                                    ) : (
+                                        <div />
+                                    )}
                                 </Ports>
                             )
                         })}
                     </PortsWrapper>
                 )}
             </Top>
-            <Bottom>
-                {children}
-            </Bottom>
+            <Bottom>{children}</Bottom>
         </div>
     )
 }
@@ -179,17 +196,23 @@ const Module = styled(UnstyledModule)`
     overflow: hidden;
     user-select: none;
 
-    ${({ grow }) => !!grow && css`
-        flex-grow: 1;
-    `}
+    ${({ grow }) =>
+        !!grow &&
+        css`
+            flex-grow: 1;
+        `}
 
-    ${({ width }) => width != null && css`
-        width: ${Number.parseInt(width, 10)}px;
-    `}
+    ${({ width }) =>
+        width != null &&
+        css`
+            width: ${Number.parseInt(width, 10)}px;
+        `}
 
-    ${({ height }) => height != null && css`
-        height: ${Number.parseInt(height, 10)}px;
-    `}
+    ${({ height }) =>
+        height != null &&
+        css`
+            height: ${Number.parseInt(height, 10)}px;
+        `}
 `
 
 export default Module

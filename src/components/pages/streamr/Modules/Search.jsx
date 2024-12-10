@@ -64,7 +64,13 @@ const SearchModule = ({ height, width, ...props }) => (
                 </div>
                 <div>
                     <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
-                        <g stroke="currentColor" strokeWidth="1.5" fill="none" fillRule="evenodd" strokeLinecap="round">
+                        <g
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            fill="none"
+                            fillRule="evenodd"
+                            strokeLinecap="round"
+                        >
                             <path d="M.757.757l8.486 8.486M9.243.757L.757 9.243" />
                         </g>
                     </svg>

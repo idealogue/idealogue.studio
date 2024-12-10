@@ -63,13 +63,15 @@ const Arrow = styled.div`
     margin: 0 auto;
     width: 0;
 
-    ${({ down }) => !!down && css`
-        border-left: solid transparent;
-        border-right: solid transparent;
-        border-top: solid #4e4e4e;
-        border-width: 5px 3px 0;
-        margin-top: 4px;
-    `}
+    ${({ down }) =>
+        !!down &&
+        css`
+            border-left: solid transparent;
+            border-right: solid transparent;
+            border-top: solid #4e4e4e;
+            border-width: 5px 3px 0;
+            margin-top: 4px;
+        `}
 `
 
 const UnstyledArrows = (props) => (
@@ -94,9 +96,7 @@ const Arrows = styled(UnstyledArrows)`
 
 const UnstyledNumeric = ({ children, ...props }) => (
     <Input {...props}>
-        <div>
-            {children}
-        </div>
+        <div>{children}</div>
         <div>
             <Arrows />
         </div>
@@ -156,23 +156,32 @@ const Circle = ({ angle: angleProp }) => {
         }
     }, [angleProp, isMounted])
 
-    const d = useMemo(() => (
-        arc(null, 50, 50, 48, 0, angle, 0)
-    ), [angle])
+    const d = useMemo(() => arc(null, 50, 50, 48, 0, angle, 0), [angle])
 
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="48" stroke="#eff0f1" strokeWidth="2" fill="none" />
-            <path d={d} fill="none" stroke="#37c481" strokeLinecap="round" strokeWidth="4" />
+            <circle
+                cx="50"
+                cy="50"
+                r="48"
+                stroke="#eff0f1"
+                strokeWidth="2"
+                fill="none"
+            />
+            <path
+                d={d}
+                fill="none"
+                stroke="#37c481"
+                strokeLinecap="round"
+                strokeWidth="4"
+            />
         </svg>
     )
 }
 
 const UnstyledGraph = ({ children, used, ...props }) => (
     <div {...props}>
-        <GraphLabel>
-            {children}
-        </GraphLabel>
+        <GraphLabel>{children}</GraphLabel>
         <Circle angle={used * 360} />
     </div>
 )
@@ -191,13 +200,20 @@ const Graph = styled(UnstyledGraph)`
     }
 `
 
-const UnstyledResource = ({ reflect, usage, total, unit, children, ...props }) => (
+const UnstyledResource = ({
+    reflect,
+    usage,
+    total,
+    unit,
+    children,
+    ...props
+}) => (
     <div {...props}>
-        <Graph used={reflect ? usage / total : 0}>
-            {children}
-        </Graph>
+        <Graph used={reflect ? usage / total : 0}>{children}</Graph>
         <Numeric>
-            <span>{usage} {unit}</span>
+            <span>
+                {usage} {unit}
+            </span>
         </Numeric>
     </div>
 )
@@ -218,9 +234,7 @@ const UnstyledAdvanced = ({ cpu, ram, disk, ...props }) => (
                 <span>Custom</span>
                 <Caret />
             </Dropdown>
-            <OutlinedButton>
-                Save as Preset
-            </OutlinedButton>
+            <OutlinedButton>Save as Preset</OutlinedButton>
         </Row>
         <Row>
             <Resource reflect={cpu} usage={4} unit="cores" total={6}>
@@ -235,7 +249,9 @@ const UnstyledAdvanced = ({ cpu, ram, disk, ...props }) => (
         </Row>
         <Row>
             <p>
-                Allocate your machine’s resources exactly as you like. Remember that if you give Golem all of your processing power you will not be able to use it at the same time.
+                Allocate your machine’s resources exactly as you like. Remember
+                that if you give Golem all of your processing power you will not
+                be able to use it at the same time.
             </p>
         </Row>
     </div>

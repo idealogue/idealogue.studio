@@ -12,13 +12,8 @@ const Body = styled.div`
 
 function UnstyledComment({ children, title, ...props }) {
     return (
-        <Module
-            {...props}
-            title={title || 'Comment'}
-        >
-            <Body>
-                {children}
-            </Body>
+        <Module {...props} title={title || 'Comment'}>
+            <Body>{children}</Body>
         </Module>
     )
 }

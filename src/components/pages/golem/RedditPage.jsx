@@ -6,8 +6,7 @@ import FluidImage from '$shared/FluidImage'
 import Image from '$golem/Image'
 import BrowserFrame from '$shared/BrowserFrame'
 
-const Wrapper = styled(Container)`
-`
+const Wrapper = styled(Container)``
 
 const RedditPage = (props) => (
     <Wrapper {...props}>

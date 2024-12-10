@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const UnstyledXofY = ({ x = 1, y = 3, bg, color, ...props }) => (
-    <button  {...props} type="button">
+    <button {...props} type="button">
         <svg viewBox="0 0 982 982" xmlns="http://www.w3.org/2000/svg">
             <g fill={color || 'currentColor'} fillRule="nonzero">
                 {typeof bg === 'string' && (
@@ -22,7 +22,7 @@ const UnstyledXofY = ({ x = 1, y = 3, bg, color, ...props }) => (
                 )}
                 {y === 3 && (
                     <path d="M709,571 C709,605 680,637 629,637 C604,637 577,632 545,611 L566,579 C593,593 611,596 629,596 C650,596 663,587 663,570 C663,553 645,543 621,543 C611,543 602,545 598,546 L579,520 L643,471 L555,471 L555,434 L698,434 L698,471 L643,512 C682,516 709,539 709,571 Z"></path>
-                    )}
+                )}
                 {y === 4 && (
                     <polygon points="696 555 696 591 671 591 671 632 627 632 627 591 532 591 532 548 607 436 655 436 577 555 627 555 627 518 671 518 671 555"></polygon>
                 )}

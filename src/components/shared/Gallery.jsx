@@ -126,10 +126,13 @@ const UnstyledGallery = ({
         animate(Direction.LEFT)
     }, [animate])
 
-    const directionToClick = useMemo(() => ({
-        right: onNext,
-        left: onPrev,
-    }), [onNext, onPrev])
+    const directionToClick = useMemo(
+        () => ({
+            right: onNext,
+            left: onPrev,
+        }),
+        [onNext, onPrev]
+    )
 
     return (
         // eslint-disable-next-line jsx-a11y/no-static-element-interactions
@@ -142,22 +145,32 @@ const UnstyledGallery = ({
                         numSlides={n}
                     >
                         {[...Array(n)].map((_, index) => {
-                            const key = slide - ((n - 1) / 2) + index
+                            const key = slide - (n - 1) / 2 + index
 
-                            const active = Math.abs(slide - key) <= currentWingSize
+                            const active =
+                                Math.abs(slide - key) <= currentWingSize
 
-                            const arrowDirection = !active ? (slide > key ? 'left' : 'right') : 'none'
+                            const arrowDirection = !active
+                                ? slide > key
+                                    ? 'left'
+                                    : 'right'
+                                : 'none'
 
                             return (
                                 <SlideContainer key={key} gutter={gutter}>
                                     <Cursor
                                         color="#0324ff"
                                         direction={arrowDirection}
-                                        onClick={directionToClick[arrowDirection]}
+                                        onClick={
+                                            directionToClick[arrowDirection]
+                                        }
                                     >
-                                        {React.cloneElement(childArr[slideIndex(key, count)], {
-                                            active,
-                                        })}
+                                        {React.cloneElement(
+                                            childArr[slideIndex(key, count)],
+                                            {
+                                                active,
+                                            }
+                                        )}
                                     </Cursor>
                                 </SlideContainer>
                             )

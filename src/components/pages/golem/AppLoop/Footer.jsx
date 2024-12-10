@@ -4,9 +4,7 @@ import styled from 'styled-components'
 const UnstyledFooter = ({ children, ...props }) => (
     <div {...props}>
         {Children.map(children, (child) => (
-            <div>
-                {child}
-            </div>
+            <div>{child}</div>
         ))}
     </div>
 )

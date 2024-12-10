@@ -64,12 +64,14 @@ const Slide = styled.div`
     visibility: hidden;
     width: 100%;
 
-    ${({ $active }) => !!$active && css`
-        opacity: 1;
-        position: static;
-        transition-delay: 0s;
-        visibility: visible;
-    `}
+    ${({ $active }) =>
+        !!$active &&
+        css`
+            opacity: 1;
+            position: static;
+            transition-delay: 0s;
+            visibility: visible;
+        `}
 `
 
 const Viewport = styled.div`

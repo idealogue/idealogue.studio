@@ -21,20 +21,9 @@ import SHIRT_5 from './shirt_5.png'
 import UI_PROCESS from './ui_process.png'
 import UX_FIRST from './ux_first.gif'
 
-const GOLEMS = [
-    GOLEM_0,
-    GOLEM_1,
-    GOLEM_2,
-]
+const GOLEMS = [GOLEM_0, GOLEM_1, GOLEM_2]
 
-const SHIRTS = [
-    SHIRT_0,
-    SHIRT_1,
-    SHIRT_2,
-    SHIRT_3,
-    SHIRT_4,
-    SHIRT_5,
-]
+const SHIRTS = [SHIRT_0, SHIRT_1, SHIRT_2, SHIRT_3, SHIRT_4, SHIRT_5]
 
 const ALL = {
     BETA_LAUNCH_MOBILE,

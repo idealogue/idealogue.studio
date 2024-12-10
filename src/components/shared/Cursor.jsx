@@ -1,4 +1,12 @@
-import React, { useEffect, useRef, useState, useCallback, createContext, useContext, useMemo } from 'react'
+import React, {
+    useEffect,
+    useRef,
+    useState,
+    useCallback,
+    createContext,
+    useContext,
+    useMemo,
+} from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import { TABLET } from '$utils/css'
 import isMobileDevice from '$utils/isMobileDevice'
@@ -16,30 +24,24 @@ const Context = createContext({
     setColor: () => {},
 })
 
-const useArrowCursor = () => (
-    useContext(Context)
-)
+const useArrowCursor = () => useContext(Context)
 
 export const Provider = ({ children }) => {
     const [direction, setDirection] = useState(Direction.NONE)
 
     const [color, setColor] = useState()
 
-    const value = useMemo(() => ({
-        direction,
-        setDirection,
-        color,
-        setColor,
-    }), [
-        direction,
-        color,
-    ])
-
-    return (
-        <Context.Provider value={value}>
-            {children}
-        </Context.Provider>
+    const value = useMemo(
+        () => ({
+            direction,
+            setDirection,
+            color,
+            setColor,
+        }),
+        [direction, color]
     )
+
+    return <Context.Provider value={value}>{children}</Context.Provider>
 }
 
 const NoCursor = createGlobalStyle`
@@ -118,11 +120,8 @@ const ArrowInner = styled(UnstyledArrow)`
     }
 `
 
-export const Arrow = () => (
-    useArrowCursor().direction === Direction.NONE ? null : (
-        <ArrowInner />
-    )
-)
+export const Arrow = () =>
+    useArrowCursor().direction === Direction.NONE ? null : <ArrowInner />
 
 const UnstyledCursor = ({
     children,
@@ -157,11 +156,7 @@ const UnstyledCursor = ({
 
     return (
         // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-        <div
-            {...props}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-        >
+        <div {...props} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             {children}
         </div>
     )

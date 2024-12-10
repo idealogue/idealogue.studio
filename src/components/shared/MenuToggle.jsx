@@ -59,9 +59,16 @@ const MenuToggle = styled(UnstyledMenuToggle)`
     transition-delay: 0ms;
     width: 90px;
 
-    ${({ backgroundColor }) => !!backgroundColor && css`
-        background: linear-gradient(${backgroundColor}00, ${backgroundColor}, ${backgroundColor}, ${backgroundColor}00);
-    `}
+    ${({ backgroundColor }) =>
+        !!backgroundColor &&
+        css`
+            background: linear-gradient(
+                ${backgroundColor}00,
+                ${backgroundColor},
+                ${backgroundColor},
+                ${backgroundColor}00
+            );
+        `}
 
     @media (min-width: ${SM}px) {
         height: 140px;

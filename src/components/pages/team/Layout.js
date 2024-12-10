@@ -39,14 +39,9 @@ const Cover = styled.div`
 const TeamPageLayout = ({ children, personImage, ...props }) => (
     <Layout {...props} theme={LayoutTheme}>
         <Cover url={personImage}>
-            <Section
-                actConsecutive
-                theme={DefaultTheme}
-            >
+            <Section actConsecutive theme={DefaultTheme}>
                 <Inner>
-                    <PersonWrapper>
-                        {children}
-                    </PersonWrapper>
+                    <PersonWrapper>{children}</PersonWrapper>
                 </Inner>
             </Section>
         </Cover>

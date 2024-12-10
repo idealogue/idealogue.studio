@@ -37,13 +37,9 @@ function Input({
     return (
         <Port {...props}>
             <Icon>
-                {!noIcon && (
-                    <PortIcon highlight={highlight} square={square} />
-                )}
+                {!noIcon && <PortIcon highlight={highlight} square={square} />}
             </Icon>
-            <Name>
-                {name}
-            </Name>
+            <Name>{name}</Name>
             <Value>
                 {!isColor ? (
                     <ValueTag>{children}</ValueTag>

@@ -5,15 +5,9 @@ import { BOLD, LAB, PUBLICO, REGULAR, LG } from '$utils/css'
 const UnstyledPerson = ({ name, role, img, children, className }) => (
     <div className={className}>
         {img}
-        <h2>
-            {name}
-        </h2>
-        <h4>
-            {role}
-        </h4>
-        <p>
-            {children}
-        </p>
+        <h2>{name}</h2>
+        <h4>{role}</h4>
+        <p>{children}</p>
     </div>
 )
 
@@ -65,7 +59,7 @@ export const Collection = styled.div`
     ${Person} + ${Person} {
         margin-top: 112px;
     }
-    
+
     @media (min-width: ${LG}px) {
         display: flex;
         justify-content: space-between;

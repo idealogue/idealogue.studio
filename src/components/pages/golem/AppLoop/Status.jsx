@@ -40,13 +40,15 @@ const Circle = styled.div`
     padding: 2px;
     width: 12px;
 
-    ${({ breathe }) => !!breathe && css`
-        background-color: transparent;
+    ${({ breathe }) =>
+        !!breathe &&
+        css`
+            background-color: transparent;
 
-        ${Animation} {
-            animation-play-state: running;
-        }
-    `}
+            ${Animation} {
+                animation-play-state: running;
+            }
+        `}
 `
 
 const UnstyledStatus = ({ children, processing, ...props }) => (

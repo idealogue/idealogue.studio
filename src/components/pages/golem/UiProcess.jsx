@@ -4,8 +4,7 @@ import FluidImage from '$shared/FluidImage'
 import Image from '$golem/Image'
 import CaptionedContainer from '$shared/CaptionedContainer'
 
-const Wrapper = styled.div`
-`
+const Wrapper = styled.div``
 
 const UiProcess = () => (
     <Wrapper>

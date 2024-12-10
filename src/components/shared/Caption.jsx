@@ -12,7 +12,6 @@ const Caption = styled.em`
     padding: 0 2em;
     text-align: center;
 
-
     a {
         color: inherit !important;
     }

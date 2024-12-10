@@ -42,9 +42,7 @@ const UnstyledGolemCharacter = (props) => (
         </Video>
         <Display as={Container} xs="none" sm="block">
             <CaptionWrapper>
-                <Caption>
-                    Loop animation of the Brass Golem character
-                </Caption>
+                <Caption>Loop animation of the Brass Golem character</Caption>
             </CaptionWrapper>
         </Display>
     </div>

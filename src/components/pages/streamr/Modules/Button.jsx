@@ -29,16 +29,12 @@ const Button = ({ title, ...props }) => (
             ['buttonName', 'Start'],
             ['buttonValue', '1'],
         ]}
-        outs={[
-            ['Out'],
-        ]}
+        outs={[['Out']]}
     >
         <Body>
             <VerticalWedge />
             <InnerBody>
-                <InnerButton>
-                    Start
-                </InnerButton>
+                <InnerButton>Start</InnerButton>
             </InnerBody>
         </Body>
     </Module>

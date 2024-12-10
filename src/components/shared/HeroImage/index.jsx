@@ -30,7 +30,9 @@ const images = {
     cobalt: <CobaltImage as={Img} />,
     golem: <StaticImage as={Img} src="golem.png" alt="Golem" />,
     hive: <StaticImage as={Img} src="hive.png" alt="Hive" />,
-    huxtaburger: <StaticImage as={Img} src="huxtaburger.png" alt="Huxtaburger" />,
+    huxtaburger: (
+        <StaticImage as={Img} src="huxtaburger.png" alt="Huxtaburger" />
+    ),
     streamr: <StaticImage as={Img} src="streamr.png" alt="Streamr" />,
     vizor: <StaticImage as={Img} src="vizor.png" alt="Vizor" />,
 }

@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useCallback, useMemo, useState } from 'react'
+import React, {
+    createContext,
+    useContext,
+    useCallback,
+    useMemo,
+    useState,
+} from 'react'
 
 const MenuContext = createContext({
     close: () => {},
@@ -17,21 +23,16 @@ export const MenuProvider = ({ children }) => {
         setIsOpen(false)
     }, [])
 
-    const value = useMemo(() => ({
-        close,
-        isOpen,
-        open,
-    }), [
-        close,
-        isOpen,
-        open,
-    ])
-
-    return (
-        <MenuContext.Provider value={value}>
-            {children}
-        </MenuContext.Provider>
+    const value = useMemo(
+        () => ({
+            close,
+            isOpen,
+            open,
+        }),
+        [close, isOpen, open]
     )
+
+    return <MenuContext.Provider value={value}>{children}</MenuContext.Provider>
 }
 
 export default function useMenu() {

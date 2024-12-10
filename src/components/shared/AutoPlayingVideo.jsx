@@ -28,9 +28,7 @@ function UnstyledAutoPlayingVideo({ autoPlay, ...props }) {
         }
     }, [])
 
-    return (
-        <Video {...props} ref={ref} />
-    )
+    return <Video {...props} ref={ref} />
 }
 
 const AutoPlayingVideo = styled(UnstyledAutoPlayingVideo)``

@@ -15,8 +15,7 @@ const Head = styled.div`
     margin: 0 0 72px;
 `
 
-const Body = styled.div`
-`
+const Body = styled.div``
 
 const Footer = styled.div`
     border: solid #878787;
@@ -27,9 +26,11 @@ const Footer = styled.div`
     margin-top: 72px;
     padding: 20px 0;
 
-    ${({ empty }) => !!empty && css`
-        visibility: hidden;
-    `}
+    ${({ empty }) =>
+        !!empty &&
+        css`
+            visibility: hidden;
+        `}
 `
 
 const Name = styled.h1`
@@ -61,9 +62,7 @@ const UnstyledOtherLink = ({ children, opposite, to, ...props }) => (
                 </div>
             )}
             <div>
-                <Link to={to}>
-                    {children}
-                </Link>
+                <Link to={to}>{children}</Link>
             </div>
             {!opposite && (
                 <div>
