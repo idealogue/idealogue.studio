@@ -1,6 +1,6 @@
+import { Link } from 'gatsby'
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { Link } from 'gatsby'
 
 const UnstyledLink = ({ nodecor, ...props }) => <Link {...props} />
 
@@ -8,10 +8,10 @@ export default styled(UnstyledLink)`
     color: inherit;
 
     &,
-    :active,
-    :focus,
-    :hover,
-    :visited {
+    &:active,
+    &:focus,
+    &:hover,
+    &:visited {
         text-decoration: none;
     }
 
@@ -28,7 +28,7 @@ export default styled(UnstyledLink)`
         css`
             position: relative;
 
-            :after {
+            &::after {
                 background-color: ${({ theme }) => theme.color || '#000000'};
                 bottom: 0;
                 content: '';
@@ -42,8 +42,8 @@ export default styled(UnstyledLink)`
                 width: 20%;
             }
 
-            :hover:after,
-            :focus:after {
+            &:hover::after,
+            &:focus::after {
                 left: 0;
                 opacity: 1;
                 width: 100%;

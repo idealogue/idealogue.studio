@@ -1,7 +1,7 @@
+import { MEDIUM } from '$utils/css'
 import React from 'react'
 import styled from 'styled-components'
 import Module, { Body as UnstyledBody } from './Module'
-import { MEDIUM } from '$utils/css'
 
 const Body = styled(UnstyledBody)`
     color: #adadad;
@@ -67,7 +67,7 @@ const Tooltip = styled.div`
         font-weight: ${MEDIUM};
     }
 
-    ::before {
+    &::before {
         background-color: #ff5c00;
         border: 4px solid white;
         border-radius: 50%;
@@ -132,7 +132,7 @@ const Ranger = styled.div`
     width: 1px;
     z-index: 1;
 
-    ::before {
+    &::before {
         background-color: #adadad;
         border-radius: 2px;
         content: '';

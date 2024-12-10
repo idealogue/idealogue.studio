@@ -1,8 +1,8 @@
+import { DESKTOP, TABLET } from '$utils/css'
 import React, { useReducer } from 'react'
 import styled from 'styled-components'
 import Arctic from './Image/arctic360.jpg'
 import PlayImage from './triangle.svg'
-import { TABLET, DESKTOP } from '$utils/css'
 
 const Inner = styled.div`
     margin: 0 auto;
@@ -129,7 +129,7 @@ const PlayButton = styled(UnstyledPlayButton)`
     width: 100%;
     text-align: left;
 
-    :hover ${PlayIcon} {
+    &:hover ${PlayIcon} {
         transform: translate(-50%, -50%) scale(1.05);
         transition-duration: 50ms;
     }

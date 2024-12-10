@@ -46,7 +46,7 @@ const Section = styled(UnstyledSection)`
     ${({ actConsecutive }) =>
         !actConsecutive &&
         css`
-            :first-child {
+            &:first-child {
                 height: 100%;
                 max-height: 1440px;
                 min-height: 640px;

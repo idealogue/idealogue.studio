@@ -1,8 +1,8 @@
-import React, { useCallback } from 'react'
 import Glyph, { SCROLL_INDICATOR } from '$shared/Glyph'
-import styled, { keyframes } from 'styled-components'
-import { scroller as scroll } from 'react-scroll'
 import { SM } from '$utils/css'
+import React, { useCallback } from 'react'
+import { scroller as scroll } from 'react-scroll'
+import styled, { keyframes } from 'styled-components'
 
 const ID = 'scroll-indicator-target'
 
@@ -61,7 +61,7 @@ const ScrollIndicator = styled(UnstyledScrollIndicator)`
     width: 140px;
     transform: translateX(50%);
 
-    :hover > div {
+    &:hover > div {
         animation-play-state: running;
     }
 

@@ -1,9 +1,9 @@
-import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react'
-import { useSwipeable } from 'react-swipeable'
-import styled from 'styled-components'
-import gsap from 'gsap'
 import useMounted from '$hooks/useMounted'
 import Cursor from '$shared/Cursor'
+import gsap from 'gsap'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useSwipeable } from 'react-swipeable'
+import styled from 'styled-components'
 
 const Swipeable = ({ className, children, innerRef, ...props }) => {
     const handlers = useSwipeable(props)
@@ -44,8 +44,8 @@ export const SlideContainer = styled.div`
     padding: 0 ${({ gutter }) => Math.floor(gutter / 2)}px;
     transition: 0.5s opacity;
 
-    :first-child,
-    :last-child {
+    &:first-child,
+    &:last-child {
         opacity: 0;
     }
 `
