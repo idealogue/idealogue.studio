@@ -1,6 +1,6 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
 import { SM } from '$utils/css'
+import * as React from 'react'
+import styled, { css } from 'styled-components'
 
 export const Parent = styled.div``
 

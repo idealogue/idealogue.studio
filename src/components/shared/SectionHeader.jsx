@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
 import Container from '$shared/Container'
-import { useTopic } from '$shared/Topic'
 import Display from '$shared/Display'
-import { SM, MD, LG } from '$utils/css'
+import { useTopic } from '$shared/Topic'
+import { LG, MD, SM } from '$utils/css'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const Body = styled.div`
     border-bottom: 1px solid ${({ theme }) => theme.color};

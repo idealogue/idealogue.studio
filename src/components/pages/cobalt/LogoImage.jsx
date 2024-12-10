@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import FluidImage from '$shared/FluidImage'
 import Image from '$cobalt/Image'
+import FluidImage from '$shared/FluidImage'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const UnstyledLogoImage = (props) => (
     <div {...props}>

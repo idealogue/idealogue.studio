@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import Module from './Module'
 import Image from '$streamr/Image'
 import { BOLD } from '$utils/css'
+import * as React from 'react'
+import styled from 'styled-components'
+import Module from './Module'
 
 const Body = styled.div`
     background-color: #efefef;

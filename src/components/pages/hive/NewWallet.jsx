@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import PhoneFrame from '$shared/PhoneFrame'
 import AutoPlayingVideo from '$shared/AutoPlayingVideo'
-import { SM, MD } from '$utils/css'
+import PhoneFrame from '$shared/PhoneFrame'
+import { MD, SM } from '$utils/css'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const UnstyledNewWallet = (props) => (
     <PhoneFrame {...props}>

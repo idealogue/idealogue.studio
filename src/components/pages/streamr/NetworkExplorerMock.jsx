@@ -1,12 +1,12 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
 import CaptionedContainer from '$shared/CaptionedContainer'
-import Mockup from './networkExplorer.jpg'
-import Mockup2x from './networkExplorer@2x.jpg'
+import { TABLET } from '$utils/css'
+import * as React from 'react'
+import styled, { css } from 'styled-components'
 import MobileMockup from './mobileNE.jpg'
 import MobileMockup2x from './mobileNE@2x.jpg'
+import Mockup from './networkExplorer.jpg'
+import Mockup2x from './networkExplorer@2x.jpg'
 import Overgrow from './Overgrow'
-import { TABLET } from '$utils/css'
 
 const Image = styled.img`
     width: 100%;

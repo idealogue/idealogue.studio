@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
-import PhoneFrame from '$shared/PhoneFrame'
-import FluidImage from '$shared/FluidImage'
-import Container from '$shared/Container'
 import Image from '$hive/Image'
+import Container from '$shared/Container'
 import Display from '$shared/Display'
-import { MD, LG } from '$utils/css'
+import FluidImage from '$shared/FluidImage'
+import PhoneFrame from '$shared/PhoneFrame'
+import { LG, MD } from '$utils/css'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const Inner = styled.div`
     display: flex;

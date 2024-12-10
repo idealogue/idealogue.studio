@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
 import CaptionedContainer from '$shared/CaptionedContainer'
 import PrestyledPadded from '$shared/Padded'
 import VideoPlayer from '$streamr/VideoPlayer'
-import Still2x from './Image/Streamr_Vid_Poster@2x.jpg'
 import { LG } from '$utils/css'
+import * as React from 'react'
+import styled from 'styled-components'
+import Still2x from './Image/Streamr_Vid_Poster@2x.jpg'
 
 const Padded = styled(PrestyledPadded)`
     @media (max-width: ${LG - 1}px) {

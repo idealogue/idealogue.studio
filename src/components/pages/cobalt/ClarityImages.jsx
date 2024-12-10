@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
-import FluidImage from '$shared/FluidImage'
-import PhoneFrame from '$shared/PhoneFrame'
 import Image from '$cobalt/Image'
 import Container from '$shared/Container'
 import Display from '$shared/Display'
-import { SM, LG, MD } from '$utils/css'
+import FluidImage from '$shared/FluidImage'
+import PhoneFrame from '$shared/PhoneFrame'
+import { LG, MD, SM } from '$utils/css'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const Frames = styled.div`
     ${PhoneFrame} {

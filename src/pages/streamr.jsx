@@ -1,2 +1,7 @@
-import StreamrPage from '$streamr'
-export default StreamrPage
+import * as React from 'react'
+import { Seo } from '../components/Seo'
+export { default } from '$streamr'
+
+export const Head = () => {
+    return <Seo />
+}

@@ -1,4 +1,5 @@
-import React from 'react'
+import CaptionedContainer from '$shared/CaptionedContainer'
+import * as React from 'react'
 import styled from 'styled-components'
 import Button from './Button'
 import Chart from './Chart'
@@ -10,7 +11,6 @@ import Scheduler from './Scheduler'
 import Search from './Search'
 import Stream from './Stream'
 import Table from './Table'
-import CaptionedContainer from '$shared/CaptionedContainer'
 
 const Row = styled.div`
     align-items: stretch;

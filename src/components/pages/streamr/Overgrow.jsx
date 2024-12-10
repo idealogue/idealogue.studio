@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
 import Container from '$shared/Container'
 import { XLDESKTOP } from '$utils/css'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const UnstyledOvergrow = ({ className, children }) => (
     <Container>

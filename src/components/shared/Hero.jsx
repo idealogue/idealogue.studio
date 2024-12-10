@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
-import { useProject } from '$shared/Project'
 import Container from '$shared/Container'
 import HeroImage from '$shared/HeroImage'
+import { useProject } from '$shared/Project'
 import ScrollIndicator from '$shared/ScrollIndicator'
-import { SM, MD, LG } from '$utils/css'
+import { LG, MD, SM } from '$utils/css'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const Inner = styled.div`
     align-items: center;

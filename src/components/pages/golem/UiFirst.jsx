@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
-import FluidImage from '$shared/FluidImage'
 import Image from '$golem/Image'
-import Container from '$shared/Container'
 import CaptionedContainer from '$shared/CaptionedContainer'
-import { SM, MD } from '$utils/css'
+import Container from '$shared/Container'
+import FluidImage from '$shared/FluidImage'
+import { MD, SM } from '$utils/css'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const Inner = styled.div`
     padding: 0 8px;

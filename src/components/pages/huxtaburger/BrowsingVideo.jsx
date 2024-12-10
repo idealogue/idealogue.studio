@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
 import AutoPlayingVideo from '$shared/AutoPlayingVideo'
 import PhoneFrame from '$shared/PhoneFrame'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const UnstyledBrowsingVideo = (props) => (
     <div {...props}>

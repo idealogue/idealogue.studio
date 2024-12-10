@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import Module, { Header as UnstyledHeader, Top, Bottom } from './Module'
 import { MEDIUM } from '$utils/css'
+import * as React from 'react'
+import styled from 'styled-components'
+import Module, { Bottom, Top, Header as UnstyledHeader } from './Module'
 
 const Cat = styled.div`
     color: #323232;

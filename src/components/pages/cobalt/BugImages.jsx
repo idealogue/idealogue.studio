@@ -1,11 +1,11 @@
+import Image from '$cobalt/Image'
+import Container from '$shared/Container'
+import Display from '$shared/Display'
+import FluidImage from '$shared/FluidImage'
+import XofY from '$shared/XofY'
+import { MD, SM } from '$utils/css'
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
-import Image from '$cobalt/Image'
-import FluidImage from '$shared/FluidImage'
-import Container from '$shared/Container'
-import { SM, MD } from '$utils/css'
-import Display from '$shared/Display'
-import XofY from '$shared/XofY'
 
 const Cell = styled.div`
     width: 160px;

@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import FluidImage from '$shared/FluidImage'
-import Container from '$shared/Container'
 import Image from '$hux/Image'
+import Container from '$shared/Container'
+import FluidImage from '$shared/FluidImage'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const UnstyledNeon = (props) => (
     <div {...props}>

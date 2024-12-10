@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
-import Video from '$shared/Video'
 import Caption from '$shared/Caption'
 import Container from '$shared/Container'
 import Display from '$shared/Display'
-import { SM, MD, LG } from '$utils/css'
+import Video from '$shared/Video'
+import { LG, MD, SM } from '$utils/css'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const CaptionWrapper = styled.div`
     position: relative;

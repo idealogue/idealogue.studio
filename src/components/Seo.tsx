@@ -14,6 +14,7 @@ export function Seo({ children }: SeoProps) {
 
     return (
         <>
+            <title>{title}</title>
             <meta property="og:type" content="website" />
             <meta property="og:title" content="idealogue.studio" />
             <meta property="og:description" name="description" content={desc} />

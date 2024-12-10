@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
+import { Bills, Theo, VegeDenise } from '$hux/Burger'
+import { Chips, Icecream, Milkshake } from '$hux/Cup'
+import { Cbd, Eastland, Hawthorn } from '$hux/Store'
 import Container from '$shared/Container'
 import Display from '$shared/Display'
-import { Bills, Theo, VegeDenise } from '$hux/Burger'
-import { Milkshake, Icecream, Chips } from '$hux/Cup'
-import { Cbd, Hawthorn, Eastland } from '$hux/Store'
-import { SM, MD } from '$utils/css'
+import { MD, SM } from '$utils/css'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const Row = styled.div`
     display: flex;

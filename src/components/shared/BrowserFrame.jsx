@@ -1,6 +1,6 @@
-import React from 'react'
+import { MD, SM, XL } from '$utils/css'
+import * as React from 'react'
 import styled, { css } from 'styled-components'
-import { SM, MD, XL } from '$utils/css'
 
 const UnstyledBrowserFrame = ({ children, shadow, dark, ...props }) => (
     <div {...props}>

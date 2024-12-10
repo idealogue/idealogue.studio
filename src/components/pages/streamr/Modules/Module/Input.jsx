@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import PortIcon from './PortIcon'
-import Port, { Icon, Name } from './Port'
 import { PLEX_SANS } from '$utils/css'
+import * as React from 'react'
+import styled from 'styled-components'
+import Port, { Icon, Name } from './Port'
+import PortIcon from './PortIcon'
 
 const Em = styled.em`
     font-style: italic;

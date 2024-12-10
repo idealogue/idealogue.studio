@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
 import DangerousHtml from '$shared/DangerousHtml'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const UnstyledBullet = ({ className }) => (
     <DangerousHtml tag="span" className={className}>

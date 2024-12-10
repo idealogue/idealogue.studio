@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import CaptionedContainer from '$shared/CaptionedContainer'
 import PrestyledAutoPlayingVideo from '$shared/AutoPlayingVideo'
+import CaptionedContainer from '$shared/CaptionedContainer'
+import * as React from 'react'
+import styled from 'styled-components'
 import Overgrow from './Overgrow'
 
 const AutoPlayingVideo = styled(PrestyledAutoPlayingVideo)`

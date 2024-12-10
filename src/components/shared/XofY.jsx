@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
 
 const UnstyledXofY = ({ x = 1, y = 3, bg, color, ...props }) => (

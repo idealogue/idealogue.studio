@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
 import Layout from '$shared/Layout'
 import Section from '$shared/Section'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const LayoutTheme = {
     backgroundColor: '#2a2a2a',

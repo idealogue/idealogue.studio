@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
 import Container from '$shared/Container'
-import { SM, MD, LG } from '$utils/css'
+import { LG, MD, SM } from '$utils/css'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const Contributor = ({ name, role, ...props }) => (
     <div {...props}>

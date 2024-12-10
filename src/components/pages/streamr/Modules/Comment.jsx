@@ -1,7 +1,7 @@
-import React from 'react'
+import { MEDIUM } from '$utils/css'
+import * as React from 'react'
 import styled from 'styled-components'
 import Module from './Module'
-import { MEDIUM } from '$utils/css'
 
 const Body = styled.div`
     font-size: 10px;

@@ -1,6 +1,6 @@
-import React from 'react'
-import styled, { css, ThemeProvider } from 'styled-components'
 import Image from '$hux/Image'
+import * as React from 'react'
+import styled, { css, ThemeProvider } from 'styled-components'
 
 const MilkshakesTheme = {
     width: 180,

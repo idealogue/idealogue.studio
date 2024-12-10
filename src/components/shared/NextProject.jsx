@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
+import Glyph, { ARROW_RIGHT } from '$shared/Glyph'
 import Link from '$shared/Link'
 import { useNextProject } from '$shared/Project'
-import Glyph, { ARROW_RIGHT } from '$shared/Glyph'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const UnstyledNextProject = ({ className, children }) => {
     const { name, href } = useNextProject()

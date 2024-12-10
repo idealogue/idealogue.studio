@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
-import Container from '$shared/Container'
-import FluidImage from '$shared/FluidImage'
 import Image from '$golem/Image'
 import BrowserFrame from '$shared/BrowserFrame'
+import Container from '$shared/Container'
+import FluidImage from '$shared/FluidImage'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const UnstyledBetaLaunchPage = (props) => (
     <div {...props}>

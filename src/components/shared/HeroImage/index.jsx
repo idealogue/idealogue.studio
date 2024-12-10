@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import { StaticImage } from 'gatsby-plugin-image'
 import { useProject } from '$shared/Project'
-import { SM, MD, LG } from '$utils/css'
+import { LG, MD, SM } from '$utils/css'
+import { StaticImage } from 'gatsby-plugin-image'
+import * as React from 'react'
+import styled from 'styled-components'
 import CobaltImage from './CobaltImage'
 
 const Img = styled.div`

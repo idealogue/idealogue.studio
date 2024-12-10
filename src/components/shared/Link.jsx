@@ -1,5 +1,5 @@
 import { Link } from 'gatsby'
-import React from 'react'
+import * as React from 'react'
 import styled, { css } from 'styled-components'
 
 const UnstyledLink = ({ nodecor, ...props }) => <Link {...props} />

@@ -1,9 +1,10 @@
-import React from 'react'
+import FluidImage from '$shared/FluidImage'
 import Layout from '$shared/Layout'
 import Section from '$shared/Section'
-import FluidImage from '$shared/FluidImage'
 import Image from '$team/Image'
 import Person, { Collection } from '$team/Person'
+import * as React from 'react'
+import { Seo } from '../components/Seo'
 
 const LayoutTheme = {
     backgroundColor: '#ffffff',
@@ -61,4 +62,8 @@ export default function TeamPage() {
             </Section>
         </Layout>
     )
+}
+
+export const Head = () => {
+    return <Seo />
 }

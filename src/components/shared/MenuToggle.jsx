@@ -1,8 +1,8 @@
-import React from 'react'
-import styled, { css } from 'styled-components'
-import UnstyledGlyph, { NAV, CLOSE } from '$shared/Glyph'
 import useMenu from '$hooks/useMenu'
+import UnstyledGlyph, { CLOSE, NAV } from '$shared/Glyph'
 import { SM } from '$utils/css'
+import * as React from 'react'
+import styled, { css } from 'styled-components'
 
 const Glyph = styled(UnstyledGlyph)`
     display: block;

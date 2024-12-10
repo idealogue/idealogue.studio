@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import Port, { Icon, Name } from './Port'
 import PortIcon from './PortIcon'
 

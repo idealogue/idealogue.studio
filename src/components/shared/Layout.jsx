@@ -6,7 +6,7 @@ import useScrollDirection from '$hooks/useScrollDirection'
 import { Arrow, Provider as ArrowProvider } from '$shared/Cursor'
 import Menu from '$shared/Menu'
 import MenuToggle from '$shared/MenuToggle'
-import React from 'react'
+import * as React from 'react'
 import { createGlobalStyle, css } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`

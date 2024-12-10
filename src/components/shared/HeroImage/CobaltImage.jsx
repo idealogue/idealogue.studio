@@ -1,5 +1,5 @@
-import React from 'react'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import * as React from 'react'
 import src from './cobalt.gif'
 
 export default function CobaltImage({ as: Tag = 'div' }) {

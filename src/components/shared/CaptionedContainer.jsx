@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
 import PrestyledCaption from '$shared/Caption'
-import { SM, TABLET, DESKTOP } from '$utils/css'
+import { DESKTOP, SM, TABLET } from '$utils/css'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const Caption = styled(PrestyledCaption)`
     margin-top: 20px;

@@ -1,7 +1,7 @@
 import MenuToggle from '$shared/MenuToggle'
 import Spacer from '$shared/Spacer'
 import { LG, MD, SM } from '$utils/css'
-import React from 'react'
+import * as React from 'react'
 import styled, { ThemeProvider, css } from 'styled-components'
 
 const ToggleWrapper = styled.div`

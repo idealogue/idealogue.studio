@@ -1,6 +1,6 @@
-import React from 'react'
+import { BOLD, LAB, LG, PUBLICO, REGULAR } from '$utils/css'
+import * as React from 'react'
 import styled from 'styled-components'
-import { BOLD, LAB, PUBLICO, REGULAR, LG } from '$utils/css'
 
 const UnstyledPerson = ({ name, role, img, children, className }) => (
     <div className={className}>
