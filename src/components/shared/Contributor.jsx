@@ -15,6 +15,10 @@ export const Contributors = styled(Container)`
     line-height: 1.8em;
     margin-bottom: 92px;
 
+    strong {
+        font-weight: 700;
+    }
+
     span {
         margin-left: 0.6em;
     }

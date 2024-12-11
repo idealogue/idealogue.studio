@@ -61,6 +61,7 @@ const UnstyledSectionHeader = ({ no, children, ...props }) => {
 const SectionHeader = styled(UnstyledSectionHeader)`
     font-size: 20px;
     font-weight: 700;
+    line-height: 1.15em;
     margin-bottom: 72px;
 
     a {

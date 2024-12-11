@@ -1,16 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import styled, {
-    css,
-    ThemeProvider,
-    createGlobalStyle,
-} from 'styled-components'
-import Link from '$shared/Link'
-import Front from '$shared/Front'
-import { lineup, projects, useProject } from '$shared/Project'
-import { CloseButton as UnstyledCloseButton } from '$shared/MenuToggle'
 import useMenu from '$hooks/useMenu'
 import useMounted from '$hooks/useMounted'
-import { SM, MD, LG } from '$utils/css'
+import Front from '$shared/Front'
+import Link from '$shared/Link'
+import { CloseButton as UnstyledCloseButton } from '$shared/MenuToggle'
+import { lineup, projects, useProject } from '$shared/Project'
+import { LG, MD, SM } from '$utils/css'
+import React, { useEffect, useState } from 'react'
+import styled, { css, ThemeProvider } from 'styled-components'
 
 const Wrapper = styled.div`
     display: flex;
@@ -84,13 +80,6 @@ const CloseButton = styled(UnstyledCloseButton)`
     top: 0;
 `
 
-const ScrollSuppressor = createGlobalStyle`
-    html,
-    body {
-        overflow: hidden;
-    }
-`
-
 const Root = styled.div`
     opacity: 0;
     pointer-events: none;
@@ -154,7 +143,6 @@ const UnstyledMenu = ({ className }) => {
         <Front>
             <ThemeProvider theme={DefaultTheme}>
                 <Root className={className} visible={isOpen}>
-                    {!!lockScroll && <ScrollSuppressor />}
                     <CloseButton onClick={close} />
                     <Inner>
                         <Wrapper>
