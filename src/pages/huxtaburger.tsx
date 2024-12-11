@@ -12,11 +12,11 @@ import Link from '$shared/Link'
 import NextProject from '$shared/NextProject'
 import Project, { HUXTABURGER } from '$shared/Project'
 import ScrollIndicator from '$shared/ScrollIndicator'
-import Section from '$shared/Section'
 import SectionHeader from '$shared/SectionHeader'
-import Spacer from '$shared/Spacer'
 import Topic from '$shared/Topic'
 import * as React from 'react'
+import { Section } from '~/components/Section'
+import { Spacer } from '~/components/Spacer'
 import { Seo } from '../components/Seo'
 
 const LayoutTheme = {
@@ -47,7 +47,7 @@ export default function HuxtaburgerPage() {
     return (
         <Project id={HUXTABURGER}>
             <Layout theme={LayoutTheme}>
-                <Section theme={RedTheme} menuToggleBackground>
+                <Section {...RedTheme} menuToggleBackground>
                     <Hero>
                         <p>
                             We designed the original brand, site and print work,
@@ -58,7 +58,11 @@ export default function HuxtaburgerPage() {
                 </Section>
                 <ScrollIndicator.Target />
                 <Topic title="Milk Bar vs Diner">
-                    <Section theme={WhiteTheme} head menuToggleColor="#575757">
+                    <Section
+                        {...WhiteTheme}
+                        spacerProps={{ head: true }}
+                        menuToggleColor="#575757"
+                    >
                         <SectionHeader no={1} />
                         <Container>
                             <p>
@@ -75,7 +79,7 @@ export default function HuxtaburgerPage() {
                             <Logo />
                         </Spacer>
                     </Section>
-                    <Section theme={WhiteTheme}>
+                    <Section {...WhiteTheme}>
                         <Display as={CollageA} xs="none" sm="block" />
                         <Display as={CollageB} xs="none" sm="block" />
                         <Display as={Collage} sm="none" />
@@ -83,7 +87,11 @@ export default function HuxtaburgerPage() {
                     </Section>
                 </Topic>
                 <Topic title="Beery Browsing">
-                    <Section theme={WhiteTheme} tail menuToggleColor="#575757">
+                    <Section
+                        {...WhiteTheme}
+                        spacerProps={{ tail: true }}
+                        menuToggleColor="#575757"
+                    >
                         <Spacer head>
                             <SectionHeader no={2} />
                             <Container>
@@ -105,7 +113,10 @@ export default function HuxtaburgerPage() {
                     </Section>
                 </Topic>
                 <Topic title="Making an Icon iconic">
-                    <Section theme={BlueTheme} head tail>
+                    <Section
+                        {...BlueTheme}
+                        spacerProps={{ head: true, tail: true }}
+                    >
                         <SectionHeader no={3} />
                         <Container>
                             <p>
@@ -125,7 +136,7 @@ export default function HuxtaburgerPage() {
                     </Section>
                 </Topic>
                 <Topic title="Sexy Neon">
-                    <Section theme={BlackTheme} head>
+                    <Section {...BlackTheme} spacerProps={{ head: true }}>
                         <SectionHeader no={4} />
                         <Container>
                             <p>
@@ -140,7 +151,10 @@ export default function HuxtaburgerPage() {
                     </Section>
                 </Topic>
                 <Topic title="Credits">
-                    <Section theme={BlackTheme} head tail>
+                    <Section
+                        {...BlackTheme}
+                        spacerProps={{ head: true, tail: true }}
+                    >
                         <SectionHeader no={5}>
                             <Bullet />
                             <Link
@@ -180,5 +194,5 @@ export default function HuxtaburgerPage() {
 }
 
 export const Head = () => {
-    return <Seo />
+    return <Seo projectName="huxtaburger" />
 }

@@ -9,9 +9,7 @@ import Layout from '$shared/Layout'
 import NextProject from '$shared/NextProject'
 import Project, { VIZOR } from '$shared/Project'
 import ScrollIndicator from '$shared/ScrollIndicator'
-import Section from '$shared/Section'
 import SectionHeader from '$shared/SectionHeader'
-import Spacer from '$shared/Spacer'
 import Ateneum from '$vizor/Ateneum'
 import Icons from '$vizor/Icons'
 import Image from '$vizor/Image'
@@ -25,6 +23,8 @@ import Modules from '$vizor/Modules'
 import PlayerPics from '$vizor/PlayerPics'
 import Vizor360 from '$vizor/Vizor360'
 import * as React from 'react'
+import { Section } from '~/components/Section'
+import { Spacer } from '~/components/Spacer'
 import { Seo } from '../components/Seo'
 import Topic from '../components/shared/Topic'
 
@@ -51,7 +51,7 @@ export default function VizorPage() {
     return (
         <Project id={VIZOR}>
             <Layout theme={LayoutTheme}>
-                <Section theme={DarkBlueTheme} menuToggleBackground>
+                <Section {...DarkBlueTheme} menuToggleBackground>
                     <Hero>
                         <p>
                             Working with Helsinki-based startup Pixelface, we
@@ -62,7 +62,7 @@ export default function VizorPage() {
                 </Section>
                 <ScrollIndicator.Target />
                 <Topic title="From Engi.works to Vizor">
-                    <Section theme={NavyTheme} head>
+                    <Section {...NavyTheme} spacerProps={{ head: true }}>
                         <SectionHeader no={1} />
                         <Container>
                             <p>
@@ -81,7 +81,7 @@ export default function VizorPage() {
                     </Section>
                 </Topic>
                 <Topic title="Visual Programming">
-                    <Section theme={NavyTheme} head>
+                    <Section {...NavyTheme} spacerProps={{ head: true }}>
                         <SectionHeader no={2} />
                         <Container>
                             <p>
@@ -100,7 +100,10 @@ export default function VizorPage() {
                     </Section>
                 </Topic>
                 <Topic title="The Patches Editor">
-                    <Section theme={NavyTheme} head tail>
+                    <Section
+                        {...NavyTheme}
+                        spacerProps={{ head: true, tail: true }}
+                    >
                         <SectionHeader no={3} />
                         <Container>
                             <p>
@@ -126,7 +129,10 @@ export default function VizorPage() {
                     </Section>
                 </Topic>
                 <Topic title="The Player">
-                    <Section theme={MidnightBlueTheme} head tail>
+                    <Section
+                        {...MidnightBlueTheme}
+                        spacerProps={{ head: true, tail: true }}
+                    >
                         <SectionHeader no={4} />
                         <Container>
                             <p>
@@ -143,7 +149,10 @@ export default function VizorPage() {
                     </Section>
                 </Topic>
                 <Topic title="User Pages">
-                    <Section theme={NavyTheme} head tail>
+                    <Section
+                        {...NavyTheme}
+                        spacerProps={{ head: true, tail: true }}
+                    >
                         <SectionHeader no={5} />
                         <Container>
                             <p>
@@ -168,7 +177,10 @@ export default function VizorPage() {
                     </Section>
                 </Topic>
                 <Topic title="Icons and Assets">
-                    <Section theme={DarkBlueTheme} head tail>
+                    <Section
+                        {...DarkBlueTheme}
+                        spacerProps={{ head: true, tail: true }}
+                    >
                         <SectionHeader no={6} />
                         <Container>
                             <p>
@@ -186,7 +198,7 @@ export default function VizorPage() {
                     </Section>
                 </Topic>
                 <Topic title="Vizor 360">
-                    <Section theme={NavyTheme} head>
+                    <Section {...NavyTheme} spacerProps={{ head: true }}>
                         <SectionHeader no={7} />
                         <Container>
                             <p>
@@ -224,12 +236,15 @@ export default function VizorPage() {
                             </Container>
                         </CaptionedContainer>
                     </Section>
-                    <Section theme={NavyTheme} head>
+                    <Section {...NavyTheme} spacerProps={{ head: true }}>
                         <Vizor360 />
                     </Section>
                 </Topic>
                 <Topic title="Credits">
-                    <Section theme={NavyTheme} head tail>
+                    <Section
+                        {...NavyTheme}
+                        spacerProps={{ head: true, tail: true }}
+                    >
                         <SectionHeader no={8} />
                         <Contributors>
                             <Contributor
@@ -287,5 +302,5 @@ export default function VizorPage() {
 }
 
 export const Head = () => {
-    return <Seo />
+    return <Seo projectName="vizor" />
 }

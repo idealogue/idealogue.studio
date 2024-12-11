@@ -1,16 +1,19 @@
 import * as React from 'react'
 import pkg from '../../package.json'
+import { ProjectName } from '../types'
+import { getProjectManifest } from '../utils/project'
 
 interface SeoProps {
+    projectName?: ProjectName
     children?: React.ReactNode
 }
 
-export function Seo({ children }: SeoProps) {
+export function Seo({ children, projectName }: SeoProps) {
     const {
         desc = 'We work with startups to create great digital products we believe in.',
-        socialPosterUrl = 'https://idealogue.studio/images/Idealogue-share.png',
+        posterUrl = 'https://idealogue.studio/images/Idealogue-share.png',
         title = 'Idealogue',
-    } = {}
+    } = projectName ? getProjectManifest(projectName) : {}
 
     return (
         <>
@@ -41,12 +44,12 @@ export function Seo({ children }: SeoProps) {
                 rel="apple-touch-icon"
                 sizes="180x180"
             />
-            {socialPosterUrl && (
+            {posterUrl && (
                 <>
                     <meta property="og:image:height" content="600" />
                     <meta property="og:image:type" content="image/png" />
                     <meta property="og:image:width" content="1200" />
-                    <meta property="og:image" content={socialPosterUrl} />
+                    <meta property="og:image" content={posterUrl} />
                     <meta name="twitter:card" content="summary_large_image" />
                 </>
             )}

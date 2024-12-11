@@ -10,11 +10,12 @@ import Link from '$shared/Link'
 import NextProject from '$shared/NextProject'
 import Project, { COBALT } from '$shared/Project'
 import ScrollIndicator from '$shared/ScrollIndicator'
-import Section from '$shared/Section'
 import SectionHeader from '$shared/SectionHeader'
-import Spacer from '$shared/Spacer'
 import Topic from '$shared/Topic'
+import { HeadFC } from 'gatsby'
 import * as React from 'react'
+import { Spacer } from '~/components/Spacer'
+import { Section } from '../components/Section'
 import { Seo } from '../components/Seo'
 
 const LayoutTheme = {
@@ -35,7 +36,7 @@ export default function CobaltPage() {
     return (
         <Project id={COBALT}>
             <Layout theme={LayoutTheme}>
-                <Section theme={DarkTheme} menuToggleBackground>
+                <Section {...DarkTheme} menuToggleBackground>
                     <Hero>
                         <p>
                             Cobalt is an app security startup in San Francisco.
@@ -45,7 +46,11 @@ export default function CobaltPage() {
                 </Section>
                 <ScrollIndicator.Target />
                 <Topic title="Crowd Powered">
-                    <Section theme={LightTheme} head menuToggleColor="#575757">
+                    <Section
+                        {...LightTheme}
+                        spacerProps={{ head: true }}
+                        menuToggleColor="#575757"
+                    >
                         <SectionHeader no={1} />
                         <Container>
                             <p>
@@ -64,7 +69,11 @@ export default function CobaltPage() {
                     </Section>
                 </Topic>
                 <Topic title="Aiming for Clarity">
-                    <Section theme={LightTheme} head menuToggleColor="#575757">
+                    <Section
+                        {...LightTheme}
+                        spacerProps={{ head: true }}
+                        menuToggleColor="#575757"
+                    >
                         <SectionHeader no={2} />
                         <Container>
                             <p>
@@ -83,7 +92,10 @@ export default function CobaltPage() {
                     </Section>
                 </Topic>
                 <Topic title="Bugs Categorised">
-                    <Section theme={DarkTheme} head tail>
+                    <Section
+                        {...DarkTheme}
+                        spacerProps={{ head: true, tail: true }}
+                    >
                         <SectionHeader no={3} />
                         <Container>
                             <p>
@@ -103,9 +115,8 @@ export default function CobaltPage() {
                 </Topic>
                 <Topic title="Credits">
                     <Section
-                        theme={LightTheme}
-                        head
-                        tail
+                        {...LightTheme}
+                        spacerProps={{ head: true, tail: true }}
                         menuToggleColor="#575757"
                     >
                         <SectionHeader no={4}>
@@ -149,6 +160,6 @@ export default function CobaltPage() {
     )
 }
 
-export const Head = () => {
-    return <Seo />
+export const Head: HeadFC = () => {
+    return <Seo projectName="cobalt" />
 }

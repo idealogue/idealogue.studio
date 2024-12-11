@@ -11,11 +11,12 @@ import Layout from '$shared/Layout'
 import NextProject from '$shared/NextProject'
 import Project, { HIVE } from '$shared/Project'
 import ScrollIndicator from '$shared/ScrollIndicator'
-import Section from '$shared/Section'
 import SectionHeader from '$shared/SectionHeader'
-import Spacer from '$shared/Spacer'
 import Topic from '$shared/Topic'
+import { HeadFC } from 'gatsby'
 import * as React from 'react'
+import { Section } from '~/components/Section'
+import { Spacer } from '~/components/Spacer'
 import { Seo } from '../components/Seo'
 
 const LayoutTheme = {
@@ -41,7 +42,7 @@ export default function HivePage() {
     return (
         <Project id={HIVE}>
             <Layout theme={LayoutTheme}>
-                <Section theme={YellowWhiteTheme} menuToggleBackground>
+                <Section {...YellowWhiteTheme} menuToggleBackground>
                     <Hero>
                         <p>
                             Hive approached us for a brand refresh and UI for
@@ -51,7 +52,11 @@ export default function HivePage() {
                 </Section>
                 <ScrollIndicator.Target />
                 <Topic title="Hex Wild">
-                    <Section theme={WhiteTheme} head menuToggleColor="#575757">
+                    <Section
+                        {...WhiteTheme}
+                        spacerProps={{ head: true }}
+                        menuToggleColor="#575757"
+                    >
                         <SectionHeader no={1} />
                         <Container>
                             <p>
@@ -70,7 +75,11 @@ export default function HivePage() {
                     </Section>
                 </Topic>
                 <Topic title="Hive Wallet 1.0">
-                    <Section theme={WhiteTheme} tail menuToggleColor="#575757">
+                    <Section
+                        {...WhiteTheme}
+                        spacerProps={{ tail: true }}
+                        menuToggleColor="#575757"
+                    >
                         <Spacer head>
                             <SectionHeader no={2} />
                             <Container>
@@ -92,9 +101,8 @@ export default function HivePage() {
                 </Topic>
                 <Topic title="Hive Wallet 2.0">
                     <Section
-                        theme={YellowGrayTheme}
-                        head
-                        tail
+                        {...YellowGrayTheme}
+                        spacerProps={{ head: true, tail: true }}
                         menuToggleColor="#575757"
                     >
                         <SectionHeader no={3} />
@@ -116,7 +124,11 @@ export default function HivePage() {
                     </Section>
                 </Topic>
                 <Topic title="Hive Hosted">
-                    <Section theme={WhiteTheme} head menuToggleColor="#575757">
+                    <Section
+                        {...WhiteTheme}
+                        spacerProps={{ head: true }}
+                        menuToggleColor="#575757"
+                    >
                         <SectionHeader no={4} />
                         <Container>
                             <p>
@@ -139,9 +151,8 @@ export default function HivePage() {
                 </Topic>
                 <Topic title="Credits">
                     <Section
-                        theme={WhiteTheme}
-                        head
-                        tail
+                        {...WhiteTheme}
+                        spacerProps={{ head: true, tail: true }}
                         menuToggleColor="#575757"
                     >
                         <SectionHeader no={5} />
@@ -176,6 +187,6 @@ export default function HivePage() {
     )
 }
 
-export const Head = () => {
-    return <Seo />
+export const Head: HeadFC = () => {
+    return <Seo projectName="hive" />
 }

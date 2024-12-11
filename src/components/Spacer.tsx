@@ -1,9 +1,15 @@
+import { LG, MD, SM } from '$utils/css'
 import styled, { css } from 'styled-components'
-import { SM, MD, LG } from '$utils/css'
 
-const Spacer = styled.div`
-    ${({ head, scale = 1 }) =>
-        !!head &&
+export interface SpacerProps {
+    head?: boolean
+    tail?: boolean
+    scale?: number
+}
+
+export const Spacer = styled.div<SpacerProps>`
+    ${({ head = false, scale = 1 }) =>
+        head &&
         css`
             padding-top: ${96 * scale}px;
 
@@ -20,8 +26,8 @@ const Spacer = styled.div`
             }
         `}
 
-    ${({ tail, scale = 1 }) =>
-        !!tail &&
+    ${({ tail = false, scale = 1 }) =>
+        tail &&
         css`
             padding-bottom: ${96 * scale}px;
 
@@ -38,5 +44,3 @@ const Spacer = styled.div`
             }
         `}
 `
-
-export default Spacer

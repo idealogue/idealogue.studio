@@ -17,11 +17,12 @@ import Layout from '$shared/Layout'
 import NextProject from '$shared/NextProject'
 import Project, { GOLEM } from '$shared/Project'
 import ScrollIndicator from '$shared/ScrollIndicator'
-import Section from '$shared/Section'
 import SectionHeader from '$shared/SectionHeader'
-import Spacer from '$shared/Spacer'
 import Topic from '$shared/Topic'
+import { HeadFC } from 'gatsby'
 import * as React from 'react'
+import { Section } from '~/components/Section'
+import { Spacer } from '~/components/Spacer'
 import { Seo } from '../components/Seo'
 
 const LayoutTheme = {
@@ -59,7 +60,7 @@ export default function GolemPage() {
     return (
         <Project id={GOLEM}>
             <Layout theme={LayoutTheme}>
-                <Section theme={BlueTheme} menuToggleBackground>
+                <Section {...BlueTheme} menuToggleBackground>
                     <Hero>
                         <p>
                             We worked on user experience design for the
@@ -72,9 +73,8 @@ export default function GolemPage() {
                 <ScrollIndicator.Target />
                 <Topic title="User Experience First">
                     <Section
-                        theme={WhiteTheme}
-                        head
-                        tail
+                        {...WhiteTheme}
+                        spacerProps={{ head: true, tail: true }}
                         menuToggleColor="#575757"
                     >
                         <SectionHeader no={1} />
@@ -112,16 +112,18 @@ export default function GolemPage() {
                         </Spacer>
                     </Section>
                     <Section
-                        theme={GrayishTheme}
-                        head
-                        tail
+                        {...GrayishTheme}
+                        spacerProps={{ head: true, tail: true }}
                         menuToggleColor="#575757"
                     >
                         <UiProcess />
                     </Section>
                 </Topic>
                 <Topic title="Simple Visual Design Pass">
-                    <Section theme={BlueTheme} head tail>
+                    <Section
+                        {...BlueTheme}
+                        spacerProps={{ head: true, tail: true }}
+                    >
                         <SectionHeader no={2} />
                         <Container>
                             <p>
@@ -156,7 +158,10 @@ export default function GolemPage() {
                     </Section>
                 </Topic>
                 <Topic title="Visual Identity">
-                    <Section theme={BlackTheme} head tail>
+                    <Section
+                        {...BlackTheme}
+                        spacerProps={{ head: true, tail: true }}
+                    >
                         <SectionHeader no={3} />
                         <Container>
                             <p>
@@ -177,7 +182,7 @@ export default function GolemPage() {
                             <Identity />
                         </Spacer>
                     </Section>
-                    <Section theme={BlueTheme} head>
+                    <Section {...BlueTheme} spacerProps={{ head: true }}>
                         <Golems />
                         <Spacer head tail>
                             <Container>
@@ -200,7 +205,10 @@ export default function GolemPage() {
                         </Spacer>
                         <GolemCharacter />
                     </Section>
-                    <Section theme={DarkBlueTheme} head tail>
+                    <Section
+                        {...DarkBlueTheme}
+                        spacerProps={{ head: true, tail: true }}
+                    >
                         <Brand />
                         <Display xs="none" md="block">
                             <Spacer head tail>
@@ -211,7 +219,10 @@ export default function GolemPage() {
                     </Section>
                 </Topic>
                 <Topic title="Beta Launch Page">
-                    <Section theme={BlackTheme} head tail>
+                    <Section
+                        {...BlackTheme}
+                        spacerProps={{ head: true, tail: true }}
+                    >
                         <SectionHeader no={4} />
                         <Container>
                             <p>
@@ -232,7 +243,10 @@ export default function GolemPage() {
                     </Section>
                 </Topic>
                 <Topic title="Credits">
-                    <Section theme={BlueTheme} head tail>
+                    <Section
+                        {...BlueTheme}
+                        spacerProps={{ head: true, tail: true }}
+                    >
                         <SectionHeader no={5} />
                         <Contributors>
                             <Contributor
@@ -259,9 +273,9 @@ export default function GolemPage() {
     )
 }
 
-export const Head = () => {
+export const Head: HeadFC = () => {
     return (
-        <Seo>
+        <Seo projectName="golem">
             <link
                 href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
                 rel="stylesheet"

@@ -1,8 +1,8 @@
+import { LG, MD, SM } from '$utils/css'
 import styled from 'styled-components'
-import { SM, MD, LG } from '$utils/css'
 
 const Caption = styled.em`
-    color: ${({ theme }) => theme.captionColor || '#ffffff7f'};
+    color: var(--captionColor, '#ffffff7f');
     display: block;
     font-family: 'Publico Text';
     font-size: 14px;

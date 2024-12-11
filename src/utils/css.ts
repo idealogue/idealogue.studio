@@ -1,10 +1,18 @@
 export const SM = 544
 
+export const SmMQ = `(min-width: ${SM}px)`
+
 export const MD = 768
+
+export const MdMQ = `(min-width: ${MD}px)`
 
 export const LG = 992
 
+export const LgMQ = `(min-width: ${LG}px)`
+
 export const XL = 1200
+
+export const XlMQ = `(min-width: ${XL}px)`
 
 export const REGULAR = 400
 

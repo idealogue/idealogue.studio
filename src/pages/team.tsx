@@ -1,9 +1,9 @@
 import FluidImage from '$shared/FluidImage'
 import Layout from '$shared/Layout'
-import Section from '$shared/Section'
 import Image from '$team/Image'
 import Person, { Collection } from '$team/Person'
 import * as React from 'react'
+import { Section } from '~/components/Section'
 import { Seo } from '../components/Seo'
 
 const LayoutTheme = {
@@ -14,10 +14,9 @@ export default function TeamPage() {
     return (
         <Layout theme={LayoutTheme}>
             <Section
-                theme={LayoutTheme}
+                {...LayoutTheme}
                 actConsecutive
-                head
-                tail
+                spacerProps={{ head: true, tail: true }}
                 menuToggleColor="#06042a"
             >
                 <Collection>
