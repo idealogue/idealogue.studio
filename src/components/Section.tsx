@@ -32,7 +32,7 @@ export function Section({
     captionColor,
     color,
     menuToggleBackground = false,
-    menuToggleColor = '#ffffff',
+    menuToggleColor,
     children,
     spacerProps = {},
 }: SectionProps) {

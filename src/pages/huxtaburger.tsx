@@ -79,7 +79,7 @@ export default function HuxtaburgerPage() {
                             <Logo />
                         </Spacer>
                     </Section>
-                    <Section {...WhiteTheme}>
+                    <Section {...WhiteTheme} menuToggleColor="#ffffff">
                         <Display as={CollageA} xs="none" sm="block" />
                         <Display as={CollageB} xs="none" sm="block" />
                         <Display as={Collage} sm="none" />

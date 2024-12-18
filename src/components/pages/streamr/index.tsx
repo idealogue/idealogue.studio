@@ -131,7 +131,7 @@ export default function StreamrPage() {
                 >
                     <Section
                         {...MainTheme}
-                        spacerProps={{ head: true }}
+                        spacerProps={{ head: true, tail: true }}
                         menuToggleColor="currentColor"
                     >
                         <SectionHeader no={3} />
@@ -146,7 +146,7 @@ export default function StreamrPage() {
                                 and shipping something fast.
                                 <Surround suffix="." prefix=" ">
                                     <a
-                                        href="https://streamr.network/marketplace"
+                                        href="https://streamr.network/hub"
                                         rel="noopener noreferrer"
                                         target="_blank"
                                     >

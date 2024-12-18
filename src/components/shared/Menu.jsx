@@ -1,11 +1,10 @@
 import useMenu from '$hooks/useMenu'
-import useMounted from '$hooks/useMounted'
 import Front from '$shared/Front'
 import Link from '$shared/Link'
 import { CloseButton as UnstyledCloseButton } from '$shared/MenuToggle'
 import { lineup, projects, useProject } from '$shared/Project'
 import { LG, MD, SM } from '$utils/css'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import styled, { css, ThemeProvider } from 'styled-components'
 
 const Wrapper = styled.div`
@@ -117,27 +116,6 @@ const UnstyledMenu = ({ className }) => {
             window.removeEventListener('keydown', onClose)
         }
     }, [isOpen, close])
-
-    const [lockScroll, setLockScroll] = useState(false)
-
-    const isMounted = useMounted()
-
-    useEffect(() => {
-        if (!isOpen) {
-            setLockScroll(false)
-            return () => {}
-        }
-
-        const timeout = setTimeout(() => {
-            if (isMounted()) {
-                setLockScroll(true)
-            }
-        }, 500)
-
-        return () => {
-            clearTimeout(timeout)
-        }
-    }, [isOpen, isMounted])
 
     return (
         <Front>

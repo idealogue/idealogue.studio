@@ -1,9 +1,11 @@
-import type { GatsbyConfig } from 'gatsby'
+import { type GatsbyConfig } from 'gatsby'
+
+const siteUrl = 'https://idealogue.studio'
 
 const config: GatsbyConfig = {
     siteMetadata: {
-        title: `idealogue.studio`,
-        siteUrl: `https://www.yourdomain.tld`,
+        title: 'idealogue.studio',
+        siteUrl,
     },
     // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
     // If you use VSCode you can also use the GraphQL plugin
@@ -12,7 +14,17 @@ const config: GatsbyConfig = {
     plugins: [
         'gatsby-plugin-styled-components',
         'gatsby-plugin-image',
-        'gatsby-plugin-sharp',
+        {
+            resolve: 'gatsby-plugin-sharp',
+            options: {
+                defaults: {
+                    placeholder: 'none',
+                    quality: 100,
+                    formats: ['auto'],
+                },
+                failOn: 'error',
+            },
+        },
         'gatsby-transformer-sharp',
         {
             resolve: 'gatsby-plugin-alias-imports',
@@ -31,6 +43,15 @@ const config: GatsbyConfig = {
                     $team: 'src/components/pages/team',
                 },
                 extensions: ['js', 'jsx', 'ts', 'tsx'],
+            },
+        },
+        'gatsby-plugin-cname',
+        'gatsby-plugin-robots-txt',
+        'gatsby-plugin-sitemap',
+        {
+            resolve: 'gatsby-plugin-canonical-urls',
+            options: {
+                siteUrl,
             },
         },
     ],
