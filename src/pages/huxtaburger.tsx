@@ -1,22 +1,22 @@
-import BrowsingVideo from '$hux/BrowsingVideo'
 import Iconic from '$hux/Iconic'
 import Neon from '$hux/Neon'
 import { Collage, CollageA, CollageB, LargeSign, Logo } from '$hux/Pics'
-import Bullet from '$shared/Bullet'
-import Container from '$shared/Container'
-import Contributor, { Contributors } from '$shared/Contributor'
-import Display from '$shared/Display'
-import Layout from '$shared/Layout'
-import Link from '$shared/Link'
-import ScrollIndicator from '$shared/ScrollIndicator'
-import SectionHeader from '$shared/SectionHeader'
-import Topic from '$shared/Topic'
 import { HeadFC } from 'gatsby'
 import * as React from 'react'
+import { BrowsingVideo } from '~/components/pages/huxtaburger/BrowsingVideo'
 import { ProjectPage } from '~/components/ProjectPage'
 import { Section } from '~/components/Section'
+import Bullet from '~/components/shared/Bullet'
+import { Container } from '~/components/shared/Container'
+import Contributor, { Contributors } from '~/components/shared/Contributor'
+import { Display } from '~/components/shared/Display'
 import Hero from '~/components/shared/Hero'
+import Layout from '~/components/shared/Layout'
+import Link from '~/components/shared/Link'
 import NextProject from '~/components/shared/NextProject'
+import ScrollIndicator from '~/components/shared/ScrollIndicator'
+import SectionHeader from '~/components/shared/SectionHeader'
+import Topic from '~/components/shared/Topic'
 import { Spacer } from '~/components/Spacer'
 import { Seo } from '../components/Seo'
 
@@ -81,8 +81,8 @@ export default function HuxtaburgerPage() {
                         </Spacer>
                     </Section>
                     <Section {...WhiteTheme} menuToggleColor="#ffffff">
-                        <Display as={CollageA} xs="none" sm="block" />
-                        <Display as={CollageB} xs="none" sm="block" />
+                        <Display as={CollageA} xs="none" sm />
+                        <Display as={CollageB} xs="none" sm />
                         <Display as={Collage} sm="none" />
                         <LargeSign />
                     </Section>

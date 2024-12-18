@@ -1,10 +1,10 @@
-import useMenu from '$hooks/useMenu'
-import Front from '$shared/Front'
-import Link from '$shared/Link'
-import { CloseButton as UnstyledCloseButton } from '$shared/MenuToggle'
 import { LG, MD, SM } from '$utils/css'
-import React, { useEffect } from 'react'
+import React, { HTMLAttributes, useEffect } from 'react'
 import styled, { css, ThemeProvider } from 'styled-components'
+import { Front } from '~/components/shared/Front'
+import { Link } from '~/components/shared/Link'
+import { CloseButton as UnstyledCloseButton } from '~/components/shared/MenuToggle'
+import { useMenu } from '~/hooks/useMenu'
 import { ProjectManifest } from '~/types'
 import { getProjectManifest, lineup, useProjectManifest } from '~/utils/project'
 
@@ -80,26 +80,9 @@ const CloseButton = styled(UnstyledCloseButton)`
     top: 0;
 `
 
-const Root = styled.div<{ visible: boolean }>`
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.35s;
-    transition-delay: 0.35s, 0s;
-    transition-property: visibility, opacity;
-    visibility: hidden;
+type MenuProps = Omit<HTMLAttributes<HTMLDivElement>, 'children'>
 
-    ${({ visible }) =>
-        !!visible &&
-        css`
-            opacity: 1;
-            pointer-events: all;
-            transition-delay: 0s;
-            transition-duration: 0.1s;
-            visibility: visible;
-        `}
-`
-
-const UnstyledMenu = ({ className }) => {
+export function Menu(props: MenuProps) {
     const { isOpen, close } = useMenu()
 
     let project: ProjectManifest | undefined = undefined
@@ -127,7 +110,7 @@ const UnstyledMenu = ({ className }) => {
     return (
         <Front>
             <ThemeProvider theme={DefaultTheme}>
-                <Root className={className} visible={isOpen}>
+                <MenuRoot {...props} $visible={isOpen}>
                     <CloseButton onClick={close} />
                     <Inner>
                         <Wrapper>
@@ -135,7 +118,7 @@ const UnstyledMenu = ({ className }) => {
                                 {lineup.map((name) => (
                                     <li key={name}>
                                         <Link
-                                            to={getProjectManifest(name)}
+                                            to={getProjectManifest(name).url}
                                             onClick={(e) => {
                                                 if (project?.name === name) {
                                                     close()
@@ -158,13 +141,19 @@ const UnstyledMenu = ({ className }) => {
                             </LinkList>
                         </Wrapper>
                     </Inner>
-                </Root>
+                </MenuRoot>
             </ThemeProvider>
         </Front>
     )
 }
 
-const Menu = styled(UnstyledMenu)`
+const MenuRoot = styled.div<{ $visible: boolean }>`
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.35s;
+    transition-delay: 0.35s, 0s;
+    transition-property: visibility, opacity;
+    visibility: hidden;
     background-color: #fcfcfc;
     color: #06042a;
     height: 100%;
@@ -174,6 +163,16 @@ const Menu = styled(UnstyledMenu)`
     top: 0;
     width: 100%;
     z-index: 100;
+
+    ${({ $visible = false }) =>
+        $visible &&
+        css`
+            opacity: 1;
+            pointer-events: all;
+            transition-delay: 0s;
+            transition-duration: 0.1s;
+            visibility: visible;
+        `}
 
     ${LinkList} li:last-child {
         font-size: 20px;
@@ -186,5 +185,3 @@ const Menu = styled(UnstyledMenu)`
         }
     }
 `
-
-export default Menu

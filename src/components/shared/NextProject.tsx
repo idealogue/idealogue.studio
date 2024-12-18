@@ -1,7 +1,7 @@
-import Glyph, { ARROW_RIGHT } from '$shared/Glyph'
-import Link from '$shared/Link'
 import * as React from 'react'
 import styled from 'styled-components'
+import Glyph, { ARROW_RIGHT } from '~/components/shared/Glyph'
+import Link from '~/components/shared/Link'
 import { useNextProjectManifest } from '~/utils/project'
 
 type NextProjectProps = React.HTMLAttributes<HTMLDivElement>

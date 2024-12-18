@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react'
-import styled, { keyframes } from 'styled-components'
 import { StoreBadge } from '$hux/Badge'
 import Image from '$hux/Image'
+import React, { useCallback, useEffect, useState } from 'react'
+import styled, { keyframes } from 'styled-components'
 
 const Wrapper = styled.div`
-    display: ${({ active }) => (active ? 'block' : 'none')};
+    display: ${({ $active }) => ($active ? 'block' : 'none')};
     height: 100%;
     left: 0;
     position: absolute;
@@ -108,16 +108,16 @@ const UnstyledStore = ({
     return (
         <div {...props} role="button" onMouseDown={onMouseDown} tabIndex="0">
             {shadow}
-            <Wrapper active>
+            <Wrapper $active>
                 <img src={firstFrame} alt="" />
             </Wrapper>
             {otherFrames.map((src, index) => (
-                <Wrapper key={src} active={index === frame}>
+                <Wrapper key={src} $active={index === frame}>
                     <img src={src} alt="" />
                 </Wrapper>
             ))}
             {slides.map((src, index) => (
-                <Wrapper key={src} active={index === slide}>
+                <Wrapper key={src} $active={index === slide}>
                     <img src={src} alt="" />
                 </Wrapper>
             ))}

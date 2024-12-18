@@ -6,7 +6,7 @@ const Output = ({ highlight, name, ...props }) => (
     <Port {...props}>
         <Name>{name}</Name>
         <Icon>
-            <PortIcon highlight={highlight} />
+            <PortIcon $highlight={highlight} />
         </Icon>
     </Port>
 )

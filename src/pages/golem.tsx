@@ -1,27 +1,27 @@
-import AppLoop from '$golem/AppLoop'
-import BetaLaunchPage from '$golem/BetaLaunchPage'
-import BetaLaunchPageMobile from '$golem/BetaLaunchPageMobile'
-import Brand from '$golem/Brand'
-import GolemCharacter from '$golem/GolemCharacter'
-import Golems from '$golem/Golems'
 import Identity from '$golem/Identity'
 import RedditPage from '$golem/RedditPage'
 import Shirts from '$golem/Shirts'
 import UiFirst from '$golem/UiFirst'
 import UiProcess from '$golem/UiProcess'
-import Container from '$shared/Container'
-import Contributor, { Contributors } from '$shared/Contributor'
-import Display from '$shared/Display'
-import Layout from '$shared/Layout'
-import ScrollIndicator from '$shared/ScrollIndicator'
-import SectionHeader from '$shared/SectionHeader'
-import Topic from '$shared/Topic'
 import { HeadFC } from 'gatsby'
 import * as React from 'react'
+import { AppLoop } from '~/components/pages/golem/AppLoop'
+import { BetaLaunchPage } from '~/components/pages/golem/BetaLaunchPage'
+import { BetaLaunchPageMobile } from '~/components/pages/golem/BetaLaunchPageMobile'
+import { Brand } from '~/components/pages/golem/Brand'
+import { GolemCharacter } from '~/components/pages/golem/GolemCharacter'
+import { Golems } from '~/components/pages/golem/Golems'
 import { ProjectPage } from '~/components/ProjectPage'
 import { Section } from '~/components/Section'
+import { Container } from '~/components/shared/Container'
+import Contributor, { Contributors } from '~/components/shared/Contributor'
+import { Display } from '~/components/shared/Display'
 import Hero from '~/components/shared/Hero'
+import Layout from '~/components/shared/Layout'
 import NextProject from '~/components/shared/NextProject'
+import ScrollIndicator from '~/components/shared/ScrollIndicator'
+import SectionHeader from '~/components/shared/SectionHeader'
+import Topic from '~/components/shared/Topic'
 import { Spacer } from '~/components/Spacer'
 import { Seo } from '../components/Seo'
 
@@ -173,9 +173,9 @@ export default function GolemPage() {
                                 Stone, Iron. Creating a brand that could vary
                                 and grow from stage to stage was the idea we
                                 started with. We also liked the origin of the
-                                name — Stanislav Lem’s novel Golem XIV, about a
-                                conversation with an AI which is evolving
-                                consciousness.
+                                name — Stanislav Lem&apos;s novel Golem XIV,
+                                about a conversation with an AI which is
+                                evolving consciousness.
                             </p>
                         </Container>
                         <Spacer head scale={0.6}>
@@ -192,11 +192,11 @@ export default function GolemPage() {
                                     with a flexible mark that could be animated
                                     to represent the network in some way. To
                                     that end we brought on illustrator Stuart
-                                    Wade, whose work we’d admired on the Monster
-                                    Project. The tricky part with the character
-                                    development was to find something that was
-                                    part AI, part golem, without being too
-                                    robotic — and without feeling too
+                                    Wade, whose work we&apos;d admired on the
+                                    Monster Project. The tricky part with the
+                                    character development was to find something
+                                    that was part AI, part golem, without being
+                                    too robotic — and without feeling too
                                     threatening or overly cute. The reaction on
                                     Reddit to an early presentation was that we
                                     got that right.
@@ -210,7 +210,7 @@ export default function GolemPage() {
                         spacerProps={{ head: true, tail: true }}
                     >
                         <Brand />
-                        <Display xs="none" md="block">
+                        <Display xs="none" md>
                             <Spacer head tail>
                                 <Shirts />
                             </Spacer>
@@ -237,7 +237,7 @@ export default function GolemPage() {
                             </p>
                         </Container>
                         <Spacer head scale={0.6}>
-                            <Display as={BetaLaunchPage} xs="none" md="block" />
+                            <Display as={BetaLaunchPage} xs="none" md />
                             <Display as={BetaLaunchPageMobile} md="none" />
                         </Spacer>
                     </Section>
