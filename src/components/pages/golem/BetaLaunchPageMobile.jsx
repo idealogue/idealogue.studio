@@ -1,11 +1,11 @@
-import React, { useReducer } from 'react'
-import styled from 'styled-components'
+import Image from '$golem/Image'
 import Container from '$shared/Container'
 import FluidImage from '$shared/FluidImage'
-import Image from '$golem/Image'
 import PhoneFrame from '$shared/PhoneFrame'
 import XofY from '$shared/XofY'
 import { SM } from '$utils/css'
+import React, { useReducer } from 'react'
+import styled from 'styled-components'
 
 const Inner = styled.div`
     height: 332px;
@@ -30,7 +30,7 @@ const UnstyledBetaLaunchPageMobile = (props) => {
             <Container>
                 <PhoneFrame>
                     <Inner slide={slide} onClick={next}>
-                        <FluidImage src={Image.BETA_LAUNCH_MOBILE} alt="" />
+                        <FluidImage src={Image.BETA_LAUNCH_MOBILE} />
                     </Inner>
                 </PhoneFrame>
                 <XofY x={slide + 1} y={4} onClick={next} />

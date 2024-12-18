@@ -36,14 +36,14 @@ const Shirts = (props) => (
                 <Row>
                     {Image.SHIRTS.slice(0, 3).map((src) => (
                         <Cell key={src}>
-                            <FluidImage src={src} alt="" />
+                            <FluidImage src={src} />
                         </Cell>
                     ))}
                 </Row>
                 <Row>
                     {Image.SHIRTS.slice(3, 6).map((src) => (
                         <Cell key={src}>
-                            <FluidImage src={src} alt="" />
+                            <FluidImage src={src} />
                         </Cell>
                     ))}
                 </Row>

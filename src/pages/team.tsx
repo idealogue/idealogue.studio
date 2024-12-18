@@ -1,9 +1,9 @@
-import FluidImage from '$shared/FluidImage'
 import Layout from '$shared/Layout'
 import Image from '$team/Image'
 import Person, { Collection } from '$team/Person'
 import * as React from 'react'
 import { Section } from '~/components/Section'
+import FluidImage from '~/components/shared/FluidImage'
 import { Seo } from '../components/Seo'
 
 const LayoutTheme = {

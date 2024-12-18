@@ -1,11 +1,11 @@
+import Container from '$shared/Container'
+import Display from '$shared/Display'
+import FluidImage from '$shared/FluidImage'
+import XofY from '$shared/XofY'
+import { LG, MD, SM } from '$utils/css'
+import Image from '$vizor/Image'
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
-import Container from '$shared/Container'
-import FluidImage from '$shared/FluidImage'
-import Image from '$vizor/Image'
-import { SM, MD, LG } from '$utils/css'
-import Display from '$shared/Display'
-import XofY from '$shared/XofY'
 
 const Row = styled.div`
     display: flex;
@@ -86,35 +86,35 @@ const UnstyledIcons = (props) => {
                 <Display as={Inner} xs="none" sm="block">
                     <Row>
                         <Cell>
-                            <FluidImage src={Image.ASSETS[0]} alt="" />
+                            <FluidImage src={Image.ASSETS[0]} />
                         </Cell>
                         <Cell>
-                            <FluidImage src={Image.ASSETS[1]} alt="" />
+                            <FluidImage src={Image.ASSETS[1]} />
                         </Cell>
                         <Cell>
-                            <FluidImage src={Image.ASSETS[2]} alt="" />
-                        </Cell>
-                    </Row>
-                    <Row>
-                        <Cell>
-                            <FluidImage src={Image.ASSETS[3]} alt="" />
-                        </Cell>
-                        <Cell>
-                            <FluidImage src={Image.ASSETS[4]} alt="" />
-                        </Cell>
-                        <Cell>
-                            <FluidImage src={Image.ASSETS[5]} alt="" />
+                            <FluidImage src={Image.ASSETS[2]} />
                         </Cell>
                     </Row>
                     <Row>
                         <Cell>
-                            <FluidImage src={Image.ASSETS[6]} alt="" />
+                            <FluidImage src={Image.ASSETS[3]} />
                         </Cell>
                         <Cell>
-                            <FluidImage src={Image.ASSETS[7]} alt="" />
+                            <FluidImage src={Image.ASSETS[4]} />
                         </Cell>
                         <Cell>
-                            <FluidImage src={Image.ASSETS[8]} alt="" />
+                            <FluidImage src={Image.ASSETS[5]} />
+                        </Cell>
+                    </Row>
+                    <Row>
+                        <Cell>
+                            <FluidImage src={Image.ASSETS[6]} />
+                        </Cell>
+                        <Cell>
+                            <FluidImage src={Image.ASSETS[7]} />
+                        </Cell>
+                        <Cell>
+                            <FluidImage src={Image.ASSETS[8]} />
                         </Cell>
                     </Row>
                 </Display>
@@ -123,28 +123,28 @@ const UnstyledIcons = (props) => {
                         <Slide $active={slideNo === 0}>
                             <Row>
                                 <Cell>
-                                    <FluidImage src={Image.ASSETS[2]} alt="" />
+                                    <FluidImage src={Image.ASSETS[2]} />
                                 </Cell>
                             </Row>
                         </Slide>
                         <Slide $active={slideNo === 1}>
                             <Row>
                                 <Cell>
-                                    <FluidImage src={Image.ASSETS[4]} alt="" />
+                                    <FluidImage src={Image.ASSETS[4]} />
                                 </Cell>
                             </Row>
                         </Slide>
                         <Slide $active={slideNo === 2}>
                             <Row>
                                 <Cell>
-                                    <FluidImage src={Image.ASSETS[5]} alt="" />
+                                    <FluidImage src={Image.ASSETS[5]} />
                                 </Cell>
                             </Row>
                         </Slide>
                         <Slide $active={slideNo === 3}>
                             <Row>
                                 <Cell>
-                                    <FluidImage src={Image.ASSETS[7]} alt="" />
+                                    <FluidImage src={Image.ASSETS[7]} />
                                 </Cell>
                             </Row>
                         </Slide>

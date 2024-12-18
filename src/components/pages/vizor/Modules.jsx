@@ -7,13 +7,13 @@ import Image from './Image'
 const UnstyledModules = (props) => (
     <div {...props}>
         <div>
-            <FluidImage src={Image.UI_0} alt="" />
+            <FluidImage src={Image.UI_0} />
         </div>
         <div>
-            <FluidImage src={Image.UI_1} alt="" />
+            <FluidImage src={Image.UI_1} />
         </div>
         <Display xs="none" sm="block">
-            <FluidImage src={Image.UI_2} alt="" />
+            <FluidImage src={Image.UI_2} />
         </Display>
     </div>
 )

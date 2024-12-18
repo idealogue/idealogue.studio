@@ -12,7 +12,7 @@ const RedditPage = (props) => (
     <Wrapper {...props}>
         <CaptionedContainer caption="A simple Reddit theme for the project">
             <BrowserFrame>
-                <FluidImage src={Image.REDDIT_PAGE} alt="" />
+                <FluidImage src={Image.REDDIT_PAGE} />
             </BrowserFrame>
         </CaptionedContainer>
     </Wrapper>

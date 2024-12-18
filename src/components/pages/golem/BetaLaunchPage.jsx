@@ -9,7 +9,7 @@ const UnstyledBetaLaunchPage = (props) => (
     <div {...props}>
         <Container>
             <BrowserFrame>
-                <FluidImage src={Image.BETA_LAUNCH} alt="" />
+                <FluidImage src={Image.BETA_LAUNCH} />
             </BrowserFrame>
         </Container>
     </div>

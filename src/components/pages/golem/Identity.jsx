@@ -16,7 +16,7 @@ const Identity = () => (
                 </>
             }
         >
-            <FluidImage src={Image.IDENTITY} alt="" />
+            <FluidImage src={Image.IDENTITY} />
         </CaptionedContainer>
     </Wrapper>
 )

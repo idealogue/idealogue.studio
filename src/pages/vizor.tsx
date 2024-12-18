@@ -3,7 +3,6 @@ import BrowserFrame from '$shared/BrowserFrame'
 import CaptionedContainer from '$shared/CaptionedContainer'
 import Container from '$shared/Container'
 import Contributor, { Contributors } from '$shared/Contributor'
-import FluidImage from '$shared/FluidImage'
 import Layout from '$shared/Layout'
 import ScrollIndicator from '$shared/ScrollIndicator'
 import SectionHeader from '$shared/SectionHeader'
@@ -22,6 +21,7 @@ import Vizor360 from '$vizor/Vizor360'
 import * as React from 'react'
 import { ProjectPage } from '~/components/ProjectPage'
 import { Section } from '~/components/Section'
+import FluidImage from '~/components/shared/FluidImage'
 import Hero from '~/components/shared/Hero'
 import NextProject from '~/components/shared/NextProject'
 import { Spacer } from '~/components/Spacer'
@@ -75,7 +75,7 @@ export default function VizorPage() {
                                 brand style for it.
                             </p>
                             <Spacer head>
-                                <FluidImage src={Image.GRID} alt="" />
+                                <FluidImage src={Image.GRID} />
                             </Spacer>
                         </Container>
                     </Section>
@@ -168,7 +168,6 @@ export default function VizorPage() {
                                     <FluidImage
                                         src={PlatformImage2x}
                                         srcSet={`${PlatformImage}, ${PlatformImage2x} 2x`}
-                                        alt=""
                                         fill
                                     />
                                 </BrowserFrame>
@@ -214,7 +213,6 @@ export default function VizorPage() {
                                     <FluidImage
                                         src={EditorImage2x}
                                         srcSet={`${EditorImage}, ${EditorImage2x} 2x`}
-                                        alt=""
                                         fill
                                     />
                                 </BrowserFrame>
@@ -229,7 +227,6 @@ export default function VizorPage() {
                                     <FluidImage
                                         src={LaunchPageImage2x}
                                         srcSet={`${LaunchPageImage}, ${LaunchPageImage2x} 2x`}
-                                        alt=""
                                         fill
                                     />
                                 </BrowserFrame>

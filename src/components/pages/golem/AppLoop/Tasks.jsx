@@ -61,7 +61,7 @@ const UnstyledTask = ({ title, eta, doneAt, completness, ...props }) => (
         <Body>
             <Left>
                 <IconWrapper>
-                    <FluidImage src={Image.BLENDER} alt="" />
+                    <FluidImage src={Image.BLENDER} />
                 </IconWrapper>
                 <div>
                     <Title>{title}</Title>

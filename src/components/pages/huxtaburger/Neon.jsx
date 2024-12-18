@@ -7,7 +7,7 @@ import styled from 'styled-components'
 const UnstyledNeon = (props) => (
     <div {...props}>
         <Container>
-            <FluidImage src={Image.NEON} alt="" />
+            <FluidImage src={Image.NEON} />
         </Container>
     </div>
 )

@@ -9,7 +9,7 @@ const Wrapper = styled.div``
 const UiProcess = () => (
     <Wrapper>
         <CaptionedContainer caption="Early wireframes for the Golem app">
-            <FluidImage src={Image.UI_PROCESS} alt="" />
+            <FluidImage src={Image.UI_PROCESS} />
         </CaptionedContainer>
     </Wrapper>
 )

@@ -97,28 +97,28 @@ const UnstyledBugImages = (props) => {
                     <Row>
                         {Image.BUGS.slice(0, 3).map((src) => (
                             <Cell key={src}>
-                                <FluidImage src={src} alt="" />
+                                <FluidImage src={src} />
                             </Cell>
                         ))}
                     </Row>
                     <Row>
                         {Image.BUGS.slice(3, 6).map((src) => (
                             <Cell key={src}>
-                                <FluidImage src={src} alt="" />
+                                <FluidImage src={src} />
                             </Cell>
                         ))}
                     </Row>
                     <Row>
                         {Image.BUGS.slice(6, 9).map((src) => (
                             <Cell key={src}>
-                                <FluidImage src={src} alt="" />
+                                <FluidImage src={src} />
                             </Cell>
                         ))}
                     </Row>
                     <Row>
                         {Image.BUGS.slice(9, 12).map((src) => (
                             <Cell key={src}>
-                                <FluidImage src={src} alt="" />
+                                <FluidImage src={src} />
                             </Cell>
                         ))}
                     </Row>
@@ -132,60 +132,60 @@ const UnstyledBugImages = (props) => {
                         <Group active={slide === 0}>
                             <Row>
                                 <Cell>
-                                    <FluidImage src={Image.BUGS[0]} alt="" />
+                                    <FluidImage src={Image.BUGS[0]} />
                                 </Cell>
                             </Row>
                             <Row>
                                 <Cell>
-                                    <FluidImage src={Image.BUGS[1]} alt="" />
+                                    <FluidImage src={Image.BUGS[1]} />
                                 </Cell>
                                 <Cell>
-                                    <FluidImage src={Image.BUGS[2]} alt="" />
+                                    <FluidImage src={Image.BUGS[2]} />
                                 </Cell>
                             </Row>
                         </Group>
                         <Group active={slide === 1}>
                             <Row>
                                 <Cell>
-                                    <FluidImage src={Image.BUGS[3]} alt="" />
+                                    <FluidImage src={Image.BUGS[3]} />
                                 </Cell>
                                 <Cell>
-                                    <FluidImage src={Image.BUGS[4]} alt="" />
+                                    <FluidImage src={Image.BUGS[4]} />
                                 </Cell>
                             </Row>
                             <Row>
                                 <Cell>
-                                    <FluidImage src={Image.BUGS[5]} alt="" />
+                                    <FluidImage src={Image.BUGS[5]} />
                                 </Cell>
                             </Row>
                         </Group>
                         <Group active={slide === 2}>
                             <Row>
                                 <Cell>
-                                    <FluidImage src={Image.BUGS[6]} alt="" />
+                                    <FluidImage src={Image.BUGS[6]} />
                                 </Cell>
                             </Row>
                             <Row>
                                 <Cell>
-                                    <FluidImage src={Image.BUGS[7]} alt="" />
+                                    <FluidImage src={Image.BUGS[7]} />
                                 </Cell>
                                 <Cell>
-                                    <FluidImage src={Image.BUGS[8]} alt="" />
+                                    <FluidImage src={Image.BUGS[8]} />
                                 </Cell>
                             </Row>
                         </Group>
                         <Group active={slide === 3}>
                             <Row>
                                 <Cell>
-                                    <FluidImage src={Image.BUGS[9]} alt="" />
+                                    <FluidImage src={Image.BUGS[9]} />
                                 </Cell>
                                 <Cell>
-                                    <FluidImage src={Image.BUGS[10]} alt="" />
+                                    <FluidImage src={Image.BUGS[10]} />
                                 </Cell>
                             </Row>
                             <Row>
                                 <Cell>
-                                    <FluidImage src={Image.BUGS[11]} alt="" />
+                                    <FluidImage src={Image.BUGS[11]} />
                                 </Cell>
                             </Row>
                         </Group>
