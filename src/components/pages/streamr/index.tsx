@@ -5,11 +5,8 @@ import CaptionedContainer from '$shared/CaptionedContainer'
 import Container from '$shared/Container'
 import Contributor, { Contributors } from '$shared/Contributor'
 import Display from '$shared/Display'
-import Hero from '$shared/Hero'
 import Layout from '$shared/Layout'
 import Link from '$shared/Link'
-import NextProject from '$shared/NextProject'
-import Project, { STREAMR } from '$shared/Project'
 import ScrollIndicator from '$shared/ScrollIndicator'
 import SectionHeader from '$shared/SectionHeader'
 import Surround from '$shared/Surround'
@@ -19,6 +16,9 @@ import EditorMockup from '$streamr/EditorMockup'
 import IconGrid from '$streamr/IconGrid'
 import Modules from '$streamr/Modules'
 import * as React from 'react'
+import { ProjectPage } from '~/components/ProjectPage'
+import Hero from '~/components/shared/Hero'
+import NextProject from '~/components/shared/NextProject'
 import { Spacer } from '~/components/Spacer'
 import { Section } from '../../Section'
 import BrubeckScreencast from './BrubeckScreencast'
@@ -44,7 +44,7 @@ const SecondaryTheme = {
 
 export default function StreamrPage() {
     return (
-        <Project id={STREAMR}>
+        <ProjectPage projectName="streamr">
             <Layout theme={LayoutTheme}>
                 <Section
                     {...MainTheme}
@@ -386,6 +386,6 @@ export default function StreamrPage() {
                     </Section>
                 </Topic>
             </Layout>
-        </Project>
+        </ProjectPage>
     )
 }

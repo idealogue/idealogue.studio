@@ -13,7 +13,8 @@ export interface Project {
     desc: string
 }
 
-export interface ProjectManifest<N extends ProjectName> extends Project {
+export interface ProjectManifest<N extends ProjectName = ProjectName>
+    extends Project {
     title: `Idealogue - ${string}`
     url: `/${N}`
 }

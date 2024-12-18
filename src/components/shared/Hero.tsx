@@ -1,10 +1,10 @@
 import Container from '$shared/Container'
 import HeroImage from '$shared/HeroImage'
-import { useProject } from '$shared/Project'
 import ScrollIndicator from '$shared/ScrollIndicator'
 import { LG, MD, SM } from '$utils/css'
 import * as React from 'react'
 import styled from 'styled-components'
+import { useProjectManifest } from '~/utils/project'
 
 const Inner = styled.div`
     align-items: center;
@@ -13,14 +13,16 @@ const Inner = styled.div`
     text-align: center;
 `
 
-const UnstyledHero = ({ children, ...props }) => {
-    const { name } = useProject()
+type HeroProps = React.HTMLAttributes<HTMLDivElement>
+
+const UnstyledHero = ({ children, ...props }: HeroProps) => {
+    const { displayName } = useProjectManifest()
 
     return (
         <div {...props}>
             <Inner>
                 <Container>
-                    <h1>{name}</h1>
+                    <h1>{displayName}</h1>
                     {children}
                     <HeroImage />
                 </Container>

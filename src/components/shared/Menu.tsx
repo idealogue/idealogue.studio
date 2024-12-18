@@ -2,10 +2,11 @@ import useMenu from '$hooks/useMenu'
 import Front from '$shared/Front'
 import Link from '$shared/Link'
 import { CloseButton as UnstyledCloseButton } from '$shared/MenuToggle'
-import { lineup, projects, useProject } from '$shared/Project'
 import { LG, MD, SM } from '$utils/css'
 import React, { useEffect } from 'react'
 import styled, { css, ThemeProvider } from 'styled-components'
+import { ProjectManifest } from '~/types'
+import { getProjectManifest, lineup, useProjectManifest } from '~/utils/project'
 
 const Wrapper = styled.div`
     display: flex;
@@ -31,14 +32,14 @@ const Wrapper = styled.div`
     }
 `
 
-export const LinkList = styled.ul`
+export const LinkList = styled.ul<{ $inline?: boolean }>`
     font-weight: 700;
     list-style: none;
     margin: 0;
     padding: 0;
 
-    ${({ inline }) =>
-        !!inline &&
+    ${({ $inline = false }) =>
+        $inline &&
         css`
             li {
                 display: inline;
@@ -79,7 +80,7 @@ const CloseButton = styled(UnstyledCloseButton)`
     top: 0;
 `
 
-const Root = styled.div`
+const Root = styled.div<{ visible: boolean }>`
     opacity: 0;
     pointer-events: none;
     transition: 0.35s;
@@ -101,7 +102,13 @@ const Root = styled.div`
 const UnstyledMenu = ({ className }) => {
     const { isOpen, close } = useMenu()
 
-    const project = useProject() || {}
+    let project: ProjectManifest | undefined = undefined
+
+    try {
+        project = useProjectManifest()
+    } catch (_) {
+        // We don't care.
+    }
 
     useEffect(() => {
         const onClose = ({ key }) => {
@@ -125,18 +132,21 @@ const UnstyledMenu = ({ className }) => {
                     <Inner>
                         <Wrapper>
                             <LinkList>
-                                {lineup.map((id) => (
-                                    <li key={id}>
+                                {lineup.map((name) => (
+                                    <li key={name}>
                                         <Link
-                                            to={projects[id].href}
+                                            to={getProjectManifest(name)}
                                             onClick={(e) => {
-                                                if (project.id === id) {
+                                                if (project?.name === name) {
                                                     close()
                                                     e.preventDefault()
                                                 }
                                             }}
                                         >
-                                            {projects[id].name}
+                                            {
+                                                getProjectManifest(name)
+                                                    .displayName
+                                            }
                                         </Link>
                                     </li>
                                 ))}

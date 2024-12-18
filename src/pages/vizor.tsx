@@ -4,10 +4,7 @@ import CaptionedContainer from '$shared/CaptionedContainer'
 import Container from '$shared/Container'
 import Contributor, { Contributors } from '$shared/Contributor'
 import FluidImage from '$shared/FluidImage'
-import Hero from '$shared/Hero'
 import Layout from '$shared/Layout'
-import NextProject from '$shared/NextProject'
-import Project, { VIZOR } from '$shared/Project'
 import ScrollIndicator from '$shared/ScrollIndicator'
 import SectionHeader from '$shared/SectionHeader'
 import Ateneum from '$vizor/Ateneum'
@@ -23,7 +20,10 @@ import Modules from '$vizor/Modules'
 import PlayerPics from '$vizor/PlayerPics'
 import Vizor360 from '$vizor/Vizor360'
 import * as React from 'react'
+import { ProjectPage } from '~/components/ProjectPage'
 import { Section } from '~/components/Section'
+import Hero from '~/components/shared/Hero'
+import NextProject from '~/components/shared/NextProject'
 import { Spacer } from '~/components/Spacer'
 import { Seo } from '../components/Seo'
 import Topic from '../components/shared/Topic'
@@ -49,7 +49,7 @@ const MidnightBlueTheme = {
 
 export default function VizorPage() {
     return (
-        <Project id={VIZOR}>
+        <ProjectPage projectName="vizor">
             <Layout theme={LayoutTheme}>
                 <Section {...DarkBlueTheme} menuToggleBackground>
                     <Hero>
@@ -297,7 +297,7 @@ export default function VizorPage() {
                     </Section>
                 </Topic>
             </Layout>
-        </Project>
+        </ProjectPage>
     )
 }
 

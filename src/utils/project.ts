@@ -1,3 +1,4 @@
+import { createContext, useContext } from 'react'
 import { Project, ProjectManifest, ProjectName } from '../types'
 
 const projects: Record<ProjectName, Project> = {
@@ -39,6 +40,17 @@ const projects: Record<ProjectName, Project> = {
     },
 }
 
+export const lineup: ProjectName[] = [
+    'streamr',
+    'golem',
+    'vizor',
+    'cobalt',
+    'hive',
+    'huxtaburger',
+]
+
+export const ProjectNameContext = createContext<ProjectName | null>(null)
+
 export function getProjectManifest<N extends ProjectName>(
     projectName: N
 ): ProjectManifest<N> {
@@ -50,4 +62,20 @@ export function getProjectManifest<N extends ProjectName>(
         title: `Idealogue - ${displayName}`,
         url: `/${projectName}`,
     }
+}
+
+export function useProjectManifest() {
+    const projectName = useContext(ProjectNameContext)
+
+    if (!projectName) {
+        throw new Error('Invalid context')
+    }
+
+    return getProjectManifest(projectName)
+}
+
+export function useNextProjectManifest() {
+    return getProjectManifest(
+        lineup[(lineup.indexOf(useProjectManifest().name) + 1) % lineup.length]
+    )
 }

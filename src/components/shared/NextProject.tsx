@@ -1,19 +1,21 @@
 import Glyph, { ARROW_RIGHT } from '$shared/Glyph'
 import Link from '$shared/Link'
-import { useNextProject } from '$shared/Project'
 import * as React from 'react'
 import styled from 'styled-components'
+import { useNextProjectManifest } from '~/utils/project'
 
-const UnstyledNextProject = ({ className, children }) => {
-    const { name, href } = useNextProject()
+type NextProjectProps = React.HTMLAttributes<HTMLDivElement>
+
+const UnstyledNextProject = (props: NextProjectProps) => {
+    const { displayName, url } = useNextProjectManifest()
 
     return (
-        <div className={className}>
+        <div {...props}>
             <div>
                 <div className="label">Next Project</div>
                 <div className="inner">
-                    <Link to={href}>{name}</Link>
-                    <Link nodecor to={href}>
+                    <Link to={url}>{displayName}</Link>
+                    <Link nodecor to={url}>
                         <Glyph source={ARROW_RIGHT} />
                     </Link>
                 </div>

@@ -2,7 +2,11 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 import * as React from 'react'
 import src from './cobalt.gif'
 
-export default function CobaltImage({ as: Tag = 'div' }) {
+interface CobaltImageProps {
+    as?: React.ElementType
+}
+
+export default function CobaltImage({ as: Tag = 'div' }: CobaltImageProps) {
     return (
         <GatsbyImage
             as={Tag}
@@ -15,12 +19,6 @@ export default function CobaltImage({ as: Tag = 'div' }) {
                         srcSet: `${src} 243w`,
                         sizes: '(min-width: 243px) 243px, 100vw',
                     },
-                    sources: [
-                        {
-                            src,
-                            srcSet: `${src} 243w`,
-                        },
-                    ],
                 },
                 layout: 'constrained',
                 width: 243,

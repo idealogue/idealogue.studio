@@ -6,16 +6,16 @@ import BrowserFrame from '$shared/BrowserFrame'
 import Container from '$shared/Container'
 import Contributor, { Contributors } from '$shared/Contributor'
 import FluidImage from '$shared/FluidImage'
-import Hero from '$shared/Hero'
 import Layout from '$shared/Layout'
-import NextProject from '$shared/NextProject'
-import Project, { HIVE } from '$shared/Project'
 import ScrollIndicator from '$shared/ScrollIndicator'
 import SectionHeader from '$shared/SectionHeader'
 import Topic from '$shared/Topic'
 import { HeadFC } from 'gatsby'
 import * as React from 'react'
+import { ProjectPage } from '~/components/ProjectPage'
 import { Section } from '~/components/Section'
+import Hero from '~/components/shared/Hero'
+import NextProject from '~/components/shared/NextProject'
 import { Spacer } from '~/components/Spacer'
 import { Seo } from '../components/Seo'
 
@@ -40,7 +40,7 @@ const WhiteTheme = {
 
 export default function HivePage() {
     return (
-        <Project id={HIVE}>
+        <ProjectPage projectName="hive">
             <Layout theme={LayoutTheme}>
                 <Section {...YellowWhiteTheme} menuToggleBackground>
                     <Hero>
@@ -183,7 +183,7 @@ export default function HivePage() {
                     </Section>
                 </Topic>
             </Layout>
-        </Project>
+        </ProjectPage>
     )
 }
 

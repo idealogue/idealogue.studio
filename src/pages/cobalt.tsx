@@ -4,16 +4,16 @@ import LogoImage from '$cobalt/LogoImage'
 import Bullet from '$shared/Bullet'
 import Container from '$shared/Container'
 import Contributor, { Contributors } from '$shared/Contributor'
-import Hero from '$shared/Hero'
 import Layout from '$shared/Layout'
 import Link from '$shared/Link'
-import NextProject from '$shared/NextProject'
-import Project, { COBALT } from '$shared/Project'
 import ScrollIndicator from '$shared/ScrollIndicator'
 import SectionHeader from '$shared/SectionHeader'
 import Topic from '$shared/Topic'
 import { HeadFC } from 'gatsby'
 import * as React from 'react'
+import { ProjectPage } from '~/components/ProjectPage'
+import Hero from '~/components/shared/Hero'
+import NextProject from '~/components/shared/NextProject'
 import { Spacer } from '~/components/Spacer'
 import { Section } from '../components/Section'
 import { Seo } from '../components/Seo'
@@ -34,7 +34,7 @@ const LightTheme = {
 
 export default function CobaltPage() {
     return (
-        <Project id={COBALT}>
+        <ProjectPage projectName="cobalt">
             <Layout theme={LayoutTheme}>
                 <Section {...DarkTheme} menuToggleBackground>
                     <Hero>
@@ -156,7 +156,7 @@ export default function CobaltPage() {
                     </Section>
                 </Topic>
             </Layout>
-        </Project>
+        </ProjectPage>
     )
 }
 

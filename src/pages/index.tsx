@@ -2,11 +2,11 @@ import Container from '$shared/Container'
 import Display from '$shared/Display'
 import Layout from '$shared/Layout'
 import Link from '$shared/Link'
-import { LinkList } from '$shared/Menu'
-import { lineup, projects } from '$shared/Project'
 import { LG, MD } from '$utils/css'
 import React, { Fragment } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
+import { LinkList } from '~/components/shared/Menu'
+import { getProjectManifest, lineup } from '~/utils/project'
 import { Seo } from '../components/Seo'
 
 const Root = styled.div`
@@ -125,12 +125,15 @@ export default function IndexPage() {
                             products we believe in.
                         </p>
                         <h2>Projects</h2>
-                        <LinkList inline>
-                            {lineup.map((id, index) => (
-                                <Fragment key={id}>
+                        <LinkList $inline>
+                            {lineup.map((name, index) => (
+                                <Fragment key={name}>
                                     <li>
-                                        <Link to={projects[id].href}>
-                                            {projects[id].name}
+                                        <Link to={getProjectManifest(name).url}>
+                                            {
+                                                getProjectManifest(name)
+                                                    .displayName
+                                            }
                                         </Link>
                                     </li>
                                     {(index + 1) % 3 === 0 && <Separator />}

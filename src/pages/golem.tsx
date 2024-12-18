@@ -12,16 +12,16 @@ import UiProcess from '$golem/UiProcess'
 import Container from '$shared/Container'
 import Contributor, { Contributors } from '$shared/Contributor'
 import Display from '$shared/Display'
-import Hero from '$shared/Hero'
 import Layout from '$shared/Layout'
-import NextProject from '$shared/NextProject'
-import Project, { GOLEM } from '$shared/Project'
 import ScrollIndicator from '$shared/ScrollIndicator'
 import SectionHeader from '$shared/SectionHeader'
 import Topic from '$shared/Topic'
 import { HeadFC } from 'gatsby'
 import * as React from 'react'
+import { ProjectPage } from '~/components/ProjectPage'
 import { Section } from '~/components/Section'
+import Hero from '~/components/shared/Hero'
+import NextProject from '~/components/shared/NextProject'
 import { Spacer } from '~/components/Spacer'
 import { Seo } from '../components/Seo'
 
@@ -58,7 +58,7 @@ const BlackTheme = {
 
 export default function GolemPage() {
     return (
-        <Project id={GOLEM}>
+        <ProjectPage projectName="golem">
             <Layout theme={LayoutTheme}>
                 <Section {...BlueTheme} menuToggleBackground>
                     <Hero>
@@ -269,7 +269,7 @@ export default function GolemPage() {
                     </Section>
                 </Topic>
             </Layout>
-        </Project>
+        </ProjectPage>
     )
 }
 

@@ -6,16 +6,17 @@ import Bullet from '$shared/Bullet'
 import Container from '$shared/Container'
 import Contributor, { Contributors } from '$shared/Contributor'
 import Display from '$shared/Display'
-import Hero from '$shared/Hero'
 import Layout from '$shared/Layout'
 import Link from '$shared/Link'
-import NextProject from '$shared/NextProject'
-import Project, { HUXTABURGER } from '$shared/Project'
 import ScrollIndicator from '$shared/ScrollIndicator'
 import SectionHeader from '$shared/SectionHeader'
 import Topic from '$shared/Topic'
+import { HeadFC } from 'gatsby'
 import * as React from 'react'
+import { ProjectPage } from '~/components/ProjectPage'
 import { Section } from '~/components/Section'
+import Hero from '~/components/shared/Hero'
+import NextProject from '~/components/shared/NextProject'
 import { Spacer } from '~/components/Spacer'
 import { Seo } from '../components/Seo'
 
@@ -45,7 +46,7 @@ const BlackTheme = {
 
 export default function HuxtaburgerPage() {
     return (
-        <Project id={HUXTABURGER}>
+        <ProjectPage projectName="huxtaburger">
             <Layout theme={LayoutTheme}>
                 <Section {...RedTheme} menuToggleBackground>
                     <Hero>
@@ -189,10 +190,10 @@ export default function HuxtaburgerPage() {
                     </Section>
                 </Topic>
             </Layout>
-        </Project>
+        </ProjectPage>
     )
 }
 
-export const Head = () => {
+export const Head: HeadFC = () => {
     return <Seo projectName="huxtaburger" />
 }

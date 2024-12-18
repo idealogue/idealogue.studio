@@ -1,8 +1,9 @@
-import { useProject } from '$shared/Project'
 import { LG, MD, SM } from '$utils/css'
 import { StaticImage } from 'gatsby-plugin-image'
 import * as React from 'react'
 import styled from 'styled-components'
+import { ProjectName } from '~/types'
+import { useProjectManifest } from '~/utils/project'
 import CobaltImage from './CobaltImage'
 
 const Img = styled.div`
@@ -26,7 +27,7 @@ const Img = styled.div`
     }
 `
 
-const images = {
+const images: Record<ProjectName, React.ReactNode> = {
     cobalt: <CobaltImage as={Img} />,
     golem: <StaticImage as={Img} src="golem.png" alt="Golem" />,
     hive: <StaticImage as={Img} src="hive.png" alt="Hive" />,
@@ -38,5 +39,5 @@ const images = {
 }
 
 export default function HeroImage() {
-    return images[useProject().id]
+    return images[useProjectManifest().name]
 }
