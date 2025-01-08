@@ -1,5 +1,5 @@
 import Image from '$hive/Image'
-import FluidImage from '$shared/FluidImage'
+import { FluidImage } from '$shared/FluidImage'
 import * as React from 'react'
 import styled from 'styled-components'
 

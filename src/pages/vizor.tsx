@@ -13,20 +13,20 @@ import * as React from 'react'
 import { Icons } from '~/components/pages/vizor/Icons'
 import { ProjectPage } from '~/components/ProjectPage'
 import { Section } from '~/components/Section'
-import AutoPlayingVideo from '~/components/shared/AutoPlayingVideo'
-import BrowserFrame from '~/components/shared/BrowserFrame'
-import CaptionedContainer from '~/components/shared/CaptionedContainer'
-import Container from '~/components/shared/Container'
-import Contributor, { Contributors } from '~/components/shared/Contributor'
+import { AutoPlayingVideo } from '~/components/shared/AutoPlayingVideo'
+import { BrowserFrame } from '~/components/shared/BrowserFrame'
+import { CaptionedContainer } from '~/components/shared/CaptionedContainer'
+import { Container } from '~/components/shared/Container'
+import { Contributor, Contributors } from '~/components/shared/Contributor'
 import { FluidImage } from '~/components/shared/FluidImage'
 import Hero from '~/components/shared/Hero'
-import Layout from '~/components/shared/Layout'
+import { Layout } from '~/components/shared/Layout'
 import NextProject from '~/components/shared/NextProject'
-import ScrollIndicator from '~/components/shared/ScrollIndicator'
-import SectionHeader from '~/components/shared/SectionHeader'
+import { ScrollIndicatorTarget } from '~/components/shared/ScrollIndicator'
+import { SectionHeader } from '~/components/shared/SectionHeader'
 import { Spacer } from '~/components/Spacer'
 import { Seo } from '../components/Seo'
-import Topic from '../components/shared/Topic'
+import { Topic } from '../components/shared/Topic'
 
 const LayoutTheme = {
     backgroundColor: '#040322',
@@ -60,7 +60,7 @@ export default function VizorPage() {
                         </p>
                     </Hero>
                 </Section>
-                <ScrollIndicator.Target />
+                <ScrollIndicatorTarget />
                 <Topic title="From Engi.works to Vizor">
                     <Section {...NavyTheme} spacerProps={{ head: true }}>
                         <SectionHeader no={1} />

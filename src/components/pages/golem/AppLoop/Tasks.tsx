@@ -11,9 +11,9 @@ import React, {
     useState,
 } from 'react'
 import styled from 'styled-components'
-import Image from '~/components/pages/golem/Image'
+import { ALL as Image } from '~/components/pages/golem/Image'
 import Glyph, { SLIDE_RIGHT } from '~/components/shared/Glyph'
-import useMounted from '~/hooks/useMounted'
+import { useMounted } from '~/hooks/useMounted'
 import {
     Body,
     Details,

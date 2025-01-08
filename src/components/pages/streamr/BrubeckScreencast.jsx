@@ -1,5 +1,5 @@
-import PrestyledAutoPlayingVideo from '$shared/AutoPlayingVideo'
-import CaptionedContainer from '$shared/CaptionedContainer'
+import { AutoPlayingVideo as PrestyledAutoPlayingVideo } from '$shared/AutoPlayingVideo'
+import { CaptionedContainer } from '$shared/CaptionedContainer'
 import { DESKTOP, TABLET } from '$utils/css'
 import * as React from 'react'
 import styled, { css } from 'styled-components'

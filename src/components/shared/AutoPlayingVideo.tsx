@@ -1,8 +1,13 @@
 import { Video } from '$shared/Video'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, VideoHTMLAttributes } from 'react'
+
+type AutoPlayingVideoProps = Omit<
+    VideoHTMLAttributes<HTMLVideoElement>,
+    'autoPlay'
+>
 
 // `autoPlay` gets dropped from `props` here. We play the video when it's seen for the first time.
-export function AutoPlayingVideo({ autoPlay, ...props }) {
+export function AutoPlayingVideo(props: AutoPlayingVideoProps) {
     const ref = useRef<HTMLVideoElement>(null)
 
     useEffect(() => {

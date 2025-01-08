@@ -4,8 +4,8 @@ import { XofY, XofYRoot } from '$shared/XofY'
 import { SM } from '$utils/css'
 import React, { useReducer } from 'react'
 import styled from 'styled-components'
-import Image from '~/components/pages/golem/Image'
-import Container from '~/components/shared/Container'
+import { ALL as Image } from '~/components/pages/golem/Image'
+import { Container } from '~/components/shared/Container'
 
 export function BetaLaunchPageMobile() {
     const [slide, next] = useReducer((x) => (x + 1) % 4, 0)

@@ -1,7 +1,7 @@
 import gsap from 'gsap'
 import React, { ReactNode, useEffect, useMemo, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
-import useMounted from '~/hooks/useMounted'
+import { useMounted } from '~/hooks/useMounted'
 import { arc } from '~/utils/arc'
 
 const Row = styled.div`

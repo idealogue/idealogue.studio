@@ -1,5 +1,5 @@
+import { CaptionedContainer } from '$shared/CaptionedContainer'
 import React, { Fragment } from 'react'
-import CaptionedContainer from '$shared/CaptionedContainer'
 
 const Ateneum = (props) => (
     <CaptionedContainer

@@ -1,7 +1,7 @@
 import { LG, MD, SM } from '$utils/css'
 import * as React from 'react'
 import styled, { css } from 'styled-components'
-import MenuToggle from '~/components/shared/MenuToggle'
+import { MenuToggle } from '~/components/shared/MenuToggle'
 import { Spacer, SpacerProps } from './Spacer'
 
 const ToggleWrapper = styled.div<{ $toggleColor?: string }>`

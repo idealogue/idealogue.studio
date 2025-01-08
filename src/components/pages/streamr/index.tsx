@@ -5,20 +5,20 @@ import EditorMockup from '$streamr/EditorMockup'
 import Modules from '$streamr/Modules'
 import * as React from 'react'
 import { BrandFilm } from '~/components/pages/streamr/BrandFilm'
-import IconGrid from '~/components/pages/streamr/IconGrid'
+import { IconGrid } from '~/components/pages/streamr/IconGrid'
 import { ProjectPage } from '~/components/ProjectPage'
-import Bullet from '~/components/shared/Bullet'
-import CaptionedContainer from '~/components/shared/CaptionedContainer'
+import { Bullet } from '~/components/shared/Bullet'
+import { CaptionedContainer } from '~/components/shared/CaptionedContainer'
 import { Container } from '~/components/shared/Container'
-import Contributor, { Contributors } from '~/components/shared/Contributor'
+import { Contributor, Contributors } from '~/components/shared/Contributor'
 import { Display } from '~/components/shared/Display'
 import Hero from '~/components/shared/Hero'
-import Layout from '~/components/shared/Layout'
-import Link from '~/components/shared/Link'
+import { Layout } from '~/components/shared/Layout'
+import { Link } from '~/components/shared/Link'
 import NextProject from '~/components/shared/NextProject'
-import ScrollIndicator from '~/components/shared/ScrollIndicator'
-import SectionHeader from '~/components/shared/SectionHeader'
-import Topic from '~/components/shared/Topic'
+import { ScrollIndicatorTarget } from '~/components/shared/ScrollIndicator'
+import { SectionHeader } from '~/components/shared/SectionHeader'
+import { Topic } from '~/components/shared/Topic'
 import { Spacer } from '~/components/Spacer'
 import { Section } from '../../Section'
 import BrubeckScreencast from './BrubeckScreencast'
@@ -73,7 +73,7 @@ export default function StreamrPage() {
                     spacerProps={{ tail: true }}
                     menuToggleColor="currentColor"
                 >
-                    <ScrollIndicator.Target />
+                    <ScrollIndicatorTarget />
                     <Topic
                         mobileTitle="A decentralised data network"
                         title="A decentralised global data network"

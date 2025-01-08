@@ -1,9 +1,9 @@
-import Display from '$shared/Display'
+import { Display } from '$shared/Display'
 import { XofY, XofYRoot } from '$shared/XofY'
 import { LG, MD } from '$utils/css'
 import React, { useReducer } from 'react'
 import styled, { css } from 'styled-components'
-import Image from '~/components/pages/golem/Image'
+import { ALL as Image } from '~/components/pages/golem/Image'
 import {
     Fontface,
     Mark,
@@ -11,7 +11,7 @@ import {
     Header as PrestyledHeader,
     Row as PrestyledRow,
 } from '~/components/shared/Brand'
-import Container from '~/components/shared/Container'
+import { Container } from '~/components/shared/Container'
 
 const Roboto = styled(Fontface)`
     && {

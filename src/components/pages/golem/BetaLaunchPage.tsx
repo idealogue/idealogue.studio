@@ -3,7 +3,7 @@ import { Container } from '$shared/Container'
 import { FluidImage } from '$shared/FluidImage'
 import * as React from 'react'
 import styled from 'styled-components'
-import BrowserFrame from '~/components/shared/BrowserFrame'
+import { BrowserFrame } from '~/components/shared/BrowserFrame'
 
 export function BetaLaunchPage() {
     return (

@@ -3,8 +3,8 @@ import { XofY, XofYRoot } from '$shared/XofY'
 import { SM } from '$utils/css'
 import React, { useCallback, useState } from 'react'
 import styled, { css } from 'styled-components'
-import Image from '~/components/pages/golem/Image'
-import CaptionedContainer from '~/components/shared/CaptionedContainer'
+import { ALL as Image } from '~/components/pages/golem/Image'
+import { CaptionedContainer } from '~/components/shared/CaptionedContainer'
 import Glyph, { SLIDE_LEFT, SLIDE_RIGHT } from '~/components/shared/Glyph'
 
 interface SlideProps {

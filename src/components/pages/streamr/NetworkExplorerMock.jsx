@@ -1,4 +1,4 @@
-import CaptionedContainer from '$shared/CaptionedContainer'
+import { CaptionedContainer } from '$shared/CaptionedContainer'
 import { TABLET } from '$utils/css'
 import * as React from 'react'
 import styled, { css } from 'styled-components'

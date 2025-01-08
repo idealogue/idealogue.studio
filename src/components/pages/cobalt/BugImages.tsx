@@ -3,9 +3,9 @@ import { XofY, XofYRoot } from '$shared/XofY'
 import { MD, SM } from '$utils/css'
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
-import Image from '~/components/pages/cobalt/Image'
-import Container from '~/components/shared/Container'
-import Display from '~/components/shared/Display'
+import { ALL as Image } from '~/components/pages/cobalt/Image'
+import { Container } from '~/components/shared/Container'
+import { Display } from '~/components/shared/Display'
 
 const Cell = styled.div`
     width: 160px;

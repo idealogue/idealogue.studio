@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import CaptionedContainer from '~/components/shared/CaptionedContainer'
+import { CaptionedContainer } from '~/components/shared/CaptionedContainer'
 
 export function Placeholder({ caption, children }: PlaceholderProps) {
     return (

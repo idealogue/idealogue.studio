@@ -1,5 +1,5 @@
-import AutoPlayingVideo from '$shared/AutoPlayingVideo'
-import PhoneFrame from '$shared/PhoneFrame'
+import { AutoPlayingVideo } from '$shared/AutoPlayingVideo'
+import { PhoneFrame } from '$shared/PhoneFrame'
 import { MD, SM } from '$utils/css'
 import * as React from 'react'
 import styled from 'styled-components'

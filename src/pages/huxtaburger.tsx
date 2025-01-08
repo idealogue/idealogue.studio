@@ -6,17 +6,17 @@ import * as React from 'react'
 import { BrowsingVideo } from '~/components/pages/huxtaburger/BrowsingVideo'
 import { ProjectPage } from '~/components/ProjectPage'
 import { Section } from '~/components/Section'
-import Bullet from '~/components/shared/Bullet'
+import { Bullet } from '~/components/shared/Bullet'
 import { Container } from '~/components/shared/Container'
-import Contributor, { Contributors } from '~/components/shared/Contributor'
+import { Contributor, Contributors } from '~/components/shared/Contributor'
 import { Display } from '~/components/shared/Display'
 import Hero from '~/components/shared/Hero'
-import Layout from '~/components/shared/Layout'
-import Link from '~/components/shared/Link'
+import { Layout } from '~/components/shared/Layout'
+import { Link } from '~/components/shared/Link'
 import NextProject from '~/components/shared/NextProject'
-import ScrollIndicator from '~/components/shared/ScrollIndicator'
-import SectionHeader from '~/components/shared/SectionHeader'
-import Topic from '~/components/shared/Topic'
+import { ScrollIndicatorTarget } from '~/components/shared/ScrollIndicator'
+import { SectionHeader } from '~/components/shared/SectionHeader'
+import { Topic } from '~/components/shared/Topic'
 import { Spacer } from '~/components/Spacer'
 import { Seo } from '../components/Seo'
 
@@ -57,7 +57,7 @@ export default function HuxtaburgerPage() {
                         </p>
                     </Hero>
                 </Section>
-                <ScrollIndicator.Target />
+                <ScrollIndicatorTarget />
                 <Topic title="Milk Bar vs Diner">
                     <Section
                         {...WhiteTheme}

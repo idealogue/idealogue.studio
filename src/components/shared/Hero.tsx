@@ -2,8 +2,8 @@ import HeroImage from '$shared/HeroImage'
 import { LG, MD, SM } from '$utils/css'
 import * as React from 'react'
 import styled from 'styled-components'
-import Container from '~/components/shared/Container'
-import ScrollIndicator from '~/components/shared/ScrollIndicator'
+import { Container } from '~/components/shared/Container'
+import { ScrollIndicator } from '~/components/shared/ScrollIndicator'
 import { useProjectManifest } from '~/utils/project'
 
 const Inner = styled.div`

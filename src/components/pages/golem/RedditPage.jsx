@@ -1,8 +1,8 @@
-import Image from '$golem/Image'
-import BrowserFrame from '$shared/BrowserFrame'
-import CaptionedContainer from '$shared/CaptionedContainer'
-import Container from '$shared/Container'
-import FluidImage from '$shared/FluidImage'
+import { ALL as Image } from '$golem/Image'
+import { BrowserFrame } from '$shared/BrowserFrame'
+import { CaptionedContainer } from '$shared/CaptionedContainer'
+import { Container } from '$shared/Container'
+import { FluidImage } from '$shared/FluidImage'
 import * as React from 'react'
 import styled from 'styled-components'
 

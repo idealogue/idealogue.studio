@@ -1,5 +1,5 @@
-import Display from '$shared/Display'
-import FluidImage from '$shared/FluidImage'
+import { Display } from '$shared/Display'
+import { FluidImage } from '$shared/FluidImage'
 import * as React from 'react'
 import styled from 'styled-components'
 import Image from './Image'

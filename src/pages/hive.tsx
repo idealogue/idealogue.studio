@@ -6,16 +6,16 @@ import * as React from 'react'
 import { OldWallet } from '~/components/pages/hive/OldWallet'
 import { ProjectPage } from '~/components/ProjectPage'
 import { Section } from '~/components/Section'
-import BrowserFrame from '~/components/shared/BrowserFrame'
+import { BrowserFrame } from '~/components/shared/BrowserFrame'
 import { Container } from '~/components/shared/Container'
-import Contributor, { Contributors } from '~/components/shared/Contributor'
+import { Contributor, Contributors } from '~/components/shared/Contributor'
 import { FluidImage } from '~/components/shared/FluidImage'
 import Hero from '~/components/shared/Hero'
-import Layout from '~/components/shared/Layout'
+import { Layout } from '~/components/shared/Layout'
 import NextProject from '~/components/shared/NextProject'
-import ScrollIndicator from '~/components/shared/ScrollIndicator'
-import SectionHeader from '~/components/shared/SectionHeader'
-import Topic from '~/components/shared/Topic'
+import { ScrollIndicatorTarget } from '~/components/shared/ScrollIndicator'
+import { SectionHeader } from '~/components/shared/SectionHeader'
+import { Topic } from '~/components/shared/Topic'
 import { Spacer } from '~/components/Spacer'
 import { Seo } from '../components/Seo'
 
@@ -50,7 +50,7 @@ export default function HivePage() {
                         </p>
                     </Hero>
                 </Section>
-                <ScrollIndicator.Target />
+                <ScrollIndicatorTarget />
                 <Topic title="Hex Wild">
                     <Section
                         {...WhiteTheme}

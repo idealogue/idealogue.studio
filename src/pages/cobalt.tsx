@@ -7,16 +7,16 @@ import {
 } from '~/components/pages/cobalt/ClarityImages'
 import { LogoImage } from '~/components/pages/cobalt/LogoImage'
 import { ProjectPage } from '~/components/ProjectPage'
-import Bullet from '~/components/shared/Bullet'
-import Container from '~/components/shared/Container'
-import Contributor, { Contributors } from '~/components/shared/Contributor'
+import { Bullet } from '~/components/shared/Bullet'
+import { Container } from '~/components/shared/Container'
+import { Contributor, Contributors } from '~/components/shared/Contributor'
 import Hero from '~/components/shared/Hero'
-import Layout from '~/components/shared/Layout'
-import Link from '~/components/shared/Link'
+import { Layout } from '~/components/shared/Layout'
+import { Link } from '~/components/shared/Link'
 import NextProject from '~/components/shared/NextProject'
-import ScrollIndicator from '~/components/shared/ScrollIndicator'
-import SectionHeader from '~/components/shared/SectionHeader'
-import Topic from '~/components/shared/Topic'
+import { ScrollIndicatorTarget } from '~/components/shared/ScrollIndicator'
+import { SectionHeader } from '~/components/shared/SectionHeader'
+import { Topic } from '~/components/shared/Topic'
 import { Spacer } from '~/components/Spacer'
 import { Section } from '../components/Section'
 import { Seo } from '../components/Seo'
@@ -47,7 +47,7 @@ export default function CobaltPage() {
                         </p>
                     </Hero>
                 </Section>
-                <ScrollIndicator.Target />
+                <ScrollIndicatorTarget />
                 <Topic title="Crowd Powered">
                     <Section
                         {...LightTheme}

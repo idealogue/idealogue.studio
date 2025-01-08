@@ -3,7 +3,7 @@ import * as React from 'react'
 import { Collection, Person } from '~/components/pages/team/Person'
 import { Section } from '~/components/Section'
 import { FluidImage } from '~/components/shared/FluidImage'
-import Layout from '~/components/shared/Layout'
+import { Layout } from '~/components/shared/Layout'
 import { Seo } from '../components/Seo'
 
 const LayoutTheme = {

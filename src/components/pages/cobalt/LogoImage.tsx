@@ -1,7 +1,7 @@
 import { FluidImage } from '$shared/FluidImage'
 import * as React from 'react'
 import styled from 'styled-components'
-import Image from '~/components/pages/cobalt/Image'
+import { ALL as Image } from '~/components/pages/cobalt/Image'
 
 export function LogoImage() {
     return (

@@ -3,9 +3,9 @@ import { PhoneFrame, PhoneFrameRoot } from '$shared/PhoneFrame'
 import { LG, MD, SM } from '$utils/css'
 import * as React from 'react'
 import styled from 'styled-components'
-import Image from '~/components/pages/cobalt/Image'
-import Container from '~/components/shared/Container'
-import Display from '~/components/shared/Display'
+import { ALL as Image } from '~/components/pages/cobalt/Image'
+import { Container } from '~/components/shared/Container'
+import { Display } from '~/components/shared/Display'
 
 const Frames = styled.div`
     ${PhoneFrameRoot} {

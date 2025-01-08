@@ -1,7 +1,7 @@
 import { PhoneFrame, PhoneFrameRoot } from '$shared/PhoneFrame'
 import * as React from 'react'
 import styled from 'styled-components'
-import AutoPlayingVideo from '~/components/shared/AutoPlayingVideo'
+import { AutoPlayingVideo } from '~/components/shared/AutoPlayingVideo'
 
 export function BrowsingVideo() {
     return (

@@ -56,7 +56,7 @@ export function OtherLink({ children, opposite, to }: OtherLinkProps) {
             <ThemeProvider theme={theme}>
                 {!!opposite && (
                     <div>
-                        <Link nodecor to={to}>
+                        <Link noDecor to={to}>
                             <Glyph source={ARROW_LEFT} />
                         </Link>
                     </div>
@@ -66,7 +66,7 @@ export function OtherLink({ children, opposite, to }: OtherLinkProps) {
                 </div>
                 {!opposite && (
                     <div>
-                        <Link nodecor to={to}>
+                        <Link noDecor to={to}>
                             <Glyph source={ARROW_RIGHT} />
                         </Link>
                     </div>

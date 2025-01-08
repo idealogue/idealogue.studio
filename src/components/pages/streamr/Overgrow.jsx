@@ -1,4 +1,4 @@
-import Container from '$shared/Container'
+import { Container } from '$shared/Container'
 import { XLDESKTOP } from '$utils/css'
 import * as React from 'react'
 import styled from 'styled-components'

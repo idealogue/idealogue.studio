@@ -6,7 +6,7 @@ import { LG, MD, XL } from '$utils/css'
 import React, { useEffect, useReducer } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import styled, { css } from 'styled-components'
-import CaptionedContainer from '~/components/shared/CaptionedContainer'
+import { CaptionedContainer } from '~/components/shared/CaptionedContainer'
 import { Gallery } from '~/components/shared/Gallery'
 
 /**

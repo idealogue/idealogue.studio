@@ -2,7 +2,7 @@ import gsap from 'gsap'
 import React, { useEffect, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
 import Glyph, { HIGH, LOW } from '~/components/shared/Glyph'
-import useMounted from '~/hooks/useMounted'
+import { useMounted } from '~/hooks/useMounted'
 import { TouchIndicator } from './TouchIndicator'
 
 export function Icon({ source, ...props }) {

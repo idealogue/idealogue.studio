@@ -1,6 +1,6 @@
 import Image from '$hux/Image'
-import Container from '$shared/Container'
-import FluidImage from '$shared/FluidImage'
+import { Container } from '$shared/Container'
+import { FluidImage } from '$shared/FluidImage'
 import { MD } from '$utils/css'
 import * as React from 'react'
 import styled from 'styled-components'

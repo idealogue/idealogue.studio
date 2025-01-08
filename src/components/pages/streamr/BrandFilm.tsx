@@ -5,7 +5,7 @@ import {
     VideoPlayer,
     VideoPlayerRoot,
 } from '~/components/pages/streamr/VideoPlayer'
-import CaptionedContainer from '~/components/shared/CaptionedContainer'
+import { CaptionedContainer } from '~/components/shared/CaptionedContainer'
 import { Padded as PrestyledPadded } from '~/components/shared/Padded'
 import Still2x from './Image/Streamr_Vid_Poster@2x.jpg'
 

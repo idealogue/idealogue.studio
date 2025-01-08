@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Glyph, { ARROW_RIGHT } from '~/components/shared/Glyph'
-import Link from '~/components/shared/Link'
+import { Link } from '~/components/shared/Link'
 import { useNextProjectManifest } from '~/utils/project'
 
 type NextProjectProps = React.HTMLAttributes<HTMLDivElement>
@@ -15,7 +15,7 @@ const UnstyledNextProject = (props: NextProjectProps) => {
                 <div className="label">Next Project</div>
                 <div className="inner">
                     <Link to={url}>{displayName}</Link>
-                    <Link nodecor to={url}>
+                    <Link noDecor to={url}>
                         <Glyph source={ARROW_RIGHT} />
                     </Link>
                 </div>

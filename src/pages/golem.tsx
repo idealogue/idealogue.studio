@@ -14,14 +14,14 @@ import { Golems } from '~/components/pages/golem/Golems'
 import { ProjectPage } from '~/components/ProjectPage'
 import { Section } from '~/components/Section'
 import { Container } from '~/components/shared/Container'
-import Contributor, { Contributors } from '~/components/shared/Contributor'
+import { Contributor, Contributors } from '~/components/shared/Contributor'
 import { Display } from '~/components/shared/Display'
 import Hero from '~/components/shared/Hero'
-import Layout from '~/components/shared/Layout'
+import { Layout } from '~/components/shared/Layout'
 import NextProject from '~/components/shared/NextProject'
-import ScrollIndicator from '~/components/shared/ScrollIndicator'
-import SectionHeader from '~/components/shared/SectionHeader'
-import Topic from '~/components/shared/Topic'
+import { ScrollIndicatorTarget } from '~/components/shared/ScrollIndicator'
+import { SectionHeader } from '~/components/shared/SectionHeader'
+import { Topic } from '~/components/shared/Topic'
 import { Spacer } from '~/components/Spacer'
 import { Seo } from '../components/Seo'
 
@@ -70,7 +70,7 @@ export default function GolemPage() {
                         </p>
                     </Hero>
                 </Section>
-                <ScrollIndicator.Target />
+                <ScrollIndicatorTarget />
                 <Topic title="User Experience First">
                     <Section
                         {...WhiteTheme}
