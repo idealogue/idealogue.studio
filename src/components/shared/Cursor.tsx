@@ -143,7 +143,7 @@ interface CursorProps
 
 export function Cursor({
     children,
-    direction = 'left',
+    direction,
     color,
     onMouseEnter: onMouseEnterProp,
     onMouseLeave: onMouseLeaveProp,
