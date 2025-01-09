@@ -331,7 +331,6 @@ export default function StreamrPage() {
                             <SectionHeader no={6}>
                                 <Bullet />
                                 <Link
-                                    as="a"
                                     href="https://streamr.network/"
                                     target="_blank"
                                     rel="noopener noreferrer"

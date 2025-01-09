@@ -125,7 +125,6 @@ export default function CobaltPage() {
                         <SectionHeader no={4}>
                             <Bullet />
                             <Link
-                                as="a"
                                 href="https://cobalt.io/"
                                 target="_blank"
                                 rel="noopener noreferrer"

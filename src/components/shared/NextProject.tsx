@@ -1,3 +1,4 @@
+import { Link as GatsbyLink } from 'gatsby'
 import * as React from 'react'
 import styled from 'styled-components'
 import Glyph, { ARROW_RIGHT } from '~/components/shared/Glyph'
@@ -14,8 +15,10 @@ const UnstyledNextProject = (props: NextProjectProps) => {
             <div>
                 <div className="label">Next Project</div>
                 <div className="inner">
-                    <Link to={url}>{displayName}</Link>
-                    <Link noDecor to={url}>
+                    <Link as={GatsbyLink} to={url}>
+                        {displayName}
+                    </Link>
+                    <Link as={GatsbyLink} $noDecor to={url}>
                         <Glyph source={ARROW_RIGHT} />
                     </Link>
                 </div>

@@ -159,7 +159,6 @@ export default function HuxtaburgerPage() {
                         <SectionHeader no={5}>
                             <Bullet />
                             <Link
-                                as="a"
                                 href="http://huxtaburger.idealogue.io/"
                                 target="_blank"
                                 rel="noopener noreferrer"

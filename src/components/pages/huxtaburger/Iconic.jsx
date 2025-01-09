@@ -91,7 +91,7 @@ const Iconic = (props) => (
                 </Cell>
             </Row>
         </Display>
-        <Display as={Container} xs="none" md="block">
+        <Display as={Container} xs="none" md>
             <Row>
                 <Cell>
                     <Bills />

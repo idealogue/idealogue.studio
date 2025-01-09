@@ -19,9 +19,19 @@ const Caption = styled(PrestyledCaption)`
     }
 `
 
-export function CaptionedContainer({ caption, children }) {
+interface CaptionedContainerProps {
+    className?: string
+    caption: React.ReactNode
+    children: React.ReactNode
+}
+
+export function CaptionedContainer({
+    className,
+    caption,
+    children,
+}: CaptionedContainerProps) {
     return (
-        <div>
+        <div className={className}>
             <div>{children}</div>
             <Caption>{caption}</Caption>
         </div>

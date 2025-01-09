@@ -1,4 +1,5 @@
 import { LG, MD } from '$utils/css'
+import { Link as GatsbyLink } from 'gatsby'
 import React, { Fragment } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import { Container } from '~/components/shared/Container'
@@ -129,7 +130,10 @@ export default function IndexPage() {
                             {lineup.map((name, index) => (
                                 <Fragment key={name}>
                                     <li>
-                                        <Link to={getProjectManifest(name).url}>
+                                        <Link
+                                            as={GatsbyLink}
+                                            to={getProjectManifest(name).url}
+                                        >
                                             {
                                                 getProjectManifest(name)
                                                     .displayName
@@ -143,7 +147,9 @@ export default function IndexPage() {
                         <h2>Team</h2>
                         <LinkList>
                             <li>
-                                <Link to="/team/">About us</Link>
+                                <Link as={GatsbyLink} to="/team/">
+                                    About us
+                                </Link>
                             </li>
                         </LinkList>
                         <footer>
@@ -154,10 +160,9 @@ export default function IndexPage() {
                                 <br />
                                 Melbourne Australia
                             </p>
-                            <Display as="p" xs="none" md="block">
+                            <Display as="p" xs="none" md>
                                 Build by{' '}
                                 <Link
-                                    as="a"
                                     href="https://www.mariusz.io"
                                     rel="noopener noreferrer"
                                     target="_blank"
@@ -166,7 +171,6 @@ export default function IndexPage() {
                                 </Link>
                                 <br />
                                 <Link
-                                    as="a"
                                     href="https://lettersfromsweden.se/font/lab-grotesque/"
                                     rel="noopener noreferrer"
                                     target="_blank"
@@ -176,7 +180,6 @@ export default function IndexPage() {
                                 by Letters from Sweden
                                 <br />
                                 <Link
-                                    as="a"
                                     href="https://commercialtype.com/catalog/publico"
                                     rel="noopener noreferrer"
                                     target="_blank"
@@ -185,13 +188,12 @@ export default function IndexPage() {
                                 </Link>{' '}
                                 by Commercial Type
                             </Display>
-                            <Display as="p" xs="none" md="block">
+                            <Display as="p" xs="none" md>
                                 <Link as="a" href="mailto:matt@idealogue.io">
                                     Email us
                                 </Link>
                                 <br />
                                 <Link
-                                    as="a"
                                     href="https://twitter.com/idealogue"
                                     rel="noopener noreferrer"
                                     target="_blank"

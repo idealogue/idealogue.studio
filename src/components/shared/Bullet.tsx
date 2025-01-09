@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 export function Bullet() {
-    return <BulletRoot>&bullet;</BulletRoot>
+    return <BulletRoot>&bull;</BulletRoot>
 }
 
 const BulletRoot = styled.span`

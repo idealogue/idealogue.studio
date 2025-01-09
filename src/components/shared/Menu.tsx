@@ -1,4 +1,5 @@
 import { LG, MD, SM } from '$utils/css'
+import { Link as GatsbyLink } from 'gatsby'
 import React, { HTMLAttributes, useEffect } from 'react'
 import styled, { css, ThemeProvider } from 'styled-components'
 import { Front } from '~/components/shared/Front'
@@ -118,6 +119,7 @@ export function Menu(props: MenuProps) {
                                 {lineup.map((name) => (
                                     <li key={name}>
                                         <Link
+                                            as={GatsbyLink}
                                             to={getProjectManifest(name).url}
                                             onClick={(e) => {
                                                 if (project?.name === name) {
@@ -134,7 +136,7 @@ export function Menu(props: MenuProps) {
                                     </li>
                                 ))}
                                 <li>
-                                    <Link to="/">
+                                    <Link as={GatsbyLink} to="/">
                                         &rarr; Back to the top page
                                     </Link>
                                 </li>

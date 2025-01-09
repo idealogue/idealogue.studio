@@ -1,4 +1,5 @@
 import { BOLD } from '$utils/css'
+import { Link as GatsbyLink } from 'gatsby'
 import * as React from 'react'
 import styled, { css, ThemeProvider } from 'styled-components'
 import Glyph, { ARROW_LEFT, ARROW_RIGHT } from '~/components/shared/Glyph'
@@ -56,17 +57,19 @@ export function OtherLink({ children, opposite, to }: OtherLinkProps) {
             <ThemeProvider theme={theme}>
                 {!!opposite && (
                     <div>
-                        <Link noDecor to={to}>
+                        <Link $noDecor as={GatsbyLink} to={to}>
                             <Glyph source={ARROW_LEFT} />
                         </Link>
                     </div>
                 )}
                 <div>
-                    <Link to={to}>{children}</Link>
+                    <Link as={GatsbyLink} to={to}>
+                        {children}
+                    </Link>
                 </div>
                 {!opposite && (
                     <div>
-                        <Link noDecor to={to}>
+                        <Link $noDecor as={GatsbyLink} to={to}>
                             <Glyph source={ARROW_RIGHT} />
                         </Link>
                     </div>

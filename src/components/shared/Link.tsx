@@ -1,16 +1,6 @@
-import { Link as GatsbyLink, GatsbyLinkProps } from 'gatsby'
-import * as React from 'react'
 import styled, { css } from 'styled-components'
 
-interface LinkProps extends GatsbyLinkProps<{}> {
-    noDecor?: boolean
-}
-
-export function Link({ noDecor, ...props }: LinkProps) {
-    return <LinkRoot {...(props as any)} $noDecor={noDecor} />
-}
-
-const LinkRoot = styled(GatsbyLink)<{ $noDecor?: boolean }>`
+export const Link = styled.a<{ $noDecor?: boolean }>`
     color: inherit;
 
     &,
