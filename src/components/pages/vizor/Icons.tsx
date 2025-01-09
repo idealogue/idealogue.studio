@@ -84,7 +84,7 @@ export function Icons() {
     return (
         <IconsRoot>
             <Container>
-                <Display as={Inner} xs="none" sm="block">
+                <Display as={Inner} xs="none" sm>
                     <Row>
                         <Cell>
                             <FluidImage src={Image.ASSETS[0]} />

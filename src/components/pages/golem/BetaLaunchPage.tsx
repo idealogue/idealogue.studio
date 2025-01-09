@@ -5,9 +5,13 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { BrowserFrame } from '~/components/shared/BrowserFrame'
 
-export function BetaLaunchPage() {
+interface BetaLaunchPageProps {
+    className?: string
+}
+
+export function BetaLaunchPage({ className }: BetaLaunchPageProps) {
     return (
-        <BetaLaunchPageRoot>
+        <BetaLaunchPageRoot className={className}>
             <Container>
                 <BrowserFrame>
                     <FluidImage src={Image.BETA_LAUNCH} />

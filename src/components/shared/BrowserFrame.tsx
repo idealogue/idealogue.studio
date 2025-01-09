@@ -2,9 +2,11 @@ import { MD, SM, XL } from '$utils/css'
 import * as React from 'react'
 import styled, { css } from 'styled-components'
 
+type ShadowValue = 'light' | boolean
+
 interface BrowserFrameProps {
     children?: React.ReactNode
-    shadow?: 'light'
+    shadow?: ShadowValue
     dark?: boolean
 }
 
@@ -25,7 +27,7 @@ export function BrowserFrame({
     )
 }
 
-const BrowserFrameRoot = styled.div<{ $shadow?: 'light'; $dark?: boolean }>`
+const BrowserFrameRoot = styled.div<{ $shadow?: ShadowValue; $dark?: boolean }>`
     border-radius: 4px;
     overflow: hidden;
     position: relative;

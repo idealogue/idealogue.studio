@@ -22,7 +22,7 @@ const Caption = styled(PrestyledCaption)`
 interface CaptionedContainerProps {
     className?: string
     caption: React.ReactNode
-    children: React.ReactNode
+    children?: React.ReactNode
 }
 
 export function CaptionedContainer({

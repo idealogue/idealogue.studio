@@ -48,7 +48,7 @@ const Iconic = (props) => (
                 </Cell>
             </Row>
         </Display>
-        <Display as={Container} xs="none" sm="block" md="none">
+        <Display as={Container} xs="none" sm md="none">
             <Row>
                 <Cell>
                     <Bills />

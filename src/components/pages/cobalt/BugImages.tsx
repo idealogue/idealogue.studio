@@ -93,7 +93,7 @@ export function BugImages() {
     return (
         <BugImagesRoot>
             <Container>
-                <Display as={Inner} xs="none" sm="block">
+                <Display as={Inner} xs="none" sm>
                     <Row>
                         {Image.BUGS.slice(0, 3).map((src) => (
                             <Cell key={src}>

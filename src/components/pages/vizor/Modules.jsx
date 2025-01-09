@@ -12,7 +12,7 @@ const UnstyledModules = (props) => (
         <div>
             <FluidImage src={Image.UI_1} />
         </div>
-        <Display xs="none" sm="block">
+        <Display xs="none" sm>
             <FluidImage src={Image.UI_2} />
         </Display>
     </div>

@@ -327,7 +327,7 @@ const useFrame = (inViewport: boolean): [Frame, () => void] => {
     return useMemo(() => [frame, next], [frame, next])
 }
 
-const PlusGlyph = styled(Glyph).attrs(() => ({ source: PLUS }))`
+const PlusGlyph = styled(Glyph)`
     && {
         display: none;
 
@@ -337,7 +337,7 @@ const PlusGlyph = styled(Glyph).attrs(() => ({ source: PLUS }))`
     }
 `
 
-const BookGlyph = styled(Glyph).attrs(() => ({ source: BOOK }))`
+const BookGlyph = styled(Glyph)`
     && {
         display: none;
 
@@ -346,7 +346,7 @@ const BookGlyph = styled(Glyph).attrs(() => ({ source: BOOK }))`
         }
     }
 `
-const SettingsGlyph = styled(Glyph).attrs(() => ({ source: SETTINGS }))`
+const SettingsGlyph = styled(Glyph)`
     && {
         display: none;
 
@@ -447,9 +447,9 @@ export function AppLoop() {
                             </Tabs>
                         </HeaderInner>
                         <HeaderIcons>
-                            <PlusGlyph />
-                            <BookGlyph />
-                            <SettingsGlyph />
+                            <PlusGlyph source={PLUS} />
+                            <BookGlyph source={BOOK} />
+                            <SettingsGlyph source={SETTINGS} />
                         </HeaderIcons>
                     </Header>
                     <Underline width={underlineWidth} x={underlineX} />

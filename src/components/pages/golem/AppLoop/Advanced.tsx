@@ -168,7 +168,7 @@ const Circle = ({ angle: angleProp }: CircleProps) => {
         }
     }, [angleProp, isMounted])
 
-    const d = useMemo(() => arc(null, 50, 50, 48, 0, angle, 0), [angle])
+    const d = useMemo(() => arc('', 50, 50, 48, 0, angle, 0), [angle])
 
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">

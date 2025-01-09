@@ -68,7 +68,10 @@ const SlideRoot = styled.div<{
         `}
 `
 
-export function PhoneFrame({ children }: HTMLAttributes<HTMLDivElement>) {
+export function PhoneFrame({
+    children,
+    className,
+}: HTMLAttributes<HTMLDivElement>) {
     const [slide, next] = useReducer(
         (x) => (x + 1) % React.Children.count(children),
         0
@@ -77,7 +80,7 @@ export function PhoneFrame({ children }: HTMLAttributes<HTMLDivElement>) {
     const n = React.Children.count(children)
 
     return (
-        <PhoneFrameRoot>
+        <PhoneFrameRoot className={className}>
             {n > 1 && (
                 <XofY
                     x={slide + 1}

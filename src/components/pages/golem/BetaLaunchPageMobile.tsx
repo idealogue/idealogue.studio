@@ -7,11 +7,15 @@ import styled from 'styled-components'
 import { ALL as Image } from '~/components/pages/golem/Image'
 import { Container } from '~/components/shared/Container'
 
-export function BetaLaunchPageMobile() {
+interface BetaLaunchPageMobileProps {
+    className?: string
+}
+
+export function BetaLaunchPageMobile({ className }: BetaLaunchPageMobileProps) {
     const [slide, next] = useReducer((x) => (x + 1) % 4, 0)
 
     return (
-        <BetaLaunchPageMobileRoot>
+        <BetaLaunchPageMobileRoot className={className}>
             <Container>
                 <PhoneFrame>
                     <Inner $slide={slide} onClick={next}>

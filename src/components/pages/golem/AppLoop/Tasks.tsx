@@ -19,7 +19,7 @@ import {
     Details,
     DoneAt,
     Eta,
-    Task as HistoryTask,
+    TaskRoot as PrestyledTaskRoot,
     Separator,
     Title,
 } from './History'
@@ -85,7 +85,7 @@ interface TaskProps {
 
 function Task({ title, eta, doneAt, completness }: TaskProps) {
     return (
-        <TaskRoot as="div">
+        <TaskRoot>
             {completness != null && (
                 <CompletenessCloak $progress={completness} />
             )}
@@ -113,7 +113,7 @@ function Task({ title, eta, doneAt, completness }: TaskProps) {
     )
 }
 
-const TaskRoot = styled(HistoryTask)`
+const TaskRoot = styled(PrestyledTaskRoot)`
     position: relative;
 
     ${Body} {

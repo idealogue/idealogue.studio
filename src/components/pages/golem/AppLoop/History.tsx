@@ -44,6 +44,7 @@ interface TaskProps {
     title: string
     eta: string
     doneAt: string
+    className?: string
 }
 
 export function Task({ reward, title, eta, doneAt }: TaskProps) {
@@ -64,7 +65,7 @@ export function Task({ reward, title, eta, doneAt }: TaskProps) {
     )
 }
 
-const TaskRoot = styled.div`
+export const TaskRoot = styled.div`
     & + & {
         border-top: 1px solid #cbcbcb;
     }
