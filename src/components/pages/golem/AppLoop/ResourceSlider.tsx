@@ -1,11 +1,15 @@
 import gsap from 'gsap'
 import React, { useEffect, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
-import Glyph, { HIGH, LOW } from '~/components/shared/Glyph'
+import Glyph, { GlyphSource, HIGH, LOW } from '~/components/shared/Glyph'
 import { useMounted } from '~/hooks/useMounted'
 import { TouchIndicator } from './TouchIndicator'
 
-export function Icon({ source, ...props }) {
+interface IconProps {
+    source: GlyphSource
+}
+
+export function Icon({ source }: IconProps) {
     return (
         <IconRoot>
             <Glyph source={source} />

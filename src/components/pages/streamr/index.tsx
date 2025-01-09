@@ -1,11 +1,11 @@
 import '@ibm/plex/css/ibm-plex.css'
 
 import Surround from '$shared/Surround'
-import EditorMockup from '$streamr/EditorMockup'
-import Modules from '$streamr/Modules'
 import * as React from 'react'
 import { BrandFilm } from '~/components/pages/streamr/BrandFilm'
+import { EditorMockup } from '~/components/pages/streamr/EditorMockup'
 import { IconGrid } from '~/components/pages/streamr/IconGrid'
+import { Modules } from '~/components/pages/streamr/Modules'
 import { ProjectPage } from '~/components/ProjectPage'
 import { Bullet } from '~/components/shared/Bullet'
 import { CaptionedContainer } from '~/components/shared/CaptionedContainer'
@@ -21,9 +21,9 @@ import { SectionHeader } from '~/components/shared/SectionHeader'
 import { Topic } from '~/components/shared/Topic'
 import { Spacer } from '~/components/Spacer'
 import { Section } from '../../Section'
-import BrubeckScreencast from './BrubeckScreencast'
-import CoreMarketplace from './CoreMarketplace'
-import NetworkExplorerMock from './NetworkExplorerMock'
+import { BrubeckScreencast } from './BrubeckScreencast'
+import { CoreMarketplace } from './CoreMarketplace'
+import { NetworkExplorerMock } from './NetworkExplorerMock'
 
 const LayoutTheme = {
     backgroundColor: '#f3f3f3',

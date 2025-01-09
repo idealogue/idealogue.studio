@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-interface GlyphSource {
+export interface GlyphSource {
     d: string
     viewBox: string
 }

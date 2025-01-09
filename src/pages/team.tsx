@@ -1,5 +1,5 @@
-import Image from '$team/Image'
 import * as React from 'react'
+import { ALL as Image } from '~/components/pages/team/Image'
 import { Collection, Person } from '~/components/pages/team/Person'
 import { Section } from '~/components/Section'
 import { FluidImage } from '~/components/shared/FluidImage'

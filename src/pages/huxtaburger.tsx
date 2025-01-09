@@ -1,9 +1,15 @@
-import Iconic from '$hux/Iconic'
-import Neon from '$hux/Neon'
-import { Collage, CollageA, CollageB, LargeSign, Logo } from '$hux/Pics'
 import { HeadFC } from 'gatsby'
 import * as React from 'react'
 import { BrowsingVideo } from '~/components/pages/huxtaburger/BrowsingVideo'
+import { Iconic } from '~/components/pages/huxtaburger/Iconic'
+import { Neon } from '~/components/pages/huxtaburger/Neon'
+import {
+    Collage,
+    CollageA,
+    CollageB,
+    LargeSign,
+    Logo,
+} from '~/components/pages/huxtaburger/Pics'
 import { ProjectPage } from '~/components/ProjectPage'
 import { Section } from '~/components/Section'
 import { Bullet } from '~/components/shared/Bullet'

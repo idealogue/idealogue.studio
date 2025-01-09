@@ -1,6 +1,6 @@
-import PlayButton from '$streamr/PlayButton'
 import React, { ReactNode, useCallback, useReducer, useRef } from 'react'
 import styled from 'styled-components'
+import { PlayButton } from '~/components/pages/streamr/PlayButton'
 import { Video } from '~/components/shared/Video'
 
 const Inner = styled.div`

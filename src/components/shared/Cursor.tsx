@@ -31,7 +31,11 @@ const Context = createContext<CursorContext>({
 
 const useArrowCursor = () => useContext(Context)
 
-export const Provider = ({ children }) => {
+interface ProviderProps {
+    children?: ReactNode
+}
+
+export const Provider = ({ children }: ProviderProps) => {
     const [direction, setDirection] = useState<Direction>()
 
     const [color, setColor] = useState<string>()
@@ -66,7 +70,7 @@ function ArrowInner() {
     const left = direction === 'left'
 
     useEffect(() => {
-        const onMouseMove = ({ clientX, clientY }) => {
+        const onMouseMove = ({ clientX, clientY }: MouseEvent) => {
             if (typeof window === 'undefined') {
                 return
             }

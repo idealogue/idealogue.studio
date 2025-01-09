@@ -95,7 +95,7 @@ export function Menu(props: MenuProps) {
     }
 
     useEffect(() => {
-        const onClose = ({ key }) => {
+        const onClose = ({ key }: KeyboardEvent) => {
             if (isOpen && key === 'Escape') {
                 close()
             }

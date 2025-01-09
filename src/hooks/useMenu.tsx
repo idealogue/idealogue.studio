@@ -1,5 +1,6 @@
 import React, {
     createContext,
+    ReactNode,
     useCallback,
     useContext,
     useMemo,
@@ -12,7 +13,11 @@ const MenuContext = createContext({
     open: () => {},
 })
 
-export const MenuProvider = ({ children }) => {
+interface MenuProviderProps {
+    children?: ReactNode
+}
+
+export function MenuProvider({ children }: MenuProviderProps) {
     const [isOpen, setIsOpen] = useState(false)
 
     const open = useCallback(() => {

@@ -1,4 +1,3 @@
-import Image from '$hive/Image'
 import { Container } from '$shared/Container'
 import { Display } from '$shared/Display'
 import { FluidImage } from '$shared/FluidImage'
@@ -6,6 +5,33 @@ import { PhoneFrame, PhoneFrameRoot } from '$shared/PhoneFrame'
 import { LG, MD } from '$utils/css'
 import * as React from 'react'
 import styled from 'styled-components'
+import { ALL as Image } from '~/components/pages/hive/Image'
+
+export function OldWallet() {
+    return (
+        <div>
+            <Container>
+                <Inner>
+                    <PhoneFrame>
+                        <FluidImage src={Image.MOBILE_1} alt="Wallet" />
+                        <FluidImage src={Image.MOBILE_2} alt="Wallet" />
+                        <FluidImage src={Image.MOBILE_3} alt="Wallet" />
+                        <FluidImage src={Image.MOBILE_4} alt="Wallet" />
+                    </PhoneFrame>
+                    <Display as={PhoneFrame} xs="none" md>
+                        <FluidImage src={Image.MOBILE_2} alt="Wallet" />
+                    </Display>
+                    <Display as={PhoneFrame} xs="none" md>
+                        <FluidImage src={Image.MOBILE_3} alt="Wallet" />
+                    </Display>
+                    <Display as={PhoneFrame} xs="none" md lg="none">
+                        <FluidImage src={Image.MOBILE_4} alt="Wallet" />
+                    </Display>
+                </Inner>
+            </Container>
+        </div>
+    )
+}
 
 const Inner = styled.div`
     display: flex;
@@ -44,29 +70,3 @@ const Inner = styled.div`
         }
     }
 `
-
-export function OldWallet() {
-    return (
-        <div>
-            <Container>
-                <Inner>
-                    <PhoneFrame>
-                        <FluidImage src={Image.MOBILE_1} alt="Wallet" />
-                        <FluidImage src={Image.MOBILE_2} alt="Wallet" />
-                        <FluidImage src={Image.MOBILE_3} alt="Wallet" />
-                        <FluidImage src={Image.MOBILE_4} alt="Wallet" />
-                    </PhoneFrame>
-                    <Display as={PhoneFrame} xs="none" md>
-                        <FluidImage src={Image.MOBILE_2} alt="Wallet" />
-                    </Display>
-                    <Display as={PhoneFrame} xs="none" md>
-                        <FluidImage src={Image.MOBILE_3} alt="Wallet" />
-                    </Display>
-                    <Display as={PhoneFrame} xs="none" md lg="none">
-                        <FluidImage src={Image.MOBILE_4} alt="Wallet" />
-                    </Display>
-                </Inner>
-            </Container>
-        </div>
-    )
-}

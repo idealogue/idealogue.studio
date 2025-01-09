@@ -1,11 +1,11 @@
 import { Caption } from '$shared/Caption'
 import { Display } from '$shared/Display'
 import { FluidImage } from '$shared/FluidImage'
-import { MACHINE_IMAGES } from '$streamr/Image'
 import { LG, MD, XL } from '$utils/css'
 import React, { useEffect, useReducer } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import styled, { css } from 'styled-components'
+import { MACHINE_IMAGES } from '~/components/pages/streamr/Image'
 import { CaptionedContainer } from '~/components/shared/CaptionedContainer'
 import { Gallery } from '~/components/shared/Gallery'
 

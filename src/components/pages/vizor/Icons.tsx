@@ -1,9 +1,9 @@
 import { FluidImage } from '$shared/FluidImage'
 import { XofY, XofYRoot } from '$shared/XofY'
 import { LG, MD, SM } from '$utils/css'
-import Image from '$vizor/Image'
 import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
+import { ALL as Image } from '~/components/pages/vizor/Image'
 import { Container } from '~/components/shared/Container'
 import { Display } from '~/components/shared/Display'
 
