@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
-import FluidImage from '$shared/FluidImage'
-import Container from '$shared/Container'
 import Image from '$hux/Image'
+import { Container } from '$shared/Container'
+import { FluidImage } from '$shared/FluidImage'
 import { MD } from '$utils/css'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const SmallImage = styled.div`
     background-image: url(${({ src }) => src});
@@ -15,7 +15,7 @@ const SmallImage = styled.div`
 `
 
 const SecondaryImages = styled.div`
-    :after {
+    &::after {
         content: '';
         display: table;
         clear: both;
@@ -52,9 +52,7 @@ export const CollageB = ({ className }) => (
     </SecondaryImages>
 )
 
-const UnstyledLargeSign = (props) => (
-    <img {...props} src={Image.SIGN} alt="" />
-)
+const UnstyledLargeSign = (props) => <img {...props} src={Image.SIGN} alt="" />
 
 const UnstyledCollage = ({ className }) => (
     <div className={className}>

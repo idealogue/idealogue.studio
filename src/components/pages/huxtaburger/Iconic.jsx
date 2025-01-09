@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
-import Container from '$shared/Container'
-import Display from '$shared/Display'
 import { Bills, Theo, VegeDenise } from '$hux/Burger'
-import { Milkshake, Icecream, Chips } from '$hux/Cup'
-import { Cbd, Hawthorn, Eastland } from '$hux/Store'
-import { SM, MD } from '$utils/css'
+import { Chips, Icecream, Milkshake } from '$hux/Cup'
+import { Cbd, Eastland, Hawthorn } from '$hux/Store'
+import { Container } from '$shared/Container'
+import { Display } from '$shared/Display'
+import { MD, SM } from '$utils/css'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const Row = styled.div`
     display: flex;
@@ -48,7 +48,7 @@ const Iconic = (props) => (
                 </Cell>
             </Row>
         </Display>
-        <Display as={Container} xs="none" sm="block" md="none">
+        <Display as={Container} xs="none" sm md="none">
             <Row>
                 <Cell>
                     <Bills />
@@ -91,7 +91,7 @@ const Iconic = (props) => (
                 </Cell>
             </Row>
         </Display>
-        <Display as={Container} xs="none" md="block">
+        <Display as={Container} xs="none" md>
             <Row>
                 <Cell>
                     <Bills />

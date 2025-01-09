@@ -22,22 +22,23 @@ const L2 = styled.img`
 
 const Root = styled.div`
     &,
-    ${L1},
-    ${L2} {
+    ${L1}, ${L2} {
         transition: 2s transform cubic-bezier(0, 1, 0, 1);
     }
 
-    ${({ $open }) => !!$open && css`
-        transform: translateX(-33.5%);
+    ${({ $open }) =>
+        !!$open &&
+        css`
+            transform: translateX(-33.5%);
 
-        ${L1} {
-            transform: translateX(100%);
-        }
+            ${L1} {
+                transform: translateX(100%);
+            }
 
-        ${L2} {
-            transform: translateX(66.6%);
-        }
-    `}
+            ${L2} {
+                transform: translateX(66.6%);
+            }
+        `}
 `
 
 const UnstyledCoreMarketplace = ({ className }) => {

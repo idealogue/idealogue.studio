@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
-import PortIcon from './PortIcon'
-import Port, { Icon, Name } from './Port'
 import { PLEX_SANS } from '$utils/css'
+import * as React from 'react'
+import styled from 'styled-components'
+import Port, { Icon, Name } from './Port'
+import PortIcon from './PortIcon'
 
 const Em = styled.em`
     font-style: italic;
@@ -38,12 +38,10 @@ function Input({
         <Port {...props}>
             <Icon>
                 {!noIcon && (
-                    <PortIcon highlight={highlight} square={square} />
+                    <PortIcon $highlight={highlight} $square={square} />
                 )}
             </Icon>
-            <Name>
-                {name}
-            </Name>
+            <Name>{name}</Name>
             <Value>
                 {!isColor ? (
                     <ValueTag>{children}</ValueTag>

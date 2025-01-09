@@ -1,6 +1,6 @@
-import React from 'react'
-import styled, { css, ThemeProvider } from 'styled-components'
 import Image from '$hux/Image'
+import * as React from 'react'
+import styled, { css, ThemeProvider } from 'styled-components'
 
 const MilkshakesTheme = {
     width: 180,
@@ -39,8 +39,9 @@ const Illustration = styled(Img)`
 const Shadow = styled(Img)`
     height: auto;
     left: 0;
-    opacity: 0.20;
-    top: ${({ theme }) => Math.floor((theme.rowHeight - theme.height) - 0.99 * 34)}px;
+    opacity: 0.2;
+    top: ${({ theme }) =>
+        Math.floor(theme.rowHeight - theme.height - 0.99 * 34)}px;
     transform: translateX(15%);
     width: 90px;
 `
@@ -67,7 +68,7 @@ export const Icecream = (props) => (
     </Cup>
 )
 
- export const Chips = (props) => (
+export const Chips = (props) => (
     <Cup {...props}>
         <ThemeProvider theme={ChipsTheme}>
             <Illustration src={Image.CHIPS} alt="" />

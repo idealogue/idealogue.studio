@@ -1,14 +1,12 @@
-import React from 'react'
+import * as React from 'react'
 import Port, { Icon, Name } from './Port'
 import PortIcon from './PortIcon'
 
 const Output = ({ highlight, name, ...props }) => (
     <Port {...props}>
-        <Name>
-            {name}
-        </Name>
+        <Name>{name}</Name>
         <Icon>
-            <PortIcon highlight={highlight} />
+            <PortIcon $highlight={highlight} />
         </Icon>
     </Port>
 )

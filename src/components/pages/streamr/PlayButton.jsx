@@ -1,6 +1,6 @@
-import React from 'react'
-import styled, { css, ThemeProvider } from 'styled-components'
 import UnstyledGlyph, { PLAY } from '$shared/Glyph'
+import * as React from 'react'
+import styled, { css, ThemeProvider } from 'styled-components'
 
 const TABLET = 800
 
@@ -49,9 +49,11 @@ const Inner = styled.div`
     transform: translate(-50%, -50%);
     width: ${({ theme }) => theme.mobileSize || DefaultTheme.mobileSize};
 
-    ${({ monolith }) => !monolith && css`
-        cursor: pointer;
-    `}
+    ${({ monolith }) =>
+        !monolith &&
+        css`
+            cursor: pointer;
+        `}
 
     @media (min-width: ${TABLET}px) {
         height: ${({ theme }) => theme.size || DefaultTheme.size};
@@ -64,7 +66,8 @@ const Pad = styled.div`
 `
 
 const Background = styled.div`
-    background-color: ${({ theme }) => theme.backgroundColor || DefaultTheme.backgroundColor};
+    background-color: ${({ theme }) =>
+        theme.backgroundColor || DefaultTheme.backgroundColor};
     border-radius: 50%;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
     height: 100%;
@@ -75,7 +78,7 @@ const Background = styled.div`
     transition: 250ms ease-out transform;
     width: 100%;
 
-  ${({ monolith }) => {
+    ${({ monolith }) => {
         const HoverSensitiveParent = monolith ? Wrapper : Inner
 
         return css`

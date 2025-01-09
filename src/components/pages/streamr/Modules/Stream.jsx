@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import Module from './Module'
 
 function Stream({ title, ...props }) {
@@ -6,9 +6,7 @@ function Stream({ title, ...props }) {
         <Module
             {...props}
             title={title || 'Stream'}
-            ins={[
-                ['Stream'],
-            ]}
+            ins={[['Stream']]}
             outs={[
                 ['Vehicle'],
                 ['Speed'],

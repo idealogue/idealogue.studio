@@ -1,19 +1,18 @@
-import React from 'react'
+import { ALL as Image } from '$golem/Image'
+import { BrowserFrame } from '$shared/BrowserFrame'
+import { CaptionedContainer } from '$shared/CaptionedContainer'
+import { Container } from '$shared/Container'
+import { FluidImage } from '$shared/FluidImage'
+import * as React from 'react'
 import styled from 'styled-components'
-import Container from '$shared/Container'
-import CaptionedContainer from '$shared/CaptionedContainer'
-import FluidImage from '$shared/FluidImage'
-import Image from '$golem/Image'
-import BrowserFrame from '$shared/BrowserFrame'
 
-const Wrapper = styled(Container)`
-`
+const Wrapper = styled(Container)``
 
 const RedditPage = (props) => (
     <Wrapper {...props}>
         <CaptionedContainer caption="A simple Reddit theme for the project">
             <BrowserFrame>
-                <FluidImage src={Image.REDDIT_PAGE} alt="" />
+                <FluidImage src={Image.REDDIT_PAGE} />
             </BrowserFrame>
         </CaptionedContainer>
     </Wrapper>

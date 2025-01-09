@@ -1,7 +1,7 @@
-import React from 'react'
+import { PLEX_MONO, SEMIBOLD } from '$utils/css'
+import * as React from 'react'
 import styled from 'styled-components'
 import Module, { Body, VerticalWedge } from './Module'
-import { PLEX_MONO, SEMIBOLD } from '$utils/css'
 
 const InnerBody = styled.div`
     color: white;
@@ -29,16 +29,12 @@ const Button = ({ title, ...props }) => (
             ['buttonName', 'Start'],
             ['buttonValue', '1'],
         ]}
-        outs={[
-            ['Out'],
-        ]}
+        outs={[['Out']]}
     >
         <Body>
             <VerticalWedge />
             <InnerBody>
-                <InnerButton>
-                    Start
-                </InnerButton>
+                <InnerButton>Start</InnerButton>
             </InnerBody>
         </Body>
     </Module>

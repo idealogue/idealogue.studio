@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from 'styled-components'
-import Image from '$golem/Image'
-import FluidImage from '$shared/FluidImage'
-import Container from '$shared/Container'
+import { ALL as Image } from '$golem/Image'
+import { Container } from '$shared/Container'
+import { FluidImage } from '$shared/FluidImage'
 import { LG } from '$utils/css'
+import * as React from 'react'
+import styled from 'styled-components'
 
 const Row = styled.div`
     display: flex;
@@ -36,14 +36,14 @@ const Shirts = (props) => (
                 <Row>
                     {Image.SHIRTS.slice(0, 3).map((src) => (
                         <Cell key={src}>
-                            <FluidImage src={src} alt="" />
+                            <FluidImage src={src} />
                         </Cell>
                     ))}
                 </Row>
                 <Row>
                     {Image.SHIRTS.slice(3, 6).map((src) => (
                         <Cell key={src}>
-                            <FluidImage src={src} alt="" />
+                            <FluidImage src={src} />
                         </Cell>
                     ))}
                 </Row>

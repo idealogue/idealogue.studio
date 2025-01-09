@@ -1,7 +1,7 @@
-import React from 'react'
+import { MEDIUM } from '$utils/css'
+import * as React from 'react'
 import styled from 'styled-components'
 import Module from './Module'
-import { MEDIUM } from '$utils/css'
 
 const Body = styled.div`
     font-size: 10px;
@@ -12,13 +12,8 @@ const Body = styled.div`
 
 function UnstyledComment({ children, title, ...props }) {
     return (
-        <Module
-            {...props}
-            title={title || 'Comment'}
-        >
-            <Body>
-                {children}
-            </Body>
+        <Module {...props} title={title || 'Comment'}>
+            <Body>{children}</Body>
         </Module>
     )
 }

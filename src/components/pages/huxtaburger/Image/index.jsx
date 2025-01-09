@@ -54,11 +54,7 @@ import SHADOW_1 from './burger/shadow--1.png'
 import TOMATO_1 from './burger/tomato--1.png'
 import TOMATO_2 from './burger/tomato--2.png'
 
-const CBD_FRAMES = [
-    CBD_ANIM_00,
-    CBD_ANIM_01,
-    CBD_ANIM_02,
-]
+const CBD_FRAMES = [CBD_ANIM_00, CBD_ANIM_01, CBD_ANIM_02]
 
 const EASTLAND_FRAMES = [
     EASTLAND_ANIM_00,
