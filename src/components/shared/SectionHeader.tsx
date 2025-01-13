@@ -7,12 +7,11 @@ import styled from 'styled-components'
 
 const Body = styled.div`
     border-bottom: 1px solid ${({ theme }) => theme.color};
-    padding-bottom: 0.8em;
+    padding: 0.8em 0;
 `
 
 const No = styled(Body)`
     font-size: 30px;
-    margin-bottom: 0.8em;
 
     @media (min-width: ${SM}px) {
         font-size: inherit;
