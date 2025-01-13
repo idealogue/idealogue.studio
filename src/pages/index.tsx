@@ -3,116 +3,11 @@ import { Link as GatsbyLink } from 'gatsby'
 import React, { Fragment } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 import { Container } from '~/components/shared/Container'
-import { Display } from '~/components/shared/Display'
 import { Layout } from '~/components/shared/Layout'
 import { Link } from '~/components/shared/Link'
 import { LinkList } from '~/components/shared/Menu'
 import { getProjectManifest, lineup } from '~/utils/project'
 import { Seo } from '../components/Seo'
-
-const Root = styled.div`
-    color: #06042a;
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 50px;
-    padding-top: 122px;
-
-    h1 {
-        font-family: 'Publico Text';
-        font-size: 28px;
-        font-weight: 700;
-        letter-spacing: -0.014px;
-        line-height: 1em;
-        margin: 0 0 108px;
-    }
-
-    h2 {
-        border-bottom: 1px solid #06042a7f;
-        font-size: 20px;
-        line-height: 1em;
-        margin: 118px 0 40px;
-        padding: 0 0 16px;
-    }
-
-    p {
-        margin: 0;
-    }
-
-    p a {
-        text-decoration: none !important;
-    }
-
-    footer {
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 24px;
-        margin-top: 118px;
-        padding-bottom: 40px;
-    }
-
-    footer p + p {
-        margin-top: 44px;
-    }
-
-    @media (min-width: ${MD}px) {
-        h1 {
-            font-size: 40px;
-            letter-spacing: -0.2px;
-            margin-bottom: 68px;
-        }
-
-        h2 {
-            margin: 108px 0 40px;
-        }
-
-        footer {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 168px;
-            padding-bottom: 108px;
-            padding: 0 0 32px;
-        }
-
-        footer p + p {
-            margin: 0;
-        }
-    }
-
-    @media (min-width: ${LG}px) {
-        font-size: 50px;
-        line-height: 72px;
-        padding-top: 208px;
-
-        h1 {
-            font-size: 45px;
-            margin-bottom: 168px;
-        }
-
-        h2 {
-            font-size: 30px;
-            margin: 256px 0 64px;
-        }
-
-        footer {
-            font-size: 16px;
-            margin-top: 256px;
-            padding: 96px;
-            padding-left: 0;
-        }
-    }
-`
-
-const LayoutTheme = {
-    backgroundColor: '#fcfcfc',
-}
-
-const Theme = {
-    color: '#06042a',
-}
-
-const Separator = styled.li`
-    display: block !important;
-`
 
 export default function IndexPage() {
     return (
@@ -120,12 +15,12 @@ export default function IndexPage() {
             <ThemeProvider theme={Theme}>
                 <Root>
                     <Container>
-                        <h1>Idealogue</h1>
+                        <Logo>Idealogue</Logo>
                         <p>
-                            We work with startups to create great&nbsp;digital
-                            products we believe in.
+                            We work with startups to create software with
+                            personality and digital products we believe in.
                         </p>
-                        <h2>Projects</h2>
+                        <SectionLabel>Projects</SectionLabel>
                         <LinkList $inline>
                             {lineup.map((name, index) => (
                                 <Fragment key={name}>
@@ -144,7 +39,7 @@ export default function IndexPage() {
                                 </Fragment>
                             ))}
                         </LinkList>
-                        <h2>Team</h2>
+                        <SectionLabel>Team</SectionLabel>
                         <LinkList>
                             <li>
                                 <Link as={GatsbyLink} to="/team/">
@@ -152,15 +47,15 @@ export default function IndexPage() {
                                 </Link>
                             </li>
                         </LinkList>
-                        <footer>
+                        <Footer>
                             <p>
-                                Level 1, 34 Breese St
+                                Suite 113, 5 Ilhan Lane
                                 <br />
                                 Brunswick 3056
                                 <br />
-                                Melbourne Australia
+                                Naarm Australia
                             </p>
-                            <Display as="p" xs="none" md>
+                            <p>
                                 Build by{' '}
                                 <Link
                                     href="https://www.mariusz.io"
@@ -187,43 +82,26 @@ export default function IndexPage() {
                                     Publico
                                 </Link>{' '}
                                 by Commercial Type
-                            </Display>
-                            <Display as="p" xs="none" md>
+                            </p>
+                            <p>
                                 <Link as="a" href="mailto:matt@idealogue.io">
                                     Email us
                                 </Link>
                                 <br />
                                 <Link
-                                    href="https://twitter.com/idealogue"
+                                    href="#FigmaCommunityfiles"
                                     rel="noopener noreferrer"
                                     target="_blank"
                                 >
-                                    Twitter
+                                    Figma Community files
                                 </Link>
                                 <br />
                                 That&apos;s all{' '}
                                 <span role="img" aria-label="Cheers!">
                                     &#x270c;&#xfe0f;{/* ✌ */}
                                 </span>
-                            </Display>
-                            <Display
-                                as="p"
-                                md="none"
-                                css={`
-                                    font-size: 1.25em;
-                                `}
-                            >
-                                <Link as="a" href="mailto:matt@idealogue.io">
-                                    &rarr; Send us an email
-                                </Link>
-                            </Display>
-                            <Display as="p" md="none">
-                                That&apos;s all{' '}
-                                <span role="img" aria-label="Cheers!">
-                                    &#x270c;&#xfe0f;{/* ✌ */}
-                                </span>
-                            </Display>
-                        </footer>
+                            </p>
+                        </Footer>
                     </Container>
                 </Root>
             </ThemeProvider>
@@ -234,3 +112,110 @@ export default function IndexPage() {
 export const Head = () => {
     return <Seo />
 }
+
+const Logo = styled.h1`
+    font-family: 'Publico Text';
+    font-size: 28px;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0 0 108px;
+
+    @media (min-width: ${MD}px) {
+        font-size: 40px;
+        margin-bottom: 68px;
+    }
+
+    @media (min-width: ${LG}px) {
+        font-size: 56px;
+        margin-bottom: 168px;
+    }
+`
+
+const SectionLabel = styled.h2`
+    border-bottom: 1px solid rgba(235, 235, 235, 1);
+    color: #9ea39e;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 118px 0 20px;
+    padding: 0 0 16px;
+
+    @media (min-width: ${MD}px) {
+        font-size: 24px;
+        margin: 108px 0 24px;
+    }
+
+    @media (min-width: ${LG}px) {
+        font-size: 30px;
+        margin: 256px 0 32px;
+    }
+`
+
+const Footer = styled.footer`
+    border-top: 1px solid rgba(235, 235, 235, 1);
+    color: rgba(158, 163, 158, 1);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    padding: 32px 0 72px;
+    margin-top: 128px;
+
+    p {
+        font-weight: 500;
+    }
+
+    p + p {
+        margin-top: 8px;
+    }
+
+    @media (min-width: ${MD}px) {
+        display: flex;
+        justify-content: space-between;
+        padding: 56px 0 88px;
+        margin-top: 128px;
+
+        p + p {
+            margin: 0;
+        }
+    }
+
+    @media (min-width: ${LG}px) {
+        font-size: 16px;
+        margin-top: 256px;
+    }
+`
+
+const Root = styled.div`
+    color: #06042a;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 50px;
+    padding-top: 122px;
+
+    p {
+        margin: 0;
+    }
+
+    p a {
+        text-decoration: none !important;
+    }
+
+    @media (min-width: ${LG}px) {
+        font-size: 50px;
+        line-height: 72px;
+        padding-top: 208px;
+    }
+`
+
+const LayoutTheme = {
+    backgroundColor: '#fcfcfc',
+}
+
+const Theme = {
+    color: '#06042a',
+}
+
+const Separator = styled.li`
+    display: block !important;
+`

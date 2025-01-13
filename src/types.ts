@@ -5,6 +5,9 @@ export type ProjectName =
     | 'cobalt'
     | 'hive'
     | 'huxtaburger'
+    | 'octant'
+    | 'cargo'
+    | 'deui'
 
 export interface Project {
     name: ProjectName

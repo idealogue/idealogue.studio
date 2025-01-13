@@ -2,6 +2,24 @@ import { createContext, useContext } from 'react'
 import { Project, ProjectManifest, ProjectName } from '../types'
 
 const projects: Record<ProjectName, Project> = {
+    deui: {
+        name: 'deui',
+        displayName: 'Deui',
+        posterUrl: 'https://idealogue.studio/images/Deui-share.png',
+        desc: 'Deui Case Study',
+    },
+    cargo: {
+        name: 'cargo',
+        displayName: 'Cargo',
+        posterUrl: 'https://idealogue.studio/images/Cargo-share.png',
+        desc: 'Cargo Case Study',
+    },
+    octant: {
+        name: 'octant',
+        displayName: 'Octant',
+        posterUrl: 'https://idealogue.studio/images/Octant-share.png',
+        desc: 'Octant Case Study',
+    },
     cobalt: {
         name: 'cobalt',
         displayName: 'Cobalt',
@@ -41,6 +59,9 @@ const projects: Record<ProjectName, Project> = {
 }
 
 export const lineup: ProjectName[] = [
+    // 'octant',
+    // 'cargo',
+    // 'deui',
     'streamr',
     'golem',
     'vizor',
