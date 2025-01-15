@@ -1,6 +1,13 @@
 import { Container } from '$shared/Container'
 import { SM } from '$utils/css'
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import React, {
+    RefObject,
+    useCallback,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+} from 'react'
 import { useInViewport } from 'react-in-viewport'
 import styled, { css } from 'styled-components'
 import { CaptionedContainer } from '~/components/shared/CaptionedContainer'
@@ -359,7 +366,12 @@ const SettingsGlyph = styled(Glyph)`
 export function AppLoop() {
     const rootRef = useRef<HTMLDivElement>(null)
 
-    const { inViewport } = useInViewport(rootRef, undefined, undefined, {})
+    const { inViewport } = useInViewport(
+        rootRef as RefObject<HTMLElement>,
+        undefined,
+        undefined,
+        {}
+    )
 
     const [
         {

@@ -96,7 +96,9 @@ export function Gallery({
 }: GalleryProps) {
     const [slide, setSlide] = useState(defaultSlide)
 
-    const childArr = React.Children.toArray(children) as ReactElement[]
+    const childArr = React.Children.toArray(children) as ReactElement<{
+        $active?: boolean
+    }>[]
 
     const count = React.Children.count(children)
 

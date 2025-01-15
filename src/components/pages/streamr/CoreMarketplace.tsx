@@ -1,5 +1,5 @@
 import { SM, MD as TABLET, XL } from '$utils/css'
-import React, { useEffect, useReducer, useRef } from 'react'
+import React, { RefObject, useEffect, useReducer, useRef } from 'react'
 import { useInViewport } from 'react-in-viewport'
 import styled, { css } from 'styled-components'
 import { MARKETPLACE_LAYERS } from './Image'
@@ -9,7 +9,12 @@ export function CoreMarketplace() {
 
     const rootRef = useRef<HTMLDivElement>(null)
 
-    const { inViewport } = useInViewport(rootRef, undefined, undefined, {})
+    const { inViewport } = useInViewport(
+        rootRef as RefObject<HTMLDivElement>,
+        undefined,
+        undefined,
+        {}
+    )
 
     const [open, touchOpen] = useReducer(() => true, false)
 
