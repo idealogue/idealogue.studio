@@ -1,4 +1,4 @@
-import { PLEX_MONO, SEMIBOLD } from '$utils/css'
+import { font, SEMIBOLD } from '$utils/css'
 import * as React from 'react'
 import styled from 'styled-components'
 import { Body, Module, ModuleProps, VerticalWedge } from './Module'
@@ -28,8 +28,9 @@ export function Button({
 }
 
 const InnerBody = styled.div`
+    ${font('plex mono')}
+
     color: white;
-    font-family: ${PLEX_MONO};
     font-size: 16px;
     font-weight: ${SEMIBOLD};
     letter-spacing: 2px;
