@@ -26,7 +26,12 @@ function getElementPrio(el: React.ReactNode) {
             case 'meta':
                 return 3
             case 'link':
-                if (el.props.rel === 'preload') {
+                if (
+                    typeof el.props === 'object' &&
+                    el.props &&
+                    'rel' in el.props &&
+                    el.props.rel === 'preload'
+                ) {
                     return 2
                 }
 

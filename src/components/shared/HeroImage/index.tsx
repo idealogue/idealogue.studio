@@ -28,6 +28,9 @@ const Img = styled.div`
 `
 
 const images: Record<ProjectName, React.ReactNode> = {
+    deui: <img alt="Deui" />,
+    octant: <img alt="Octant" />,
+    cargo: <img alt="Cargo" />,
     cobalt: <CobaltImage as={Img} />,
     golem: <StaticImage as={Img} src="golem.png" alt="Golem" />,
     hive: <StaticImage as={Img} src="hive.png" alt="Hive" />,
