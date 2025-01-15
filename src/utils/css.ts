@@ -1,3 +1,5 @@
+import { css, RuleSet } from 'styled-components'
+
 export const SM = 544
 
 export const MD = 768
@@ -28,3 +30,27 @@ export const TABLET = `(min-width: ${MD}px)`
 export const DESKTOP = `(min-width: ${LG}px)`
 
 export const XLDESKTOP = `(min-width: ${XL}px)`
+
+export function font(
+    name: 'plex mono' | 'plex sans' | 'publico banner'
+): RuleSet<Record<never, never>> {
+    if (name === 'plex mono') {
+        return css`
+            font-family: "'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace";
+        `
+    }
+
+    if (name === 'plex sans') {
+        return css`
+            font-family: "'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif";
+        `
+    }
+
+    if (name === 'publico banner') {
+        return css`
+            font-family: 'Publico Banner';
+        `
+    }
+
+    throw new Error('Invalid font name')
+}

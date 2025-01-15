@@ -1,4 +1,4 @@
-import { LG, MD } from '$utils/css'
+import { font, LG, MD } from '$utils/css'
 import { Link as GatsbyLink } from 'gatsby'
 import React, { Fragment } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
@@ -114,7 +114,8 @@ export const Head = () => {
 }
 
 const Logo = styled.h1`
-    font-family: 'Publico Text';
+    ${font('publico banner')}
+
     font-size: 28px;
     font-weight: 700;
     line-height: normal;

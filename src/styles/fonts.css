@@ -122,6 +122,16 @@
 }
 
 @font-face {
+    font-family: 'Publico Banner';
+    font-style: normal;
+    font-weight: 600;
+    src:
+        local('Publico Banner Bold'),
+        url('/fonts/PublicoBanner-Bold-Web.woff2') format('woff2'),
+        url('/fonts/PublicoBanner-Bold-Web.woff') format('woff');
+}
+
+@font-face {
     font-family: 'Sharp Sans';
     font-style: normal;
     font-weight: 700;
