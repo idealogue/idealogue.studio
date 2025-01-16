@@ -5,12 +5,14 @@ import { LG, MD, SM } from '$utils/css'
 import * as React from 'react'
 import styled from 'styled-components'
 
-const Body = styled.div`
-    border-bottom: 1px solid ${({ theme }) => theme.color};
+const Body = styled.div<{ $color?: string; $borderColor?: string }>`
+    border-bottom: 1px solid var(--SectionHeader_BorderColor);
+    color: var(--SectionHeader_Color);
     padding: 0.8em 0;
 `
 
 const No = styled(Body)`
+    color: var(--SectionHeader_NumberColor, var(--SectionHeader_Color));
     font-size: 30px;
 
     @media (min-width: ${SM}px) {
@@ -19,11 +21,11 @@ const No = styled(Body)`
 `
 
 interface SectionHeaderProps {
-    no: number
     children?: React.ReactNode
+    no: number
 }
 
-export function SectionHeader({ no, children }: SectionHeaderProps) {
+export function SectionHeader({ children, no }: SectionHeaderProps) {
     const { title, hash, mobileTitle } = useTopic()
 
     return (
@@ -41,11 +43,7 @@ export function SectionHeader({ no, children }: SectionHeaderProps) {
                                         <Display as="span" md="none">
                                             {mobileTitle}
                                         </Display>
-                                        <Display
-                                            as="span"
-                                            xs="none"
-                                            md="inline"
-                                        >
+                                        <Display as="span" xs="none" md="inline">
                                             {title}
                                         </Display>
                                     </>

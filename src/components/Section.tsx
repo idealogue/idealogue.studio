@@ -15,7 +15,7 @@ const ToggleWrapper = styled.div<{ $toggleColor?: string }>`
     width: 140px;
 `
 
-interface SectionProps {
+interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
     actConsecutive?: boolean
     backgroundColor?: string
     captionColor?: string
@@ -24,6 +24,7 @@ interface SectionProps {
     menuToggleBackground?: boolean
     menuToggleColor?: string
     spacerProps?: SpacerProps
+    className?: string
 }
 
 export function Section({
@@ -35,9 +36,11 @@ export function Section({
     menuToggleColor,
     children,
     spacerProps = {},
+    ...props
 }: SectionProps) {
     return (
         <SectionRoot
+            {...props}
             {...spacerProps}
             $actConsecutive={actConsecutive}
             $backgroundColor={backgroundColor}
@@ -46,11 +49,7 @@ export function Section({
         >
             {children}
             <ToggleWrapper $toggleColor={menuToggleColor}>
-                <MenuToggle
-                    backgroundColor={
-                        menuToggleBackground ? backgroundColor : undefined
-                    }
-                />
+                <MenuToggle backgroundColor={menuToggleBackground ? backgroundColor : undefined} />
             </ToggleWrapper>
         </SectionRoot>
     )
@@ -62,9 +61,9 @@ const SectionRoot = styled(Spacer)<{
     $captionColor?: string
     $color?: string
 }>`
-    --captionColor: ${({ $captionColor = '#ffffff7f' }) => $captionColor};
-
+    background: var(--Section_Background);
     background-color: ${({ $backgroundColor }) => $backgroundColor};
+    color: var(--Section_Color);
     color: ${({ $color }) => $color};
     overflow: hidden;
     position: relative;

@@ -2,7 +2,7 @@ import { LG, MD, SM } from '$utils/css'
 import styled from 'styled-components'
 
 export const Caption = styled.em`
-    color: var(--captionColor, '#ffffff7f');
+    color: var(--Caption_Color);
     display: block;
     font-family: 'Publico Text';
     font-size: 14px;
