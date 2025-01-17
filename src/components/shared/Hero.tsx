@@ -1,5 +1,5 @@
 import HeroImage from '$shared/HeroImage'
-import { LG, MD, SM } from '$utils/css'
+import { font, LG, MD, SM } from '$utils/css'
 import * as React from 'react'
 import styled from 'styled-components'
 import { Container } from '~/components/shared/Container'
@@ -37,7 +37,8 @@ const Hero = styled(UnstyledHero)`
     position: relative;
 
     h1 {
-        font-family: 'Publico Text';
+        ${font('publico text')};
+
         font-size: 40px;
         font-weight: 700;
         letter-spacing: -0.005em;

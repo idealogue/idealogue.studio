@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import { font } from '~/utils/css'
 import { useProjectManifest } from '~/utils/project'
 
 export function ProjectName() {
@@ -8,11 +9,16 @@ export function ProjectName() {
     return <ProjectNameRoot>{displayName}</ProjectNameRoot>
 }
 
-const ProjectNameRoot = styled.h1``
+const ProjectNameRoot = styled.h1`
+    ${font('publico banner')}
 
-export function ProjectImage(
-    props: Omit<React.ImgHTMLAttributes<HTMLImageElement>, 'alt'>
-) {
+    color: #171717;
+    font-size: 120px;
+    line-height: normal;
+    font-weight: 600;
+`
+
+export function ProjectImage(props: Omit<React.ImgHTMLAttributes<HTMLImageElement>, 'alt'>) {
     const { displayName } = useProjectManifest()
 
     return <img {...props} alt={displayName} />

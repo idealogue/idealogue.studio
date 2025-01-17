@@ -1,4 +1,4 @@
-import { LG, MD, SM } from '$utils/css'
+import { font, LG, MD, SM } from '$utils/css'
 import * as React from 'react'
 import styled, { css } from 'styled-components'
 import { MenuToggle } from '~/components/shared/MenuToggle'
@@ -69,7 +69,8 @@ const SectionRoot = styled(Spacer)<{
     position: relative;
 
     p {
-        font-family: 'Publico Text';
+        ${font('publico text')};
+
         font-size: 16px;
         line-height: 1.875em;
         margin: 0;

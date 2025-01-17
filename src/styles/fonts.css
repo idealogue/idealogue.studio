@@ -54,58 +54,58 @@
     font-family: 'Publico Text';
     font-style: normal;
     font-weight: 400;
-    src: url('/fonts/PublicoText-Roman-Web.eot');
+    src: url('/fonts/publico/PublicoText-Roman-Web.eot');
     src:
         local('Publico Text Roman'),
         local('PublicoText-Roman'),
-        url('/fonts/PublicoText-Roman-Web.eot?#iefix')
+        url('/fonts/publico/PublicoText-Roman-Web.eot?#iefix')
             format('embedded-opentype'),
-        url('/fonts/PublicoText-Roman-Web.woff') format('woff'),
-        url('/fonts/PublicoText-Roman-Web.svg#svgFontName') format('svg');
+        url('/fonts/publico/PublicoText-Roman-Web.woff') format('woff'),
+        url('/fonts/publico/PublicoText-Roman-Web.svg#svgFontName') format('svg');
 }
 
 @font-face {
     font-family: 'Publico Text';
     font-style: italic;
     font-weight: 400;
-    src: url('/fonts/PublicoText-Italic-Web.eot');
+    src: url('/fonts/publico/PublicoText-Italic-Web.eot');
     src:
         local('Publico Text Italic'),
         local('PublicoText-Italic'),
-        url('/fonts/PublicoText-Italic-Web.eot?#iefix')
+        url('/fonts/publico/PublicoText-Italic-Web.eot?#iefix')
             format('embedded-opentype'),
-        url('/fonts/PublicoText-Italic-Web.woff') format('woff'),
-        url('/fonts/PublicoText-Italic-Web.ttf') format('truetype'),
-        url('/fonts/PublicoText-Italic-Web.svg#svgFontName') format('svg');
+        url('/fonts/publico/PublicoText-Italic-Web.woff') format('woff'),
+        url('/fonts/publico/PublicoText-Italic-Web.ttf') format('truetype'),
+        url('/fonts/publico/PublicoText-Italic-Web.svg#svgFontName') format('svg');
 }
 
 @font-face {
     font-family: 'Publico Text';
     font-style: normal;
     font-weight: 500;
-    src: url('/fonts/PublicoText-Semibold-Web.eot');
+    src: url('/fonts/publico/PublicoText-Semibold-Web.eot');
     src:
         local('Publico Text Semibold'),
         local('PublicoText-Semibold'),
-        url('/fonts/PublicoText-Semibold-Web.eot?#iefix')
+        url('/fonts/publico/PublicoText-Semibold-Web.eot?#iefix')
             format('embedded-opentype'),
-        url('/fonts/PublicoText-Semibold-Web.woff') format('woff'),
-        url('/fonts/PublicoText-Semibold-Web.ttf') format('truetype'),
-        url('/fonts/PublicoText-Semibold-Web.svg#svgFontName') format('svg');
+        url('/fonts/publico/PublicoText-Semibold-Web.woff') format('woff'),
+        url('/fonts/publico/PublicoText-Semibold-Web.ttf') format('truetype'),
+        url('/fonts/publico/PublicoText-Semibold-Web.svg#svgFontName') format('svg');
 }
 
 @font-face {
     font-family: 'Publico Text';
     font-style: normal;
     font-weight: 600;
-    src: url('/fonts/PublicoText-Bold-Web.eot');
+    src: url('/fonts/publico/PublicoText-Bold-Web.eot');
     src:
         local('Publico Text Bold'),
         local('PublicoText-Bold'),
-        url('/fonts/PublicoText-Bold-Web.eot?#iefix')
+        url('/fonts/publico/PublicoText-Bold-Web.eot?#iefix')
             format('embedded-opentype'),
-        url('/fonts/PublicoText-Bold-Web.woff2') format('woff2'),
-        url('/fonts/PublicoText-Bold-Web.woff') format('woff');
+        url('/fonts/publico/PublicoText-Bold-Web.woff2') format('woff2'),
+        url('/fonts/publico/PublicoText-Bold-Web.woff') format('woff');
 }
 
 @font-face {
@@ -127,8 +127,16 @@
     font-weight: 600;
     src:
         local('Publico Banner Bold'),
-        url('/fonts/PublicoBanner-Bold-Web.woff2') format('woff2'),
-        url('/fonts/PublicoBanner-Bold-Web.woff') format('woff');
+        url('/fonts/publico/PublicoBanner-Bold-Web.woff2') format('woff2'),
+        url('/fonts/publico/PublicoBanner-Bold-Web.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Publico Banner';
+    font-style: italic;
+	font-weight: 400;
+	src: url('/fonts/publico/PublicoBanner-Italic-Web.woff2') format('woff2'),
+		 url('/fonts/publico/PublicoBanner-Italic-Web.woff') format('woff');
 }
 
 @font-face {

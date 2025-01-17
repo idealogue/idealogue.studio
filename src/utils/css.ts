@@ -27,7 +27,7 @@ export const DESKTOP = `(min-width: ${LG}px)`
 export const XLDESKTOP = `(min-width: ${XL}px)`
 
 export function font(
-    name: 'plex mono' | 'plex sans' | 'publico banner'
+    name: 'plex mono' | 'plex sans' | 'publico banner' | 'publico text'
 ): RuleSet<Record<never, never>> {
     if (name === 'plex mono') {
         return css`
@@ -44,6 +44,12 @@ export function font(
     if (name === 'publico banner') {
         return css`
             font-family: 'Publico Banner';
+        `
+    }
+
+    if (name === 'publico text') {
+        return css`
+            font-family: 'Publico Text';
         `
     }
 

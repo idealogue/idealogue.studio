@@ -1,10 +1,11 @@
-import { LG, MD, SM } from '$utils/css'
+import { font, LG, MD, SM } from '$utils/css'
 import styled from 'styled-components'
 
 export const Caption = styled.em`
+    ${font('publico text')};
+
     color: var(--Caption_Color);
     display: block;
-    font-family: 'Publico Text';
     font-size: 14px;
     font-style: italic;
     font-weight: 400;
