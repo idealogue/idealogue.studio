@@ -29,7 +29,7 @@ const Context = createContext<CursorContext>({
     setColor: () => {},
 })
 
-const useArrowCursor = () => useContext(Context)
+export const useArrowCursor = () => useContext(Context)
 
 interface ProviderProps {
     children?: ReactNode
@@ -134,10 +134,7 @@ export function Arrow() {
 }
 
 interface CursorProps
-    extends Omit<
-        HTMLAttributes<HTMLDivElement>,
-        'onMouseEnter' | 'onMouseLeave'
-    > {
+    extends Omit<HTMLAttributes<HTMLDivElement>, 'onMouseEnter' | 'onMouseLeave'> {
     children?: ReactNode
     direction?: Direction
     color?: string

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { css } from 'styled-components'
+import { ViewGallery } from '~/components/pages/octant/ViewGallery'
 import { ProjectHeroContent, ProjectImage, ProjectName } from '~/components/Project'
 import { ProjectPage } from '~/components/ProjectPage'
 import { Section } from '~/components/Section'
@@ -60,7 +61,7 @@ export function OctantPage() {
                 </Topic>
                 <Section css={[defaultCss, sageMistBgCss]} spacerProps={{ head: true, tail: true }}>
                     <CaptionedContainer caption="Main views of Octant.app">
-                        {/* Gallery. */}
+                        <ViewGallery />
                     </CaptionedContainer>
                 </Section>
                 <Topic title="Modular, tile-based UI for flexibility">
