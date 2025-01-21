@@ -1,11 +1,12 @@
-import { SM } from '$utils/css'
+import { font, SM } from '$utils/css'
 import styled from 'styled-components'
 import { Parent } from '~/components/pages/huxtaburger/BurgerComponent'
 
 const Badge = styled.div`
+    ${font('lab grotesque')}
+
     background: #ee4734;
     border-radius: 50%;
-    font-family: 'Lab Grotesque';
     font-weight: bold;
     height: 4em;
     line-height: 4em;

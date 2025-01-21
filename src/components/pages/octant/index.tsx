@@ -1,5 +1,7 @@
 import * as React from 'react'
 import { css } from 'styled-components'
+import { Blockquote, BlockquoteBody } from '~/components/Html'
+import { Ui } from '~/components/pages/octant/Ui'
 import { ViewGallery } from '~/components/pages/octant/ViewGallery'
 import { ProjectHeroContent, ProjectImage, ProjectName } from '~/components/Project'
 import { ProjectPage } from '~/components/ProjectPage'
@@ -80,13 +82,20 @@ export function OctantPage() {
                                 was one of the trickiest to get right, but the app&apos;s overall
                                 ease of use seems to have found the right balance.
                             </p>
-                            {/* Quote. */}
+                            <Blockquote>
+                                <BlockquoteBody>
+                                    Octant is the most exciting new project in the public goods
+                                    space… I&nbsp;loved the clean UI and overall experience of 3
+                                    step&nbsp;checkout.
+                                </BlockquoteBody>
+                                <cite>@TheDevanshMehta</cite>
+                            </Blockquote>
                         </Container>
                     </Section>
                 </Topic>
                 <Section css={defaultCss} spacerProps={{ head: true }}>
                     <CaptionedContainer caption="UI elements for adding projects, allocating funds and a metrics chart">
-                        {/* Module grid. */}
+                        <Ui />
                     </CaptionedContainer>
                 </Section>
                 <Topic title="Navigating public goods">

@@ -1,4 +1,4 @@
-import { BOLD, LAB, LG, PUBLICO, REGULAR } from '$utils/css'
+import { BOLD, font, LG, REGULAR } from '$utils/css'
 import * as React from 'react'
 import styled from 'styled-components'
 
@@ -33,7 +33,8 @@ const PersonRoot = styled.div`
     }
 
     h2 {
-        font-family: ${LAB};
+        ${font('lab grotesque')}
+
         font-size: 18px;
         font-weight: ${BOLD};
         line-height: normal;
@@ -41,7 +42,8 @@ const PersonRoot = styled.div`
     }
 
     h4 {
-        font-family: ${LAB};
+        ${font('lab grotesque')}
+
         font-size: 12px;
         font-weight: ${REGULAR};
         line-height: normal;
@@ -49,7 +51,8 @@ const PersonRoot = styled.div`
     }
 
     p {
-        font-family: ${PUBLICO};
+        ${font('publico text')};
+
         font-size: 16px;
         line-height: 28px;
         margin: 0;

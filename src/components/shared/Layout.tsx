@@ -8,6 +8,7 @@ import { MenuToggleRoot } from '$shared/MenuToggle'
 import * as React from 'react'
 import { createGlobalStyle, css } from 'styled-components'
 import { Arrow, Provider as ArrowProvider } from '~/components/shared/Cursor'
+import { font } from '~/utils/css'
 
 const GlobalStyle = createGlobalStyle<{
     $backgroundColor?: string
@@ -19,7 +20,8 @@ const GlobalStyle = createGlobalStyle<{
     }
 
     body {
-        font-family: 'Lab Grotesque';
+        ${font('lab grotesque')}
+
         font-size: 16px;
     }
 
@@ -45,10 +47,7 @@ export function Layout({ children, theme }: LayoutProps) {
 
     return (
         <>
-            <GlobalStyle
-                $backgroundColor={theme.backgroundColor}
-                $nav={direction !== 'down'}
-            />
+            <GlobalStyle $backgroundColor={theme.backgroundColor} $nav={direction !== 'down'} />
             <MenuProvider>
                 <ArrowProvider>
                     {children}

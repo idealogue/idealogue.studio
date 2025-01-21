@@ -16,28 +16,25 @@ export const SEMIBOLD = 600
 
 export const BOLD = 700
 
-export const LAB = "'Lab Grotesque', 'Helvetica Neue', Arial, sans-serif"
-
-export const PUBLICO = "'Publico Text'"
-
 export const TABLET = `(min-width: ${MD}px)`
 
 export const DESKTOP = `(min-width: ${LG}px)`
 
 export const XLDESKTOP = `(min-width: ${XL}px)`
 
-export function font(
-    name: 'plex mono' | 'plex sans' | 'publico banner' | 'publico text'
-): RuleSet<Record<never, never>> {
+type FontName = 'plex mono' | 'plex sans' | 'publico banner' | 'publico text' | 'lab grotesque'
+
+export function font(name: FontName): RuleSet<Record<never, never>> {
     if (name === 'plex mono') {
         return css`
-            font-family: "'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace";
+            font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+                Courier, monospace;
         `
     }
 
     if (name === 'plex sans') {
         return css`
-            font-family: "'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif";
+            font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
         `
     }
 
@@ -50,6 +47,12 @@ export function font(
     if (name === 'publico text') {
         return css`
             font-family: 'Publico Text';
+        `
+    }
+
+    if (name === 'lab grotesque') {
+        return css`
+            font-family: 'Lab Grotesque', 'Helvetica Neue', Arial, sans-serif;
         `
     }
 
