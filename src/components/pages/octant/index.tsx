@@ -5,6 +5,7 @@ import { Exploration } from '~/components/pages/octant/Exploration'
 import { Illustrations } from '~/components/pages/octant/Illustrations'
 import { Ui } from '~/components/pages/octant/Ui'
 import { ViewGallery } from '~/components/pages/octant/ViewGallery'
+import { Websites } from '~/components/pages/octant/Websites'
 import { ProjectHeroContent, ProjectImage, ProjectName } from '~/components/Project'
 import { ProjectPage } from '~/components/ProjectPage'
 import { Section } from '~/components/Section'
@@ -18,10 +19,6 @@ import { SectionHeader } from '~/components/shared/SectionHeader'
 import { Topic } from '~/components/shared/Topic'
 import Tree from './assets/tree.png'
 import Tree2x from './assets/tree@2x.png'
-import WebsitesToken from './assets/websites_token.jpg'
-import WebsitesToken2x from './assets/websites_token@2x.jpg'
-import WebsitesTop from './assets/websites_top.jpg'
-import WebsitesTop2x from './assets/websites_top@2x.jpg'
 
 export function OctantPage() {
     return (
@@ -164,32 +161,8 @@ export function OctantPage() {
                         </Container>
                     </Section>
                 </Topic>
-                <Section
-                    spacerProps={{ head: true, tail: true }}
-                    css={[
-                        defaultCss,
-                        sageMistBgCss,
-                        css`
-                            img {
-                                border-radius: 16px;
-                                display: block;
-                                margin: 0 auto;
-                            }
-
-                            img + img {
-                                margin-top: 40px;
-                            }
-                        `,
-                    ]}
-                >
-                    <Container>
-                        <img src={WebsitesTop} srcSet={`${WebsitesTop2x} 2x`} alt="Top page" />
-                        <img
-                            src={WebsitesToken}
-                            srcSet={`${WebsitesToken2x} 2x`}
-                            alt="Token page"
-                        />
-                    </Container>
+                <Section spacerProps={{ head: true, tail: true }} css={[defaultCss, sageMistBgCss]}>
+                    <Websites />
                 </Section>
                 <Topic title="Credits">
                     <Section css={defaultCss} spacerProps={{ head: true, tail: true }}>
