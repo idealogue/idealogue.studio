@@ -2,6 +2,7 @@ import * as React from 'react'
 import { css } from 'styled-components'
 import { Blockquote, BlockquoteBody } from '~/components/Html'
 import { Exploration } from '~/components/pages/octant/Exploration'
+import { Illustrations } from '~/components/pages/octant/Illustrations'
 import { Ui } from '~/components/pages/octant/Ui'
 import { ViewGallery } from '~/components/pages/octant/ViewGallery'
 import { ProjectHeroContent, ProjectImage, ProjectName } from '~/components/Project'
@@ -142,9 +143,12 @@ export function OctantPage() {
                         </p>
                     </Container>
                 </Section>
-                <Section css={[defaultCss, pearlDustBgCss]} spacerProps={{ tail: true }}>
+                <Section
+                    css={[defaultCss, pearlDustBgCss]}
+                    spacerProps={{ head: true, tail: true }}
+                >
                     <CaptionedContainer caption="Brand animation and illustration">
-                        {/* Illustrations. */}
+                        <Illustrations />
                     </CaptionedContainer>
                 </Section>
                 <Topic title="Websites">
