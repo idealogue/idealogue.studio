@@ -7,6 +7,8 @@ import UiFundUsageDesktop from './assets/ui_fund_usage_desktop.jpg'
 import UiFundUsageDesktop2x from './assets/ui_fund_usage_desktop@2x.jpg'
 import UiPreciseSliderDesktop from './assets/ui_precise_slider_top_desktop.jpg'
 import UiPreciseSliderDesktop2x from './assets/ui_precise_slider_top_desktop@2x.png'
+import UiRewardsDesktop from './assets/ui_rewards_desktop.jpg'
+import UiRewardsDesktop2x from './assets/ui_rewards_desktop@2x.jpg'
 
 export function Ui() {
     return (
@@ -75,12 +77,85 @@ export function Ui() {
                         />
                     </FundUsageRoot>
                 </Cell>
-                <Cell />
-                <Cell />
+                <Cell>
+                    <RewardsRoot>
+                        <AutoPlayingVideo loop playsInline muted>
+                            <source src="/videos/octant/ui_rewards_desktop.mp4" />
+                        </AutoPlayingVideo>
+                        <Image src={UiRewardsDesktop} srcSet={`${UiRewardsDesktop2x} 2x`} alt="" />
+                    </RewardsRoot>
+                </Cell>
+                <Cell>
+                    <svg
+                        width="0"
+                        height="0"
+                        viewBox="0 0 1073 958"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <defs>
+                            <clipPath id="clip-rects" clipPathUnits="objectBoundingBox">
+                                <rect
+                                    x="0"
+                                    y="0"
+                                    width="1"
+                                    height="0.1356993737"
+                                    rx="0.01670146138"
+                                    fill="red"
+                                />
+                                <rect
+                                    x="0"
+                                    y="0.165970772442589"
+                                    width="1"
+                                    height="0.385177453"
+                                    rx="0.01670146138"
+                                />
+                                <rect
+                                    x="0"
+                                    y="0.5814196242"
+                                    width="1"
+                                    height="0.1951983299"
+                                    rx="0.01670146138"
+                                />
+                                <rect
+                                    x="0"
+                                    y="0.8048016701"
+                                    width="1"
+                                    height="0.1951983299"
+                                    rx="0.01670146138"
+                                />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <AutoPlayingVideo
+                        loop
+                        playsInline
+                        muted
+                        css={css`
+                            clip-path: url('#clip-rects');
+                        `}
+                    >
+                        <source src="/videos/octant/ui_slider_desktop.mp4" />
+                    </AutoPlayingVideo>
+                </Cell>
             </BottomRow>
         </UiRoot>
     )
 }
+
+const RewardsRoot = styled.div`
+    --Rewards_Width: 364px;
+    --Rewards_VideoScale: var(--Rewards_Width) / 683;
+
+    position: relative;
+    width: var(--Rewards_Width);
+
+    video {
+        position: absolute;
+        width: calc(587 * var(--Rewards_VideoScale));
+        top: calc(318 * var(--Rewards_VideoScale));
+        left: calc(48 * var(--Rewards_VideoScale));
+    }
+`
 
 const FundUsageRoot = styled.div`
     --FundUsage_Width: 367px;
@@ -132,9 +207,9 @@ const PreciseSliderRoot = styled.div`
 `
 
 const Cell = styled.div`
-    background-color: rgba(255, 0, 0, 0.2);
     user-select: none;
 
+    svg,
     img,
     video {
         display: block;
