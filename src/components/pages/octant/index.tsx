@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { css } from 'styled-components'
 import { Blockquote, BlockquoteBody } from '~/components/Html'
+import { Exploration } from '~/components/pages/octant/Exploration'
 import { Ui } from '~/components/pages/octant/Ui'
 import { ViewGallery } from '~/components/pages/octant/ViewGallery'
 import { ProjectHeroContent, ProjectImage, ProjectName } from '~/components/Project'
@@ -127,7 +128,7 @@ export function OctantPage() {
                             </>
                         }
                     >
-                        {/* Representations. */}
+                        <Exploration />
                     </CaptionedContainer>
                 </Section>
                 <Section css={[defaultCss, pearlDustBgCss]} spacerProps={{ head: true }}>
