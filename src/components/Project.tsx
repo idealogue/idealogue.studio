@@ -12,7 +12,7 @@ export function ProjectName() {
 const ProjectNameRoot = styled.h1`
     ${font('publico banner')}
 
-    color: #171717;
+    color: var(--ProjectName_Color, #171717);
     font-size: 120px;
     line-height: normal;
     font-weight: 600;
