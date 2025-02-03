@@ -4,9 +4,8 @@ import styled, { css } from 'styled-components'
 import { MenuToggle } from '~/components/shared/MenuToggle'
 import { Spacer, SpacerProps } from './Spacer'
 
-const ToggleWrapper = styled.div<{ $toggleColor?: string }>`
+const ToggleWrapper = styled.div`
     clip: rect(0, auto, auto, 0);
-    color: ${({ $toggleColor }) => $toggleColor};
     height: 100%;
     pointer-events: none;
     position: absolute;
@@ -17,39 +16,17 @@ const ToggleWrapper = styled.div<{ $toggleColor?: string }>`
 
 interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
     actConsecutive?: boolean
-    backgroundColor?: string
-    captionColor?: string
     children?: React.ReactNode
-    color?: string
-    menuToggleBackground?: boolean
-    menuToggleColor?: string
     spacerProps?: SpacerProps
     className?: string
 }
 
-export function Section({
-    actConsecutive,
-    backgroundColor,
-    captionColor,
-    color,
-    menuToggleBackground = false,
-    menuToggleColor,
-    children,
-    spacerProps = {},
-    ...props
-}: SectionProps) {
+export function Section({ actConsecutive, children, spacerProps = {}, ...props }: SectionProps) {
     return (
-        <SectionRoot
-            {...props}
-            {...spacerProps}
-            $actConsecutive={actConsecutive}
-            $backgroundColor={backgroundColor}
-            $color={color}
-            $captionColor={captionColor}
-        >
+        <SectionRoot {...props} {...spacerProps} $actConsecutive={actConsecutive}>
             {children}
-            <ToggleWrapper $toggleColor={menuToggleColor}>
-                <MenuToggle backgroundColor={menuToggleBackground ? backgroundColor : undefined} />
+            <ToggleWrapper>
+                <MenuToggle />
             </ToggleWrapper>
         </SectionRoot>
     )
@@ -57,14 +34,9 @@ export function Section({
 
 const SectionRoot = styled(Spacer)<{
     $actConsecutive?: boolean
-    $backgroundColor?: string
-    $captionColor?: string
-    $color?: string
 }>`
-    background: var(--Section_Background);
-    background-color: ${({ $backgroundColor }) => $backgroundColor};
-    color: var(--Section_Color);
-    color: ${({ $color }) => $color};
+    background: var(--Section_Background, none);
+    color: var(--Section_Color, inherit);
     overflow: hidden;
     position: relative;
 
@@ -97,7 +69,7 @@ const SectionRoot = styled(Spacer)<{
     }
 
     hr {
-        background-color: ${({ $color }) => $color};
+        background: var(--Section_Color, currentColor);
         border: 0;
         height: 1px;
     }

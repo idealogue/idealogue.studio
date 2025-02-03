@@ -1,7 +1,7 @@
 import { useMenu } from '$hooks/useMenu'
 import { SM } from '$utils/css'
 import * as React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import UnstyledGlyph, { CLOSE, NAV } from '~/components/shared/Glyph'
 
 const Glyph = styled(UnstyledGlyph)`
@@ -29,10 +29,7 @@ const Button = styled.button`
     }
 `
 
-type CloseButtonProps = Omit<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    'type'
->
+type CloseButtonProps = Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'type'>
 
 export const CloseButton = (props: CloseButtonProps) => (
     <Button {...props} type="button">
@@ -40,15 +37,11 @@ export const CloseButton = (props: CloseButtonProps) => (
     </Button>
 )
 
-interface MenuToggleProps {
-    backgroundColor?: string
-}
-
-export function MenuToggle({ backgroundColor }: MenuToggleProps) {
+export function MenuToggle() {
     const { open } = useMenu()
 
     return (
-        <MenuToggleRoot $backgroundColor={backgroundColor}>
+        <MenuToggleRoot>
             <Button type="button" onClick={open}>
                 <Glyph source={NAV} />
             </Button>
@@ -56,8 +49,14 @@ export function MenuToggle({ backgroundColor }: MenuToggleProps) {
     )
 }
 
-export const MenuToggleRoot = styled.div<{ $backgroundColor?: string }>`
-    color: inherit;
+export const MenuToggleRoot = styled.div`
+    background: linear-gradient(
+        var(--MenuToggle_GradientLowBackgroundColor, transparent),
+        var(--MenuToggle_GradientHighBackgroundColor, transparent),
+        var(--MenuToggle_GradientHighBackgroundColor, transparent),
+        var(--MenuToggle_GradientLowBackgroundColor, transparent)
+    );
+    color: var(--MenuToggle_Color, inherit);
     height: 90px;
     pointer-events: all;
     position: fixed;
@@ -67,17 +66,6 @@ export const MenuToggleRoot = styled.div<{ $backgroundColor?: string }>`
     transition: 400ms transform;
     transition-delay: 0ms;
     width: 90px;
-
-    ${({ $backgroundColor }) =>
-        !!$backgroundColor &&
-        css`
-            background: linear-gradient(
-                ${$backgroundColor}00,
-                ${$backgroundColor},
-                ${$backgroundColor},
-                ${$backgroundColor}00
-            );
-        `}
 
     @media (min-width: ${SM}px) {
         height: 140px;

@@ -50,7 +50,7 @@ const PersonRoot = styled.div`
         margin: 0.5em 0 26px;
     }
 
-    p {
+    && p {
         ${font('publico text')};
 
         font-size: 16px;

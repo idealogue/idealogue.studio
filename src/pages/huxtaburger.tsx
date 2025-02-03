@@ -1,15 +1,10 @@
 import { HeadFC } from 'gatsby'
 import * as React from 'react'
+import { css } from 'styled-components'
 import { BrowsingVideo } from '~/components/pages/huxtaburger/BrowsingVideo'
 import { Iconic } from '~/components/pages/huxtaburger/Iconic'
 import { Neon } from '~/components/pages/huxtaburger/Neon'
-import {
-    Collage,
-    CollageA,
-    CollageB,
-    LargeSign,
-    Logo,
-} from '~/components/pages/huxtaburger/Pics'
+import { Collage, CollageA, CollageB, LargeSign, Logo } from '~/components/pages/huxtaburger/Pics'
 import { ProjectPage } from '~/components/ProjectPage'
 import { Section } from '~/components/Section'
 import { Bullet } from '~/components/shared/Bullet'
@@ -26,67 +21,36 @@ import { Topic } from '~/components/shared/Topic'
 import { Spacer } from '~/components/Spacer'
 import { Seo } from '../components/Seo'
 
-const LayoutTheme = {
-    backgroundColor: '#dd2712',
-}
-
-const RedTheme = {
-    backgroundColor: '#ee4734',
-    color: '#ffffff',
-}
-
-const WhiteTheme = {
-    backgroundColor: '#f9f9f9',
-    color: '#575757',
-}
-
-const BlueTheme = {
-    backgroundColor: '#22a4db',
-    color: '#ffffff',
-}
-
-const BlackTheme = {
-    backgroundColor: '#010000',
-    color: '#ffffff',
-}
-
 export default function HuxtaburgerPage() {
     return (
         <ProjectPage projectName="huxtaburger">
-            <Layout theme={LayoutTheme}>
-                <Section {...RedTheme} menuToggleBackground>
+            <Layout rootCss={layoutCss}>
+                <Section css={[defaultCss, heroCss]}>
                     <Hero>
                         <p>
-                            We designed the original brand, site and print work,
-                            and have been happy to see them grow into the
-                            Melbourne icon they are today.
+                            We designed the original brand, site and print work, and have been happy
+                            to see them grow into the Melbourne icon they are today.
                         </p>
                     </Hero>
                 </Section>
                 <ScrollIndicatorTarget />
                 <Topic title="Milk Bar vs Diner">
-                    <Section
-                        {...WhiteTheme}
-                        spacerProps={{ head: true }}
-                        menuToggleColor="#575757"
-                    >
+                    <Section spacerProps={{ head: true }} css={whiteCss}>
                         <SectionHeader no={1} />
                         <Container>
                             <p>
-                                One of the first players in the now-crowded
-                                gourmet burger scene, the original brand is a
-                                mashup of classic American diner with a 70’s
-                                Aussie milk bar typographic aesthetic — pressed
-                                metal diamonds meets red, white &amp; blue fly
-                                strips, with the king of beef at the centre of
-                                it all.
+                                One of the first players in the now-crowded gourmet burger scene,
+                                the original brand is a mashup of classic American diner with a 70’s
+                                Aussie milk bar typographic aesthetic — pressed metal diamonds meets
+                                red, white &amp; blue fly strips, with the king of beef at the
+                                centre of it all.
                             </p>
                         </Container>
                         <Spacer head tail>
                             <Logo />
                         </Spacer>
                     </Section>
-                    <Section {...WhiteTheme} menuToggleColor="#ffffff">
+                    <Section css={[whiteCss, whiteToggleCss]}>
                         <Display as={CollageA} xs="none" sm />
                         <Display as={CollageB} xs="none" sm />
                         <Display as={Collage} sm="none" />
@@ -94,23 +58,16 @@ export default function HuxtaburgerPage() {
                     </Section>
                 </Topic>
                 <Topic title="Beery Browsing">
-                    <Section
-                        {...WhiteTheme}
-                        spacerProps={{ tail: true }}
-                        menuToggleColor="#575757"
-                    >
+                    <Section spacerProps={{ tail: true }} css={whiteCss}>
                         <Spacer head>
                             <SectionHeader no={2} />
                             <Container>
                                 <p>
-                                    The key UX concept that drove the site
-                                    design was simple. Users should be be able
-                                    to flip through the site on a phone with one
-                                    hand while holding a beer in the other.
-                                    Also, early on, we decided we want to be
-                                    able to see what was in the burgers by
-                                    tapping them. Put another way, exploding
-                                    burgers.
+                                    The key UX concept that drove the site design was simple. Users
+                                    should be be able to flip through the site on a phone with one
+                                    hand while holding a beer in the other. Also, early on, we
+                                    decided we want to be able to see what was in the burgers by
+                                    tapping them. Put another way, exploding burgers.
                                 </p>
                                 <Spacer head>
                                     <BrowsingVideo />
@@ -120,20 +77,15 @@ export default function HuxtaburgerPage() {
                     </Section>
                 </Topic>
                 <Topic title="Making an Icon iconic">
-                    <Section
-                        {...BlueTheme}
-                        spacerProps={{ head: true, tail: true }}
-                    >
+                    <Section spacerProps={{ head: true, tail: true }} css={blueCss}>
                         <SectionHeader no={3} />
                         <Container>
                             <p>
-                                It was an uphill battle to convince the client
-                                that we should illustrate all their burgers and
-                                products. Lots of people do it now, but at the
-                                time it was relatively rare. It worked well, and
-                                customers love it. Once we’d applied it to the
-                                products we extended it to the stores, making
-                                each one an individual animated icon. Try
+                                It was an uphill battle to convince the client that we should
+                                illustrate all their burgers and products. Lots of people do it now,
+                                but at the time it was relatively rare. It worked well, and
+                                customers love it. Once we’d applied it to the products we extended
+                                it to the stores, making each one an individual animated icon. Try
                                 clicking the ones below.
                             </p>
                         </Container>
@@ -143,13 +95,12 @@ export default function HuxtaburgerPage() {
                     </Section>
                 </Topic>
                 <Topic title="Sexy Neon">
-                    <Section {...BlackTheme} spacerProps={{ head: true }}>
+                    <Section spacerProps={{ head: true }} css={blackCss}>
                         <SectionHeader no={4} />
                         <Container>
                             <p>
-                                We put together a wide range of signage
-                                including windows, and boxes but without doubt
-                                this Hot Beef — Cold Beer neon is our favourite.
+                                We put together a wide range of signage including windows, and boxes
+                                but without doubt this Hot Beef — Cold Beer neon is our favourite.
                             </p>
                         </Container>
                         <Spacer head>
@@ -158,10 +109,7 @@ export default function HuxtaburgerPage() {
                     </Section>
                 </Topic>
                 <Topic title="Credits">
-                    <Section
-                        {...BlackTheme}
-                        spacerProps={{ head: true, tail: true }}
-                    >
+                    <Section spacerProps={{ head: true, tail: true }} css={blackCss}>
                         <SectionHeader no={5}>
                             <Bullet />
                             <Link
@@ -173,14 +121,8 @@ export default function HuxtaburgerPage() {
                             </Link>
                         </SectionHeader>
                         <Contributors>
-                            <Contributor
-                                name="Matt Innes"
-                                role="Brand, Direction, Design"
-                            />
-                            <Contributor
-                                name="Ben Jennings"
-                                role="Design, Code"
-                            />
+                            <Contributor name="Matt Innes" role="Brand, Direction, Design" />
+                            <Contributor name="Ben Jennings" role="Design, Code" />
                             <Contributor name="David Hauser" role="Code" />
                             <Contributor name="Mariusz Roliński" role="Code" />
                             <Contributor
@@ -202,3 +144,35 @@ export default function HuxtaburgerPage() {
 export const Head: HeadFC = () => {
     return <Seo projectName="huxtaburger" />
 }
+
+const layoutCss = css`
+    --Layout_Background: #dd2712;
+`
+
+const defaultCss = css`
+    --Section_Background: #ee4734;
+    --Section_Color: #ffffff;
+`
+
+const heroCss = css`
+    --MenuToggle_GradientHighBackgroundColor: var(--Section_Background);
+`
+
+const whiteCss = css`
+    --Section_Background: #f9f9f9;
+    --Section_Color: #575757;
+`
+
+const blueCss = css`
+    --Section_Background: #22a4db;
+    --Section_Color: #ffffff;
+`
+
+const blackCss = css`
+    --Section_Background: #010000;
+    --Section_Color: #ffffff;
+`
+
+const whiteToggleCss = css`
+    --MenuToggle_Color: #ffffff;
+`

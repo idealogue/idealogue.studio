@@ -23,8 +23,8 @@ import Tree2x from './assets/tree@2x.png'
 export function OctantPage() {
     return (
         <ProjectPage projectName="octant">
-            <Layout theme={EmptyTheme}>
-                <Section css={defaultCss}>
+            <Layout rootCss={layoutCss}>
+                <Section css={[defaultCss, heroCss]}>
                     <ProjectHeroContent>
                         <Container>
                             <ProjectImage src={Tree} srcSet={`${Tree2x} 2x`} />
@@ -188,12 +188,20 @@ export function OctantPage() {
     )
 }
 
+const layoutCss = css`
+    --Layout_Background: #ebebeb;
+`
+
 const defaultCss = css`
     --Section_Background: #f8f8f8;
     --Section_Color: #6b6b6b;
     --SectionHeader_BorderColor: #ebebeb;
     --SectionHeader_Color: #06042a;
     --SectionHeader_NumberColor: #9ea39e;
+`
+
+const heroCss = css`
+    --MenuToggle_GradientHighBackgroundColor: var(--Section_Background);
 `
 
 const pearlDustBgCss = css`
@@ -203,5 +211,3 @@ const pearlDustBgCss = css`
 const sageMistBgCss = css`
     --Section_Background: #cdd1cd;
 `
-
-const EmptyTheme = {}

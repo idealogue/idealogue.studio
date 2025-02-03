@@ -5,14 +5,14 @@ import { LG, MD, SM } from '$utils/css'
 import * as React from 'react'
 import styled from 'styled-components'
 
-const Body = styled.div<{ $color?: string; $borderColor?: string }>`
-    border-bottom: 1px solid var(--SectionHeader_BorderColor);
-    color: var(--SectionHeader_Color);
+const Body = styled.div`
+    border-bottom: 1px solid var(--SectionHeader_BorderColor, currentColor);
+    color: var(--SectionHeader_Color, inherit);
     padding: 0.8em 0;
 `
 
 const No = styled(Body)`
-    color: var(--SectionHeader_NumberColor, var(--SectionHeader_Color));
+    color: var(--SectionHeader_NumberColor, var(--SectionHeader_Color, inherit));
     font-size: 30px;
 
     @media (min-width: ${SM}px) {

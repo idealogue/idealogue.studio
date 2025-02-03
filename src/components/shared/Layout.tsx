@@ -6,17 +6,22 @@ import useScrollDirection from '$hooks/useScrollDirection'
 import { Menu } from '$shared/Menu'
 import { MenuToggleRoot } from '$shared/MenuToggle'
 import * as React from 'react'
-import { createGlobalStyle, css } from 'styled-components'
+import { createGlobalStyle, css, RuleSet } from 'styled-components'
 import { Arrow, Provider as ArrowProvider } from '~/components/shared/Cursor'
 import { font } from '~/utils/css'
 
 const GlobalStyle = createGlobalStyle<{
-    $backgroundColor?: string
     $nav?: boolean
+    $rootCss?: RuleSet
 }>`
+    :root {
+        ${({ $rootCss }) => $rootCss};
+    }
+
     html,
     body {
-        background-color: ${({ $backgroundColor }) => $backgroundColor};
+        background: var(--Layout_Background);
+        color: var(--Layout_Color);
     }
 
     body {
@@ -42,12 +47,12 @@ const GlobalStyle = createGlobalStyle<{
         `}
 `
 
-export function Layout({ children, theme }: LayoutProps) {
+export function Layout({ children, rootCss }: LayoutProps) {
     const direction = useScrollDirection()
 
     return (
         <>
-            <GlobalStyle $backgroundColor={theme.backgroundColor} $nav={direction !== 'down'} />
+            <GlobalStyle $nav={direction !== 'down'} $rootCss={rootCss} />
             <MenuProvider>
                 <ArrowProvider>
                     {children}
@@ -60,8 +65,6 @@ export function Layout({ children, theme }: LayoutProps) {
 }
 
 interface LayoutProps {
+    rootCss?: RuleSet
     children?: React.ReactNode
-    theme: {
-        backgroundColor?: string
-    }
 }

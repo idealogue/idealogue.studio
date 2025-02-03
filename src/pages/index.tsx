@@ -1,7 +1,7 @@
 import { font, LG, MD } from '$utils/css'
 import { Link as GatsbyLink } from 'gatsby'
 import React, { Fragment } from 'react'
-import styled, { ThemeProvider } from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Container } from '~/components/shared/Container'
 import { Layout } from '~/components/shared/Layout'
 import { Link } from '~/components/shared/Link'
@@ -11,100 +11,92 @@ import { Seo } from '../components/Seo'
 
 export default function IndexPage() {
     return (
-        <Layout theme={LayoutTheme}>
-            <ThemeProvider theme={Theme}>
-                <Root>
-                    <Container>
-                        <Logo>Idealogue</Logo>
+        <Layout rootCss={layoutCss}>
+            <Root>
+                <Container>
+                    <Logo>Idealogue</Logo>
+                    <p>
+                        We work with startups to create software with personality and digital
+                        products we believe in.
+                    </p>
+                    <SectionLabel>Projects</SectionLabel>
+                    <LinkList $inline>
+                        {lineup.map((name, index) => (
+                            <Fragment key={name}>
+                                <li>
+                                    <Link as={GatsbyLink} to={getProjectManifest(name).url}>
+                                        {getProjectManifest(name).displayName}
+                                    </Link>
+                                </li>
+                                {(index + 1) % 3 === 0 && <Separator />}
+                            </Fragment>
+                        ))}
+                    </LinkList>
+                    <SectionLabel>Team</SectionLabel>
+                    <LinkList>
+                        <li>
+                            <Link as={GatsbyLink} to="/team/">
+                                About us
+                            </Link>
+                        </li>
+                    </LinkList>
+                    <Footer>
                         <p>
-                            We work with startups to create software with
-                            personality and digital products we believe in.
+                            Suite 113, 5 Ilhan Lane
+                            <br />
+                            Brunswick 3056
+                            <br />
+                            Naarm Australia
                         </p>
-                        <SectionLabel>Projects</SectionLabel>
-                        <LinkList $inline>
-                            {lineup.map((name, index) => (
-                                <Fragment key={name}>
-                                    <li>
-                                        <Link
-                                            as={GatsbyLink}
-                                            to={getProjectManifest(name).url}
-                                        >
-                                            {
-                                                getProjectManifest(name)
-                                                    .displayName
-                                            }
-                                        </Link>
-                                    </li>
-                                    {(index + 1) % 3 === 0 && <Separator />}
-                                </Fragment>
-                            ))}
-                        </LinkList>
-                        <SectionLabel>Team</SectionLabel>
-                        <LinkList>
-                            <li>
-                                <Link as={GatsbyLink} to="/team/">
-                                    About us
-                                </Link>
-                            </li>
-                        </LinkList>
-                        <Footer>
-                            <p>
-                                Suite 113, 5 Ilhan Lane
-                                <br />
-                                Brunswick 3056
-                                <br />
-                                Naarm Australia
-                            </p>
-                            <p>
-                                Build by{' '}
-                                <Link
-                                    href="https://www.mariusz.io"
-                                    rel="noopener noreferrer"
-                                    target="_blank"
-                                >
-                                    Mariusz
-                                </Link>
-                                <br />
-                                <Link
-                                    href="https://lettersfromsweden.se/font/lab-grotesque/"
-                                    rel="noopener noreferrer"
-                                    target="_blank"
-                                >
-                                    Lab Grotesque
-                                </Link>{' '}
-                                by Letters from Sweden
-                                <br />
-                                <Link
-                                    href="https://commercialtype.com/catalog/publico"
-                                    rel="noopener noreferrer"
-                                    target="_blank"
-                                >
-                                    Publico
-                                </Link>{' '}
-                                by Commercial Type
-                            </p>
-                            <p>
-                                <Link as="a" href="mailto:matt@idealogue.io">
-                                    Email us
-                                </Link>
-                                <br />
-                                <Link
-                                    href="#FigmaCommunityfiles"
-                                    rel="noopener noreferrer"
-                                    target="_blank"
-                                >
-                                    Figma Community files
-                                </Link>
-                                <br />
-                                That&apos;s all{' '}
-                                <span role="img" aria-label="Cheers!">
-                                    &#x270c;&#xfe0f;{/* ✌ */}
-                                </span>
-                            </p>
-                        </Footer>
-                    </Container>
-                </Root>
-            </ThemeProvider>
+                        <p>
+                            Build by{' '}
+                            <Link
+                                href="https://www.mariusz.io"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                            >
+                                Mariusz
+                            </Link>
+                            <br />
+                            <Link
+                                href="https://lettersfromsweden.se/font/lab-grotesque/"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                            >
+                                Lab Grotesque
+                            </Link>{' '}
+                            by Letters from Sweden
+                            <br />
+                            <Link
+                                href="https://commercialtype.com/catalog/publico"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                            >
+                                Publico
+                            </Link>{' '}
+                            by Commercial Type
+                        </p>
+                        <p>
+                            <Link as="a" href="mailto:matt@idealogue.io">
+                                Email us
+                            </Link>
+                            <br />
+                            <Link
+                                href="#FigmaCommunityfiles"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                            >
+                                Figma Community files
+                            </Link>
+                            <br />
+                            That&apos;s all{' '}
+                            <span role="img" aria-label="Cheers!">
+                                &#x270c;&#xfe0f;{/* ✌ */}
+                            </span>
+                        </p>
+                    </Footer>
+                </Container>
+            </Root>
         </Layout>
     )
 }
@@ -209,14 +201,11 @@ const Root = styled.div`
     }
 `
 
-const LayoutTheme = {
-    backgroundColor: '#fcfcfc',
-}
-
-const Theme = {
-    color: '#06042a',
-}
-
 const Separator = styled.li`
     display: block !important;
+`
+
+const layoutCss = css`
+    --Layout_Background: #fcfcfc;
+    --Layout_Color: #06042a;
 `

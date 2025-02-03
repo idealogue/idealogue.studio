@@ -35,8 +35,8 @@ export function DeuiPage() {
 
     return (
         <ProjectPage projectName="deui">
-            <Layout theme={EmptyTheme}>
-                <Section css={defaultCss}>
+            <Layout rootCss={layoutCss}>
+                <Section css={[defaultCss, heroCss]}>
                     <ProjectHeroContent>
                         <Container>
                             <ProjectImage src={Cup} srcSet={`${Cup2x} 2x`} />
@@ -173,8 +173,6 @@ export function DeuiPage() {
     )
 }
 
-const EmptyTheme = {}
-
 const RepoLink = styled.a`
     ${font('lab grotesque')}
 
@@ -251,6 +249,10 @@ const Machine = styled.div`
     }
 `
 
+const layoutCss = css`
+    --Layout_Background: #101010;
+`
+
 const defaultCss = css`
     --Section_Background: #171717;
     --Section_Color: #9ea39e;
@@ -258,6 +260,10 @@ const defaultCss = css`
     --SectionHeader_Color: #ffffff;
     --SectionHeader_NumberColor: var(--SectionHeader_BorderColor);
     --ProjectName_Color: var(--SectionHeader_Color);
+`
+
+const heroCss = css`
+    --MenuToggle_GradientHighBackgroundColor: var(--Section_Background);
 `
 
 const darkCss = css`
