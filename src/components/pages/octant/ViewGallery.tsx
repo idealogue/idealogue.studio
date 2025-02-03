@@ -27,7 +27,7 @@ export function ViewGallery() {
                     }}
                 >
                     <Video autoPlay loop playsInline muted>
-                        <source src="/videos/octant/view_homepage_desktop.mp4" />
+                        <source src="/videos/octant/view_metrics_desktop.mp4" />
                     </Video>
                 </Slide>
                 <Slide
@@ -43,7 +43,7 @@ export function ViewGallery() {
                     }}
                 >
                     <Video autoPlay loop playsInline muted>
-                        <source src="/videos/octant/view_metrics_desktop.mp4" />
+                        <source src="/videos/octant/view_homepage_desktop.mp4" />
                     </Video>
                 </Slide>
                 <Slide
