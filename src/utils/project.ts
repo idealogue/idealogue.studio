@@ -59,22 +59,20 @@ const projects: Record<ProjectName, Project> = {
 }
 
 export const lineup: ProjectName[] = [
-    // 'octant',
-    // 'cargo',
-    // 'deui',
+    'octant',
+    'cargo',
+    'deui',
     'streamr',
     'golem',
     'vizor',
     'cobalt',
     'hive',
-    'huxtaburger',
+    // 'huxtaburger',
 ]
 
 export const ProjectNameContext = createContext<ProjectName | null>(null)
 
-export function getProjectManifest<N extends ProjectName>(
-    projectName: N
-): ProjectManifest<N> {
+export function getProjectManifest<N extends ProjectName>(projectName: N): ProjectManifest<N> {
     const { displayName, ...rest } = projects[projectName]
 
     return {
