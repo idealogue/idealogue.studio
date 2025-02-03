@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled, { css } from 'styled-components'
+import { ThemeToggle } from '~/components/pages/deui/ThemeToggle'
 import { ProjectHeroContent, ProjectImage, ProjectName } from '~/components/Project'
 import { ProjectPage } from '~/components/ProjectPage'
 import { Section } from '~/components/Section'
@@ -30,7 +31,7 @@ import ShotLight from './assets/ui_shot_light.jpg'
 import ShotLight2x from './assets/ui_shot_light@2x.jpg'
 
 export function DeuiPage() {
-    const [dark, setDark] = React.useState(false)
+    const [dark, setDark] = React.useState(true)
 
     return (
         <ProjectPage projectName="deui">
@@ -129,16 +130,15 @@ export function DeuiPage() {
                             </ScreenshotWrap>
                         </UiScreenshotNarrow>
                     </UiScreenshots>
-                    <button
+                    <ThemeToggle
+                        dark={dark}
                         type="button"
                         onClick={() => {
                             setDark((c) => !c)
                         }}
-                    >
-                        Toggle
-                    </button>
+                    />
                 </Section>
-                <Section css={[defaultCss, darkCss]}>
+                <Section css={[defaultCss]}>
                     <Machine />
                 </Section>
                 <Topic title="Try it out yourself">
@@ -243,15 +243,16 @@ const Machine = styled.div`
     max-height: 69rem;
     max-width: 1600px;
     margin: 0 auto;
+    transition: 200ms ease-in-out margin;
 
     @media (min-width: 1600px) {
         border-radius: clamp(0rem, calc(100vw - 1600px), 1rem);
-        margin-bottom: 15rem;
+        margin: 15rem auto 0;
     }
 `
 
 const defaultCss = css`
-    --Section_Background: #ebebeb;
+    --Section_Background: #171717;
     --Section_Color: #9ea39e;
     --SectionHeader_BorderColor: #cdd1cd;
     --SectionHeader_Color: #ffffff;
