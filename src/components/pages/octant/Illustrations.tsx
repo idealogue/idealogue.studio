@@ -49,6 +49,11 @@ export function Illustrations() {
                                 <source src="/videos/octant/illustration_maths_desktop.mp4" />
                             </AutoPlayingVideo>
                         </Clip>
+                        <Clip>
+                            <AutoPlayingVideo loop playsInline muted>
+                                <source src="/videos/octant/illustration_whale_desktop.mp4" />
+                            </AutoPlayingVideo>
+                        </Clip>
                     </ClipList>
                 </div>
             </Clips>
