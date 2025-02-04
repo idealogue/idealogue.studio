@@ -69,7 +69,7 @@ const SectionRoot = styled(Spacer)<{
     }
 
     hr {
-        background: var(--Section_Color, currentColor);
+        background: var(--SectionHeader_BorderColor, currentColor);
         border: 0;
         height: 1px;
     }
