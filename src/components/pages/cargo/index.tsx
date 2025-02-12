@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { css } from 'styled-components'
 import { CargoLogo } from '~/components/pages/cargo/CargoLogo'
+import { Folders } from '~/components/pages/cargo/Folders'
+import { Icons } from '~/components/pages/cargo/Icons'
 import { Modules } from '~/components/pages/cargo/Modules'
 import { ProjectHeroContent, ProjectName } from '~/components/Project'
 import { ProjectPage } from '~/components/ProjectPage'
@@ -67,7 +69,12 @@ export function CargoPage() {
                         </Container>
                     </Section>
                 </Topic>
-                <Section css={defaultCss}>{/* Icons */}</Section>
+                <Section css={defaultCss} spacerProps={{ head: true }}>
+                    <Folders />
+                </Section>
+                <Section css={defaultCss} spacerProps={{ head: true }}>
+                    <Icons />
+                </Section>
                 <Topic title="Credits">
                     <Section css={defaultCss} spacerProps={{ head: true, tail: true }}>
                         <SectionHeader no={3} />
