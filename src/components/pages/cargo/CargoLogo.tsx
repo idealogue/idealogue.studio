@@ -11,4 +11,5 @@ export function CargoLogo() {
 
 const CargoLogoRoot = styled.video`
     mix-blend-mode: lighten;
+    width: clamp(14.5rem, 50vw, 29.75rem);
 `
