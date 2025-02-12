@@ -1,10 +1,8 @@
 import { HeadFC } from 'gatsby'
 import * as React from 'react'
+import { css } from 'styled-components'
 import { BugImages } from '~/components/pages/cobalt/BugImages'
-import {
-    DesktopShot,
-    MobileShots,
-} from '~/components/pages/cobalt/ClarityImages'
+import { DesktopShot, MobileShots } from '~/components/pages/cobalt/ClarityImages'
 import { LogoImage } from '~/components/pages/cobalt/LogoImage'
 import { ProjectPage } from '~/components/ProjectPage'
 import { Bullet } from '~/components/shared/Bullet'
@@ -21,49 +19,29 @@ import { Spacer } from '~/components/Spacer'
 import { Section } from '../components/Section'
 import { Seo } from '../components/Seo'
 
-const LayoutTheme = {
-    backgroundColor: '#207dbc',
-}
-
-const DarkTheme = {
-    backgroundColor: '#248bd2',
-    color: '#ffffff',
-}
-
-const LightTheme = {
-    backgroundColor: '#f9f9f9',
-    color: '#575757',
-}
-
 export default function CobaltPage() {
     return (
         <ProjectPage projectName="cobalt">
-            <Layout theme={LayoutTheme}>
-                <Section {...DarkTheme} menuToggleBackground>
+            <Layout rootCss={layoutCss}>
+                <Section css={[darkCss, heroCss]}>
                     <Hero>
                         <p>
-                            Cobalt is an app security startup in San Francisco.
-                            We helped them with a&nbsp;brand and&nbsp;site.
+                            Cobalt is an app security startup in San Francisco. We helped them with
+                            a&nbsp;brand and&nbsp;site.
                         </p>
                     </Hero>
                 </Section>
                 <ScrollIndicatorTarget />
                 <Topic title="Crowd Powered">
-                    <Section
-                        {...LightTheme}
-                        spacerProps={{ head: true }}
-                        menuToggleColor="#575757"
-                    >
+                    <Section spacerProps={{ head: true }} css={lightCss}>
                         <SectionHeader no={1} />
                         <Container>
                             <p>
-                                Cobalt started life as Crowdcurity, as the name
-                                suggests, a crowdsourced web-app security
-                                testing startup in San Francisco, run by a great
-                                team of Danish Vikings. We helped with a new
-                                name, an eyeball / combination lock-inspired
-                                mark, and an approachable brand wrapped around
-                                it all.
+                                Cobalt started life as Crowdcurity, as the name suggests, a
+                                crowdsourced web-app security testing startup in San Francisco, run
+                                by a great team of Danish Vikings. We helped with a new name, an
+                                eyeball / combination lock-inspired mark, and an approachable brand
+                                wrapped around it all.
                             </p>
                             <Spacer head scale={0.6}>
                                 <LogoImage />
@@ -72,18 +50,13 @@ export default function CobaltPage() {
                     </Section>
                 </Topic>
                 <Topic title="Aiming for Clarity">
-                    <Section
-                        {...LightTheme}
-                        spacerProps={{ head: true }}
-                        menuToggleColor="#575757"
-                    >
+                    <Section spacerProps={{ head: true }} css={lightCss}>
                         <SectionHeader no={2} />
                         <Container>
                             <p>
-                                With the site, we aimed to make their range of
-                                services clear, simple and accessible, with a
-                                friendly voice. We also did a brief UI pass over
-                                Central, their web dashboard, to clean it up.
+                                With the site, we aimed to make their range of services clear,
+                                simple and accessible, with a friendly voice. We also did a brief UI
+                                pass over Central, their web dashboard, to clean it up.
                             </p>
                         </Container>
                         <Spacer head tail scale={0.6}>
@@ -95,19 +68,14 @@ export default function CobaltPage() {
                     </Section>
                 </Topic>
                 <Topic title="Bugs Categorised">
-                    <Section
-                        {...DarkTheme}
-                        spacerProps={{ head: true, tail: true }}
-                    >
+                    <Section spacerProps={{ head: true, tail: true }} css={darkCss}>
                         <SectionHeader no={3} />
                         <Container>
                             <p>
-                                As a big part of the site is the leaderboards
-                                for their security testers, where they get
-                                ranked against their peers, we worked with
-                                illustrator Marty Cook to create a range of
-                                icons representing all the bug types they can
-                                fix in client's applications — from access
+                                As a big part of the site is the leaderboards for their security
+                                testers, where they get ranked against their peers, we worked with
+                                illustrator Marty Cook to create a range of icons representing all
+                                the bug types they can fix in client's applications — from access
                                 control to an SQL injection.
                             </p>
                         </Container>
@@ -117,11 +85,7 @@ export default function CobaltPage() {
                     </Section>
                 </Topic>
                 <Topic title="Credits">
-                    <Section
-                        {...LightTheme}
-                        spacerProps={{ head: true, tail: true }}
-                        menuToggleColor="#575757"
-                    >
+                    <Section spacerProps={{ head: true, tail: true }} css={lightCss}>
                         <SectionHeader no={4}>
                             <Bullet />
                             <Link
@@ -133,23 +97,11 @@ export default function CobaltPage() {
                             </Link>
                         </SectionHeader>
                         <Contributors>
-                            <Contributor
-                                name="Matt Innes"
-                                role="Brand, Direction, Design"
-                            />
-                            <Contributor
-                                name="Saori Kajiwara"
-                                role="Design, Illustration"
-                            />
+                            <Contributor name="Matt Innes" role="Brand, Direction, Design" />
+                            <Contributor name="Saori Kajiwara" role="Design, Illustration" />
                             <Contributor name="Lars Kluge" role="Inkpad CMS" />
-                            <Contributor
-                                name="Mariusz Roliński"
-                                role="Front End Code"
-                            />
-                            <Contributor
-                                name="Marty Cook"
-                                role="Illustration"
-                            />
+                            <Contributor name="Mariusz Roliński" role="Front End Code" />
+                            <Contributor name="Marty Cook" role="Illustration" />
                         </Contributors>
                         <Container>
                             <hr />
@@ -165,3 +117,21 @@ export default function CobaltPage() {
 export const Head: HeadFC = () => {
     return <Seo projectName="cobalt" />
 }
+
+const layoutCss = css`
+    --Layout_Background: #207dbc;
+`
+
+const darkCss = css`
+    --Section_Background: #248bd2;
+    --Section_Color: #ffffff;
+`
+
+const lightCss = css`
+    --Section_Background: #f9f9f9;
+    --Section_Color: #575757;
+`
+
+const heroCss = css`
+    --MenuToggle_GradientHighBackgroundColor: var(--Section_Background);
+`

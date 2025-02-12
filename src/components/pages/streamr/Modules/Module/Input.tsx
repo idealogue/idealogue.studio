@@ -1,4 +1,4 @@
-import { PLEX_SANS } from '$utils/css'
+import { font } from '$utils/css'
 import * as React from 'react'
 import styled from 'styled-components'
 import { Icon, Name, Port } from './Port'
@@ -55,8 +55,9 @@ const Em = styled.em`
 `
 
 const Value = styled.div`
+    ${font('plex sans')}
+
     color: #adadad;
-    font-family: ${PLEX_SANS};
     line-height: 1rem;
     margin-left: 0.75rem;
     white-space: pre;

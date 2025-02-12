@@ -23,6 +23,12 @@
       "$streamr": ["./src/components/pages/streamr"],
       "$streamr/*": ["./src/components/pages/streamr/*"],
       "$vizor/*": ["./src/components/pages/vizor/*"],
+      "$octant": ["./src/components/pages/octant"],
+      "$octant/*": ["./src/components/pages/octant/*"],
+      "$deui": ["./src/components/pages/deui"],
+      "$deui/*": ["./src/components/pages/deui/*"],
+      "$cargo": ["./src/components/pages/cargo"],
+      "$cargo/*": ["./src/components/pages/cargo/*"],
       "$team/*": ["./src/components/pages/team/*"]
     }
   },

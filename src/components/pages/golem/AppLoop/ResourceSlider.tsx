@@ -121,10 +121,7 @@ export function ResourceSlider({
     const isMounted = useMounted()
 
     useEffect(() => {
-        const duration = Math.max(
-            1,
-            Math.abs(positionProp - positionRef.current.position) * 0.03
-        )
+        const duration = Math.max(1, Math.abs(positionProp - positionRef.current.position) * 0.03)
 
         const tween = gsap.to(positionRef.current, duration, {
             position: positionProp,
@@ -167,9 +164,8 @@ export function ResourceSlider({
                 <Icon source={HIGH} />
             </Slider>
             <p>
-                Use the slider to choose how much of your machine&apos;s
-                resources (CPU, RAM and disk space) Golem can use. More power
-                means more potential income.
+                Use the slider to choose how much of your machine&apos;s resources (CPU, RAM and
+                disk space) Golem can use. More power means more potential income.
             </p>
         </ResourceSliderRoot>
     )
@@ -178,7 +174,7 @@ export function ResourceSlider({
 const ResourceSliderRoot = styled.div`
     padding: 40px 25px 40px;
 
-    & p {
+    && p {
         color: #cbcbcb;
         font-size: 12px;
         line-height: 18px;

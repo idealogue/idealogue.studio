@@ -9,4 +9,4 @@
 ### Deployment
 
 - `npm version <patch|minor|…>` to get a tag and a version commit.
-- `git push master <tag aka version>` to get it deployed to `gh-pages` branch in the current repo.
+- `git push --atomic master <tag aka version>` to get it deployed to `gh-pages` branch in the current repo.

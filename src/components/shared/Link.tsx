@@ -25,7 +25,7 @@ export const Link = styled.a<{ $noDecor?: boolean }>`
             position: relative;
 
             &::after {
-                background-color: ${({ theme }) => theme.color || '#000000'};
+                background-color: currentColor;
                 bottom: 0;
                 content: '';
                 display: block;

@@ -3,6 +3,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import Glyph, { ARROW_RIGHT } from '~/components/shared/Glyph'
 import { Link } from '~/components/shared/Link'
+import { font } from '~/utils/css'
 import { useNextProjectManifest } from '~/utils/project'
 
 type NextProjectProps = React.HTMLAttributes<HTMLDivElement>
@@ -28,8 +29,9 @@ const UnstyledNextProject = (props: NextProjectProps) => {
 }
 
 const NextProject = styled(UnstyledNextProject)`
+    ${font('publico text')};
+
     display: flex;
-    font-family: 'Publico Text';
     justify-content: center;
     padding: 5.75rem 0 0;
 

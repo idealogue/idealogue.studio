@@ -1,4 +1,4 @@
-import { MEDIUM, PLEX_MONO } from '$utils/css'
+import { font, MEDIUM } from '$utils/css'
 import styled from 'styled-components'
 
 export const Icon = styled.div`
@@ -7,7 +7,8 @@ export const Icon = styled.div`
 `
 
 export const Name = styled.div`
-    font-family: ${PLEX_MONO};
+    ${font('plex mono')};
+
     font-weight: ${MEDIUM};
     line-height: 1rem;
     white-space: nowrap;

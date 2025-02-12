@@ -1,4 +1,4 @@
-import { MEDIUM, PLEX_SANS } from '$utils/css'
+import { font, MEDIUM } from '$utils/css'
 import React, { HTMLAttributes, useMemo } from 'react'
 import styled, { css } from 'styled-components'
 import { Input } from './Input'
@@ -128,10 +128,11 @@ export const Bottom = styled.div`
 `
 
 export const Header = styled.div`
+    ${font('plex sans')}
+
     align-items: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
-    font-family: ${PLEX_SANS};
     font-size: 12px;
     font-weight: ${MEDIUM};
     height: 40px;
@@ -205,12 +206,13 @@ export const ModuleRoot = styled.div<{
     $width?: string
     $height?: string
 }>`
+    ${font('plex sans')}
+
     background-color: white;
     border-radius: 4px;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
     color: #323232;
     display: flex;
-    font-family: ${PLEX_SANS};
     flex-direction: column;
     flex-shrink: 0;
     overflow: hidden;

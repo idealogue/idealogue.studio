@@ -172,21 +172,8 @@ const Circle = ({ angle: angleProp }: CircleProps) => {
 
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-            <circle
-                cx="50"
-                cy="50"
-                r="48"
-                stroke="#eff0f1"
-                strokeWidth="2"
-                fill="none"
-            />
-            <path
-                d={d}
-                fill="none"
-                stroke="#37c481"
-                strokeLinecap="round"
-                strokeWidth="4"
-            />
+            <circle cx="50" cy="50" r="48" stroke="#eff0f1" strokeWidth="2" fill="none" />
+            <path d={d} fill="none" stroke="#37c481" strokeLinecap="round" strokeWidth="4" />
         </svg>
     )
 }
@@ -227,13 +214,7 @@ interface ResourceProps {
     children: ReactNode
 }
 
-function Resource({
-    reflect = false,
-    usage,
-    total,
-    unit,
-    children,
-}: ResourceProps) {
+function Resource({ reflect = false, usage, total, unit, children }: ResourceProps) {
     return (
         <ResourceRoot>
             <Graph used={reflect ? usage / total : 0}>{children}</Graph>
@@ -284,9 +265,9 @@ export function Advanced({ cpu, ram, disk }: AdvancedProps) {
             </Row>
             <Row>
                 <p>
-                    Allocate your machine&apos;s resources exactly as you like.
-                    Remember that if you give Golem all of your processing power
-                    you will not be able to use it at the same time.
+                    Allocate your machine&apos;s resources exactly as you like. Remember that if you
+                    give Golem all of your processing power you will not be able to use it at the
+                    same time.
                 </p>
             </Row>
         </AdvancedRoot>
@@ -296,7 +277,7 @@ export function Advanced({ cpu, ram, disk }: AdvancedProps) {
 const AdvancedRoot = styled.div`
     padding: 25px 0;
 
-    & p {
+    && p {
         color: #cbcbcb;
         font-size: 10px;
         line-height: 1.5em;
