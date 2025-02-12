@@ -61,7 +61,7 @@ const projects: Record<ProjectName, Project> = {
 export const lineup: ProjectName[] = [
     // 'octant',
     'cargo',
-    // 'deui',
+    'deui',
     'streamr',
     'golem',
     'vizor',
