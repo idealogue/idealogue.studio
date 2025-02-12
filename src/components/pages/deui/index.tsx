@@ -138,7 +138,7 @@ export function DeuiPage() {
                         }}
                     />
                 </Section>
-                <Section css={[defaultCss]}>
+                <Section css={[defaultCss, darkMenuToggleCss]}>
                     <Machine />
                 </Section>
                 <Topic title="Try it out yourself">
@@ -284,6 +284,14 @@ const darkCss = css`
 
 const lightCss = css`
     --Section_Background: #ebebeb;
+`
+
+const darkMenuToggleCss = css`
+    --MenuToggle_Color: #171717;
+
+    @media (min-width: 1600px) {
+        --MenuToggle_Color: inherit;
+    }
 `
 
 const themeCss = css`
