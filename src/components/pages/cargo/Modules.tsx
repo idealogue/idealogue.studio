@@ -21,7 +21,7 @@ export function Modules() {
                 src={ModulesImg}
                 srcSet={`${ModulesImg2x} 2x`}
                 alt="Cargo modules"
-                width="2569"
+                width="2920"
                 height="1571"
             />
         </ModulesRoot>
@@ -57,7 +57,7 @@ const WideImg = styled.img`
         position: absolute;
         top: 0;
         transform: translateX(-50%) translateY(2.5rem);
-        width: clamp(80rem, 200vw, 160rem);
+        width: clamp(80rem, 200vw, 182.5rem);
     }
 `
 
@@ -65,6 +65,6 @@ const ModulesRoot = styled.div`
     margin: 0;
 
     @media ${WideImgMq} {
-        height: clamp(50rem, 115vw, 92.75rem);
+        height: clamp(40rem, 101vw, 92.75rem);
     }
 `

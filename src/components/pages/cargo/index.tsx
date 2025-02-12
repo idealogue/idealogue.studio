@@ -114,4 +114,5 @@ const heroCss = css`
 
 const blackCss = css`
     --Section_Background: #000000;
+    --Section_Color: #9ea39e;
 `
