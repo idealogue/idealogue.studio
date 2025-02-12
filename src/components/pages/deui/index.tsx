@@ -9,7 +9,7 @@ import { Layout } from '~/components/shared/Layout'
 import { ScrollIndicator, ScrollIndicatorTarget } from '~/components/shared/ScrollIndicator'
 import { SectionHeader } from '~/components/shared/SectionHeader'
 import { Topic } from '~/components/shared/Topic'
-import { font } from '~/utils/css'
+import { font, LG, MD } from '~/utils/css'
 import Cup from './assets/cup.png'
 import Cup2x from './assets/cup@2x.png'
 import MachinePicture from './assets/machine.jpg'
@@ -179,12 +179,20 @@ const RepoLink = styled.a`
     display: block;
     width: max-content;
     font-weight: 700;
-    font-size: 1.875rem;
+    font-size: 1.25rem;
     text-decoration: none;
     padding: 1rem 0;
 
     && {
         color: var(--SectionHeader_Color) !important;
+    }
+
+    @media (min-width: ${MD}px) {
+        font-size: 1.5rem;
+    }
+
+    @media (min-width: ${LG}px) {
+        font-size: 1.875rem;
     }
 `
 
