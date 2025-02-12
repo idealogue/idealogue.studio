@@ -6,7 +6,6 @@ import PlatformImage from '$vizor/Image/platform.jpg'
 import PlatformImage2x from '$vizor/Image/platform@2x.jpg'
 import * as React from 'react'
 import { css } from 'styled-components'
-import { Ateneum } from '~/components/pages/vizor/Ateneum'
 import { Icons } from '~/components/pages/vizor/Icons'
 import { ALL as Image } from '~/components/pages/vizor/Image'
 import { Modules } from '~/components/pages/vizor/Modules'
@@ -174,9 +173,7 @@ export default function VizorPage() {
                                 </BrowserFrame>
                             </Spacer>
                         </Container>
-                        <Spacer head tail>
-                            <Ateneum />
-                        </Spacer>
+                        <Spacer head />
                         <CaptionedContainer caption="The Vizor 360 product launch page">
                             <Container>
                                 <BrowserFrame shadow dark>
