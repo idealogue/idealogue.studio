@@ -271,7 +271,7 @@ export default function StreamrPage() {
                 <Topic title="Credits">
                     <Section css={mainCss}>
                         <Spacer head tail>
-                            <SectionHeader no={6}>
+                            <SectionHeader no={7}>
                                 <Bullet />
                                 <Link
                                     href="https://streamr.network/"
