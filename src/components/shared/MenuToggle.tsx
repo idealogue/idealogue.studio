@@ -50,11 +50,11 @@ export function MenuToggle() {
 }
 
 export const MenuToggleRoot = styled.div`
-    background: linear-gradient(
-        var(--MenuToggle_GradientLowBackgroundColor, transparent),
-        var(--MenuToggle_GradientHighBackgroundColor, transparent),
-        var(--MenuToggle_GradientHighBackgroundColor, transparent),
-        var(--MenuToggle_GradientLowBackgroundColor, transparent)
+    background: radial-gradient(
+        closest-side,
+        var(--MenuToggle_GradientHighBackgroundColor, transparent) 0,
+        var(--MenuToggle_GradientHighBackgroundColor, transparent) 25%,
+        var(--MenuToggle_GradientLowBackgroundColor, transparent) 100%
     );
     color: var(--MenuToggle_Color, inherit);
     height: 90px;
