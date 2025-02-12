@@ -5,6 +5,7 @@ export const Caption = styled.em`
     ${font('publico text')};
 
     color: var(--Caption_Color);
+    opacity: var(--Caption_Opacity, 1);
     display: block;
     font-size: 14px;
     font-style: italic;

@@ -207,11 +207,14 @@ const layoutCss = css`
 const blueCss = css`
     --Section_Background: #005ad3;
     --Section_Color: #ffffff;
+    --Caption_Color: #ffffff;
+    --Caption_Opacity: 0.6;
 `
 
 const darkBlueCss = css`
     --Section_Background: #001a3d;
     --Section_Color: #ffffff;
+    --Caption_Opacity: 0.6;
 `
 
 const whiteCss = css`
@@ -229,6 +232,7 @@ const grayishCss = css`
 const blackCss = css`
     --Section_Background: #000000;
     --Section_Color: #ffffff;
+    --Caption_Opacity: 0.6;
 `
 
 const heroCss = css`
