@@ -61,7 +61,7 @@ export function DeuiPage() {
                             </p>
                             <p>
                                 So I teamed up with Mariusz to make a replacement, mainly because I
-                                couldn&amp;t stand to use such unhappy software on such a generally
+                                couldn&apos;t stand to use such unhappy software on such a generally
                                 nice espresso machine.
                             </p>
                             <p>
