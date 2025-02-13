@@ -6,6 +6,7 @@ import { ProjectPage } from '~/components/ProjectPage'
 import { Section } from '~/components/Section'
 import { Container } from '~/components/shared/Container'
 import { Layout } from '~/components/shared/Layout'
+import NextProject from '~/components/shared/NextProject'
 import { ScrollIndicator, ScrollIndicatorTarget } from '~/components/shared/ScrollIndicator'
 import { SectionHeader } from '~/components/shared/SectionHeader'
 import { Topic } from '~/components/shared/Topic'
@@ -168,6 +169,12 @@ export function DeuiPage() {
                         </Container>
                     </Section>
                 </Topic>
+                <Section css={defaultCss} spacerProps={{ tail: true }}>
+                    <Container>
+                        <hr />
+                    </Container>
+                    <NextProject />
+                </Section>
             </Layout>
         </ProjectPage>
     )
