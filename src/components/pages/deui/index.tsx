@@ -9,7 +9,7 @@ import { Layout } from '~/components/shared/Layout'
 import { ScrollIndicator, ScrollIndicatorTarget } from '~/components/shared/ScrollIndicator'
 import { SectionHeader } from '~/components/shared/SectionHeader'
 import { Topic } from '~/components/shared/Topic'
-import { font } from '~/utils/css'
+import { font, LG, MD, TABLET } from '~/utils/css'
 import Cup from './assets/cup.png'
 import Cup2x from './assets/cup@2x.png'
 import MachinePicture from './assets/machine.jpg'
@@ -61,7 +61,7 @@ export function DeuiPage() {
                             </p>
                             <p>
                                 So I teamed up with Mariusz to make a replacement, mainly because I
-                                couldn&amp;t stand to use such unhappy software on such a generally
+                                couldn&apos;t stand to use such unhappy software on such a generally
                                 nice espresso machine.
                             </p>
                             <p>
@@ -81,7 +81,7 @@ export function DeuiPage() {
                     css={[defaultCss, themeCss, dark ? darkCss : lightCss]}
                 >
                     <UiScreenshots>
-                        <ScreenshotWrap>
+                        <WideScreenshotWrap>
                             <UiScreenshot>
                                 <ImageDark
                                     src={Controller}
@@ -94,7 +94,7 @@ export function DeuiPage() {
                                     alt="Controller"
                                 />
                             </UiScreenshot>
-                        </ScreenshotWrap>
+                        </WideScreenshotWrap>
                         <UiScreenshotNarrow>
                             <ScreenshotWrap>
                                 <ImageDark
@@ -138,7 +138,7 @@ export function DeuiPage() {
                         }}
                     />
                 </Section>
-                <Section css={[defaultCss]}>
+                <Section css={[defaultCss, darkMenuToggleCss]}>
                     <Machine />
                 </Section>
                 <Topic title="Try it out yourself">
@@ -179,12 +179,20 @@ const RepoLink = styled.a`
     display: block;
     width: max-content;
     font-weight: 700;
-    font-size: 1.875rem;
+    font-size: 1.25rem;
     text-decoration: none;
     padding: 1rem 0;
 
     && {
         color: var(--SectionHeader_Color) !important;
+    }
+
+    @media (min-width: ${MD}px) {
+        font-size: 1.5rem;
+    }
+
+    @media (min-width: ${LG}px) {
+        font-size: 1.875rem;
     }
 `
 
@@ -212,25 +220,44 @@ const UiScreenshot = styled.div`
     img {
         border-radius: 1rem;
         display: block;
+        max-width: 100%;
     }
 `
 
 const UiScreenshotNarrow = styled(UiScreenshot)`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: space-between;
-    gap: 40px;
-    margin-top: 40px;
+    gap: 2.5rem;
+    justify-content: center;
+
+    @media ${TABLET} {
+        justify-content: space-between;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-top: 2.5rem;
+    }
 `
 
 const ScreenshotWrap = styled.div`
     position: relative;
 `
 
+const WideScreenshotWrap = styled(ScreenshotWrap)`
+    display: none;
+
+    @media ${TABLET} {
+        display: block;
+    }
+`
+
 const UiScreenshots = styled.div`
-    width: 968px;
+    box-sizing: border-box;
     max-width: 100%;
+    padding: 0 2rem;
     margin: 0 auto;
+
+    @media ${TABLET} {
+        padding: 0 4rem;
+        width: 68.5rem;
+    }
 `
 
 const Machine = styled.div`
@@ -284,6 +311,14 @@ const darkCss = css`
 
 const lightCss = css`
     --Section_Background: #ebebeb;
+`
+
+const darkMenuToggleCss = css`
+    --MenuToggle_Color: #171717;
+
+    @media (min-width: 1600px) {
+        --MenuToggle_Color: inherit;
+    }
 `
 
 const themeCss = css`

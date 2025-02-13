@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled, { css } from 'styled-components'
+import { TABLET } from '~/utils/css'
 
 interface ThemeToggleProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     dark?: boolean
@@ -24,6 +25,13 @@ const Icon = styled.svg`
     transform: translate(-50%, -50%);
     transition: 200ms ease-in-out;
     transition-property: visibility, opacity;
+    width: 2rem;
+    height: 2rem;
+
+    @media ${TABLET} {
+        width: auto;
+        height: auto;
+    }
 `
 
 const SunRoot = styled(Icon)`
@@ -40,27 +48,45 @@ const MoonRoot = styled(Icon)`
 
 const ThemeToggleSlider = styled.div`
     position: relative;
-    width: 6rem;
-    height: 6rem;
+    width: var(--ThemeToggle_SliderSize, 6rem);
+    height: var(--ThemeToggle_SliderSize, 6rem);
     border-radius: 50%;
     background-color: #ffffff;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.08);
     transition: 200ms ease-in-out;
     transition-property: background-color, box-shadow, transform;
 `
 
 const ThemeToggleRoot = styled.button<{ $dark?: boolean }>`
+    --ThemeToggle_SliderSize: 4rem;
+    --ThemeToggle_Width: 7rem;
+    --ThemeToggle_Height: 4.75rem;
+    --ThemeToggle_BorderRadius: 3.375rem; /* 0.5 of --ThemeToggle_Height */
+    --ThemeToggle_Padding: 0.375rem;
+    --ThemeToggle_MarginTop: 5rem;
+    --ThemeToggle_SlideDistance: 2.25rem;
+
     appearance: none;
     border: 0;
     background-color: #f8f8f8;
-    width: 10.5rem;
-    height: 6.75rem;
-    border-radius: 3.375rem;
+    width: var(--ThemeToggle_Width);
+    height: var(--ThemeToggle_Height);
+    border-radius: var(--ThemeToggle_BorderRadius);
     box-sizing: border-box;
-    padding: 0.375rem;
-    margin: 10rem auto 0;
+    padding: var(--ThemeToggle_Padding);
+    margin: var(--ThemeToggle_MarginTop) auto 0;
     display: block;
     transition: 200ms ease-in-out background-color;
+
+    @media ${TABLET} {
+        --ThemeToggle_SliderSize: 6rem;
+        --ThemeToggle_Width: 10.5rem;
+        --ThemeToggle_Height: 6.75rem;
+        --ThemeToggle_BorderRadius: 3.375rem; /* 0.5 of --ThemeToggle_Height */
+        --ThemeToggle_Padding: 0.375rem;
+        --ThemeToggle_MarginTop: 10rem;
+        --ThemeToggle_SlideDistance: 3.75rem;
+    }
 
     ${({ $dark = false }) =>
         $dark &&
@@ -69,8 +95,8 @@ const ThemeToggleRoot = styled.button<{ $dark?: boolean }>`
 
             ${ThemeToggleSlider} {
                 background-color: #272727;
-                box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.08);
-                transform: translateX(3.75rem);
+                box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.08);
+                transform: translateX(var(--ThemeToggle_SlideDistance));
             }
 
             ${SunRoot} {

@@ -5,7 +5,7 @@ const projects: Record<ProjectName, Project> = {
     deui: {
         name: 'deui',
         displayName: 'Deui',
-        posterUrl: 'https://idealogue.studio/images/Deui-share.png',
+        posterUrl: 'https://idealogue.studio/images/Idealogue-share.png',
         desc: 'Deui Case Study',
     },
     cargo: {
@@ -61,7 +61,7 @@ const projects: Record<ProjectName, Project> = {
 export const lineup: ProjectName[] = [
     // 'octant',
     'cargo',
-    // 'deui',
+    'deui',
     'streamr',
     'golem',
     'vizor',
