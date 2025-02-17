@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled, { css } from 'styled-components'
+import { AutoPlayingVideo } from '~/components/shared/AutoPlayingVideo'
 import { useArrowCursor } from '~/components/shared/Cursor'
 
 export function ViewGallery() {
@@ -26,7 +27,7 @@ export function ViewGallery() {
                         setDirection(undefined)
                     }}
                 >
-                    <Video autoPlay loop playsInline muted>
+                    <Video loop playsInline muted disabled={dx !== 0}>
                         <source src="/videos/octant/view_metrics_desktop.mp4" />
                     </Video>
                 </Slide>
@@ -42,7 +43,7 @@ export function ViewGallery() {
                         setDirection(undefined)
                     }}
                 >
-                    <Video autoPlay loop playsInline muted>
+                    <Video loop playsInline muted disabled={dx !== 1}>
                         <source src="/videos/octant/view_homepage_desktop.mp4" />
                     </Video>
                 </Slide>
@@ -58,7 +59,7 @@ export function ViewGallery() {
                         setDirection(undefined)
                     }}
                 >
-                    <Video autoPlay loop playsInline muted>
+                    <Video loop playsInline muted disabled={dx !== 2}>
                         <source src="/videos/octant/view_projects_desktop.mp4" />
                     </Video>
                 </Slide>
@@ -67,7 +68,7 @@ export function ViewGallery() {
     )
 }
 
-const Video = styled.video`
+const Video = styled(AutoPlayingVideo)`
     display: block;
     border-radius: 16px;
     width: 100%;
