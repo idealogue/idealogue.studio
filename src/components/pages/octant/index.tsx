@@ -1,12 +1,16 @@
 import * as React from 'react'
-import { css } from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Blockquote, BlockquoteBody } from '~/components/Html'
 import { Exploration } from '~/components/pages/octant/Exploration'
 import { Illustrations } from '~/components/pages/octant/Illustrations'
 import { Ui } from '~/components/pages/octant/Ui'
 import { ViewGallery } from '~/components/pages/octant/ViewGallery'
 import { Websites } from '~/components/pages/octant/Websites'
-import { ProjectHeroContent, ProjectImage, ProjectName } from '~/components/Project'
+import {
+    ProjectImage as PrestyledProjectIamge,
+    ProjectHeroContent,
+    ProjectName,
+} from '~/components/Project'
 import { ProjectPage } from '~/components/ProjectPage'
 import { Section } from '~/components/Section'
 import { CaptionedContainer } from '~/components/shared/CaptionedContainer'
@@ -210,4 +214,8 @@ const pearlDustBgCss = css`
 
 const sageMistBgCss = css`
     --Section_Background: #cdd1cd;
+`
+
+const ProjectImage = styled(PrestyledProjectIamge)`
+    width: clamp(10rem, 26vw, 16.625rem);
 `
