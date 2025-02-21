@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled, { css } from 'styled-components'
 import { AutoPlayingVideo } from '~/components/shared/AutoPlayingVideo'
+import { SM, TABLET } from '~/utils/css'
 import HeroCrop from './assets/illustration_hero_crop.png'
 import HeroCrop2x from './assets/illustration_hero_crop@2x.png'
 import WindowCloth from './assets/illustration_window_cloth.png'
@@ -57,7 +58,9 @@ export function Illustrations() {
                     </ClipList>
                 </div>
             </Clips>
-            <HeroImage src={HeroCrop} srcSet={`${HeroCrop2x} 2x`} alt="" />
+            <HeroImageWrap>
+                <HeroImage src={HeroCrop} srcSet={`${HeroCrop2x} 2x`} alt="" />
+            </HeroImageWrap>
             <Windows>
                 <img src={WindowWithDog} srcSet={`${WindowWithDog2x} 2x`} alt="" />
                 <img src={WindowWithBird} srcSet={`${WindowWithBird2x} 2x`} alt="" />
@@ -102,18 +105,50 @@ const Clips = styled.div`
     }
 `
 
+const HeroImageWrap = styled.div`
+    width: 1372px;
+    max-width: 100%;
+    margin: 0 auto;
+`
+
 const HeroImage = styled.img`
     display: block;
-    margin: 0 auto;
     width: 1372px;
+    max-width: 225vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 `
 
 const Windows = styled.div`
     display: grid;
-    grid-template-columns: auto auto auto;
-    width: 1440px;
+    grid-template-columns: auto;
+    gap: 8rem;
+    gap: clamp(3rem, 20vw, 8rem);
     justify-content: space-around;
-    margin: 116px auto 0;
+    margin: 8rem auto 6rem;
+    max-width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+
+    img {
+        max-width: 100%;
+    }
+
+    @media (min-width: ${SM}px) {
+        padding: 0 4rem;
+        width: 79rem;
+    }
+
+    @media ${TABLET} {
+        gap: 0;
+        grid-template-columns: auto auto auto;
+    }
+
+    @media (min-width: 87rem) {
+        padding: 0 8rem;
+        width: 116rem;
+    }
 `
 
 const IllustrationsRoot = styled.div``
