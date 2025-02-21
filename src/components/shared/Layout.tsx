@@ -1,5 +1,6 @@
 import 'reset-css'
 import '../../styles/fonts.css'
+import '../../styles/global.css'
 
 import { MenuProvider } from '$hooks/useMenu'
 import useScrollDirection from '$hooks/useScrollDirection'

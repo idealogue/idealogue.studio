@@ -1,13 +1,12 @@
 import { Video } from '$shared/Video'
 import React, { useEffect, useRef, VideoHTMLAttributes } from 'react'
 
-type AutoPlayingVideoProps = Omit<
-    VideoHTMLAttributes<HTMLVideoElement>,
-    'autoPlay'
->
+interface AutoPlayingVideoProps extends Omit<VideoHTMLAttributes<HTMLVideoElement>, 'autoPlay'> {
+    disabled?: boolean
+}
 
 // `autoPlay` gets dropped from `props` here. We play the video when it's seen for the first time.
-export function AutoPlayingVideo(props: AutoPlayingVideoProps) {
+export function AutoPlayingVideo({ disabled = false, ...props }: AutoPlayingVideoProps) {
     const ref = useRef<HTMLVideoElement>(null)
 
     useEffect(() => {
@@ -17,17 +16,25 @@ export function AutoPlayingVideo(props: AutoPlayingVideoProps) {
             return () => {}
         }
 
+        if (disabled) {
+            if (!video.paused) {
+                video.pause()
+            }
+
+            return () => {}
+        }
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(async ({ isIntersecting }) => {
                 const { current: video } = ref
 
-                if (isIntersecting && video && video.paused) {
-                    try {
-                        await video.play()
-                    } catch (e) {
-                        // Ignore failures.
-                    }
+                if (!video || !video.paused || !isIntersecting) {
+                    return
                 }
+
+                try {
+                    await video.play()
+                } catch (_ignored) {}
             })
         })
 
@@ -36,7 +43,7 @@ export function AutoPlayingVideo(props: AutoPlayingVideoProps) {
         return () => {
             observer.disconnect()
         }
-    }, [])
+    }, [disabled])
 
     return <Video {...props} ref={ref} />
 }

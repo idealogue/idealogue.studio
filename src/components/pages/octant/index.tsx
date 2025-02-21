@@ -1,14 +1,18 @@
 import * as React from 'react'
-import { css } from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Blockquote, BlockquoteBody } from '~/components/Html'
 import { Exploration } from '~/components/pages/octant/Exploration'
 import { Illustrations } from '~/components/pages/octant/Illustrations'
 import { Ui } from '~/components/pages/octant/Ui'
 import { ViewGallery } from '~/components/pages/octant/ViewGallery'
 import { Websites } from '~/components/pages/octant/Websites'
-import { ProjectHeroContent, ProjectImage, ProjectName } from '~/components/Project'
+import {
+    ProjectImage as PrestyledProjectIamge,
+    ProjectHeroContent,
+    ProjectName,
+} from '~/components/Project'
 import { ProjectPage } from '~/components/ProjectPage'
-import { Section } from '~/components/Section'
+import { HeroSection, Section } from '~/components/Section2'
 import { CaptionedContainer } from '~/components/shared/CaptionedContainer'
 import { Container } from '~/components/shared/Container'
 import { Contributor, Contributors } from '~/components/shared/Contributor'
@@ -17,6 +21,7 @@ import NextProject from '~/components/shared/NextProject'
 import { ScrollIndicator, ScrollIndicatorTarget } from '~/components/shared/ScrollIndicator'
 import { SectionHeader } from '~/components/shared/SectionHeader'
 import { Topic } from '~/components/shared/Topic'
+import { TABLET } from '~/utils/css'
 import Tree from './assets/tree.png'
 import Tree2x from './assets/tree@2x.png'
 
@@ -24,7 +29,7 @@ export function OctantPage() {
     return (
         <ProjectPage projectName="octant">
             <Layout rootCss={layoutCss}>
-                <Section css={[defaultCss, heroCss]}>
+                <HeroSection css={[defaultCss, heroCss]}>
                     <ProjectHeroContent>
                         <Container>
                             <ProjectImage src={Tree} srcSet={`${Tree2x} 2x`} />
@@ -32,10 +37,10 @@ export function OctantPage() {
                         </Container>
                     </ProjectHeroContent>
                     <ScrollIndicator />
-                </Section>
+                </HeroSection>
                 <ScrollIndicatorTarget />
                 <Topic title="Making public goods funding easy">
-                    <Section spacerProps={{ head: true, tail: true }} css={defaultCss}>
+                    <Section x s m l css={defaultCss}>
                         <SectionHeader no={1} />
                         <Container>
                             <p>
@@ -60,13 +65,13 @@ export function OctantPage() {
                         </Container>
                     </Section>
                 </Topic>
-                <Section css={[defaultCss, sageMistBgCss]} spacerProps={{ head: true, tail: true }}>
+                <Section x s m l css={[defaultCss, sageMistBgCss]}>
                     <CaptionedContainer caption="Main views of Octant.app">
                         <ViewGallery />
                     </CaptionedContainer>
                 </Section>
                 <Topic title="Modular, tile-based UI for flexibility">
-                    <Section css={defaultCss} spacerProps={{ head: true }}>
+                    <Section x="t" s="t" m="t" l="t" css={defaultCss}>
                         <SectionHeader no={2} />
                         <Container>
                             <p>
@@ -92,13 +97,13 @@ export function OctantPage() {
                         </Container>
                     </Section>
                 </Topic>
-                <Section css={defaultCss} spacerProps={{ head: true }}>
+                <Section x="t" s="t" m="t" l="t" css={defaultCss}>
                     <CaptionedContainer caption="UI elements for adding projects, allocating funds and a metrics chart">
                         <Ui />
                     </CaptionedContainer>
                 </Section>
                 <Topic title="Navigating public goods">
-                    <Section css={defaultCss} spacerProps={{ head: true }}>
+                    <Section css={defaultCss} x s m="t" l="t">
                         <SectionHeader no={3} />
                         <Container>
                             <p>
@@ -117,19 +122,19 @@ export function OctantPage() {
                         </Container>
                     </Section>
                 </Topic>
-                <Section css={defaultCss} spacerProps={{ head: true, tail: true }}>
+                <Section x s m l css={explorationCss}>
                     <CaptionedContainer
                         caption={
                             <>
-                                Various representations of Octant in mark form with final at top
-                                right
+                                Various representations of Octant in mark form with final
+                                at&nbsp;top&nbsp;right
                             </>
                         }
                     >
                         <Exploration />
                     </CaptionedContainer>
                 </Section>
-                <Section css={[defaultCss, pearlDustBgCss]} spacerProps={{ head: true }}>
+                <Section x="t" s="t" m="t" l="t" css={[defaultCss, pearlDustBgCss]}>
                     <Container>
                         <p>
                             We worked with Jeff Phillips on a 2D simple line style illustration set
@@ -140,16 +145,13 @@ export function OctantPage() {
                         </p>
                     </Container>
                 </Section>
-                <Section
-                    css={[defaultCss, pearlDustBgCss]}
-                    spacerProps={{ head: true, tail: true }}
-                >
+                <Section x s m l css={[defaultCss, pearlDustBgCss]}>
                     <CaptionedContainer caption="Brand animation and illustration">
                         <Illustrations />
                     </CaptionedContainer>
                 </Section>
                 <Topic title="Websites">
-                    <Section css={[defaultCss, sageMistBgCss]} spacerProps={{ head: true }}>
+                    <Section x="t" s="t" m="t" l="t" css={[defaultCss, sageMistBgCss]}>
                         <SectionHeader no={4} />
                         <Container>
                             <p>
@@ -161,11 +163,11 @@ export function OctantPage() {
                         </Container>
                     </Section>
                 </Topic>
-                <Section spacerProps={{ head: true, tail: true }} css={[defaultCss, sageMistBgCss]}>
+                <Section x s m l css={[defaultCss, sageMistBgCss]}>
                     <Websites />
                 </Section>
                 <Topic title="Credits">
-                    <Section css={defaultCss} spacerProps={{ head: true, tail: true }}>
+                    <Section x s m l css={defaultCss}>
                         <SectionHeader no={5} />
                         <Contributors>
                             <Contributor name="Saori Kajiwara" role="UI/UX design" />
@@ -200,6 +202,16 @@ const defaultCss = css`
     --SectionHeader_NumberColor: #9ea39e;
 `
 
+const explorationCss = css`
+    --Section_Background: #ffffff;
+    --Section_Color: #171717;
+
+    @media ${TABLET} {
+        --Section_Background: #f8f8f8;
+        --Section_Color: #6b6b6b;
+    }
+`
+
 const heroCss = css`
     --MenuToggle_GradientHighBackgroundColor: var(--Section_Background);
 `
@@ -210,4 +222,8 @@ const pearlDustBgCss = css`
 
 const sageMistBgCss = css`
     --Section_Background: #cdd1cd;
+`
+
+const ProjectImage = styled(PrestyledProjectIamge)`
+    width: clamp(10rem, 26vw, 16.625rem);
 `
