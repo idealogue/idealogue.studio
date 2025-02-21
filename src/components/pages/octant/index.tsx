@@ -12,8 +12,7 @@ import {
     ProjectName,
 } from '~/components/Project'
 import { ProjectPage } from '~/components/ProjectPage'
-import { Section } from '~/components/Section'
-import { Section as Section2 } from '~/components/Section2'
+import { HeroSection, Section } from '~/components/Section2'
 import { CaptionedContainer } from '~/components/shared/CaptionedContainer'
 import { Container } from '~/components/shared/Container'
 import { Contributor, Contributors } from '~/components/shared/Contributor'
@@ -30,7 +29,7 @@ export function OctantPage() {
     return (
         <ProjectPage projectName="octant">
             <Layout rootCss={layoutCss}>
-                <Section css={[defaultCss, heroCss]}>
+                <HeroSection css={[defaultCss, heroCss]}>
                     <ProjectHeroContent>
                         <Container>
                             <ProjectImage src={Tree} srcSet={`${Tree2x} 2x`} />
@@ -38,10 +37,10 @@ export function OctantPage() {
                         </Container>
                     </ProjectHeroContent>
                     <ScrollIndicator />
-                </Section>
+                </HeroSection>
                 <ScrollIndicatorTarget />
                 <Topic title="Making public goods funding easy">
-                    <Section spacerProps={{ head: true, tail: true }} css={defaultCss}>
+                    <Section x s m l css={defaultCss}>
                         <SectionHeader no={1} />
                         <Container>
                             <p>
@@ -66,13 +65,13 @@ export function OctantPage() {
                         </Container>
                     </Section>
                 </Topic>
-                <Section css={[defaultCss, sageMistBgCss]} spacerProps={{ head: true, tail: true }}>
+                <Section x s m l css={[defaultCss, sageMistBgCss]}>
                     <CaptionedContainer caption="Main views of Octant.app">
                         <ViewGallery />
                     </CaptionedContainer>
                 </Section>
                 <Topic title="Modular, tile-based UI for flexibility">
-                    <Section css={defaultCss} spacerProps={{ head: true }}>
+                    <Section x="t" s="t" m="t" l="t" css={defaultCss}>
                         <SectionHeader no={2} />
                         <Container>
                             <p>
@@ -98,13 +97,13 @@ export function OctantPage() {
                         </Container>
                     </Section>
                 </Topic>
-                <Section css={defaultCss} spacerProps={{ head: true }}>
+                <Section x="t" s="t" m="t" l="t" css={defaultCss}>
                     <CaptionedContainer caption="UI elements for adding projects, allocating funds and a metrics chart">
                         <Ui />
                     </CaptionedContainer>
                 </Section>
                 <Topic title="Navigating public goods">
-                    <Section2 css={defaultCss} x s m="t" l="t">
+                    <Section css={defaultCss} x s m="t" l="t">
                         <SectionHeader no={3} />
                         <Container>
                             <p>
@@ -121,9 +120,9 @@ export function OctantPage() {
                                 eighths.
                             </p>
                         </Container>
-                    </Section2>
+                    </Section>
                 </Topic>
-                <Section2 x s m l css={explorationCss}>
+                <Section x s m l css={explorationCss}>
                     <CaptionedContainer
                         caption={
                             <>
@@ -134,8 +133,8 @@ export function OctantPage() {
                     >
                         <Exploration />
                     </CaptionedContainer>
-                </Section2>
-                <Section css={[defaultCss, pearlDustBgCss]} spacerProps={{ head: true }}>
+                </Section>
+                <Section x="t" s="t" m="t" l="t" css={[defaultCss, pearlDustBgCss]}>
                     <Container>
                         <p>
                             We worked with Jeff Phillips on a 2D simple line style illustration set
@@ -146,16 +145,13 @@ export function OctantPage() {
                         </p>
                     </Container>
                 </Section>
-                <Section
-                    css={[defaultCss, pearlDustBgCss]}
-                    spacerProps={{ head: true, tail: true }}
-                >
+                <Section x s m l css={[defaultCss, pearlDustBgCss]}>
                     <CaptionedContainer caption="Brand animation and illustration">
                         <Illustrations />
                     </CaptionedContainer>
                 </Section>
                 <Topic title="Websites">
-                    <Section css={[defaultCss, sageMistBgCss]} spacerProps={{ head: true }}>
+                    <Section x="t" s="t" m="t" l="t" css={[defaultCss, sageMistBgCss]}>
                         <SectionHeader no={4} />
                         <Container>
                             <p>
@@ -167,11 +163,11 @@ export function OctantPage() {
                         </Container>
                     </Section>
                 </Topic>
-                <Section spacerProps={{ head: true, tail: true }} css={[defaultCss, sageMistBgCss]}>
+                <Section x s m l css={[defaultCss, sageMistBgCss]}>
                     <Websites />
                 </Section>
                 <Topic title="Credits">
-                    <Section css={defaultCss} spacerProps={{ head: true, tail: true }}>
+                    <Section x s m l css={defaultCss}>
                         <SectionHeader no={5} />
                         <Contributors>
                             <Contributor name="Saori Kajiwara" role="UI/UX design" />
