@@ -1,61 +1,66 @@
-.pad-xs-t {
+.Section {
+    transition: 200ms;
+    transition-property: padding-top, padding-bottom;
+}
+
+.Section.pad-xs-t {
     padding-top: 6rem;
 }
 
-.pad-xs-b {
+.Section.pad-xs-b {
     padding-bottom: 6rem;
 }
 
 @media (min-width: 34rem) {
-    .pad-xs-t {
+    .Section.pad-xs-t {
         padding-top: 0;
     }
 
-    .pad-xs-b {
+    .Section.pad-xs-b {
         padding-bottom: 0;
     }
 
-    .pad-sm-t {
+    .Section.pad-sm-t {
         padding-top: 9rem;
     }
 
-    .pad-sm-b {
+    .Section.pad-sm-b {
         padding-bottom: 9rem;
     }
 }
 
 @media (min-width: 48rem) {
-    .pad-sm-t {
+    .Section.pad-sm-t {
         padding-top: 0;
     }
 
-    .pad-sm-b {
+    .Section.pad-sm-b {
         padding-bottom: 0;
     }
 
-    .pad-md-t {
+    .Section.pad-md-t {
         padding-top: 10.5rem;
     }
 
-    .pad-md-b {
+    .Section.pad-md-b {
         padding-bottom: 10.5rem;
     }
 }
 
 @media (min-width: 62rem) {
-    .pad-md-t {
+    .Section.pad-md-t {
         padding-top: 0;
     }
 
-    .pad-md-b {
+    .Section.pad-md-b {
         padding-bottom: 0;
     }
 
-    .pad-lg-t {
+    .Section.pad-lg-t {
         padding-top: 15rem;
     }
 
-    .pad-lg-b {
+    .Section.pad-lg-b {
         padding-bottom: 15rem;
     }
 }

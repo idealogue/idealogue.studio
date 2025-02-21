@@ -13,6 +13,7 @@ import {
 } from '~/components/Project'
 import { ProjectPage } from '~/components/ProjectPage'
 import { Section } from '~/components/Section'
+import { Section as Section2 } from '~/components/Section2'
 import { CaptionedContainer } from '~/components/shared/CaptionedContainer'
 import { Container } from '~/components/shared/Container'
 import { Contributor, Contributors } from '~/components/shared/Contributor'
@@ -21,6 +22,7 @@ import NextProject from '~/components/shared/NextProject'
 import { ScrollIndicator, ScrollIndicatorTarget } from '~/components/shared/ScrollIndicator'
 import { SectionHeader } from '~/components/shared/SectionHeader'
 import { Topic } from '~/components/shared/Topic'
+import { TABLET } from '~/utils/css'
 import Tree from './assets/tree.png'
 import Tree2x from './assets/tree@2x.png'
 
@@ -102,7 +104,7 @@ export function OctantPage() {
                     </CaptionedContainer>
                 </Section>
                 <Topic title="Navigating public goods">
-                    <Section css={defaultCss} spacerProps={{ head: true }}>
+                    <Section2 css={defaultCss} x s m="t" l="t">
                         <SectionHeader no={3} />
                         <Container>
                             <p>
@@ -119,20 +121,20 @@ export function OctantPage() {
                                 eighths.
                             </p>
                         </Container>
-                    </Section>
+                    </Section2>
                 </Topic>
-                <Section css={defaultCss} spacerProps={{ head: true, tail: true }}>
+                <Section2 x s m l css={explorationCss}>
                     <CaptionedContainer
                         caption={
                             <>
-                                Various representations of Octant in mark form with final at top
-                                right
+                                Various representations of Octant in mark form with final
+                                at&nbsp;top&nbsp;right
                             </>
                         }
                     >
                         <Exploration />
                     </CaptionedContainer>
-                </Section>
+                </Section2>
                 <Section css={[defaultCss, pearlDustBgCss]} spacerProps={{ head: true }}>
                     <Container>
                         <p>
@@ -202,6 +204,16 @@ const defaultCss = css`
     --SectionHeader_BorderColor: #ebebeb;
     --SectionHeader_Color: #06042a;
     --SectionHeader_NumberColor: #9ea39e;
+`
+
+const explorationCss = css`
+    --Section_Background: #ffffff;
+    --Section_Color: #171717;
+
+    @media ${TABLET} {
+        --Section_Background: #f8f8f8;
+        --Section_Color: #6b6b6b;
+    }
 `
 
 const heroCss = css`

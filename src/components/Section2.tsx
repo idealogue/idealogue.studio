@@ -24,7 +24,7 @@ export function Section({
     return (
         <SectionRoot
             {...props}
-            className={`${toClass(x, 'xs')} ${toClass(s, 'sm')} ${toClass(m, 'md')} ${toClass(l, 'lg')} ${classNameProp}`}
+            className={`Section ${toClass(x, 'xs')} ${toClass(s, 'sm')} ${toClass(m, 'md')} ${toClass(l, 'lg')} ${classNameProp}`}
         >
             {children}
             {!noMenuToggle && (
