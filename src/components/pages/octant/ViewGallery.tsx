@@ -2,6 +2,9 @@ import * as React from 'react'
 import styled, { css } from 'styled-components'
 import { AutoPlayingVideo } from '~/components/shared/AutoPlayingVideo'
 import { useArrowCursor } from '~/components/shared/Cursor'
+import HomepagePoster from './assets/view_homepage_desktop_poster.jpg'
+import MetricsPoster from './assets/view_metrics_desktop_poster.jpg'
+import ProjectsPoster from './assets/view_projects_desktop_poster.jpg'
 
 export function ViewGallery() {
     const [dx, setDx] = React.useState(1)
@@ -27,7 +30,7 @@ export function ViewGallery() {
                         setDirection(undefined)
                     }}
                 >
-                    <Video loop playsInline muted disabled={dx !== 0}>
+                    <Video loop playsInline muted disabled={dx !== 0} poster={MetricsPoster}>
                         <source src="/videos/octant/view_metrics_desktop.mp4" />
                     </Video>
                 </Slide>
@@ -43,7 +46,7 @@ export function ViewGallery() {
                         setDirection(undefined)
                     }}
                 >
-                    <Video loop playsInline muted disabled={dx !== 1}>
+                    <Video loop playsInline muted disabled={dx !== 1} poster={HomepagePoster}>
                         <source src="/videos/octant/view_homepage_desktop.mp4" />
                     </Video>
                 </Slide>
@@ -59,7 +62,7 @@ export function ViewGallery() {
                         setDirection(undefined)
                     }}
                 >
-                    <Video loop playsInline muted disabled={dx !== 2}>
+                    <Video loop playsInline muted disabled={dx !== 2} poster={ProjectsPoster}>
                         <source src="/videos/octant/view_projects_desktop.mp4" />
                     </Video>
                 </Slide>
