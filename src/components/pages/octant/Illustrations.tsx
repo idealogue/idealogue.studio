@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled, { css } from 'styled-components'
 import { AutoPlayingVideo } from '~/components/shared/AutoPlayingVideo'
+import { CaptionedContainer } from '~/components/shared/CaptionedContainer'
 import { SM, TABLET } from '~/utils/css'
 import HeroCrop from './assets/illustration_hero_crop.png'
 import HeroCrop2x from './assets/illustration_hero_crop@2x.png'
@@ -14,6 +15,34 @@ import WindowWithDog2x from './assets/illustration_window_with_dog@2x.png'
 export function Illustrations() {
     return (
         <IllustrationsRoot>
+            <MobileClips>
+                <CaptionedContainer
+                    caption={<>Brand and POAP animations by 21_19 and Stuart&nbsp;Wade</>}
+                >
+                    <ClipList>
+                        <Clip>
+                            <AutoPlayingVideo loop playsInline muted>
+                                <source src="/videos/octant/illustration_thinking_desktop.mp4" />
+                            </AutoPlayingVideo>
+                        </Clip>
+                        <Clip>
+                            <AutoPlayingVideo loop playsInline muted>
+                                <source src="/videos/octant/illustration_whale_desktop.mp4" />
+                            </AutoPlayingVideo>
+                        </Clip>
+                        <Clip>
+                            <AutoPlayingVideo loop playsInline muted>
+                                <source src="/videos/octant/illustration_flight_desktop.mp4" />
+                            </AutoPlayingVideo>
+                        </Clip>
+                        <Clip>
+                            <AutoPlayingVideo loop playsInline muted>
+                                <source src="/videos/octant/illustration_logo_desktop.mp4" />
+                            </AutoPlayingVideo>
+                        </Clip>
+                    </ClipList>
+                </CaptionedContainer>
+            </MobileClips>
             <Clips>
                 <div>
                     <ClipList $first>
@@ -72,15 +101,19 @@ export function Illustrations() {
 
 const Clip = styled.div`
     background-color: #ffffff;
-    border-radius: 1rem;
     position: relative;
-    aspect-ratio: 1200 / 675;
-    width: 600px;
+    width: 37.5rem;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    video {
+        display: block;
+    }
 `
 
 const ClipList = styled.div<{ $first?: boolean }>`
     display: grid;
-    gap: 32px;
+    gap: 2rem;
     width: 0;
     overflow: visible;
 
@@ -94,26 +127,47 @@ const ClipList = styled.div<{ $first?: boolean }>`
 `
 
 const Clips = styled.div`
-    display: grid;
+    display: none;
     grid-template-columns: 0px 0px;
-    gap: 32px;
-    width: 32px;
-    margin: 0 auto 116px;
+    gap: 2rem;
+    width: 2rem;
+    margin: 0 auto 7.25rem;
 
-    video {
-        border-radius: 16px;
+    @media ${TABLET} {
+        display: grid;
+    }
+`
+
+const MobileClips = styled.div`
+    margin-bottom: 8rem;
+
+    ${ClipList} {
+        gap: 1.5rem;
+        margin: 0 auto;
+        width: auto;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 0 2rem 3rem;
+    }
+
+    ${Clip} {
+        width: auto;
+    }
+
+    @media ${TABLET} {
+        display: none;
     }
 `
 
 const HeroImageWrap = styled.div`
-    width: 1372px;
+    width: 85.75rem;
     max-width: 100%;
     margin: 0 auto;
 `
 
 const HeroImage = styled.img`
     display: block;
-    width: 1372px;
+    width: 85.75rem;
     max-width: 225vw;
     position: relative;
     left: 50%;
