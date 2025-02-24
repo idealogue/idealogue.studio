@@ -4,8 +4,10 @@ import { Blockquote, BlockquoteBody } from '~/components/Html'
 import { Exploration } from '~/components/pages/octant/Exploration'
 import { Illustrations } from '~/components/pages/octant/Illustrations'
 import { Ui } from '~/components/pages/octant/Ui'
+import { ViewGallery } from '~/components/pages/octant/ViewGallery'
 import { ViewGalleryMobile } from '~/components/pages/octant/ViewGalleryMobile'
 import { Websites } from '~/components/pages/octant/Websites'
+import { WebsitesMobile } from '~/components/pages/octant/WebsitesMobile'
 import {
     ProjectImage as PrestyledProjectIamge,
     ProjectHeroContent,
@@ -66,10 +68,8 @@ export function OctantPage() {
                     </Section>
                 </Topic>
                 <Section x s m l css={[defaultCss, sageMistBgCss]}>
-                    <CaptionedContainer caption="Main views of Octant.app">
-                        {/* <ViewGallery /> */}
-                        <ViewGalleryMobile />
-                    </CaptionedContainer>
+                    <ViewGallery />
+                    <ViewGalleryMobile />
                 </Section>
                 <Topic title="Modular, tile-based UI for flexibility">
                     <Section x="t" s="t" m="t" l="t" css={defaultCss}>
@@ -166,6 +166,7 @@ export function OctantPage() {
                 </Topic>
                 <Section x s m l css={[defaultCss, sageMistBgCss]}>
                     <Websites />
+                    <WebsitesMobile />
                 </Section>
                 <Topic title="Credits">
                     <Section x s m l css={defaultCss}>

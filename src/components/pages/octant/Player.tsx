@@ -1,88 +1,108 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useMemo, useRef } from 'react'
 import styled from 'styled-components'
 import { AutoPlayingVideo } from '~/components/shared/AutoPlayingVideo'
 
-export interface Source {
-    posterSrc?: string
-    mediaSrc: string
-}
-
 interface PlayerProps {
-    sources: [Source, ...Source[]]
+    src: string
+    durationsInSeconds: [number, ...number[]]
+    posterSrc?: string
+    onClipChange?(clipIndex: number): void
 }
 
-export function Player({ sources }: PlayerProps) {
-    const [sourceIndex, setSourceIndex] = useState(0)
+interface Clip {
+    position: number
+    duration: number
+}
 
-    const source = sources[sourceIndex] || sources[0]
+export function Player({ src, durationsInSeconds, posterSrc, onClipChange }: PlayerProps) {
+    const videoRef = useRef<HTMLVideoElement>(null)
 
-    const buttonRefs = useRef<
-        Record<string, [index: number, element: HTMLButtonElement] | undefined>
-    >({})
+    const clips: Clip[] = useMemo(() => {
+        const result: Clip[] = []
+
+        for (const duration of durationsInSeconds) {
+            const { position: prevPosition = 0, duration: prevDuration = 0 } =
+                result[result.length - 1] || {}
+
+            result.push({
+                position: prevPosition + prevDuration,
+                duration,
+            })
+        }
+
+        return result
+    }, [durationsInSeconds])
+
+    const buttonRefs = useRef<Record<number, HTMLButtonElement | undefined>>({})
 
     const attachButtonRef = useCallback((el: HTMLButtonElement | null) => {
         if (!el) {
             return
         }
 
-        const src = el.getAttribute('data-media-src')
+        const index = Number(el.getAttribute('data-index')) ?? undefined
 
-        const index = Number(el.getAttribute('data-media-index')) ?? undefined
-
-        if (src && index != null) {
-            buttonRefs.current[src] = [index, el]
+        if (index != null) {
+            buttonRefs.current[index] = el
         }
     }, [])
 
-    useEffect(
-        function markPreviousButtonsAsComplete() {
-            for (const value of Object.values(buttonRefs.current)) {
-                if (!value) {
-                    continue
-                }
-
-                const [index, el] = value
-
-                try {
-                    el.style.setProperty('--Player_Progress', index < sourceIndex ? '1' : '0')
-                } catch (_ignore) {}
-            }
-        },
-        [sourceIndex]
-    )
+    const recentClipIndexRef = useRef(0)
 
     return (
         <PlayerRoot>
             <AutoPlayingVideo
+                innerRef={videoRef}
+                loop
                 playsInline
                 muted
-                poster={source.posterSrc}
+                poster={posterSrc}
                 width={780}
                 height={1688}
-                src={source.mediaSrc}
-                onTimeUpdate={(mediaSrc, ct, tt) => {
-                    const [index, el] = buttonRefs.current[new URL(mediaSrc).pathname] || []
+                src={src}
+                onTimeUpdate={(_, ct) => {
+                    for (let i = 0; i < clips.length; i++) {
+                        const clip = clips[i]
 
-                    if (index !== sourceIndex) {
-                        return
+                        if (!clip) {
+                            continue
+                        }
+
+                        const { position, duration } = clip
+
+                        if (duration <= 0) {
+                            continue
+                        }
+
+                        const Pos = !duration ? 0 : Math.max(0, ct - position) / clip.duration
+
+                        buttonRefs.current[i]?.style.setProperty('--Player_Progress', `${Pos}`)
+
+                        if (ct < clip.position || ct >= clip.position + clip.duration) {
+                            continue
+                        }
+
+                        if (recentClipIndexRef.current === i) {
+                            continue
+                        }
+
+                        recentClipIndexRef.current = i
+
+                        onClipChange?.(i)
                     }
-
-                    el?.style.setProperty('--Player_Progress', `${tt ? ct / tt : 0}`)
-                }}
-                onPlaybackEnded={() => {
-                    setSourceIndex((c) => (c + 1) % sources.length)
                 }}
             />
-            <Buttons>
-                {sources.map((_, index) => (
+            <Buttons $count={clips.length}>
+                {clips.map((clip, index) => (
                     <NavButton
                         ref={attachButtonRef}
-                        data-media-src={sources[index].mediaSrc}
-                        data-media-index={index}
-                        key={sources[index].mediaSrc}
+                        data-index={index}
+                        key={clip.position}
                         type="button"
                         onClick={() => {
-                            setSourceIndex(index)
+                            if (videoRef.current) {
+                                videoRef.current.currentTime = clip.position
+                            }
                         }}
                     />
                 ))}
@@ -124,19 +144,25 @@ const NavButton = styled.button`
     }
 `
 
-const Buttons = styled.div`
+const Buttons = styled.div<{ $count: number }>`
     display: flex;
-    margin: 0 auto;
-    width: 15rem;
+    margin: 3.5rem auto;
+    width: ${({ $count }) => `${$count * 5}rem`};
+    max-width: 100%;
 `
 
 const PlayerRoot = styled.div`
     margin: 0 auto;
-    width: 20rem;
+    width: 22rem;
+    max-width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
 
     video {
         aspect-ratio: 780 / 1688;
-        width: 20rem;
+        width: 100%;
         height: auto;
+        border-radius: 1rem;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.06);
     }
 `
