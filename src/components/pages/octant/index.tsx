@@ -4,7 +4,7 @@ import { Blockquote, BlockquoteBody } from '~/components/Html'
 import { Exploration } from '~/components/pages/octant/Exploration'
 import { Illustrations } from '~/components/pages/octant/Illustrations'
 import { Ui } from '~/components/pages/octant/Ui'
-import { ViewGallery } from '~/components/pages/octant/ViewGallery'
+import { ViewGalleryMobile } from '~/components/pages/octant/ViewGalleryMobile'
 import { Websites } from '~/components/pages/octant/Websites'
 import {
     ProjectImage as PrestyledProjectIamge,
@@ -67,7 +67,8 @@ export function OctantPage() {
                 </Topic>
                 <Section x s m l css={[defaultCss, sageMistBgCss]}>
                     <CaptionedContainer caption="Main views of Octant.app">
-                        <ViewGallery />
+                        {/* <ViewGallery /> */}
+                        <ViewGalleryMobile />
                     </CaptionedContainer>
                 </Section>
                 <Topic title="Modular, tile-based UI for flexibility">
@@ -222,6 +223,8 @@ const pearlDustBgCss = css`
 
 const sageMistBgCss = css`
     --Section_Background: #cdd1cd;
+    --Player_NavButtonIdleColor: #9ea39e;
+    --Player_NavButtonActiveColor: #ffffff;
 `
 
 const ProjectImage = styled(PrestyledProjectIamge)`
