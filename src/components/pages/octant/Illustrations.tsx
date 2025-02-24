@@ -104,6 +104,7 @@ const Clip = styled.div`
     position: relative;
     width: 37.5rem;
     border-radius: 1rem;
+    border-radius: clamp(0.25rem, 5vw, 1rem);
     overflow: hidden;
 
     video {

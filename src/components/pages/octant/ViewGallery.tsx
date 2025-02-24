@@ -9,7 +9,7 @@ import ProjectsPoster from './assets/view_projects_desktop_poster.jpg'
 export function ViewGallery() {
     const [dx, setDx] = React.useState(1)
 
-    const { setDirection, setColor } = useArrowCursor()
+    const { setDirection } = useArrowCursor()
 
     return (
         <ViewGalleryRoot
