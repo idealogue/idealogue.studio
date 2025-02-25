@@ -4,6 +4,7 @@ import { Blockquote, BlockquoteBody } from '~/components/Html'
 import { Exploration } from '~/components/pages/octant/Exploration'
 import { Illustrations } from '~/components/pages/octant/Illustrations'
 import { Ui } from '~/components/pages/octant/Ui'
+import { UiMobile } from '~/components/pages/octant/UiMobile'
 import { ViewGallery } from '~/components/pages/octant/ViewGallery'
 import { ViewGalleryMobile } from '~/components/pages/octant/ViewGalleryMobile'
 import { Websites } from '~/components/pages/octant/Websites'
@@ -99,9 +100,8 @@ export function OctantPage() {
                     </Section>
                 </Topic>
                 <Section x="t" s="t" m="t" l="t" css={defaultCss}>
-                    <CaptionedContainer caption="UI elements for adding projects, allocating funds and a metrics chart">
-                        <Ui />
-                    </CaptionedContainer>
+                    <Ui />
+                    <UiMobile />
                 </Section>
                 <Topic title="Navigating public goods">
                     <Section css={defaultCss} x s m="t" l="t">
