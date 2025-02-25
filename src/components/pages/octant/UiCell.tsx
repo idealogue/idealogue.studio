@@ -25,6 +25,7 @@ const Content = styled.div`
 `
 
 const VideoContent = styled(Content)`
+    aspect-ratio: var(--Container_Width) / var(--Container_Height);
     position: relative;
 
     video {
@@ -85,6 +86,7 @@ export function PreciseSlider() {
 }
 
 const PreciseSliderRoot = styled(Content)`
+    aspect-ratio: 321 / 301;
     display: grid;
     gap: 14px;
 
@@ -106,6 +108,7 @@ export function Allocation() {
 
 const AllocationRoot = styled(VideoContent)`
     --Container_Width: 684;
+    --Container_Height: 560;
     --Video_Width: 338;
     --Video_Height: 180;
     --Video_OffsetX: 424;
@@ -125,6 +128,7 @@ export function FundsUsage() {
 
 const FundUsageRoot = styled(VideoContent)`
     --Container_Width: 684;
+    --Container_Height: 656;
     --Video_Width: 590;
     --Video_Height: 384;
     --Video_OffsetX: -41;
@@ -144,6 +148,7 @@ export function Rewards() {
 
 const RewardsRoot = styled(VideoContent)`
     --Container_Width: 683;
+    --Container_Height: 656;
     --Video_Width: 586;
     --Video_Height: 290;
     --Video_OffsetX: 48;
@@ -161,7 +166,7 @@ export function Slider() {
 }
 
 const SliderRoot = styled(Content)`
-    aspect-ratio: 1073 / 958;
+    aspect-ratio: 1072 / 958;
 
     video {
         mask-image: url(${UiSliderMask});
