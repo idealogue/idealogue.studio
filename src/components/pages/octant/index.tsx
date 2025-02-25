@@ -224,8 +224,8 @@ const pearlDustBgCss = css`
 
 const sageMistBgCss = css`
     --Section_Background: #cdd1cd;
-    --Player_NavButtonIdleColor: #9ea39e;
-    --Player_NavButtonActiveColor: #ffffff;
+    --PlayerButton_IdleColor: #9ea39e;
+    --PlayerButton_ActiveColor: #ffffff;
 `
 
 const ProjectImage = styled(PrestyledProjectIamge)`

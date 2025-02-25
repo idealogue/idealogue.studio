@@ -1,7 +1,8 @@
 import { Video } from '$shared/Video'
 import React, { RefObject, useEffect, useReducer, useRef, VideoHTMLAttributes } from 'react'
 
-interface AutoPlayingVideoProps extends Omit<VideoHTMLAttributes<HTMLVideoElement>, 'autoPlay'> {
+interface AutoPlayingVideoProps
+    extends Omit<VideoHTMLAttributes<HTMLVideoElement>, 'autoPlay' | 'onTimeUpdate'> {
     disabled?: boolean
     innerRef?: RefObject<HTMLVideoElement | null>
     onTimeUpdate?(src: string, currentTime: number, totalTime: number): void

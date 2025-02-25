@@ -1,5 +1,6 @@
 import React, { useCallback, useMemo, useRef } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { PlayerButton, PlayerButtons } from '~/components/pages/octant/PlayerButton'
 import { AutoPlayingVideo } from '~/components/shared/AutoPlayingVideo'
 
 interface PlayerProps {
@@ -50,7 +51,7 @@ export function Player({ src, durationsInSeconds, posterSrc, onClipChange }: Pla
     const recentClipIndexRef = useRef(0)
 
     return (
-        <PlayerRoot>
+        <PlayerRoot $count={clips.length}>
             <AutoPlayingVideo
                 innerRef={videoRef}
                 loop
@@ -76,7 +77,10 @@ export function Player({ src, durationsInSeconds, posterSrc, onClipChange }: Pla
 
                         const Pos = !duration ? 0 : Math.max(0, ct - position) / clip.duration
 
-                        buttonRefs.current[i]?.style.setProperty('--Player_Progress', `${Pos}`)
+                        buttonRefs.current[i]?.style.setProperty(
+                            '--PlayerButton_Progress',
+                            `${Math.min(1, Pos)}`
+                        )
 
                         if (ct < clip.position || ct >= clip.position + clip.duration) {
                             continue
@@ -92,13 +96,12 @@ export function Player({ src, durationsInSeconds, posterSrc, onClipChange }: Pla
                     }
                 }}
             />
-            <Buttons $count={clips.length}>
+            <PlayerButtons>
                 {clips.map((clip, index) => (
-                    <NavButton
-                        ref={attachButtonRef}
+                    <PlayerButton
+                        innerRef={attachButtonRef}
                         data-index={index}
                         key={clip.position}
-                        type="button"
                         onClick={() => {
                             if (videoRef.current) {
                                 videoRef.current.currentTime = clip.position
@@ -106,52 +109,12 @@ export function Player({ src, durationsInSeconds, posterSrc, onClipChange }: Pla
                         }}
                     />
                 ))}
-            </Buttons>
+            </PlayerButtons>
         </PlayerRoot>
     )
 }
 
-const NavButton = styled.button`
-    appearance: none;
-    background: none;
-    border: 0;
-    display: block;
-    padding: 0.5rem;
-    width: 5rem;
-    height: 1.25rem;
-    box-sizing: border-box;
-    position: relative;
-
-    &::after,
-    &::before {
-        content: '';
-        width: 4rem;
-        max-width: 4rem;
-        height: 0.25rem;
-        border-radius: 0.125rem;
-        position: absolute;
-        top: 0.5rem;
-        left: 0.5rem;
-    }
-
-    &::before {
-        background-color: var(--Player_NavButtonIdleColor);
-    }
-
-    &::after {
-        background-color: var(--Player_NavButtonActiveColor);
-        width: calc(var(--Player_Progress, 0) * 4rem);
-    }
-`
-
-const Buttons = styled.div<{ $count: number }>`
-    display: flex;
-    margin: 3.5rem auto;
-    width: ${({ $count }) => `${$count * 5}rem`};
-    max-width: 100%;
-`
-
-const PlayerRoot = styled.div`
+const PlayerRoot = styled.div<{ $count: number }>`
     margin: 0 auto;
     width: 22rem;
     max-width: 100%;
@@ -164,5 +127,11 @@ const PlayerRoot = styled.div`
         height: auto;
         border-radius: 1rem;
         box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    ${PlayerButtons} {
+        ${({ $count }) => css`
+            width: ${$count * 5.5}rem;
+        `}
     }
 `
