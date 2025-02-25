@@ -5,14 +5,20 @@ import UiAllocateDesktop from './assets/ui_allocate_desktop.jpg'
 import UiAllocateDesktop2x from './assets/ui_allocate_desktop@2x.jpg'
 import UiAllocationMask from './assets/ui_allocation_mask.png'
 import UiAllocationPoster from './assets/ui_allocation_poster.jpg'
+import UiCartMask from './assets/ui_cart_mask.png'
+import UiCartPoster from './assets/ui_cart_poster.jpg'
 import UiFundUsageDesktop from './assets/ui_fund_usage_desktop.jpg'
 import UiFundUsageDesktop2x from './assets/ui_fund_usage_desktop@2x.jpg'
 import UiFundUsageMask from './assets/ui_fund_usage_mask.png'
 import UiFundUsagePoster from './assets/ui_fund_usage_poster.jpg'
+import UiPreciseSliderMask from './assets/ui_precise_slider_mask.png'
+import UiPreciseSliderPoster from './assets/ui_precise_slider_poster.jpg'
 import UiPreciseSliderDesktop from './assets/ui_precise_slider_top_desktop.jpg'
 import UiPreciseSliderDesktop2x from './assets/ui_precise_slider_top_desktop@2x.png'
 import UiRewardsDesktop from './assets/ui_rewards_desktop.jpg'
 import UiRewardsDesktop2x from './assets/ui_rewards_desktop@2x.jpg'
+import UiRewardsMask from './assets/ui_rewards_mask.png'
+import UiRewardsPoster from './assets/ui_rewards_poster.jpg'
 import UiSliderMask from './assets/ui_slider_mask.png'
 import UiSliderPoster from './assets/ui_slider_poster.jpg'
 
@@ -81,6 +87,7 @@ export function Cart({
                 preload="auto"
                 onPlaybackEnded={onPlaybackEnded}
                 onTimeUpdate={onTimeUpdate}
+                poster={UiCartPoster}
             >
                 <source src="/videos/octant/ui_cart_desktop.mp4" />
             </AutoPlayingVideo>
@@ -101,6 +108,8 @@ export const CartRoot = styled(Content)`
     video {
         width: 12rem;
         max-width: 50%;
+        mask-image: url(${UiCartMask});
+        -webkit-mask-image: url(${UiCartMask});
     }
 `
 
@@ -129,6 +138,7 @@ export function PreciseSlider({
                     preload="auto"
                     onPlaybackEnded={onPlaybackEnded}
                     onTimeUpdate={onTimeUpdate}
+                    poster={UiPreciseSliderPoster}
                 >
                     <source src="/videos/octant/ui_precise_slider_desktop.mp4" />
                 </AutoPlayingVideo>
@@ -144,6 +154,8 @@ const PreciseSliderRoot = styled(Content)`
 
     video {
         border-radius: 16px;
+        mask-image: url(${UiPreciseSliderMask});
+        -webkit-mask-image: url(${UiPreciseSliderMask});
     }
 `
 
@@ -244,6 +256,7 @@ export function Rewards({
                 preload="auto"
                 onPlaybackEnded={onPlaybackEnded}
                 onTimeUpdate={onTimeUpdate}
+                poster={UiRewardsPoster}
             >
                 <source src="/videos/octant/ui_rewards_desktop.mp4" />
             </AutoPlayingVideo>
@@ -259,6 +272,11 @@ const RewardsRoot = styled(VideoContent)`
     --Video_Height: 290;
     --Video_OffsetX: 48;
     --Video_OffsetY: 318;
+
+    video {
+        mask-image: url(${UiRewardsMask});
+        -webkit-mask-image: url(${UiRewardsMask});
+    }
 `
 
 export function Slider({
