@@ -25,15 +25,15 @@ interface CaptionedContainerProps {
     children?: React.ReactNode
 }
 
-export function CaptionedContainer({
-    className,
-    caption,
-    children,
-}: CaptionedContainerProps) {
+export function CaptionedContainer({ className, caption, children }: CaptionedContainerProps) {
     return (
-        <div className={className}>
+        <CaptionedContainerRoot className={className}>
             <div>{children}</div>
             <Caption>{caption}</Caption>
-        </div>
+        </CaptionedContainerRoot>
     )
 }
+
+const CaptionedContainerRoot = styled.div`
+    min-width: 0;
+`

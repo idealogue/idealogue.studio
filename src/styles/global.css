@@ -1,0 +1,66 @@
+.Section {
+    transition: 200ms;
+    transition-property: padding-top, padding-bottom;
+}
+
+.Section.pad-xs-t {
+    padding-top: 6rem;
+}
+
+.Section.pad-xs-b {
+    padding-bottom: 6rem;
+}
+
+@media (min-width: 34rem) {
+    .Section.pad-xs-t {
+        padding-top: 0;
+    }
+
+    .Section.pad-xs-b {
+        padding-bottom: 0;
+    }
+
+    .Section.pad-sm-t {
+        padding-top: 9rem;
+    }
+
+    .Section.pad-sm-b {
+        padding-bottom: 9rem;
+    }
+}
+
+@media (min-width: 48rem) {
+    .Section.pad-sm-t {
+        padding-top: 0;
+    }
+
+    .Section.pad-sm-b {
+        padding-bottom: 0;
+    }
+
+    .Section.pad-md-t {
+        padding-top: 10.5rem;
+    }
+
+    .Section.pad-md-b {
+        padding-bottom: 10.5rem;
+    }
+}
+
+@media (min-width: 62rem) {
+    .Section.pad-md-t {
+        padding-top: 0;
+    }
+
+    .Section.pad-md-b {
+        padding-bottom: 0;
+    }
+
+    .Section.pad-lg-t {
+        padding-top: 15rem;
+    }
+
+    .Section.pad-lg-b {
+        padding-bottom: 15rem;
+    }
+}

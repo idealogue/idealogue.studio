@@ -59,7 +59,7 @@ const projects: Record<ProjectName, Project> = {
 }
 
 export const lineup: ProjectName[] = [
-    // 'octant',
+    'octant',
     'cargo',
     'deui',
     'streamr',
@@ -67,7 +67,7 @@ export const lineup: ProjectName[] = [
     'vizor',
     'cobalt',
     'hive',
-    'huxtaburger',
+    // 'huxtaburger',
 ]
 
 export const ProjectNameContext = createContext<ProjectName | null>(null)
