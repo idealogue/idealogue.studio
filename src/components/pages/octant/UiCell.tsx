@@ -42,7 +42,7 @@ const Image = styled.img`
 export function Cart() {
     return (
         <CartRoot>
-            <AutoPlayingVideo loop playsInline muted>
+            <AutoPlayingVideo loop playsInline muted preload="auto">
                 <source src="/videos/octant/ui_cart_desktop.mp4" />
             </AutoPlayingVideo>
         </CartRoot>
@@ -76,7 +76,7 @@ export function PreciseSlider() {
                 />
             </div>
             <div>
-                <AutoPlayingVideo loop playsInline muted>
+                <AutoPlayingVideo loop playsInline muted preload="auto">
                     <source src="/videos/octant/ui_precise_slider_desktop.mp4" />
                 </AutoPlayingVideo>
             </div>
@@ -96,7 +96,7 @@ const PreciseSliderRoot = styled(Content)`
 export function Allocation() {
     return (
         <AllocationRoot>
-            <AutoPlayingVideo loop playsInline muted>
+            <AutoPlayingVideo loop playsInline muted preload="auto">
                 <source src="/videos/octant/ui_allocation_desktop.mp4" />
             </AutoPlayingVideo>
             <Image src={UiAllocateDesktop} srcSet={`${UiAllocateDesktop2x} 2x`} alt="" />
@@ -115,7 +115,7 @@ const AllocationRoot = styled(VideoContent)`
 export function FundsUsage() {
     return (
         <FundUsageRoot>
-            <AutoPlayingVideo loop playsInline muted>
+            <AutoPlayingVideo loop playsInline muted preload="auto">
                 <source src="/videos/octant/ui_fund_usage_desktop.mp4" />
             </AutoPlayingVideo>
             <Image src={UiFundUsageDesktop} srcSet={`${UiFundUsageDesktop2x} 2x`} alt="" />
@@ -134,7 +134,7 @@ const FundUsageRoot = styled(VideoContent)`
 export function Rewards() {
     return (
         <RewardsRoot>
-            <AutoPlayingVideo loop playsInline muted>
+            <AutoPlayingVideo loop playsInline muted preload="auto">
                 <source src="/videos/octant/ui_rewards_desktop.mp4" />
             </AutoPlayingVideo>
             <Image src={UiRewardsDesktop} srcSet={`${UiRewardsDesktop2x} 2x`} alt="" />
@@ -153,7 +153,7 @@ const RewardsRoot = styled(VideoContent)`
 export function Slider() {
     return (
         <SliderRoot>
-            <AutoPlayingVideo loop playsInline muted poster={UiSliderPoster}>
+            <AutoPlayingVideo loop playsInline muted preload="auto" poster={UiSliderPoster}>
                 <source src="/videos/octant/ui_slider_desktop.mp4" />
             </AutoPlayingVideo>
         </SliderRoot>
