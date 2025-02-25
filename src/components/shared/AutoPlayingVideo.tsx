@@ -95,15 +95,27 @@ export function AutoPlayingVideo({
             entries.forEach(async ({ isIntersecting }) => {
                 const { current: video } = ref
 
-                if (!video || !video.paused || !isIntersecting) {
+                if (!video) {
                     return
                 }
 
-                try {
-                    video.load()
+                if (video.paused && isIntersecting) {
+                    try {
+                        if (!video.readyState) {
+                            video.load()
+                        }
 
-                    await video.play()
-                } catch (_ignored) {}
+                        await video.play()
+                    } catch (_ignored) {}
+
+                    return
+                }
+
+                if (!video.paused && !isIntersecting) {
+                    video.pause()
+
+                    return
+                }
             })
         })
 
