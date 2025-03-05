@@ -1,5 +1,5 @@
 import * as React from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 import { AutoPlayingVideo } from '~/components/shared/AutoPlayingVideo'
 import { CaptionedContainer } from '~/components/shared/CaptionedContainer'
 import { SM, TABLET } from '~/utils/css'
@@ -402,8 +402,29 @@ function BrandIllustration() {
         }
     }, [])
 
+    const [isSpotted, spot] = React.useReducer(() => true, false)
+
+    React.useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !isSpotted) {
+                    setTimeout(() => {
+                        spot()
+                    }, 1000)
+                }
+            },
+            { threshold: 0.5 }
+        )
+
+        if (ref.current) {
+            observer.observe(ref.current)
+        }
+
+        return () => observer.disconnect()
+    }, [isSpotted])
+
     return (
-        <BrandIllustrationRoot ref={ref}>
+        <BrandIllustrationRoot ref={ref} $wiggle={isSpotted}>
             <BrandIllustrationImage
                 onMouseDown={(e) => {
                     e.preventDefault()
@@ -417,6 +438,14 @@ function BrandIllustration() {
     )
 }
 
+const wiggle = keyframes`
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2%); }
+    50% { transform: translateX(2%); }
+    75% { transform: translateX(-2%); }
+    100% { transform: translateX(0); }
+`
+
 const BrandIllustrationImage = styled.img`
     display: block;
     width: 85.75rem;
@@ -427,11 +456,21 @@ const BrandIllustrationImage = styled.img`
     user-select: none;
 `
 
-const BrandIllustrationRoot = styled.div`
+const BrandIllustrationRoot = styled.div<{ $wiggle: boolean }>`
     width: 85.75rem;
     max-width: 100%;
     margin: 0 auto;
     touch-action: pan-y;
+
+    ${({ $wiggle }) =>
+        $wiggle &&
+        css`
+            animation: ${wiggle} 0.75s ease-in-out;
+
+            @media (min-width: 85.75rem) {
+                animation: none;
+            }
+        `}
 `
 
 const IllustrationsRoot = styled.div``
