@@ -11,10 +11,10 @@ export function Websites() {
         <WebsitesRoot>
             <Container>
                 <AutoPlayingVideo loop playsInline muted poster={PosterTop}>
-                    <source src="/videos/octant/websites_top_desktop.mp4?v=20250305" />
+                    <source src="/videos/octant/websites_top_desktop.mp4?v=202503052" />
                 </AutoPlayingVideo>
                 <AutoPlayingVideo loop playsInline muted poster={PosterToken}>
-                    <source src="/videos/octant/websites_token_desktop.mp4?v=20250305" />
+                    <source src="/videos/octant/websites_token_desktop.mp4?v=202503052" />
                 </AutoPlayingVideo>
             </Container>
         </WebsitesRoot>
