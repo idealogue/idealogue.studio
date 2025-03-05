@@ -189,6 +189,8 @@ const Windows = styled.div`
     }
 `
 
+const MaxOvershoot = 200
+
 function BrandIllustration() {
     const ref = React.useRef<HTMLDivElement>(null)
 
@@ -203,6 +205,16 @@ function BrandIllustration() {
 
         let maxTranslate = 0
 
+        let velocity = 0
+
+        let lastX = 0
+
+        let lastTime = 0
+
+        let animationFrameRequestId: number | undefined
+
+        let maxOvershoot = 0
+
         const { current: root } = ref
 
         if (!root) {
@@ -210,10 +222,24 @@ function BrandIllustration() {
         }
 
         function onWindowResize() {
+            startX = undefined
+
+            lastX = 0
+
+            velocity = 0
+
+            lastTime = 0
+
+            currentTranslate = 0
+
+            ref.current?.style.setProperty('--BrandIllustration_OffsetX', `${currentTranslate}px`)
+
             if (!ref.current || !imgRef.current) {
                 minTranslate = 0
 
                 maxTranslate = 0
+
+                maxOvershoot = 0
 
                 return
             }
@@ -227,7 +253,10 @@ function BrandIllustration() {
             const halfRoot = rootWidth / 2
 
             minTranslate = Math.min(0, halfRoot - halfImg)
+
             maxTranslate = Math.max(0, halfImg - halfRoot)
+
+            maxOvershoot = maxTranslate !== 0 ? MaxOvershoot : 0
         }
 
         onWindowResize()
@@ -236,6 +265,18 @@ function BrandIllustration() {
 
         function onPointerDown(e: PointerEvent) {
             startX = e.clientX - currentTranslate
+
+            velocity = 0
+
+            lastX = e.clientX
+
+            lastTime = Date.now()
+
+            if (animationFrameRequestId != null) {
+                cancelAnimationFrame(animationFrameRequestId)
+
+                animationFrameRequestId = undefined
+            }
         }
 
         root.addEventListener('pointerdown', onPointerDown)
@@ -251,14 +292,38 @@ function BrandIllustration() {
                 let x = e.clientX - startX
 
                 if (x < minTranslate) {
-                    x = minTranslate
+                    const overshoot = minTranslate - x
+
+                    if (overshoot > 2 * maxOvershoot) {
+                        x = minTranslate - maxOvershoot
+                    } else {
+                        x = minTranslate - maxOvershoot * easing(overshoot / (2 * maxOvershoot))
+                    }
                 }
 
                 if (x > maxTranslate) {
-                    x = maxTranslate
+                    const overshoot = x - maxTranslate
+
+                    if (overshoot > 2 * maxOvershoot) {
+                        x = maxTranslate + maxOvershoot
+                    } else {
+                        x = maxTranslate + maxOvershoot * easing(overshoot / (2 * maxOvershoot))
+                    }
                 }
 
                 ref.current?.style.setProperty('--BrandIllustration_OffsetX', `${x}px`)
+
+                const now = Date.now()
+
+                const deltaTime = now - lastTime
+
+                if (deltaTime > 0) {
+                    velocity = (e.clientX - lastX) / deltaTime
+                }
+
+                lastX = e.clientX
+
+                lastTime = now
 
                 currentTranslate = x
             } catch (_ohSnap) {}
@@ -266,13 +331,67 @@ function BrandIllustration() {
 
         window.addEventListener('pointermove', onPointerMove)
 
-        function onPointerUp(e: PointerEvent) {
+        function onPointerUp() {
             startX = undefined
+
+            animateWithMomentum()
+        }
+
+        function animateWithMomentum() {
+            const velocityDecay = 0.8
+
+            function step() {
+                if (startX != null) {
+                    return
+                }
+
+                velocity *= velocityDecay
+                currentTranslate += velocity * 20
+
+                if (currentTranslate < minTranslate) {
+                    currentTranslate = minTranslate + (currentTranslate - minTranslate) * 0.9
+                }
+
+                if (currentTranslate > maxTranslate) {
+                    currentTranslate = maxTranslate + (currentTranslate - maxTranslate) * 0.9
+                }
+
+                ref.current?.style.setProperty(
+                    '--BrandIllustration_OffsetX',
+                    `${currentTranslate}px`
+                )
+
+                if (
+                    Math.abs(velocity) > 0.1 ||
+                    currentTranslate - minTranslate < -0.01 ||
+                    currentTranslate - maxTranslate > 0.01
+                ) {
+                    animationFrameRequestId = requestAnimationFrame(step)
+                } else {
+                    currentTranslate = Math.max(
+                        minTranslate,
+                        Math.min(maxTranslate, currentTranslate)
+                    )
+
+                    ref.current?.style.setProperty(
+                        '--BrandIllustration_OffsetX',
+                        `${currentTranslate}px`
+                    )
+                }
+            }
+
+            animationFrameRequestId = requestAnimationFrame(step)
         }
 
         window.addEventListener('pointerup', onPointerUp)
 
         return () => {
+            if (animationFrameRequestId != null) {
+                cancelAnimationFrame(animationFrameRequestId)
+
+                animationFrameRequestId = undefined
+            }
+
             window.removeEventListener('pointerup', onPointerUp)
 
             window.removeEventListener('pointermove', onPointerMove)
@@ -286,6 +405,9 @@ function BrandIllustration() {
     return (
         <BrandIllustrationRoot ref={ref}>
             <BrandIllustrationImage
+                onMouseDown={(e) => {
+                    e.preventDefault()
+                }}
                 ref={imgRef}
                 src={HeroCrop}
                 srcSet={`${HeroCrop2x} 2x`}
@@ -309,8 +431,11 @@ const BrandIllustrationRoot = styled.div`
     width: 85.75rem;
     max-width: 100%;
     margin: 0 auto;
-    touch-action: none;
-    overflow: hidden;
+    touch-action: pan-y;
 `
 
 const IllustrationsRoot = styled.div``
+
+function easing(x: number): number {
+    return 1 - (1 - x) * (1 - x)
+}
