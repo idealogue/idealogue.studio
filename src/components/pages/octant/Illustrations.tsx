@@ -87,9 +87,7 @@ export function Illustrations() {
                     </ClipList>
                 </div>
             </Clips>
-            <HeroImageWrap>
-                <HeroImage src={HeroCrop} srcSet={`${HeroCrop2x} 2x`} alt="" />
-            </HeroImageWrap>
+            <BrandIllustration />
             <Windows>
                 <img src={WindowWithDog} srcSet={`${WindowWithDog2x} 2x`} alt="" />
                 <img src={WindowWithBird} srcSet={`${WindowWithBird2x} 2x`} alt="" />
@@ -160,21 +158,6 @@ const MobileClips = styled.div`
     }
 `
 
-const HeroImageWrap = styled.div`
-    width: 85.75rem;
-    max-width: 100%;
-    margin: 0 auto;
-`
-
-const HeroImage = styled.img`
-    display: block;
-    width: 85.75rem;
-    max-width: 225vw;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-`
-
 const Windows = styled.div`
     display: grid;
     grid-template-columns: auto;
@@ -204,6 +187,130 @@ const Windows = styled.div`
         padding: 0 8rem;
         width: 116rem;
     }
+`
+
+function BrandIllustration() {
+    const ref = React.useRef<HTMLDivElement>(null)
+
+    const imgRef = React.useRef<HTMLImageElement>(null)
+
+    React.useEffect(function updateOffsetX() {
+        let startX: number | undefined
+
+        let currentTranslate = 0
+
+        let minTranslate = 0
+
+        let maxTranslate = 0
+
+        const { current: root } = ref
+
+        if (!root) {
+            return () => {}
+        }
+
+        function onWindowResize() {
+            if (!ref.current || !imgRef.current) {
+                minTranslate = 0
+
+                maxTranslate = 0
+
+                return
+            }
+
+            const rootWidth = ref.current.clientWidth
+
+            const imgWidth = imgRef.current.clientWidth
+
+            const halfImg = imgWidth / 2
+
+            const halfRoot = rootWidth / 2
+
+            minTranslate = Math.min(0, halfRoot - halfImg)
+            maxTranslate = Math.max(0, halfImg - halfRoot)
+        }
+
+        onWindowResize()
+
+        window.addEventListener('resize', onWindowResize)
+
+        function onPointerDown(e: PointerEvent) {
+            startX = e.clientX - currentTranslate
+        }
+
+        root.addEventListener('pointerdown', onPointerDown)
+
+        function onPointerMove(e: PointerEvent) {
+            const { current: img } = imgRef
+
+            if (startX == null || !img) {
+                return
+            }
+
+            try {
+                let x = e.clientX - startX
+
+                if (x < minTranslate) {
+                    x = minTranslate
+                }
+
+                if (x > maxTranslate) {
+                    x = maxTranslate
+                }
+
+                ref.current?.style.setProperty('--BrandIllustration_OffsetX', `${x}px`)
+
+                currentTranslate = x
+            } catch (_ohSnap) {}
+        }
+
+        window.addEventListener('pointermove', onPointerMove)
+
+        function onPointerUp(e: PointerEvent) {
+            startX = undefined
+        }
+
+        window.addEventListener('pointerup', onPointerUp)
+
+        return () => {
+            window.removeEventListener('pointerup', onPointerUp)
+
+            window.removeEventListener('pointermove', onPointerMove)
+
+            root.removeEventListener('pointerdown', onPointerDown)
+
+            window.removeEventListener('resize', onWindowResize)
+        }
+    }, [])
+
+    return (
+        <BrandIllustrationRoot ref={ref}>
+            <BrandIllustrationImage
+                ref={imgRef}
+                src={HeroCrop}
+                srcSet={`${HeroCrop2x} 2x`}
+                alt=""
+            />
+        </BrandIllustrationRoot>
+    )
+}
+
+const BrandIllustrationImage = styled.img`
+    display: block;
+    width: 85.75rem;
+    max-width: 225vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%) translateX(var(--BrandIllustration_OffsetX, 0));
+    user-select: none;
+`
+
+const BrandIllustrationRoot = styled.div`
+    width: 85.75rem;
+    max-width: 100%;
+    margin: 0 auto;
+    touch-action: none;
+    overflow: hidden;
 `
 
 const IllustrationsRoot = styled.div``
