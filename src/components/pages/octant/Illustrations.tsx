@@ -215,6 +215,8 @@ function BrandIllustration() {
 
         let maxOvershoot = 0
 
+        let lastRootWidth: number | undefined
+
         const { current: root } = ref
 
         if (!root) {
@@ -222,18 +224,6 @@ function BrandIllustration() {
         }
 
         function onWindowResize() {
-            startX = undefined
-
-            lastX = 0
-
-            velocity = 0
-
-            lastTime = 0
-
-            currentTranslate = 0
-
-            ref.current?.style.setProperty('--BrandIllustration_OffsetX', `${currentTranslate}px`)
-
             if (!ref.current || !imgRef.current) {
                 minTranslate = 0
 
@@ -245,6 +235,25 @@ function BrandIllustration() {
             }
 
             const rootWidth = ref.current.clientWidth
+
+            if (lastRootWidth !== rootWidth) {
+                startX = undefined
+
+                lastX = 0
+
+                velocity = 0
+
+                lastTime = 0
+
+                currentTranslate = 0
+
+                ref.current?.style.setProperty(
+                    '--BrandIllustration_OffsetX',
+                    `${currentTranslate}px`
+                )
+
+                lastRootWidth = rootWidth
+            }
 
             const imgWidth = imgRef.current.clientWidth
 
