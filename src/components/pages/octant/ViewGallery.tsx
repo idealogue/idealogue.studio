@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled, { css } from 'styled-components'
 import { AutoPlayingVideo } from '~/components/shared/AutoPlayingVideo'
 import { CaptionedContainer } from '~/components/shared/CaptionedContainer'
-import { useArrowCursor } from '~/components/shared/Cursor'
+import { isTouchDevice, useArrowCursor } from '~/components/shared/Cursor'
 import { TABLET } from '~/utils/css'
 import HomepagePoster from './assets/view_homepage_desktop_poster.jpg'
 import MetricsPoster from './assets/view_metrics_desktop_poster.jpg'
@@ -28,7 +28,9 @@ export function ViewGallery() {
                                 setDx((c) => (c > 0 ? c - 1 : c < 0 ? c + 1 : c))
                             }}
                             onMouseEnter={() => {
-                                setDirection(dx > 0 ? 'left' : dx < 0 ? 'right' : undefined)
+                                if (!isTouchDevice()) {
+                                    setDirection(dx > 0 ? 'left' : dx < 0 ? 'right' : undefined)
+                                }
                             }}
                             onMouseLeave={() => {
                                 setDirection(undefined)
@@ -50,7 +52,9 @@ export function ViewGallery() {
                                 setDx((c) => (c > 1 ? c - 1 : c < 1 ? c + 1 : c))
                             }}
                             onMouseEnter={() => {
-                                setDirection(dx > 1 ? 'left' : dx < 1 ? 'right' : undefined)
+                                if (!isTouchDevice()) {
+                                    setDirection(dx > 1 ? 'left' : dx < 1 ? 'right' : undefined)
+                                }
                             }}
                             onMouseLeave={() => {
                                 setDirection(undefined)
@@ -72,7 +76,9 @@ export function ViewGallery() {
                                 setDx((c) => (c > 2 ? c - 1 : c < 2 ? c + 1 : c))
                             }}
                             onMouseEnter={() => {
-                                setDirection(dx > 2 ? 'left' : dx < 2 ? 'right' : undefined)
+                                if (!isTouchDevice()) {
+                                    setDirection(dx > 2 ? 'left' : dx < 2 ? 'right' : undefined)
+                                }
                             }}
                             onMouseLeave={() => {
                                 setDirection(undefined)

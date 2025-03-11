@@ -1,5 +1,4 @@
 import { TABLET } from '$utils/css'
-import { isMobileDevice } from '$utils/isMobileDevice'
 import React, {
     createContext,
     HTMLAttributes,
@@ -153,7 +152,7 @@ export function Cursor({
     const { setDirection, setColor } = useArrowCursor()
 
     const onMouseEnter = useCallback(() => {
-        if (isMobileDevice()) {
+        if (isTouchDevice()) {
             return
         }
 
@@ -174,4 +173,8 @@ export function Cursor({
             {children}
         </div>
     )
+}
+
+export function isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0
 }
