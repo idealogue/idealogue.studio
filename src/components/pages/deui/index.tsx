@@ -164,7 +164,7 @@ export function DeuiPage() {
                                     href="https://github.com/deui-coffee/deui"
                                     rel="noopener noreferrer"
                                 >
-                                    <div>→ Get Deui on Github</div>
+                                    <span>→ Get Deui on Github</span>
                                 </RepoLink>
                             </p>
                         </Container>
