@@ -1,12 +1,14 @@
 import { MEDIUM } from '$utils/css'
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
+import { useIsBrowser } from '~/utils/ssr'
 import { Module, ModuleProps } from './Module'
 
-export function Table({
-    title = 'Table',
-    ...props
-}: Omit<ModuleProps, 'ins' | 'children'>) {
+export function Table({ title = 'Table', ...props }: Omit<ModuleProps, 'ins' | 'children'>) {
+    if (!useIsBrowser()) {
+        return null
+    }
+
     return (
         <Module {...props} title={title} ins={[['batch'], ['in4+']]}>
             <Body>

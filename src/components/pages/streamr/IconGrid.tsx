@@ -2,12 +2,13 @@ import { Caption } from '$shared/Caption'
 import { Display } from '$shared/Display'
 import { FluidImage } from '$shared/FluidImage'
 import { LG, MD, XL } from '$utils/css'
-import React, { useEffect, useReducer } from 'react'
+import React from 'react'
 import { useMediaQuery } from 'react-responsive'
 import styled, { css } from 'styled-components'
 import { MACHINE_IMAGES } from '~/components/pages/streamr/Image'
 import { CaptionedContainer } from '~/components/shared/CaptionedContainer'
 import { Gallery } from '~/components/shared/Gallery'
+import { useIsBrowser } from '~/utils/ssr'
 
 /**
  * $active is given to Cell by Gallery.
@@ -67,49 +68,23 @@ export function IconGrid() {
         query: `(min-width: ${XL}px)`,
     })
 
-    const [cache, nudgeMediaQuery] = useReducer(() => 1, 0)
-
-    useEffect(() => {
-        let cancelled = false
-
-        // `useMediaQuery` needs a "nudge". This way we force a re-render when the SSR-ed page loads
-        // in the browser for the first time.
-        const timeoutId = setTimeout(() => {
-            if (!cancelled) {
-                nudgeMediaQuery()
-            }
-        }, 0)
-
-        return () => {
-            cancelled = true
-            clearTimeout(timeoutId)
-        }
-    }, [])
+    if (!useIsBrowser()) {
+        return null
+    }
 
     return (
         <IconGridRoot caption="A range of custom icons used across website, apps and social media">
             <Display xs="none" md>
                 {[0, 5, 10].map((i) => (
                     <Viewport key={i}>
-                        <Gallery
-                            key={cache}
-                            defaultSlide={0}
-                            gutter={0}
-                            currentWingSize={xl ? 1 : 0}
-                        >
-                            {MACHINE_IMAGES.slice(i, i + 5).map(
-                                ([src, src2x]) => (
-                                    <Cell key={src}>
-                                        <ImageWrapper>
-                                            <FluidImage
-                                                src={src}
-                                                srcSet={`${src2x} 2x`}
-                                                alt=""
-                                            />
-                                        </ImageWrapper>
-                                    </Cell>
-                                )
-                            )}
+                        <Gallery defaultSlide={0} gutter={0} currentWingSize={xl ? 1 : 0}>
+                            {MACHINE_IMAGES.slice(i, i + 5).map(([src, src2x]) => (
+                                <Cell key={src}>
+                                    <ImageWrapper>
+                                        <FluidImage src={src} srcSet={`${src2x} 2x`} alt="" />
+                                    </ImageWrapper>
+                                </Cell>
+                            ))}
                         </Gallery>
                     </Viewport>
                 ))}
@@ -120,11 +95,7 @@ export function IconGrid() {
                         {MACHINE_IMAGES.map(([src, src2x]) => (
                             <Cell key={src}>
                                 <ImageWrapper>
-                                    <FluidImage
-                                        src={src}
-                                        srcSet={`${src2x} 2x`}
-                                        alt=""
-                                    />
+                                    <FluidImage src={src} srcSet={`${src2x} 2x`} alt="" />
                                 </ImageWrapper>
                             </Cell>
                         ))}
