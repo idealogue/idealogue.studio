@@ -1,12 +1,13 @@
 import { ReactNode } from 'react'
 import { createPortal } from 'react-dom'
+import { useIsBrowser } from '~/utils/ssr'
 
 interface FrontProps {
     children: ReactNode
 }
 
 export function Front({ children }: FrontProps) {
-    if (typeof document === 'undefined') {
+    if (!useIsBrowser()) {
         return null
     }
 
