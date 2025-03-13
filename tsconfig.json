@@ -29,6 +29,7 @@
       "$deui/*": ["./src/components/pages/deui/*"],
       "$cargo": ["./src/components/pages/cargo"],
       "$cargo/*": ["./src/components/pages/cargo/*"],
+      "$team": ["./src/components/pages/team"],
       "$team/*": ["./src/components/pages/team/*"]
     }
   },
