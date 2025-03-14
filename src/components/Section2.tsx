@@ -73,7 +73,7 @@ const SectionRoot = styled.div`
     }
 
     p + p {
-        margin-top: 40px;
+        margin-top: var(--Section_SpaceBetweenParagraphs, 40px);
     }
 
     p a {
