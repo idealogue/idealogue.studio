@@ -1,4 +1,4 @@
-import { font, LG, MD } from '$utils/css'
+import { LG, MD, font } from '$utils/css'
 import { Link as GatsbyLink } from 'gatsby'
 import React, { Fragment } from 'react'
 import styled, { css } from 'styled-components'
@@ -82,11 +82,11 @@ export default function IndexPage() {
                             </Link>
                             <br />
                             <Link
-                                href="#FigmaCommunityfiles"
+                                href="https://bsky.app/profile/mattinnes.bsky.social"
                                 rel="noopener noreferrer"
                                 target="_blank"
                             >
-                                Figma Community files
+                                Matt on Bluesky
                             </Link>
                             <br />
                             That&apos;s all{' '}
