@@ -15,10 +15,10 @@ export default function IndexPage() {
             <Root>
                 <Container>
                     <Logo>Idealogue</Logo>
-                    <p>
-                        We work with startups to create software with personality and digital
-                        products we believe in.
-                    </p>
+                    <Tagline>
+                        We work with startups to&nbsp;create software with personality and digital
+                        products&nbsp;we believe&nbsp;in.
+                    </Tagline>
                     <SectionLabel>Projects</SectionLabel>
                     <LinkList $inline>
                         {lineup.map((name, index) => (
@@ -104,6 +104,19 @@ export default function IndexPage() {
 export const Head = () => {
     return <Seo />
 }
+
+const Tagline = styled.p`
+    line-height: 2.25rem;
+    max-width: 28rem;
+
+    @media (min-width: ${MD}px) {
+        max-width: 52rem;
+    }
+
+    @media (min-width: ${LG}px) {
+        line-height: 4rem;
+    }
+`
 
 const Logo = styled.h1`
     ${font('publico banner')}
